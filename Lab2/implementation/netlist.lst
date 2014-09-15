@@ -1,0 +1,18 @@
+C:\Victory\Lab2\implementation\system.ngc 1410823842
+C:/Victory/Lab2/implementation/push_buttons_5bits_wrapper.ngc 1410823784
+C:/Victory/Lab2/implementation/dip_switches_8bits_wrapper.ngc 1410823802
+C:/Victory/Lab2/implementation/rs232_uart_1_wrapper.ngc 1410823775
+C:/Victory/Lab2/implementation/proc_sys_reset_0_wrapper.ngc 1410823645
+C:/Victory/Lab2/implementation/clock_generator_0_wrapper.ngc 1410823823
+C:/Victory/Lab2/implementation/microblaze_0_ilmb_wrapper.ngc 1410823812
+C:/Victory/Lab2/implementation/microblaze_0_dlmb_wrapper.ngc 1410823816
+C:/Victory/Lab2/implementation/axi4lite_0_wrapper.ngc 1410823827
+C:/Victory/Lab2/implementation/microblaze_0_wrapper.ngc 1410823819
+C:/Victory/Lab2/implementation/microblaze_0_intc_wrapper.ngc 1410823654
+C:/Victory/Lab2/implementation/microblaze_0_i_bram_ctrl_wrapper.ngc 1410823665
+C:/Victory/Lab2/implementation/microblaze_0_d_bram_ctrl_wrapper.ngc 1410823676
+C:/Victory/Lab2/implementation/debug_module_wrapper.ngc 1410823750
+C:/Victory/Lab2/implementation/leds_8bits_wrapper.ngc 1410823793
+C:/Victory/Lab2/implementation/fit_timer_0_wrapper.ngc 1410823808
+C:/Victory/Lab2/implementation/microblaze_0_bram_block_wrapper.ngc 1410823682
+OK
