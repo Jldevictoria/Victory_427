@@ -1,24 +1,21 @@
 
-**** Build of configuration Main for project space_invaders ****
+**** Build of configuration Release for project space_invaders ****
 
 make all 
-Building file: ../src/bitMapper.c
+Building file: ../src/vdmaTest.c
 Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../space_invaders_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"src/bitMapper.d" -MT"src/bitMapper.d" -o"src/bitMapper.o" "../src/bitMapper.c"
-../src/bitMapper.c:138: warning: return type defaults to 'int'
-../src/bitMapper.c: In function 'main':
-../src/bitMapper.c:154: warning: control reaches end of non-void function
-Finished building: ../src/bitMapper.c
+mb-gcc -Wall -O3 -c -fmessage-length=0 -I../../space_invaders_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"src/vdmaTest.d" -MT"src/vdmaTest.d" -o"src/vdmaTest.o" "../src/vdmaTest.c"
+Finished building: ../src/vdmaTest.c
 ' '
 Building target: space_invaders.elf
 Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../space_invaders_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -o"space_invaders.elf"  ./src/bitMapper.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../space_invaders_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -o"space_invaders.elf"  ./src/platform.o ./src/vdmaTest.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
 Finished building target: space_invaders.elf
 ' '
 Invoking: MicroBlaze Print Size
 mb-size space_invaders.elf  |tee "space_invaders.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  11640	   1720	   2144	  15504	   3c90	space_invaders.elf
+  12074	    828	   2102	  15004	   3a9c	space_invaders.elf
 Finished building: space_invaders.elf.size
 ' '
 Invoking: Xilinx ELF Check

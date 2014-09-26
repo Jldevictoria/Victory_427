@@ -135,20 +135,20 @@ int bottomInAlienSymbol[ALIEN_HEIGHT] =
 
 #define WORD_WIDTH 32
 
-main() {
+//main() {
   // Let's print out the alien as ASCII characters on the screen.
   // Each line of the alien is a 32-bit integer. We just need to strip the bits out and send
   // them to stdout.
   // MSB is the left-most pixel for the alien, so start from the MSB as we print from left to right.
-  int row, column;
-  for (row=0; row<ALIEN_HEIGHT; row++) {
-    for (column=0; column<WORD_WIDTH; column++) {
-      if ((bottomInAlienSymbol[row] & (1<<(WORD_WIDTH-1-column)))) {
-	printf("#");
-      } else {
-	printf(" ");
-      }
-    }
-    printf("\n");
-  }
-}
+//  int row, column;
+//  for (row=0; row<ALIEN_HEIGHT; row++) {
+//    for (column=0; column<WORD_WIDTH; column++) {
+//      if ((bottomInAlienSymbol[row] & (1<<(WORD_WIDTH-1-column)))) {
+//	printf("#");
+//      } else {
+//	printf(" ");
+//      }
+//    }
+//    printf("\n");
+//  }
+//}
