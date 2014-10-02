@@ -2,26 +2,4 @@
 **** Build of configuration Release for project space_invaders ****
 
 make all 
-Building target: space_invaders.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../space_invaders_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -o"space_invaders.elf"  ./src/platform.o ./src/vdmaTest.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-c:\xilinx\13.4\ise_ds\edk\gnu\microblaze\nt64\bin\..\lib\gcc\microblaze-xilinx-elf\4.1.2\..\..\..\..\microblaze-xilinx-elf\bin\ld.exe: region microblaze_0_i_bram_ctrl_microblaze_0_d_bram_ctrl is full (space_invaders.elf section .text)
-c:\xilinx\13.4\ise_ds\edk\gnu\microblaze\nt64\bin\..\lib\gcc\microblaze-xilinx-elf\4.1.2\..\..\..\..\microblaze-xilinx-elf\bin\ld.exe: region microblaze_0_i_bram_ctrl_microblaze_0_d_bram_ctrl is full (space_invaders.elf section .bss)
-c:\xilinx\13.4\ise_ds\edk\gnu\microblaze\nt64\bin\..\lib\gcc\microblaze-xilinx-elf\4.1.2\..\..\..\..\microblaze-xilinx-elf\bin\ld.exe: section .init [00000050 -> 0000008f] overlaps section .text [00000050 -> 00012bc3]
-c:\xilinx\13.4\ise_ds\edk\gnu\microblaze\nt64\bin\..\lib\gcc\microblaze-xilinx-elf\4.1.2\..\..\..\..\microblaze-xilinx-elf\bin\ld.exe: section .fini [00000090 -> 000000af] overlaps section .text [00000050 -> 00012bc3]
-c:\xilinx\13.4\ise_ds\edk\gnu\microblaze\nt64\bin\..\lib\gcc\microblaze-xilinx-elf\4.1.2\..\..\..\..\microblaze-xilinx-elf\bin\ld.exe: section .ctors [000000b0 -> 000000b7] overlaps section .text [00000050 -> 00012bc3]
-c:\xilinx\13.4\ise_ds\edk\gnu\microblaze\nt64\bin\..\lib\gcc\microblaze-xilinx-elf\4.1.2\..\..\..\..\microblaze-xilinx-elf\bin\ld.exe: section .dtors [000000b8 -> 000000bf] overlaps section .text [00000050 -> 00012bc3]
-c:\xilinx\13.4\ise_ds\edk\gnu\microblaze\nt64\bin\..\lib\gcc\microblaze-xilinx-elf\4.1.2\..\..\..\..\microblaze-xilinx-elf\bin\ld.exe: section .rodata [000000c0 -> 000010bb] overlaps section .text [00000050 -> 00012bc3]
-c:\xilinx\13.4\ise_ds\edk\gnu\microblaze\nt64\bin\..\lib\gcc\microblaze-xilinx-elf\4.1.2\..\..\..\..\microblaze-xilinx-elf\bin\ld.exe: section .sdata2 [000010bc -> 000010bf] overlaps section .text [00000050 -> 00012bc3]
-c:\xilinx\13.4\ise_ds\edk\gnu\microblaze\nt64\bin\..\lib\gcc\microblaze-xilinx-elf\4.1.2\..\..\..\..\microblaze-xilinx-elf\bin\ld.exe: section .data [000010c0 -> 00001a47] overlaps section .text [00000050 -> 00012bc3]
-c:\xilinx\13.4\ise_ds\edk\gnu\microblaze\nt64\bin\..\lib\gcc\microblaze-xilinx-elf\4.1.2\..\..\..\..\microblaze-xilinx-elf\bin\ld.exe: section .eh_frame [00001a48 -> 00001a4b] overlaps section .text [00000050 -> 00012bc3]
-c:\xilinx\13.4\ise_ds\edk\gnu\microblaze\nt64\bin\..\lib\gcc\microblaze-xilinx-elf\4.1.2\..\..\..\..\microblaze-xilinx-elf\bin\ld.exe: section .jcr [00001a4c -> 00001a4f] overlaps section .text [00000050 -> 00012bc3]
-c:\xilinx\13.4\ise_ds\edk\gnu\microblaze\nt64\bin\..\lib\gcc\microblaze-xilinx-elf\4.1.2\..\..\..\..\microblaze-xilinx-elf\bin\ld.exe: section .bss [00001a50 -> 0012db9b] overlaps section .text [00000050 -> 00012bc3]
-c:\xilinx\13.4\ise_ds\edk\gnu\microblaze\nt64\bin\..\lib\gcc\microblaze-xilinx-elf\4.1.2\..\..\..\..\microblaze-xilinx-elf\bin\ld.exe: section .heap [00000050 -> 0000044f] overlaps section .text [00000050 -> 00012bc3]
-c:\xilinx\13.4\ise_ds\edk\gnu\microblaze\nt64\bin\..\lib\gcc\microblaze-xilinx-elf\4.1.2\..\..\..\..\microblaze-xilinx-elf\bin\ld.exe: section .stack [00000450 -> 0000084f] overlaps section .text [00000050 -> 00012bc3]
-c:\xilinx\13.4\ise_ds\edk\gnu\microblaze\nt64\bin\..\lib\gcc\microblaze-xilinx-elf\4.1.2\..\..\..\..\microblaze-xilinx-elf\bin\ld.exe: region microblaze_0_i_bram_ctrl_microblaze_0_d_bram_ctrl is full (space_invaders.elf section .text)
-c:\xilinx\13.4\ise_ds\edk\gnu\microblaze\nt64\bin\..\lib\gcc\microblaze-xilinx-elf\4.1.2\..\..\..\..\microblaze-xilinx-elf\bin\ld.exe: region microblaze_0_i_bram_ctrl_microblaze_0_d_bram_ctrl is full (space_invaders.elf section .bss)
-c:\xilinx\13.4\ise_ds\edk\gnu\microblaze\nt64\bin\..\lib\gcc\microblaze-xilinx-elf\4.1.2\..\..\..\..\microblaze-xilinx-elf\bin\ld.exe: space_invaders.elf: section .text lma 0x50 overlaps previous sections
-c:/xilinx/13.4/ise_ds/edk/gnu/microblaze/nt64/bin/../lib/gcc/microblaze-xilinx-elf/4.1.2/bs/m/le/crtend.o:(.init+0x0): relocation truncated to fit: R_MICROBLAZE_32_PCREL_LO against `.text'
-collect2: ld returned 1 exit status
-make: *** [space_invaders.elf] Error 1
+make: Nothing to be done for `all'.
