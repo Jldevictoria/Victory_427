@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<section name="Workbench">
-	<item value="bootloop" key="427_hw_platform-microblaze_0-initElf"/>
-	<item value="C:\Victory\lab3ws\427_hw_platform\system_bd.bmm" key="427_hw_platform-bmmFile"/>
-	<item value="C:\Victory\lab3ws\427_hw_platform\system.bit" key="427_hw_platform-bitFile"/>
-</section>
