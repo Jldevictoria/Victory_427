@@ -37,6 +37,8 @@
 int tankX, tankY;
 int tBulletX, tBulletY;
 int aBlockX, aBlockY;
+int oldABlockX, oldABlockY;
+
 _Bool aBlockT, aBlockD;
 int aBullet0X, aBullet0Y;
 int aBullet1X, aBullet1Y;
@@ -65,5 +67,6 @@ void updatePositions();
 void drawGreenLine();
 void timer_interrupt_handler();
 void interrupt_handler_dispatcher(void* ptr);
+void drawInvaderBlock();
 
 #endif /* GLOBALS_H_ */

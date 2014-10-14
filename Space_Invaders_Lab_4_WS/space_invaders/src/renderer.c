@@ -9,6 +9,102 @@
 #include "globals.h"
 #include "bitmap.h"
 
+
+void drawInvaderBlock(){
+	int row, col,invader,curPixel,oldPixel;
+
+	for(invader = 0; invader < 55; invader++){
+		for (row = 0; row < 16; row ++){
+			for (col = 0; col < 32; col ++){
+				oldPixel = (oldABlockY+((invader/11)*INV_VERT)+row)*640+oldABlockX+((invader%11)*32)+col;
+				if(invader < 11){
+					if(!aBlockT){
+						if ((topInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
+							framePointer[oldPixel] = 0x00000000;
+						}
+					}
+					else{
+						if ((topOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
+							framePointer[oldPixel] = 0x00000000;
+						}
+					}
+				}
+				else if(invader < 33){
+					if(!aBlockT){
+						if ((midInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
+							framePointer[oldPixel] = 0x00000000;
+						}
+					}
+					else{
+						if ((midOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
+							framePointer[oldPixel] = 0x00000000;
+						}
+					}
+				}
+				else{
+					if(!aBlockT){
+						if ((bottomInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
+							framePointer[oldPixel] = 0x00000000;
+						}
+					}
+					else{
+						if ((bottomOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
+							framePointer[oldPixel] = 0x00000000;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	oldABlockX = aBlockX;
+	oldABlockY = aBlockY;
+	for(invader = 0; invader < 55; invader++){
+		for (row = 0; row < 16; row ++){
+			for (col = 0; col < 32; col ++){
+				curPixel = (aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col;
+				if(invader < 11){
+					if(aBlockT){
+						if ((topInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
+							framePointer[curPixel] = 0x00FFFFFF;
+						}
+					}
+					else{
+						if ((topOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
+							framePointer[curPixel] = 0x00FFFFFF;
+						}
+					}
+				}
+				else if(invader < 33){
+					if(aBlockT){
+						if ((midInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
+							framePointer[curPixel] = 0x00FFFFFF;
+						}
+					}
+					else{
+						if ((midOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
+							framePointer[curPixel] = 0x00FFFFFF;
+						}
+					}
+				}
+				else{
+					if(aBlockT){
+						if ((bottomInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
+							framePointer[curPixel] = 0x00FFFFFF;
+						}
+					}
+					else{
+						if ((bottomOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
+							framePointer[curPixel] = 0x00FFFFFF;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
 void render(int caller){
 	int row, col,invader;
 	int bunkerNum;

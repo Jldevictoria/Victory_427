@@ -105,7 +105,7 @@ void control(int input){
 		}else if (aBlockD == 0){
 			aBlockX -= BLOCK_SHIFT;
 		}
-		render(8);
+		drawInvaderBlock();
 	}
 	if (cmd == 2){
 		xil_printf("%c\r\n", cmd);
