@@ -14,13 +14,11 @@
  * FROM CLAIMS OF INFRINGEMENT, IMPLIED WARRANTIES OF MERCHANTABILITY
  * AND FITNESS FOR A PARTICULAR PURPOSE.
  *
- */
-
-/*
  * Taylor Simons + Joseph DeVictoria
  * ECEN 425 Lab 3 aliens source.
  */
 
+// Includes
 #include <stdio.h>
 #include "bitmap.h"
 #include "stdlib.h"
@@ -31,1129 +29,16 @@
 #include "xio.h"
 #include "time.h"
 #include "unistd.h"
-#include "mb_interface.h"   // provides the microblaze interrupt enables, etc.
-#include "xintc_l.h"        // Provides handy macros for the interrupt controller.
+#include "mb_interface.h"
+#include "xintc_l.h"
+#include "globals.h"
 
-#define DEBUG void print(char *str);
-#define WRD_WIDTH 32
-#define FRAME_BUFFER_0_ADDR 0xC1000000  // Starting location in DDR where we will store the images that we display.
-#define NUM_OF_PIXELS 307200
-//#define MAX_SILLY_TIMER 10000000;
-
-#define SIDE_MARGINE 56
-#define TOP_MARGINE 44
-#define X_BOUND_RIGHT SIDE_MARGINE
-#define X_BOUND_LEFT 640 - SIDE_MARGINE
-
-
-#define GREEN_LINE_ROW 480 - TOP_MARGINE - 16
-#define TANK_ROW GREEN_LINE_ROW - 32
-#define TOP_BULLET_END TOP_MARGINE + 28
-#define A_BLOCK_WIDTH 11*32
-#define TANK_WIDTH  32
-#define BUNKER_ROW GREEN_LINE_ROW - 90
-#define BUNK_SHIFT X_BOUND_RIGHT + 74
-#define BLOCK_SHIFT 4
-#define INV_VERT 28
-#define A_B_MOVE 14
-#define A_B_Y_INIT TOP_MARGINE + 64
-#define A_B_X_OFF 9
-#define BUNK_SPACE 108
-
-
-// Declare Variables for game objects.
-// TA's NOTE: We are declaring these variables globally
-// to use in both our render and displaying [render()].
-int tankX, tankY;
-int tBulletX, tBulletY;
-int aBlockX, aBlockY;
-_Bool aBlockT, aBlockD;
-int aBullet0X, aBullet0Y;
-int aBullet1X, aBullet1Y;
-int aBullet2X, aBullet2Y;
-int aBullet3X, aBullet3Y;
-int bNum = 0;
-_Bool bDone;
 _Bool bs[4] = {1,1,1,1};
-_Bool ts;
-_Bool aBullet0T, aBullet1T, aBullet2T, aBullet3T;
-_Bool abs0, abs1, abs2, abs3;
-int bErosion[4][10];
-_Bool alien_life[55];
-int fit_counter, runtime;
-
-int random;
-int randomT;
-
+int bNum = 0;
+int alienMarchSpeed = 80;
 unsigned int * framePointer = (unsigned int *) FRAME_BUFFER_0_ADDR;
 
-void render(int caller){
-	int row, col,invader;
-	int bunkerNum;
-	int block;
-	int bar;
-	int bsc;
-	// Choose what to update depending on calling function.
-	switch (caller){
-	case 0:
-		break;
-	case 2:
-		//Draw Invader
-		for(invader = 0; invader < 55; invader++){
-			for (row = 0; row < 16; row ++){
-				for (col = 0; col < 32; col ++){
-					if(invader < 11){
-						if(aBlockT){
-							if ((topInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
-							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
-							}
-						}
-						else{
-							if ((topOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
-							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
-							}
-						}
-					}
-					else if(invader < 33){
-						if(aBlockT){
-							if ((midInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
-							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
-							}
-						}
-						else{
-							if ((midOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
-							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
-							}
-						}
-					}
-					else{
-						if(aBlockT){
-							if ((bottomInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
-							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
-							}
-						}
-						else{
-							if ((bottomOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
-							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
-							}
-						}
-					}
-				}
-			}
-		}
-		break;
-	case 3:
-		// Spawn aliens bullets.
-		for(bsc = 0; bsc < 4; bsc++){
-			for (row = 0; row < 14; row ++){
-				for (col = 0; col < 8; col ++){
-					switch (bsc){
-					case 0:
-						if (bs[bsc] == 0){
-							if (aBullet0T == 0){
-								if (abs0){
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = 0x00000000;
-									}
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = 0x00FFFFFF;
-									}
-
-								}else{
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = 0x00000000;
-									}
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = 0x00FFFFFF;
-									}
-								}
-							}else{
-								if (abs0){
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = 0x00000000;
-									}
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = 0x00FFFFFF;
-									}
-
-								}else{
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = 0x00000000;
-									}
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = 0x00FFFFFF;
-									}
-								}
-							}
-						}
-						break;
-					case 1:
-						if (bs[bsc] == 0){
-							if (aBullet1T == 0){
-								if (abs1){
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = 0x00000000;
-									}
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = 0x00FFFFFF;
-									}
-
-								}else{
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = 0x00000000;
-									}
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = 0x00FFFFFF;
-									}
-								}
-							}else{
-								if (abs1){
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = 0x00000000;
-									}
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = 0x00FFFFFF;
-									}
-
-								}else{
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = 0x00000000;
-									}
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = 0x00FFFFFF;
-									}
-								}
-							}
-						}
-						break;
-					case 2:
-						if (bs[bsc] == 0){
-							if (aBullet2T == 0){
-								if (abs2){
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = 0x00000000;
-									}
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = 0x00FFFFFF;
-									}
-
-								}else{
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = 0x00000000;
-									}
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = 0x00FFFFFF;
-									}
-								}
-							}else{
-								if (abs2){
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = 0x00000000;
-									}
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = 0x00FFFFFF;
-									}
-
-								}else{
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = 0x00000000;
-									}
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = 0x00FFFFFF;
-									}
-								}
-							}
-						}
-
-						break;
-					case 3:
-						if (bs[bsc] == 0){
-							if (aBullet3T == 0){
-								if (abs3){
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = 0x00000000;
-									}
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = 0x00FFFFFF;
-									}
-
-								}else{
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = 0x00000000;
-									}
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = 0x00FFFFFF;
-									}
-								}
-							}else{
-								if (abs3){
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = 0x00000000;
-									}
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = 0x00FFFFFF;
-									}
-
-								}else{
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = 0x00000000;
-									}
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = 0x00FFFFFF;
-									}
-								}
-							}
-						}
-						break;
-					default:
-						break;
-					}
-				}
-			}
-		}
-		break;
-	case 4:
-		// Move tank left.
-		// Cleanup
-		for (row = 0; row < 16; row ++){
-			for (col = 0; col < 32; col ++){
-				if (tankSymbol[row] & (1 << (31-col))){
-					framePointer[(tankY+row)*640+tankX+4+col] = 0x00000000;
-				}
-			}
-		}
-		for (row = 0; row < 16; row ++){
-			for (col = 0; col < 32; col ++){
-				if (tankSymbol[row] & (1 << (31-col))){
-					framePointer[(tankY+row)*640+tankX+col] = 0x0000FF00;
-				}
-			}
-		}
-
-		break;
-	case 5:
-		for (row = 0; row < 14; row ++){
-			for (col = 0; col < 2; col ++){
-				framePointer[(tBulletY+row)*640+tBulletX+col] = 0x00FFFFFF;
-			}
-		}
-		break;
-	case 6:
-		// Move tank right.
-		// Cleanup
-		for (row = 0; row < 16; row ++){
-			for (col = 0; col < 32; col ++){
-				if (tankSymbol[row] & (1 << (31-col))){
-					framePointer[(tankY+row)*640+tankX-4+col] = 0x00000000;
-				}
-			}
-		}
-		for (row = 0; row < 16; row ++){
-			for (col = 0; col < 32; col ++){
-				if (tankSymbol[row] & (1 << (31-col))){
-					framePointer[(tankY+row)*640+tankX+col] = 0x0000FF00;
-				}
-			}
-		}
-		break;
-	case 7:
-		for(bunkerNum = 0; bunkerNum < 4; bunkerNum++){
-			for(block = 0; block < 10; block ++){
-				switch(block){
-				case 0:
-					for(row = 0; row < 12; row++){
-						for(col = 0; col < 12; col++){
-							switch(bErosion[bunkerNum][block]){
-							case 0:
-								if (bunker0[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = 0x00000000;
-								}
-								break;
-							case 1:
-								if (bunkerD10[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = 0x00000000;
-								}
-								break;
-							case 2:
-								if (bunkerD20[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = 0x00000000;
-								}
-								break;
-							case 3:
-								if (bunkerD30[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = 0x00000000;
-								}
-								break;
-							case 4:
-								if (bunkerBlank[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = 0x00000000;
-								}
-								break;
-							default:
-								break;
-							}
-						}
-					}
-					break;
-				case 1:
-					for(row = 0; row < 12; row++){
-						for(col = 0; col < 12; col++){
-							switch(bErosion[bunkerNum][block]){
-							case 0:
-								if (bunker[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
-								}
-								break;
-							case 1:
-								if (bunkerD1[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
-								}
-								break;
-							case 2:
-								if (bunkerD2[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
-								}
-								break;
-							case 3:
-								if (bunkerD3[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
-								}
-								break;
-							case 4:
-								if (bunkerBlank[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
-								}
-								break;
-							default:
-								break;
-							}
-						}
-					}
-					break;
-				case 2:
-					for(row = 0; row < 12; row++){
-						for(col = 0; col < 12; col++){
-							switch(bErosion[bunkerNum][block]){
-							case 0:
-								if (bunker[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x00000000;
-								}
-								break;
-							case 1:
-								if (bunkerD1[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x00000000;
-								}
-								break;
-							case 2:
-								if (bunkerD2[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x00000000;
-								}
-								break;
-							case 3:
-								if (bunkerD3[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x00000000;
-								}
-								break;
-							case 4:
-								if (bunkerBlank[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x00000000;
-								}
-								break;
-							default:
-								break;
-							}
-						}
-					}
-					break;
-				case 3:
-					for(row = 0; row < 12; row++){
-						for(col = 0; col < 12; col++){
-							switch(bErosion[bunkerNum][block]){
-							case 0:
-								if (bunker3[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
-								}
-								break;
-							case 1:
-								if (bunkerD13[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
-								}
-								break;
-							case 2:
-								if (bunkerD23[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
-								}
-								break;
-							case 3:
-								if (bunkerD33[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
-								}
-								break;
-							case 4:
-								if (bunkerBlank[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
-								}
-								break;
-							default:
-								break;
-							}
-						}
-					}
-					break;
-				case 4:
-					for(row = 0; row < 12; row++){
-						for(col = 0; col < 12; col++){
-							switch(bErosion[bunkerNum][block]){
-							case 0:
-								if (bunker[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x00000000;
-								}
-								break;
-							case 1:
-								if (bunkerD1[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(32*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x00000000;
-								}
-								break;
-							case 2:
-								if (bunkerD2[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x00000000;
-								}
-								break;
-							case 3:
-								if (bunkerD3[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x00000000;
-								}
-								break;
-							case 4:
-								if (bunkerBlank[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
-								}
-								break;
-							default:
-								break;
-							}
-						}
-					}
-					break;
-				case 5:
-					for(row = 0; row < 12; row++){
-						for(col = 0; col < 12; col++){
-							switch(bErosion[bunkerNum][block]){
-							case 0:
-								if (bunker5[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
-								}
-								break;
-							case 1:
-								if (bunkerD15[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
-								}
-								break;
-							case 2:
-								if (bunkerD25[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
-								}
-								break;
-							case 3:
-								if (bunkerD35[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
-								}
-								break;
-							case 4:
-								if (bunkerBlank[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
-								}
-								break;
-							default:
-								break;
-							}
-						}
-					}
-					break;
-				case 6:
-					for(row = 0; row < 12; row++){
-						for(col = 0; col < 12; col++){
-							switch(bErosion[bunkerNum][block]){
-							case 0:
-								if (bunker6[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x00000000;
-								}
-								break;
-							case 1:
-								if (bunkerD16[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x00000000;
-								}
-								break;
-							case 2:
-								if (bunkerD26[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x00000000;
-								}
-								break;
-							case 3:
-								if (bunkerD36[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x00000000;
-								}
-								break;
-							case 4:
-								if (bunkerBlank[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x00000000;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x00000000;
-								}
-								break;
-							default:
-								break;
-							}
-						}
-					}
-					break;
-				case 7:
-					for(row = 0; row < 12; row++){
-						for(col = 0; col < 12; col++){
-							switch(bErosion[bunkerNum][block]){
-							case 0:
-								if (bunker[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
-								}
-								break;
-							case 1:
-								if (bunkerD1[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
-								}
-								break;
-							case 2:
-								if (bunkerD2[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
-								}
-								break;
-							case 3:
-								if (bunkerD3[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
-								}
-								break;
-							case 4:
-								if (bunkerBlank[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
-								}
-								break;
-							default:
-								break;
-							}
-						}
-					}
-					break;
-				case 8:
-					for(row = 0; row < 12; row++){
-						for(col = 0; col < 12; col++){
-							switch(bErosion[bunkerNum][block]){
-							case 0:
-								if (bunker[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x00000000;
-								}
-								break;
-							case 1:
-								if (bunkerD1[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x00000000;
-								}
-								break;
-							case 2:
-								if (bunkerD2[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x00000000;
-								}
-								break;
-							case 3:
-								if (bunkerD3[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x00000000;
-								}
-								break;
-							case 4:
-								if (bunkerBlank[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x00000000;
-								}
-								break;
-							default:
-								break;
-							}
-						}
-					}
-					break;
-				case 9:
-					for(row = 0; row < 12; row++){
-						for(col = 0; col < 12; col++){
-							switch(bErosion[bunkerNum][block]){
-							case 0:
-								if (bunker[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
-								}
-								break;
-							case 1:
-								if (bunkerD1[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
-								}
-								break;
-							case 2:
-								if (bunkerD2[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
-								}
-								break;
-							case 3:
-								if (bunkerD3[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
-								}
-								break;
-							case 4:
-								if (bunkerBlank[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
-								}
-								else{
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
-								}
-								break;
-							default:
-								break;
-							}
-						}
-					}
-					break;
-				default:
-					break;
-				}
-			}
-		}
-		break;
-	case 8:
-		//Draw Invader
-		if ((aBlockD == 0) && (aBlockX >= X_BOUND_LEFT - A_BLOCK_WIDTH - BLOCK_SHIFT)){
-			for(bar = 0; bar < 5; bar++){
-				for (row = 0; row < 16; row ++){
-					for (col = 0; col < 32*11; col ++){
-						framePointer[(aBlockY+((bar)*INV_VERT)-16+row)*640+aBlockX+col] = 0x00000000;
-					}
-				}
-			}
-		}else if ((aBlockD == 1) && (aBlockX <= X_BOUND_RIGHT + BLOCK_SHIFT)){
-			for(bar = 0; bar < 5; bar++){
-				for (row = 0; row < 16; row ++){
-					for (col = 0; col < 32*11; col ++){
-						framePointer[(aBlockY+((bar)*INV_VERT)-16+row)*640+aBlockX+col] = 0x00000000;
-					}
-				}
-			}
-		}else if (aBlockD == 1){
-			for (row = 0; row < INV_VERT * 5; row ++){
-				for (col = 0; col < 32; col ++){
-					framePointer[(aBlockY+row)*640+aBlockX-32+col] = 0x00000000;
-				}
-			}
-		}else if (aBlockD == 0){
-			for (row = 0; row < INV_VERT * 5; row ++){
-				for (col = 0; col < 32; col ++){
-					framePointer[(aBlockY+row)*640+aBlockX+32+col+(32*10)] = 0x00000000;
-				}
-			}
-		}
-		for(invader = 0; invader < 55; invader++){
-			for (row = 0; row < 16; row ++){
-				for (col = 0; col < 32; col ++){
-					if(invader < 11){
-						if(aBlockT){
-							if ((topInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
-							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
-							}
-						}
-						else{
-							if ((topOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
-							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
-							}
-						}
-					}
-					else if(invader < 33){
-						if(aBlockT){
-							if ((midInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
-							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
-							}
-						}
-						else{
-							if ((midOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
-							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
-							}
-						}
-					}
-					else{
-						if(aBlockT){
-							if ((bottomInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
-							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
-							}
-						}
-						else{
-							if ((bottomOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
-							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
-							}
-						}
-					}
-				}
-			}
-		}
-		break;
-	case 9:
-		// Move bullets
-		// Cleanup tank bullet.
-		if(!ts){
-			for (row = 0; row < 14; row ++){
-				for (col = 0; col < 2; col ++){
-					framePointer[(tBulletY+row+14)*640+tBulletX+col] = 0x00000000;
-				}
-			}
-			// Move tank bullet.
-			for (row = 0; row < 14; row ++){
-				for (col = 0; col < 2; col ++){
-					framePointer[(tBulletY+row)*640+tBulletX+col] = 0x00FFFFFF;
-				}
-			}
-		}
-		// Cleanup Alien Bullets
-		for(bsc = 0; bsc < 4; bsc++){
-			for (row = 0; row < 14; row ++){
-				for (col = 0; col < 8; col ++){
-					switch (bsc){
-					case 0:
-						if (bs[bsc] == 0){
-							if (aBullet0T == 0){
-								if (abs0){
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = 0x00000000;
-									}
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = 0x00FFFFFF;
-									}
-
-								}else{
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = 0x00000000;
-									}
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = 0x00FFFFFF;
-									}
-								}
-							}else{
-								if (abs0){
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = 0x00000000;
-									}
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = 0x00FFFFFF;
-									}
-
-								}else{
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = 0x00000000;
-									}
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = 0x00FFFFFF;
-									}
-								}
-							}
-						}
-						break;
-					case 1:
-						if (bs[bsc] == 0){
-							if (aBullet1T == 0){
-								if (abs1){
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = 0x00000000;
-									}
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = 0x00FFFFFF;
-									}
-
-								}else{
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = 0x00000000;
-									}
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = 0x00FFFFFF;
-									}
-								}
-							}else{
-								if (abs1){
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = 0x00000000;
-									}
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = 0x00FFFFFF;
-									}
-
-								}else{
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = 0x00000000;
-									}
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = 0x00FFFFFF;
-									}
-								}
-							}
-						}
-						break;
-					case 2:
-						if (bs[bsc] == 0){
-							if (aBullet2T == 0){
-								if (abs2){
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = 0x00000000;
-									}
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = 0x00FFFFFF;
-									}
-
-								}else{
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = 0x00000000;
-									}
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = 0x00FFFFFF;
-									}
-								}
-							}else{
-								if (abs2){
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = 0x00000000;
-									}
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = 0x00FFFFFF;
-									}
-
-								}else{
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = 0x00000000;
-									}
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = 0x00FFFFFF;
-									}
-								}
-							}
-						}
-
-						break;
-					case 3:
-						if (bs[bsc] == 0){
-							if (aBullet3T == 0){
-								if (abs3){
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = 0x00000000;
-									}
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = 0x00FFFFFF;
-									}
-
-								}else{
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = 0x00000000;
-									}
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = 0x00FFFFFF;
-									}
-								}
-							}else{
-								if (abs3){
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = 0x00000000;
-									}
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = 0x00FFFFFF;
-									}
-
-								}else{
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = 0x00000000;
-									}
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = 0x00FFFFFF;
-									}
-								}
-							}
-						}
-						break;
-					default:
-						break;
-					}
-				}
-			}
-		}
-		break;
-	default:
-		break;
-		}
-	return;
-}
+XGpio gpPB;   // This is a handle for the push-button GPIO block.
 
 void clearBullet(int sel){
 	int tempY = 0;
@@ -1189,24 +74,24 @@ void clearBullet(int sel){
 
 }
 
-void control(){
+void control(int input){
 	// Get command from user.
-	char cmd = getc(stdin);
-	if (cmd == '4'){
+	char cmd = input;
+	if (cmd == 4){
 		xil_printf("%c\r\n", cmd);
 		if (tankX > X_BOUND_RIGHT)
 			tankX -= 4;
 		render(4);
 		xil_printf("%d\r\n", tankX);
 	}
-	if (cmd == '6'){
+	if (cmd == 6){
 		xil_printf("%c\r\n", cmd);
 		if (tankX < X_BOUND_LEFT - TANK_WIDTH)
 			tankX += 4;
 		render(6);
 		xil_printf("%d\r\n", tankX);
 	}
-	if (cmd == '8'){
+	if (cmd == 8){
 		xil_printf("%c\r\n", cmd);
 		aBlockT = !aBlockT;
 		if ((aBlockD == 1) && (aBlockX >= X_BOUND_LEFT - A_BLOCK_WIDTH - BLOCK_SHIFT)){
@@ -1222,7 +107,7 @@ void control(){
 		}
 		render(8);
 	}
-	if (cmd == '2'){
+	if (cmd == 2){
 		xil_printf("%c\r\n", cmd);
 		xil_printf("Please provide the number of the alien you want to kill\n\r");
 		int toKill;
@@ -1238,7 +123,7 @@ void control(){
 		}
 		render(2);
 	}
-	if (cmd == '5'){
+	if (cmd == 5){
 		xil_printf("%c\r\n", cmd);
 		if(ts){
 			ts = 0;
@@ -1247,7 +132,7 @@ void control(){
 			render(5);
 		}
 	}
-	if (cmd == '3'){
+	if (cmd == 3){
 		xil_printf("%c\r\n", cmd);
 		random = rand()%11;
 		randomT = rand()%2;
@@ -1293,7 +178,7 @@ void control(){
 		}
 		render(3);
 	}
-	if (cmd == '9'){
+	if (cmd == 9){
 		xil_printf("%c\r\n", cmd);
 		int i;
 		if(bNum > 0){
@@ -1351,7 +236,7 @@ void control(){
 		}
 		render(9);
 	}
-	if (cmd == '7'){
+	if (cmd == 7){
 		xil_printf("%c\r\n", cmd);
 		xil_printf("%c\r\n", cmd);
 		xil_printf("Please provide the number of the bunker you want to erode\n\r");
@@ -1371,8 +256,35 @@ void control(){
 	return;
 }
 
-void drawGreenLine(){
+void pollButtons(){
+	currentButtonState = XGpio_DiscreteRead(&gpPB, 1);  // Get the current state of the buttons.
+	//xil_printf("poll the buttons! %d \n\r", currentButtonState);
+	char left = currentButtonState&(0x8);
+	char mid = currentButtonState&(0x1);
+	char right = currentButtonState&(0x2);
+	//char up = currentButtonState&(0x10);
+	//char down = currentButtonState&(0x4);
+	if (left){
+		control(4);
+	}
+	if (right){
+		control(6);
+	}
+	if (mid){
+		control(5);
+	}
+}
 
+void updatePositions(){
+	if ((fit_counter % alienMarchSpeed) == 0){
+		control(8);
+	}
+	if ((fit_counter % BULLET_MOVE_SPEED) == 0){
+		control(9);
+	}
+}
+
+void drawGreenLine(){
 	int row,col;
 	for(row = 0; row < 2; row ++){
 		for (col = 0; col < X_BOUND_LEFT - X_BOUND_RIGHT; col ++){
@@ -1384,10 +296,9 @@ void drawGreenLine(){
 // This is invoked in response to a timer interrupt.
 void timer_interrupt_handler() {
 	fit_counter++;
-	if (fit_counter == 100){				//Update the timer by one second every second
-		runtime++;							//Increment the timer
-		fit_counter = 0;					//reset the fit count
-	}
+	//xil_printf("A FIT interrupt came in! %d \n\r", fit_counter);
+	pollButtons();
+	updatePositions();
 }
 
 // Main interrupt handler, queries the interrupt controller to see what peripheral
@@ -1401,11 +312,6 @@ void interrupt_handler_dispatcher(void* ptr) {
 		XIntc_AckIntr(XPAR_INTC_0_BASEADDR, XPAR_FIT_TIMER_0_INTERRUPT_MASK);
 		timer_interrupt_handler();
 	}
-	// Check the push buttons.
-	//if (intc_status & XPAR_PUSH_BUTTONS_5BITS_IP2INTC_IRPT_MASK){
-	//	XIntc_AckIntr(XPAR_INTC_0_BASEADDR, XPAR_PUSH_BUTTONS_5BITS_IP2INTC_IRPT_MASK);
-	//	pb_interrupt_handler();
-	//}
 }
 
 int main(){
@@ -1491,7 +397,7 @@ int main(){
     	 xil_printf("vdma parking failed\n\r");
      }
 
-/*
+
      // Initialize the GPIO peripherals.
      int success;
      // print("hello world\n\r");
@@ -1501,16 +407,16 @@ int main(){
      // Set the push button peripheral to be inputs.
      XGpio_SetDataDirection(&gpPB, 1, 0x0000001F);
      // Enable the global GPIO interrupt for push buttons.
-     XGpio_InterruptGlobalEnable(&gpPB);
+     //XGpio_InterruptGlobalEnable(&gpPB);
      // Enable all interrupts in the push button peripheral.
-     XGpio_InterruptEnable(&gpPB, 0xFFFFFFFF);
-*/
+     //XGpio_InterruptEnable(&gpPB, 0xFFFFFFFF);
 
-/*     microblaze_register_handler(interrupt_handler_dispatcher, NULL);
+
+     microblaze_register_handler(interrupt_handler_dispatcher, NULL);
      XIntc_EnableIntr(XPAR_INTC_0_BASEADDR, XPAR_FIT_TIMER_0_INTERRUPT_MASK);
      XIntc_MasterEnable(XPAR_INTC_0_BASEADDR);
      microblaze_enable_interrupts();
-*/
+
      //initilize bunker status
      int bunk;
      int blk;
@@ -1549,9 +455,7 @@ int main(){
      render(7);
 
      drawGreenLine();
-
      while(1){
-    	 control();
      }
 
      cleanup_platform();
