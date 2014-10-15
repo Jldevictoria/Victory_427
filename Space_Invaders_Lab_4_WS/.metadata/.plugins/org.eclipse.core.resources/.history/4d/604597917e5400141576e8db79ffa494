@@ -270,21 +270,19 @@ void control(int input){
 						clearBullet(i);
 					}
 					for(k = 0; k < 8;k++){
-						for(l = 0; l < (A_B_MOVE+2); l++){
+						for(l = 0; l < A_B_MOVE; l++){
 							tempPixel = framePointer[(aBulletY[i]+l)*640+aBulletX[i]+k];
 							if ((tempPixel == GREEN) && !done){
 								done = 1;
 								clearBullet(i);
 								bNum--;
 								bs[i] = 1;
-								if(aBulletY[i] < TANK_ROW){
-									bunkerCollision((aBulletY[i]+l)*640+aBulletX[i]+k);
-								}
+								bunkerCollision((aBulletY[i]+l)*640+aBulletX[i]+k);
 							}
 						}
 					}
 					aBulletY[i] += A_B_MOVE;
-					abs_[i] = !abs_[i];
+					abs_[0] = !abs_[0];
 
 /*
 					switch(i){
@@ -562,13 +560,6 @@ int main(){
     	 for(blk = 0; blk < 10; blk ++){
     		 bErosion[bunk][blk] = 0;
     	 }
-     }
-
-     int bullStat;
-     for(bullStat = 0; bullStat < 4; bullStat++){
-    	 aBulletX[bullStat] = 0;
-    	 aBulletY[bullStat] = 0;
-    	 abs_[bullStat] = 0;
      }
 
      // Write black to all pixels in frame buffer.

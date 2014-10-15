@@ -47,20 +47,17 @@ int aBlockX, aBlockY;
 int oldABlockX, oldABlockY;
 extern int playerScore;
 _Bool aBlockT, aBlockD;
-/*
 int aBullet0X, aBullet0Y;
 int aBullet1X, aBullet1Y;
 int aBullet2X, aBullet2Y;
 int aBullet3X, aBullet3Y;
-*/
 int aBulletX[4];
 int aBulletY[4];
 _Bool bDone;
 extern _Bool bs[4];
 _Bool ts;
 _Bool aBullet0T, aBullet1T, aBullet2T, aBullet3T;
-//_Bool abs0, abs1, abs2, abs3;
-_Bool abs_[4];
+_Bool abs0, abs1, abs2, abs3;
 int bErosion[4][10];
 _Bool alien_life[55];
 int fit_counter, runtime;

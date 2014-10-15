@@ -564,13 +564,6 @@ int main(){
     	 }
      }
 
-     int bullStat;
-     for(bullStat = 0; bullStat < 4; bullStat++){
-    	 aBulletX[bullStat] = 0;
-    	 aBulletY[bullStat] = 0;
-    	 abs_[bullStat] = 0;
-     }
-
      // Write black to all pixels in frame buffer.
      // This is sort of a default
      int row, col;
