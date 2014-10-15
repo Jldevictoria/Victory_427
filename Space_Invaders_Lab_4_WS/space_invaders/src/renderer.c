@@ -9,6 +9,143 @@
 #include "globals.h"
 #include "bitmap.h"
 
+void clearAlien(int alienNum){
+	int aRow,aCol,row,col,tempPix;
+	int alienGridX = alienNum%11;
+	int alienGridY = alienNum/11;
+
+	aRow = (aBlockY+(alienGridY*INV_VERT));
+	aCol = (aBlockX+(alienGridX*32));
+
+	for(row = 0; row < 16; row++){
+		for(col = 0; col < 32; col++){
+			tempPix = (aRow+row)*640+aCol+col;
+			if(framePointer[tempPix] == ALIEN_COLOR){
+				framePointer[tempPix] = BLACK;
+			}
+		}
+	}
+}
+
+void drawAlienBullets(){
+	int bsc,row,col,pixTemp;
+	//Clear alien bullet
+	for(bsc = 0; bsc < 4; bsc++){
+		for (row = 0; row < 14; row ++){
+			for (col = 0; col < 8; col ++){
+				pixTemp = (aBulletY[bsc]-A_B_MOVE+row)*640+aBulletX[bsc]+col;
+				if(framePointer[pixTemp] == BULLET_COLOR){
+					framePointer[pixTemp] = BLACK;
+				}
+/*
+				if (bs[bsc] == 0){
+					if (aBulletT[bsc]){
+						if (((aBulletY[bsc]-A_B_MOVE)/(BUL_TOGGLE_SIZE))%2){
+							if (bulletType10[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]-A_B_MOVE+row)*640+aBulletX[bsc]+col] = BLACK;
+							}
+
+						}else{
+							if (bulletType00[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]-A_B_MOVE+row)*640+aBulletX[bsc]+col] = BLACK;
+							}
+						}
+					}else{
+						if (abs_[bsc]){
+							if (bulletType11[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]-A_B_MOVE+row)*640+aBulletX[bsc]+col] = BLACK;
+							}
+						}else{
+							if (bulletType01[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]-A_B_MOVE+row)*640+aBulletX[bsc]+col] = BLACK;
+							}
+						}
+					}
+				}
+*/
+			}
+		}
+	}
+
+
+	//Draw alien bullets
+	for(bsc = 0; bsc < 4; bsc++){
+		for (row = 0; row < 14; row ++){
+			for (col = 0; col < 8; col ++){
+				if (bs[bsc] == 0){
+					if (aBulletT[bsc]){
+						if ((aBulletY[bsc]/BUL_TOGGLE_SIZE)%2){
+							if (bulletType10[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]+row)*640+aBulletX[bsc]+col] = BULLET_COLOR;
+							}
+
+						}else{
+							if (bulletType00[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]+row)*640+aBulletX[bsc]+col] = BULLET_COLOR;
+							}
+						}
+					}else{
+						if ((aBulletY[bsc]/BUL_TOGGLE_SIZE)%2){
+							if (bulletType11[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]+row)*640+aBulletX[bsc]+col] = BULLET_COLOR;
+							}
+						}else{
+							if (bulletType01[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]+row)*640+aBulletX[bsc]+col] = BULLET_COLOR;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+/*
+	for(bsc = 0; bsc < 4; bsc++){
+		for (row = 0; row < 14; row ++){
+			for (col = 0; col < 8; col ++){
+				if (bs[bsc] == 0){
+					if (aBulletT[bsc]){
+						if (abs_[bsc]){
+							if (bulletType00[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]-A_B_MOVE+row)*640+aBulletX[bsc]+col] = BLACK;
+							}
+							if (bulletType10[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]+row)*640+aBulletX[bsc]+col] = BULLET_COLOR;
+							}
+
+						}else{
+							if (bulletType10[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]-A_B_MOVE+row)*640+aBulletX[bsc]+col] = BLACK;
+							}
+							if (bulletType00[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]+row)*640+aBulletX[bsc]+col] = BULLET_COLOR;
+							}
+						}
+					}else{
+						if (abs_[bsc]){
+							if (bulletType01[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]-A_B_MOVE+row)*640+aBulletX[bsc]+col] = BLACK;
+							}
+							if (bulletType11[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]+row)*640+aBulletX[bsc]+col] = BULLET_COLOR;
+							}
+
+						}else{
+							if (bulletType11[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]-A_B_MOVE+row)*640+aBulletX[bsc]+col] = BLACK;
+							}
+							if (bulletType01[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]+row)*640+aBulletX[bsc]+col] = BULLET_COLOR;
+							}
+						}
+					}
+				}
+
+			}
+		}
+	}
+*/
+}
 
 void drawBunkerBlock(int block, int bunkerNum){
 	int col,row;
@@ -529,7 +666,6 @@ void render(int caller){
 	int bunkerNum;
 	int block;
 	int bar;
-	int bsc;
 	int curPix;
 	// Choose what to update depending on calling function.
 	switch (caller){
@@ -595,173 +731,7 @@ void render(int caller){
 		break;
 	case 3:
 		// Spawn aliens bullets.
-		for(bsc = 0; bsc < 4; bsc++){
-			for (row = 0; row < 14; row ++){
-				for (col = 0; col < 8; col ++){
-					switch (bsc){
-					case 0:
-						if (bs[bsc] == 0){
-							if (aBullet0T){
-								if (abs_[0]){
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBulletY[0]-A_B_MOVE+row)*640+aBulletX[0]+col] = BLACK;
-									}
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBulletY[0]+row)*640+aBulletX[0]+col] = BULLET_COLOR;
-									}
-
-								}else{
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBulletY[0]-A_B_MOVE+row)*640+aBulletX[0]+col] = BLACK;
-									}
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBulletY[0]+row)*640+aBulletX[0]+col] = BULLET_COLOR;
-									}
-								}
-							}else{
-								if (abs_[0]){
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBulletY[0]-A_B_MOVE+row)*640+aBulletX[0]+col] = BLACK;
-									}
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBulletY[0]+row)*640+aBulletX[0]+col] = BULLET_COLOR;
-									}
-
-								}else{
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBulletY[0]-A_B_MOVE+row)*640+aBulletX[0]+col] = BLACK;
-									}
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBulletY[0]+row)*640+aBulletX[0]+col] = BULLET_COLOR;
-									}
-								}
-							}
-						}
-						break;
-					case 1:
-						if (bs[bsc] == 0){
-							if (aBullet1T){
-								if (abs_[1]){
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBulletY[1]-A_B_MOVE+row)*640+aBulletX[1]+col] = BLACK;
-									}
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBulletY[1]+row)*640+aBulletX[1]+col] = BULLET_COLOR;
-									}
-
-								}else{
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBulletY[1]-A_B_MOVE+row)*640+aBulletX[1]+col] = BLACK;
-									}
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBulletY[1]+row)*640+aBulletX[1]+col] = BULLET_COLOR;
-									}
-								}
-							}else{
-								if (abs_[1]){
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBulletY[1]-A_B_MOVE+row)*640+aBulletX[1]+col] = BLACK;
-									}
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBulletY[1]+row)*640+aBulletX[1]+col] = BULLET_COLOR;
-									}
-
-								}else{
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBulletY[1]-A_B_MOVE+row)*640+aBulletX[1]+col] = BLACK;
-									}
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBulletY[1]+row)*640+aBulletX[1]+col] = BULLET_COLOR;
-									}
-								}
-							}
-						}
-						break;
-					case 2:
-						if (bs[bsc] == 0){
-							if (aBullet2T){
-								if (abs_[2]){
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBulletY[2]-A_B_MOVE+row)*640+aBulletX[2]+col] = BLACK;
-									}
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBulletY[2]+row)*640+aBulletX[2]+col] = BULLET_COLOR;
-									}
-
-								}else{
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBulletY[2]-A_B_MOVE+row)*640+aBulletX[2]+col] = BLACK;
-									}
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBulletY[2]+row)*640+aBulletX[2]+col] = BULLET_COLOR;
-									}
-								}
-							}else{
-								if (abs_[2]){
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBulletY[2]-A_B_MOVE+row)*640+aBulletX[2]+col] = BLACK;
-									}
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBulletY[2]+row)*640+aBulletX[2]+col] = BULLET_COLOR;
-									}
-
-								}else{
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBulletY[2]-A_B_MOVE+row)*640+aBulletX[2]+col] = BLACK;
-									}
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBulletY[2]+row)*640+aBulletX[2]+col] = BULLET_COLOR;
-									}
-								}
-							}
-						}
-
-						break;
-					case 3:
-						if (bs[bsc] == 0){
-							if (aBullet3T){
-								if (abs_[3]){
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBulletY[3]-A_B_MOVE+row)*640+aBulletX[3]+col] = BLACK;
-									}
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBulletY[3]+row)*640+aBulletX[3]+col] = BULLET_COLOR;
-									}
-
-								}else{
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBulletY[3]-A_B_MOVE+row)*640+aBulletX[3]+col] = BLACK;
-									}
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBulletY[3]+row)*640+aBulletX[3]+col] = BULLET_COLOR;
-									}
-								}
-							}else{
-								if (abs_[3]){
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBulletY[3]-A_B_MOVE+row)*640+aBulletX[3]+col] = BLACK;
-									}
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBulletY[3]+row)*640+aBulletX[3]+col] = BULLET_COLOR;
-									}
-
-								}else{
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBulletY[3]-A_B_MOVE+row)*640+aBulletX[3]+col] = BLACK;
-									}
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBulletY[3]+row)*640+aBulletX[3]+col] = BULLET_COLOR;
-									}
-								}
-							}
-						}
-						break;
-					default:
-						break;
-					}
-				}
-			}
-		}
+		drawAlienBullets();
 		break;
 	case 4:
 		// Move tank left.
@@ -1421,173 +1391,7 @@ void render(int caller){
 			}
 		}
 		// Cleanup Alien Bullets
-		for(bsc = 0; bsc < 4; bsc++){
-			for (row = 0; row < 14; row ++){
-				for (col = 0; col < 8; col ++){
-					switch (bsc){
-					case 0:
-						if (bs[bsc] == 0){
-							if (aBullet0T){
-								if (abs_[0]){
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBulletY[0]-A_B_MOVE+row)*640+aBulletX[0]+col] = BLACK;
-									}
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBulletY[0]+row)*640+aBulletX[0]+col] = BULLET_COLOR;
-									}
-
-								}else{
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBulletY[0]-A_B_MOVE+row)*640+aBulletX[0]+col] = BLACK;
-									}
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBulletY[0]+row)*640+aBulletX[0]+col] = BULLET_COLOR;
-									}
-								}
-							}else{
-								if (abs_[0]){
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBulletY[0]-A_B_MOVE+row)*640+aBulletX[0]+col] = BLACK;
-									}
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBulletY[0]+row)*640+aBulletX[0]+col] = BULLET_COLOR;
-									}
-
-								}else{
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBulletY[0]-A_B_MOVE+row)*640+aBulletX[0]+col] = BLACK;
-									}
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBulletY[0]+row)*640+aBulletX[0]+col] = BULLET_COLOR;
-									}
-								}
-							}
-						}
-						break;
-					case 1:
-						if (bs[bsc] == 0){
-							if (aBullet1T){
-								if (abs_[1]){
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBulletY[1]-A_B_MOVE+row)*640+aBulletX[1]+col] = BLACK;
-									}
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBulletY[1]+row)*640+aBulletX[1]+col] = BULLET_COLOR;
-									}
-
-								}else{
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBulletY[1]-A_B_MOVE+row)*640+aBulletX[1]+col] = BLACK;
-									}
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBulletY[1]+row)*640+aBulletX[1]+col] = BULLET_COLOR;
-									}
-								}
-							}else{
-								if (abs_[1]){
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBulletY[1]-A_B_MOVE+row)*640+aBulletX[1]+col] = BLACK;
-									}
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBulletY[1]+row)*640+aBulletX[1]+col] = BULLET_COLOR;
-									}
-
-								}else{
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBulletY[1]-A_B_MOVE+row)*640+aBulletX[1]+col] = BLACK;
-									}
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBulletY[1]+row)*640+aBulletX[1]+col] = BULLET_COLOR;
-									}
-								}
-							}
-						}
-						break;
-					case 2:
-						if (bs[bsc] == 0){
-							if (aBullet2T){
-								if (abs_[2]){
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBulletY[2]-A_B_MOVE+row)*640+aBulletX[2]+col] = BLACK;
-									}
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBulletY[2]+row)*640+aBulletX[2]+col] = BULLET_COLOR;
-									}
-
-								}else{
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBulletY[2]-A_B_MOVE+row)*640+aBulletX[2]+col] = BLACK;
-									}
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBulletY[2]+row)*640+aBulletX[2]+col] = BULLET_COLOR;
-									}
-								}
-							}else{
-								if (abs_[2]){
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBulletY[2]-A_B_MOVE+row)*640+aBulletX[2]+col] = BLACK;
-									}
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBulletY[2]+row)*640+aBulletX[2]+col] = BULLET_COLOR;
-									}
-
-								}else{
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBulletY[2]-A_B_MOVE+row)*640+aBulletX[2]+col] = BLACK;
-									}
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBulletY[2]+row)*640+aBulletX[2]+col] = BULLET_COLOR;
-									}
-								}
-							}
-						}
-
-						break;
-					case 3:
-						if (bs[bsc] == 0){
-							if (aBullet3T){
-								if (abs_[3]){
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBulletY[3]-A_B_MOVE+row)*640+aBulletX[3]+col] = BLACK;
-									}
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBulletY[3]+row)*640+aBulletX[3]+col] = BULLET_COLOR;
-									}
-
-								}else{
-									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBulletY[3]-A_B_MOVE+row)*640+aBulletX[3]+col] = BLACK;
-									}
-									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBulletY[3]+row)*640+aBulletX[3]+col] = BULLET_COLOR;
-									}
-								}
-							}else{
-								if (abs_[3]){
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBulletY[3]-A_B_MOVE+row)*640+aBulletX[3]+col] = BLACK;
-									}
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBulletY[3]+row)*640+aBulletX[3]+col] = BULLET_COLOR;
-									}
-
-								}else{
-									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBulletY[3]-A_B_MOVE+row)*640+aBulletX[3]+col] = BLACK;
-									}
-									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBulletY[3]+row)*640+aBulletX[3]+col] = BULLET_COLOR;
-									}
-								}
-							}
-						}
-						break;
-					default:
-						break;
-					}
-				}
-			}
-		}
+		drawAlienBullets();
 		break;
 	default:
 		break;

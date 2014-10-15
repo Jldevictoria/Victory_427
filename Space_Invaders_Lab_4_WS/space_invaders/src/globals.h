@@ -26,18 +26,19 @@
 #define BUNK_SHIFT (X_BOUND_RIGHT + 74)
 #define BLOCK_SHIFT 4
 #define INV_VERT 28
-#define A_B_MOVE 14
+#define A_B_MOVE 4
 #define A_B_Y_INIT TOP_MARGINE + 64
 #define A_B_X_OFF 9
 #define BUNK_SPACE 108
 #define ALIEN_FIRE_RATE 2000
 #define BULLET_MOVE_SPEED 3
-#define ALIEN_BULLET_SPEED 8
+#define ALIEN_BULLET_SPEED 5
 #define ALIEN_COLOR 0x00FFFFFF
 #define BULLET_COLOR 0x00FFFFFE
 #define BLACK 0x00000000
 #define GREEN 0x0000FF00
-#define BUL_TOGGEL_SIZE 14
+#define BUL_TOGGLE_SIZE 14
+#define ALIEN_BULLET_HIGHT 14
 
 
 // Declare Global Variables for game objects.
@@ -47,19 +48,15 @@ int aBlockX, aBlockY;
 int oldABlockX, oldABlockY;
 extern int playerScore;
 _Bool aBlockT, aBlockD;
-/*
-int aBullet0X, aBullet0Y;
-int aBullet1X, aBullet1Y;
-int aBullet2X, aBullet2Y;
-int aBullet3X, aBullet3Y;
-*/
 int aBulletX[4];
 int aBulletY[4];
 _Bool bDone;
 extern _Bool bs[4];
 _Bool ts;
 _Bool aBullet0T, aBullet1T, aBullet2T, aBullet3T;
-//_Bool abs0, abs1, abs2, abs3;
+_Bool aBulletT[4];
+extern int bottomAlien[11];
+int bai;
 _Bool abs_[4];
 int bErosion[4][10];
 _Bool alien_life[55];
@@ -84,5 +81,8 @@ void interrupt_handler_dispatcher(void* ptr);
 void drawInvaderBlock();
 void bunkerCollision(int pixelHit);
 void drawBunkerBlock(int block, int bunkerNum);
+void drawAlienBullets();
+void alienCollision(int pixelHit);
+void clearAlien(int alienNum);
 
 #endif /* GLOBALS_H_ */

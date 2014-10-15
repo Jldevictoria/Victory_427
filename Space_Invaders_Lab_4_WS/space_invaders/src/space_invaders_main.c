@@ -34,14 +34,53 @@
 #include "globals.h"
 
 _Bool bs[4] = {1,1,1,1};
+int bottomAlien[11] = {4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4};
 int bNum = 0;
-int alienMarchSpeed = 20;
+int alienMarchSpeed = 65;
 int playerScore = 0;
 int tempPixel;
 unsigned int * framePointer = (unsigned int *) FRAME_BUFFER_0_ADDR;
 
 XGpio gpPB;   // This is a handle for the push-button GPIO block.
+void alienCollision(int pixelHit){
+	int whichAlien;
+	int alienGridX = 0;
+	int alienGridY = 0;
+	alienGridX = ((pixelHit%640)- aBlockX)/32;
+	alienGridY = ((pixelHit/640)- aBlockY)/INV_VERT;
+	//xil_printf("Which X: %d\n\r",alienGridX);
+	//xil_printf("Which Y: %d\n\r",alienGridY);
 
+	whichAlien = alienGridX + (alienGridY*11);
+	//xil_printf("Which A: %d\n\r",whichAlien);
+	alien_life[whichAlien] = 0;
+	// Decrement bottomAlien for corresponding column.
+	if ((whichAlien/11) == bottomAlien[(whichAlien%11)]){
+		bottomAlien[(whichAlien%11)] = (bottomAlien[(whichAlien%11)] - 1);
+		if (11 < whichAlien){
+			if (alien_life[whichAlien-11] != 1){
+				bottomAlien[(whichAlien%11)] = (bottomAlien[(whichAlien%11)] - 1);
+				if (22 < whichAlien){
+					if (alien_life[whichAlien-22] != 1){
+						bottomAlien[(whichAlien%11)] = (bottomAlien[(whichAlien%11)] - 1);
+						if (33 < whichAlien){
+							if (alien_life[whichAlien-33] != 1){
+								bottomAlien[(whichAlien%11)] = (bottomAlien[(whichAlien%11)] - 1);
+								if (44 < whichAlien){
+									if (alien_life[whichAlien-44] != 1){
+										bottomAlien[(whichAlien%11)] = (bottomAlien[(whichAlien%11)] - 1);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	alienMarchSpeed--;
+	clearAlien(whichAlien);
+}
 void bunkerCollision(int pixelHit){
 	//framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT]
 
@@ -160,7 +199,6 @@ void control(int input){
 		render(2);
 	}
 	if (cmd == 5){
-		//xil_printf("%c\r\n", cmd);
 		if(ts){
 			ts = 0;
 			tBulletX = tankX+15;
@@ -169,11 +207,10 @@ void control(int input){
 		}
 	}
 	if (cmd == 3){
-		//xil_printf("%c\r\n", cmd);
-		random = rand()%11;
+		random = rand()%55;
 		randomT = rand()%2;
-		while (alien_life[random+44] != 1){
-			random = rand()%11;
+		while (alien_life[random] != 1 || ((random/11) != bottomAlien[(random/5)])){
+			random = rand()%55;
 		}
 		int i;
 		if(bNum < 4){
@@ -184,30 +221,9 @@ void control(int input){
 						bDone = 1;
 						bNum++;
 						bs[i] = 0;
-						switch(i){
-						case 0:
-							aBulletX[0] = aBlockX + (random*32) + A_B_X_OFF;
-							aBulletY[0] = aBlockY + INV_VERT*5;
-							aBullet0T = randomT;
-							break;
-						case 1:
-							aBulletX[1] = aBlockX + (random*32) + A_B_X_OFF;
-							aBulletY[1] = aBlockY + INV_VERT*5;
-							aBullet1T = randomT;
-							break;
-						case 2:
-							aBulletX[2] = aBlockX + (random*32) + A_B_X_OFF;
-							aBulletY[2] = aBlockY + INV_VERT*5;
-							aBullet2T = randomT;
-							break;
-						case 3:
-							aBulletX[3] = aBlockX + (random*32) + A_B_X_OFF;
-							aBulletY[3] = aBlockY + INV_VERT*5;
-							aBullet3T = randomT;
-							break;
-						default:
-							break;
-						}
+						aBulletX[i] = aBlockX + ((random/5)*32) + A_B_X_OFF;
+						aBulletY[i] = aBlockY + (INV_VERT*((random/11)+1)-10);
+						aBulletT[i] = randomT;
 					}
 				}
 			}
@@ -228,6 +244,12 @@ void control(int input){
 						clearBullet(4);
 						ts = 1;
 						bunkerCollision((tBulletY-l)*640+tBulletX+k);
+					}
+					else if((tempPixel == ALIEN_COLOR) && !done){
+						done = 1;
+						clearBullet(4);
+						ts = 1;
+						alienCollision((tBulletY-l)*640+tBulletX+k);
 					}
 				}
 			}
@@ -264,13 +286,13 @@ void control(int input){
 		if(bNum > 0){
 			for(i=0; i<4; i++){
 				if (bs[i] == 0){
-					if (aBulletY[i] >= GREEN_LINE_ROW - (A_B_MOVE * 2)){
+					if (aBulletY[i] >= GREEN_LINE_ROW - (ALIEN_BULLET_HIGHT+2)){
 						bs[i] = 1;
 						bNum--;
 						clearBullet(i);
 					}
 					for(k = 0; k < 8;k++){
-						for(l = 0; l < (A_B_MOVE+2); l++){
+						for(l = 0; l < (ALIEN_BULLET_HIGHT); l++){
 							tempPixel = framePointer[(aBulletY[i]+l)*640+aBulletX[i]+k];
 							if ((tempPixel == GREEN) && !done){
 								done = 1;
@@ -286,96 +308,6 @@ void control(int input){
 					aBulletY[i] += A_B_MOVE;
 					abs_[i] = !abs_[i];
 
-/*
-					switch(i){
-					case 0:
-						if (aBulletY[0] >= GREEN_LINE_ROW - (A_B_MOVE * 2)){
-							bs[i] = 1;
-							bNum--;
-							clearBullet(i);
-						}
-						for(k = 0; k < 8;k++){
-							for(l = 0; l < A_B_MOVE; l++){
-								tempPixel = framePointer[(aBulletY[0]+l)*640+aBulletX[0]+k];
-								if ((tempPixel == GREEN) && !done){
-									done = 1;
-									clearBullet(i);
-									bNum--;
-									bs[i] = 1;
-									bunkerCollision((aBulletY[0]+l)*640+aBulletX[0]+k);
-								}
-							}
-						}
-						aBulletY[0] += A_B_MOVE;
-						abs_[0] = !abs_[0];
-						break;
-					case 1:
-						if (aBulletY[1] >= GREEN_LINE_ROW - (A_B_MOVE * 2)){
-							bs[i] = 1;
-							bNum--;
-							clearBullet(i);
-						}
-						for(k = 0; k < 8;k++){
-							for(l = 0; l < A_B_MOVE; l++){
-								tempPixel = framePointer[(aBulletY[1]+l)*640+aBulletX[1]+k];
-								if ((tempPixel == GREEN) && !done){
-									done = 1;
-									clearBullet(i);
-									bNum--;
-									bs[i] = 1;
-									bunkerCollision((aBulletY[1]+l)*640+aBulletX[1]+k);
-								}
-							}
-						}
-						aBulletY[1] += A_B_MOVE;
-						abs_[1] = !abs_[1];
-						break;
-					case 2:
-						if (aBulletY[2] >= GREEN_LINE_ROW - (A_B_MOVE * 2)){
-							bs[i] = 1;
-							bNum--;
-							clearBullet(i);
-						}
-						for(k = 0; k < 8;k++){
-							for(l = 0; l < A_B_MOVE; l++){
-								tempPixel = framePointer[(aBulletY[2]+l)*640+aBulletX[2]+k];
-								if ((tempPixel == GREEN) && !done){
-									done = 1;
-									bNum--;
-									clearBullet(i);
-									bs[i] = 1;
-									bunkerCollision((aBulletY[2]+l)*640+aBulletX[2]+k);
-								}
-							}
-						}
-						aBulletY[2] += A_B_MOVE;
-						abs_[2] = !abs_[2];
-						break;
-					case 3:
-						if (aBulletY[3] >= GREEN_LINE_ROW - (A_B_MOVE * 2)){
-							bs[i] = 1;
-							bNum--;
-							clearBullet(i);
-						}
-						for(k = 0; k < 8;k++){
-							for(l = 0; l < A_B_MOVE; l++){
-								tempPixel = framePointer[(aBulletY[3]+l)*640+aBulletX[3]+k];
-								if ((tempPixel == GREEN) && !done){
-									done = 1;
-									clearBullet(i);
-									bNum--;
-									bs[i] = 1;
-									bunkerCollision((aBulletY[3]+l)*640+aBulletX[3]+k);
-								}
-							}
-						}
-						aBulletY[3] += A_B_MOVE;
-						abs_[3] = !abs_[3];
-						break;
-					default:
-						break;
-					}
-*/
 				}
 			}
 		}
