@@ -35,10 +35,43 @@
 
 _Bool bs[4] = {1,1,1,1};
 int bNum = 0;
-int alienMarchSpeed = 80;
+int alienMarchSpeed = 20;
+int playerScore = 0;
+int tempPixel;
 unsigned int * framePointer = (unsigned int *) FRAME_BUFFER_0_ADDR;
 
 XGpio gpPB;   // This is a handle for the push-button GPIO block.
+
+void bunkerCollision(int pixelHit){
+	//framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT]
+
+	//find which bunker was hit
+	int whichBunker = 0;
+	int whichBlock = 0;
+	int bunkGridX = 0;
+	int bunkGridY = 0;
+	if((pixelHit % 640) > (BUNK_SPACE*1+ BUNK_SHIFT)){
+		whichBunker = 1;
+	}
+	if((pixelHit % 640) > (BUNK_SPACE*2+ BUNK_SHIFT)){
+		whichBunker = 2;
+	}
+	if((pixelHit % 640) > (BUNK_SPACE*3+ BUNK_SHIFT)){
+		whichBunker = 3;
+	}
+
+	//Find which block
+	bunkGridX = ((pixelHit%640)-((BUNK_SPACE*whichBunker)+BUNK_SHIFT))/12;
+	bunkGridY = ((pixelHit/640)-BUNKER_ROW)/12;
+
+	whichBlock = bunkGridX+(bunkGridY*4);
+	if(whichBlock == 11){
+		whichBlock = 9;
+	}
+	bErosion[whichBunker][whichBlock]++;
+	drawBunkerBlock(whichBlock, whichBunker);
+}
+
 
 void clearBullet(int sel){
 	int tempY = 0;
@@ -61,38 +94,40 @@ void clearBullet(int sel){
 		tempX = aBullet3X;
 		break;
 	case 4:
-		tempY = tBulletY + 14;
+		tempY = tBulletY;
 		tempX = tBulletX;
 		break;
 	}
 	int row,col;
-	for (row = 0; row < 14; row ++){
+	for (row = 0; row < 21; row ++){
 		for (col = 0; col < 8; col ++){
-			framePointer[(tempY+row)*640+tempX+col] = 0x00000000;
+			tempPixel = (tempY+row)*640+tempX+col;
+			if(framePointer[tempPixel] == BULLET_COLOR){
+				framePointer[tempPixel] = BLACK;
+			}
 		}
 	}
-
 }
 
 void control(int input){
 	// Get command from user.
 	char cmd = input;
 	if (cmd == 4){
-		xil_printf("%c\r\n", cmd);
+		//xil_printf("%c\r\n", cmd);
 		if (tankX > X_BOUND_RIGHT)
 			tankX -= 4;
 		render(4);
-		xil_printf("%d\r\n", tankX);
+		//xil_printf("%d\r\n", tankX);
 	}
 	if (cmd == 6){
-		xil_printf("%c\r\n", cmd);
+		//xil_printf("%c\r\n", cmd);
 		if (tankX < X_BOUND_LEFT - TANK_WIDTH)
 			tankX += 4;
 		render(6);
-		xil_printf("%d\r\n", tankX);
+		//xil_printf("%d\r\n", tankX);
 	}
 	if (cmd == 8){
-		xil_printf("%c\r\n", cmd);
+		//xil_printf("%c\r\n", cmd);
 		aBlockT = !aBlockT;
 		if ((aBlockD == 1) && (aBlockX >= X_BOUND_LEFT - A_BLOCK_WIDTH - BLOCK_SHIFT)){
 			aBlockD = 0;
@@ -105,11 +140,12 @@ void control(int input){
 		}else if (aBlockD == 0){
 			aBlockX -= BLOCK_SHIFT;
 		}
-		drawInvaderBlock();
+		//drawInvaderBlock();
+		render(8);
 	}
 	if (cmd == 2){
-		xil_printf("%c\r\n", cmd);
-		xil_printf("Please provide the number of the alien you want to kill\n\r");
+		//xil_printf("%c\r\n", cmd);
+		//xil_printf("Please provide the number of the alien you want to kill\n\r");
 		int toKill;
 		scanf("%d", &toKill);
 		xil_printf("%d\r\n", toKill);
@@ -124,16 +160,16 @@ void control(int input){
 		render(2);
 	}
 	if (cmd == 5){
-		xil_printf("%c\r\n", cmd);
+		//xil_printf("%c\r\n", cmd);
 		if(ts){
 			ts = 0;
-			tBulletX = tankX+16;
-			tBulletY = tankY-12;
+			tBulletX = tankX+15;
+			tBulletY = tankY-14;
 			render(5);
 		}
 	}
 	if (cmd == 3){
-		xil_printf("%c\r\n", cmd);
+		//xil_printf("%c\r\n", cmd);
 		random = rand()%11;
 		randomT = rand()%2;
 		while (alien_life[random+44] != 1){
@@ -179,56 +215,24 @@ void control(int input){
 		render(3);
 	}
 	if (cmd == 9){
-		xil_printf("%c\r\n", cmd);
-		int i;
-		if(bNum > 0){
-			for(i=0; i<4; i++){
-				if (bs[i] == 0){
-					switch(i){
-					case 0:
-						if (aBullet0Y >= GREEN_LINE_ROW - (A_B_MOVE * 2)){
-							bs[i] = 1;
-							bNum--;
-							clearBullet(0);
-						}
-						aBullet0Y += A_B_MOVE;
-						abs0 = !abs0;
-						break;
-					case 1:
-						if (aBullet1Y >= GREEN_LINE_ROW - (A_B_MOVE * 2)){
-							bs[i] = 1;
-							bNum--;
-							clearBullet(1);
-						}
-						aBullet1Y += A_B_MOVE;
-						abs1 = !abs1;
-						break;
-					case 2:
-						if (aBullet2Y >= GREEN_LINE_ROW - (A_B_MOVE * 2)){
-							bs[i] = 1;
-							bNum--;
-							clearBullet(2);
-						}
-						aBullet2Y += A_B_MOVE;
-						abs2 = !abs2;
-						break;
-					case 3:
-						if (aBullet3Y >= GREEN_LINE_ROW - (A_B_MOVE * 2)){
-							bs[i] = 1;
-							bNum--;
-							clearBullet(3);
-						}
-						aBullet3Y += A_B_MOVE;
-						abs3 = !abs3;
-						break;
-					default:
-						break;
+		//xil_printf("%c\r\n", cmd);
+		if (!ts){
+			// Check for collision with bunker
+			int k,l;
+			char done = 0;
+			for(k = 0; k < 2;k++){
+				for(l = 0; l < 7; l++){
+					tempPixel = framePointer[(tBulletY-l)*640+tBulletX+k];
+					if ((tempPixel == GREEN) && !done){
+						done = 1;
+						clearBullet(4);
+						ts = 1;
+						bunkerCollision((tBulletY-l)*640+tBulletX+k);
 					}
 				}
 			}
-		}
-		if (!ts){
-			tBulletY -= 14;
+			// Check for collision with alien
+			tBulletY -= 7;
 			if (tBulletY <= TOP_BULLET_END){
 				clearBullet(4);
 				ts = 1;
@@ -237,9 +241,9 @@ void control(int input){
 		render(9);
 	}
 	if (cmd == 7){
-		xil_printf("%c\r\n", cmd);
-		xil_printf("%c\r\n", cmd);
-		xil_printf("Please provide the number of the bunker you want to erode\n\r");
+		//xil_printf("%c\r\n", cmd);
+		//xil_printf("%c\r\n", cmd);
+		//xil_printf("Please provide the number of the bunker you want to erode\n\r");
 		int toErode;
 		scanf("%d", &toErode);
 		xil_printf("%d\r\n", toErode);
@@ -252,6 +256,55 @@ void control(int input){
 			bErosion[toErode][random]++;
 		}
 		render(7);
+	}
+	if (cmd == 10){
+		int i;
+		if(bNum > 0){
+			for(i=0; i<4; i++){
+				if (bs[i] == 0){
+					switch(i){
+					case 0:
+						if (aBullet0Y >= GREEN_LINE_ROW - (A_B_MOVE * 2)){
+							bs[i] = 1;
+							bNum--;
+							clearBullet(i);
+						}
+						aBullet0Y += A_B_MOVE;
+						abs0 = !abs0;
+						break;
+					case 1:
+						if (aBullet1Y >= GREEN_LINE_ROW - (A_B_MOVE * 2)){
+							bs[i] = 1;
+							bNum--;
+							clearBullet(i);
+						}
+						aBullet1Y += A_B_MOVE;
+						abs1 = !abs1;
+						break;
+					case 2:
+						if (aBullet2Y >= GREEN_LINE_ROW - (A_B_MOVE * 2)){
+							bs[i] = 1;
+							bNum--;
+							clearBullet(i);
+						}
+						aBullet2Y += A_B_MOVE;
+						abs2 = !abs2;
+						break;
+					case 3:
+						if (aBullet3Y >= GREEN_LINE_ROW - (A_B_MOVE * 2)){
+							bs[i] = 1;
+							bNum--;
+							clearBullet(i);
+						}
+						aBullet3Y += A_B_MOVE;
+						abs3 = !abs3;
+						break;
+					default:
+						break;
+					}
+				}
+			}
+		}
 	}
 	return;
 }
@@ -282,6 +335,16 @@ void updatePositions(){
 	if ((fit_counter % BULLET_MOVE_SPEED) == 0){
 		control(9);
 	}
+	if ((fit_counter % ALIEN_BULLET_SPEED) == 0){
+		control(10);
+	}
+}
+
+void spawnBullets(){
+	rando = rand()%ALIEN_FIRE_RATE;
+	if ((fit_counter % rando) == 0){
+		control(3);
+	}
 }
 
 void drawGreenLine(){
@@ -299,6 +362,7 @@ void timer_interrupt_handler() {
 	//xil_printf("A FIT interrupt came in! %d \n\r", fit_counter);
 	pollButtons();
 	updatePositions();
+	spawnBullets();
 }
 
 // Main interrupt handler, queries the interrupt controller to see what peripheral

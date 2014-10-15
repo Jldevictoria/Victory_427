@@ -10,100 +10,519 @@
 #include "bitmap.h"
 
 
-void drawInvaderBlock(){
-	int row, col,invader,curPixel,oldPixel;
-
-	for(invader = 0; invader < 55; invader++){
-		for (row = 0; row < 16; row ++){
-			for (col = 0; col < 32; col ++){
-				oldPixel = (oldABlockY+((invader/11)*INV_VERT)+row)*640+oldABlockX+((invader%11)*32)+col;
-				if(invader < 11){
-					if(!aBlockT){
-						if ((topInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-							framePointer[oldPixel] = 0x00000000;
+void drawBunkerBlock(int block, int bunkerNum){
+	int col,row;
+	switch(block){
+		case 0:
+			for(row = 0; row < 12; row++){
+				for(col = 0; col < 12; col++){
+					switch(bErosion[bunkerNum][block]){
+					case 0:
+						if (bunker0[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = GREEN;
 						}
-					}
-					else{
-						if ((topOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-							framePointer[oldPixel] = 0x00000000;
+						else{
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = BLACK;
 						}
-					}
-				}
-				else if(invader < 33){
-					if(!aBlockT){
-						if ((midInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-							framePointer[oldPixel] = 0x00000000;
+						break;
+					case 1:
+						if (bunkerD10[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = GREEN;
 						}
-					}
-					else{
-						if ((midOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-							framePointer[oldPixel] = 0x00000000;
+						else{
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = BLACK;
 						}
-					}
-				}
-				else{
-					if(!aBlockT){
-						if ((bottomInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-							framePointer[oldPixel] = 0x00000000;
+						break;
+					case 2:
+						if (bunkerD20[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = GREEN;
 						}
-					}
-					else{
-						if ((bottomOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-							framePointer[oldPixel] = 0x00000000;
+						else{
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = BLACK;
 						}
-					}
-				}
-			}
-		}
-	}
-
-	oldABlockX = aBlockX;
-	oldABlockY = aBlockY;
-	for(invader = 0; invader < 55; invader++){
-		for (row = 0; row < 16; row ++){
-			for (col = 0; col < 32; col ++){
-				curPixel = (aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col;
-				if(invader < 11){
-					if(aBlockT){
-						if ((topInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-							framePointer[curPixel] = 0x00FFFFFF;
+						break;
+					case 3:
+						if (bunkerD30[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = GREEN;
 						}
-					}
-					else{
-						if ((topOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-							framePointer[curPixel] = 0x00FFFFFF;
+						else{
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = BLACK;
 						}
-					}
-				}
-				else if(invader < 33){
-					if(aBlockT){
-						if ((midInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-							framePointer[curPixel] = 0x00FFFFFF;
+						break;
+					case 4:
+						if (bunkerBlank[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = GREEN;
 						}
-					}
-					else{
-						if ((midOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-							framePointer[curPixel] = 0x00FFFFFF;
+						else{
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = BLACK;
 						}
-					}
-				}
-				else{
-					if(aBlockT){
-						if ((bottomInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-							framePointer[curPixel] = 0x00FFFFFF;
-						}
-					}
-					else{
-						if ((bottomOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-							framePointer[curPixel] = 0x00FFFFFF;
-						}
+						break;
+					default:
+						break;
 					}
 				}
 			}
+			break;
+		case 1:
+			for(row = 0; row < 12; row++){
+				for(col = 0; col < 12; col++){
+					switch(bErosion[bunkerNum][block]){
+					case 0:
+						if (bunker[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = BLACK;
+						}
+						break;
+					case 1:
+						if (bunkerD1[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = BLACK;
+						}
+						break;
+					case 2:
+						if (bunkerD2[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = BLACK;
+						}
+						break;
+					case 3:
+						if (bunkerD3[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = BLACK;
+						}
+						break;
+					case 4:
+						if (bunkerBlank[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = BLACK;
+						}
+						break;
+					default:
+						break;
+					}
+				}
+			}
+			break;
+		case 2:
+			for(row = 0; row < 12; row++){
+				for(col = 0; col < 12; col++){
+					switch(bErosion[bunkerNum][block]){
+					case 0:
+						if (bunker[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = BLACK;
+						}
+						break;
+					case 1:
+						if (bunkerD1[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = BLACK;
+						}
+						break;
+					case 2:
+						if (bunkerD2[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = BLACK;
+						}
+						break;
+					case 3:
+						if (bunkerD3[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = BLACK;
+						}
+						break;
+					case 4:
+						if (bunkerBlank[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = BLACK;
+						}
+						break;
+					default:
+						break;
+					}
+				}
+			}
+			break;
+		case 3:
+			for(row = 0; row < 12; row++){
+				for(col = 0; col < 12; col++){
+					switch(bErosion[bunkerNum][block]){
+					case 0:
+						if (bunker3[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
+						}
+						break;
+					case 1:
+						if (bunkerD13[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
+						}
+						break;
+					case 2:
+						if (bunkerD23[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
+						}
+						break;
+					case 3:
+						if (bunkerD33[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
+						}
+						break;
+					case 4:
+						if (bunkerBlank[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
+						}
+						break;
+					default:
+						break;
+					}
+				}
+			}
+			break;
+		case 4:
+			for(row = 0; row < 12; row++){
+				for(col = 0; col < 12; col++){
+					switch(bErosion[bunkerNum][block]){
+					case 0:
+						if (bunker[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = BLACK;
+						}
+						break;
+					case 1:
+						if (bunkerD1[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = BLACK;
+						}
+						break;
+					case 2:
+						if (bunkerD2[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = BLACK;
+						}
+						break;
+					case 3:
+						if (bunkerD3[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = BLACK;
+						}
+						break;
+					case 4:
+						if (bunkerBlank[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = BLACK;
+						}
+						break;
+					default:
+						break;
+					}
+				}
+			}
+			break;
+		case 5:
+			for(row = 0; row < 12; row++){
+				for(col = 0; col < 12; col++){
+					switch(bErosion[bunkerNum][block]){
+					case 0:
+						if (bunker5[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = BLACK;
+						}
+						break;
+					case 1:
+						if (bunkerD15[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = BLACK;
+						}
+						break;
+					case 2:
+						if (bunkerD25[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = BLACK;
+						}
+						break;
+					case 3:
+						if (bunkerD35[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = BLACK;
+						}
+						break;
+					case 4:
+						if (bunkerBlank[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = BLACK;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = BLACK;
+						}
+						break;
+					default:
+						break;
+					}
+				}
+			}
+			break;
+		case 6:
+			for(row = 0; row < 12; row++){
+				for(col = 0; col < 12; col++){
+					switch(bErosion[bunkerNum][block]){
+					case 0:
+						if (bunker6[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = BLACK;
+						}
+						break;
+					case 1:
+						if (bunkerD16[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = BLACK;
+						}
+						break;
+					case 2:
+						if (bunkerD26[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = BLACK;
+						}
+						break;
+					case 3:
+						if (bunkerD36[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = BLACK;
+						}
+						break;
+					case 4:
+						if (bunkerBlank[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = BLACK;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = BLACK;
+						}
+						break;
+					default:
+						break;
+					}
+				}
+			}
+			break;
+		case 7:
+			for(row = 0; row < 12; row++){
+				for(col = 0; col < 12; col++){
+					switch(bErosion[bunkerNum][block]){
+					case 0:
+						if (bunker[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
+						}
+						break;
+					case 1:
+						if (bunkerD1[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
+						}
+						break;
+					case 2:
+						if (bunkerD2[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
+						}
+						break;
+					case 3:
+						if (bunkerD3[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
+						}
+						break;
+					case 4:
+						if (bunkerBlank[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
+						}
+						break;
+					default:
+						break;
+					}
+				}
+			}
+			break;
+		case 8:
+			for(row = 0; row < 12; row++){
+				for(col = 0; col < 12; col++){
+					switch(bErosion[bunkerNum][block]){
+					case 0:
+						if (bunker[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = BLACK;
+						}
+						break;
+					case 1:
+						if (bunkerD1[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = BLACK;
+						}
+						break;
+					case 2:
+						if (bunkerD2[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = BLACK;
+						}
+						break;
+					case 3:
+						if (bunkerD3[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = BLACK;
+						}
+						break;
+					case 4:
+						if (bunkerBlank[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = BLACK;
+						}
+						break;
+					default:
+						break;
+					}
+				}
+			}
+			break;
+		case 9:
+			for(row = 0; row < 12; row++){
+				for(col = 0; col < 12; col++){
+					switch(bErosion[bunkerNum][block]){
+					case 0:
+						if (bunker[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
+						}
+						break;
+					case 1:
+						if (bunkerD1[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
+						}
+						break;
+					case 2:
+						if (bunkerD2[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
+						}
+						break;
+					case 3:
+						if (bunkerD3[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
+						}
+						break;
+					case 4:
+						if (bunkerBlank[row] & (1 << (31-col))){
+							framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
+						}
+						else{
+							framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
+						}
+						break;
+					default:
+						break;
+					}
+				}
+			}
+			break;
+		default:
+			break;
 		}
-	}
 }
 
+
+
+void drawScore(){
+
+}
 
 void render(int caller){
 	int row, col,invader;
@@ -111,6 +530,7 @@ void render(int caller){
 	int block;
 	int bar;
 	int bsc;
+	int curPix;
 	// Choose what to update depending on calling function.
 	switch (caller){
 	case 0:
@@ -120,51 +540,52 @@ void render(int caller){
 		for(invader = 0; invader < 55; invader++){
 			for (row = 0; row < 16; row ++){
 				for (col = 0; col < 32; col ++){
+					curPix = (aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col;
 					if(invader < 11){
 						if(aBlockT){
 							if ((topInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
+								framePointer[curPix] = ALIEN_COLOR;
 							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
+								framePointer[curPix] = BLACK;
 							}
 						}
 						else{
 							if ((topOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
+								framePointer[curPix] = ALIEN_COLOR;
 							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
+								framePointer[curPix] = BLACK;
 							}
 						}
 					}
 					else if(invader < 33){
 						if(aBlockT){
 							if ((midInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
+								framePointer[curPix] = ALIEN_COLOR;
 							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
+								framePointer[curPix] = BLACK;
 							}
 						}
 						else{
 							if ((midOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
+								framePointer[curPix] = ALIEN_COLOR;
 							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
+								framePointer[curPix] = BLACK;
 							}
 						}
 					}
 					else{
 						if(aBlockT){
 							if ((bottomInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
+								framePointer[curPix] = ALIEN_COLOR;
 							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
+								framePointer[curPix] = BLACK;
 							}
 						}
 						else{
 							if ((bottomOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
+								framePointer[curPix] = ALIEN_COLOR;
 							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
+								framePointer[curPix] = BLACK;
 							}
 						}
 					}
@@ -180,38 +601,38 @@ void render(int caller){
 					switch (bsc){
 					case 0:
 						if (bs[bsc] == 0){
-							if (aBullet0T == 0){
+							if (aBullet0T){
 								if (abs0){
 									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = 0x00000000;
+										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = BLACK;
 									}
 									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = 0x00FFFFFF;
+										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = BULLET_COLOR;
 									}
 
 								}else{
 									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = 0x00000000;
+										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = BLACK;
 									}
 									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = 0x00FFFFFF;
+										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = BULLET_COLOR;
 									}
 								}
 							}else{
 								if (abs0){
 									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = 0x00000000;
+										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = BLACK;
 									}
 									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = 0x00FFFFFF;
+										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = BULLET_COLOR;
 									}
 
 								}else{
 									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = 0x00000000;
+										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = BLACK;
 									}
 									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = 0x00FFFFFF;
+										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = BULLET_COLOR;
 									}
 								}
 							}
@@ -219,38 +640,38 @@ void render(int caller){
 						break;
 					case 1:
 						if (bs[bsc] == 0){
-							if (aBullet1T == 0){
+							if (aBullet1T){
 								if (abs1){
 									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = 0x00000000;
+										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = BLACK;
 									}
 									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = 0x00FFFFFF;
+										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = BULLET_COLOR;
 									}
 
 								}else{
 									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = 0x00000000;
+										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = BLACK;
 									}
 									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = 0x00FFFFFF;
+										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = BULLET_COLOR;
 									}
 								}
 							}else{
 								if (abs1){
 									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = 0x00000000;
+										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = BLACK;
 									}
 									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = 0x00FFFFFF;
+										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = BULLET_COLOR;
 									}
 
 								}else{
 									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = 0x00000000;
+										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = BLACK;
 									}
 									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = 0x00FFFFFF;
+										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = BULLET_COLOR;
 									}
 								}
 							}
@@ -258,38 +679,38 @@ void render(int caller){
 						break;
 					case 2:
 						if (bs[bsc] == 0){
-							if (aBullet2T == 0){
+							if (aBullet2T){
 								if (abs2){
 									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = 0x00000000;
+										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = BLACK;
 									}
 									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = 0x00FFFFFF;
+										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = BULLET_COLOR;
 									}
 
 								}else{
 									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = 0x00000000;
+										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = BLACK;
 									}
 									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = 0x00FFFFFF;
+										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = BULLET_COLOR;
 									}
 								}
 							}else{
 								if (abs2){
 									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = 0x00000000;
+										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = BLACK;
 									}
 									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = 0x00FFFFFF;
+										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = BULLET_COLOR;
 									}
 
 								}else{
 									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = 0x00000000;
+										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = BLACK;
 									}
 									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = 0x00FFFFFF;
+										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = BULLET_COLOR;
 									}
 								}
 							}
@@ -298,38 +719,38 @@ void render(int caller){
 						break;
 					case 3:
 						if (bs[bsc] == 0){
-							if (aBullet3T == 0){
+							if (aBullet3T){
 								if (abs3){
 									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = 0x00000000;
+										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = BLACK;
 									}
 									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = 0x00FFFFFF;
+										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = BULLET_COLOR;
 									}
 
 								}else{
 									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = 0x00000000;
+										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = BLACK;
 									}
 									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = 0x00FFFFFF;
+										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = BULLET_COLOR;
 									}
 								}
 							}else{
 								if (abs3){
 									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = 0x00000000;
+										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = BLACK;
 									}
 									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = 0x00FFFFFF;
+										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = BULLET_COLOR;
 									}
 
 								}else{
 									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = 0x00000000;
+										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = BLACK;
 									}
 									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = 0x00FFFFFF;
+										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = BULLET_COLOR;
 									}
 								}
 							}
@@ -348,14 +769,14 @@ void render(int caller){
 		for (row = 0; row < 16; row ++){
 			for (col = 0; col < 32; col ++){
 				if (tankSymbol[row] & (1 << (31-col))){
-					framePointer[(tankY+row)*640+tankX+4+col] = 0x00000000;
+					framePointer[(tankY+row)*640+tankX+4+col] = BLACK;
 				}
 			}
 		}
 		for (row = 0; row < 16; row ++){
 			for (col = 0; col < 32; col ++){
 				if (tankSymbol[row] & (1 << (31-col))){
-					framePointer[(tankY+row)*640+tankX+col] = 0x0000FF00;
+					framePointer[(tankY+row)*640+tankX+col] = GREEN;
 				}
 			}
 		}
@@ -364,7 +785,7 @@ void render(int caller){
 	case 5:
 		for (row = 0; row < 14; row ++){
 			for (col = 0; col < 2; col ++){
-				framePointer[(tBulletY+row)*640+tBulletX+col] = 0x00FFFFFF;
+				framePointer[(tBulletY+row)*640+tBulletX+col] = BULLET_COLOR;
 			}
 		}
 		break;
@@ -374,14 +795,14 @@ void render(int caller){
 		for (row = 0; row < 16; row ++){
 			for (col = 0; col < 32; col ++){
 				if (tankSymbol[row] & (1 << (31-col))){
-					framePointer[(tankY+row)*640+tankX-4+col] = 0x00000000;
+					framePointer[(tankY+row)*640+tankX-4+col] = BLACK;
 				}
 			}
 		}
 		for (row = 0; row < 16; row ++){
 			for (col = 0; col < 32; col ++){
 				if (tankSymbol[row] & (1 << (31-col))){
-					framePointer[(tankY+row)*640+tankX+col] = 0x0000FF00;
+					framePointer[(tankY+row)*640+tankX+col] = GREEN;
 				}
 			}
 		}
@@ -396,42 +817,42 @@ void render(int caller){
 							switch(bErosion[bunkerNum][block]){
 							case 0:
 								if (bunker0[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = 0x00000000;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = BLACK;
 								}
 								break;
 							case 1:
 								if (bunkerD10[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = 0x00000000;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = BLACK;
 								}
 								break;
 							case 2:
 								if (bunkerD20[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = 0x00000000;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = BLACK;
 								}
 								break;
 							case 3:
 								if (bunkerD30[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = 0x00000000;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = BLACK;
 								}
 								break;
 							case 4:
 								if (bunkerBlank[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = 0x00000000;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT] = BLACK;
 								}
 								break;
 							default:
@@ -446,42 +867,42 @@ void render(int caller){
 							switch(bErosion[bunkerNum][block]){
 							case 0:
 								if (bunker[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = BLACK;
 								}
 								break;
 							case 1:
 								if (bunkerD1[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = BLACK;
 								}
 								break;
 							case 2:
 								if (bunkerD2[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = BLACK;
 								}
 								break;
 							case 3:
 								if (bunkerD3[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = BLACK;
 								}
 								break;
 							case 4:
 								if (bunkerBlank[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = BLACK;
 								}
 								break;
 							default:
@@ -496,42 +917,42 @@ void render(int caller){
 							switch(bErosion[bunkerNum][block]){
 							case 0:
 								if (bunker[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = BLACK;
 								}
 								break;
 							case 1:
 								if (bunkerD1[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = BLACK;
 								}
 								break;
 							case 2:
 								if (bunkerD2[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = BLACK;
 								}
 								break;
 							case 3:
 								if (bunkerD3[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = BLACK;
 								}
 								break;
 							case 4:
 								if (bunkerBlank[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = BLACK;
 								}
 								break;
 							default:
@@ -546,42 +967,42 @@ void render(int caller){
 							switch(bErosion[bunkerNum][block]){
 							case 0:
 								if (bunker3[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
 								}
 								break;
 							case 1:
 								if (bunkerD13[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
 								}
 								break;
 							case 2:
 								if (bunkerD23[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
 								}
 								break;
 							case 3:
 								if (bunkerD33[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
 								}
 								break;
 							case 4:
 								if (bunkerBlank[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
 								}
 								break;
 							default:
@@ -596,42 +1017,42 @@ void render(int caller){
 							switch(bErosion[bunkerNum][block]){
 							case 0:
 								if (bunker[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = BLACK;
 								}
 								break;
 							case 1:
 								if (bunkerD1[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(32*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(32*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = BLACK;
 								}
 								break;
 							case 2:
 								if (bunkerD2[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = BLACK;
 								}
 								break;
 							case 3:
 								if (bunkerD3[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = BLACK;
 								}
 								break;
 							case 4:
 								if (bunkerBlank[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = BLACK;
 								}
 								break;
 							default:
@@ -646,42 +1067,42 @@ void render(int caller){
 							switch(bErosion[bunkerNum][block]){
 							case 0:
 								if (bunker5[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = BLACK;
 								}
 								break;
 							case 1:
 								if (bunkerD15[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = BLACK;
 								}
 								break;
 							case 2:
 								if (bunkerD25[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = BLACK;
 								}
 								break;
 							case 3:
 								if (bunkerD35[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = BLACK;
 								}
 								break;
 							case 4:
 								if (bunkerBlank[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = BLACK;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*1)] = BLACK;
 								}
 								break;
 							default:
@@ -696,42 +1117,42 @@ void render(int caller){
 							switch(bErosion[bunkerNum][block]){
 							case 0:
 								if (bunker6[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = BLACK;
 								}
 								break;
 							case 1:
 								if (bunkerD16[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = BLACK;
 								}
 								break;
 							case 2:
 								if (bunkerD26[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = BLACK;
 								}
 								break;
 							case 3:
 								if (bunkerD36[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = BLACK;
 								}
 								break;
 							case 4:
 								if (bunkerBlank[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = BLACK;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*2)] = BLACK;
 								}
 								break;
 							default:
@@ -746,42 +1167,42 @@ void render(int caller){
 							switch(bErosion[bunkerNum][block]){
 							case 0:
 								if (bunker[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
 								}
 								break;
 							case 1:
 								if (bunkerD1[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
 								}
 								break;
 							case 2:
 								if (bunkerD2[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
 								}
 								break;
 							case 3:
 								if (bunkerD3[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
 								}
 								break;
 							case 4:
 								if (bunkerBlank[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*1))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
 								}
 								break;
 							default:
@@ -796,42 +1217,42 @@ void render(int caller){
 							switch(bErosion[bunkerNum][block]){
 							case 0:
 								if (bunker[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = BLACK;
 								}
 								break;
 							case 1:
 								if (bunkerD1[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = BLACK;
 								}
 								break;
 							case 2:
 								if (bunkerD2[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = BLACK;
 								}
 								break;
 							case 3:
 								if (bunkerD3[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = BLACK;
 								}
 								break;
 							case 4:
 								if (bunkerBlank[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*0)] = BLACK;
 								}
 								break;
 							default:
@@ -846,42 +1267,42 @@ void render(int caller){
 							switch(bErosion[bunkerNum][block]){
 							case 0:
 								if (bunker[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
 								}
 								break;
 							case 1:
 								if (bunkerD1[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
 								}
 								break;
 							case 2:
 								if (bunkerD2[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
 								}
 								break;
 							case 3:
 								if (bunkerD3[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
 								}
 								break;
 							case 4:
 								if (bunkerBlank[row] & (1 << (31-col))){
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x0000FF00;
+									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = GREEN;
 								}
 								else{
-									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = 0x00000000;
+									framePointer[(BUNKER_ROW+row+(12*2))*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT+(12*3)] = BLACK;
 								}
 								break;
 							default:
@@ -902,7 +1323,7 @@ void render(int caller){
 			for(bar = 0; bar < 5; bar++){
 				for (row = 0; row < 16; row ++){
 					for (col = 0; col < 32*11; col ++){
-						framePointer[(aBlockY+((bar)*INV_VERT)-16+row)*640+aBlockX+col] = 0x00000000;
+						framePointer[(aBlockY+((bar)*INV_VERT)-16+row)*640+aBlockX+col] = BLACK;
 					}
 				}
 			}
@@ -910,71 +1331,72 @@ void render(int caller){
 			for(bar = 0; bar < 5; bar++){
 				for (row = 0; row < 16; row ++){
 					for (col = 0; col < 32*11; col ++){
-						framePointer[(aBlockY+((bar)*INV_VERT)-16+row)*640+aBlockX+col] = 0x00000000;
+						framePointer[(aBlockY+((bar)*INV_VERT)-16+row)*640+aBlockX+col] = BLACK;
 					}
 				}
 			}
 		}else if (aBlockD == 1){
-			for (row = 0; row < INV_VERT * 5; row ++){
+			for (row = 0; row < ((INV_VERT * 5)-12); row ++){
 				for (col = 0; col < 32; col ++){
-					framePointer[(aBlockY+row)*640+aBlockX-32+col] = 0x00000000;
+					framePointer[(aBlockY+row)*640+aBlockX-32+col] = BLACK;
 				}
 			}
 		}else if (aBlockD == 0){
-			for (row = 0; row < INV_VERT * 5; row ++){
+			for (row = 0; row < ((INV_VERT * 5)-12); row ++){
 				for (col = 0; col < 32; col ++){
-					framePointer[(aBlockY+row)*640+aBlockX+32+col+(32*10)] = 0x00000000;
+					framePointer[(aBlockY+row)*640+aBlockX+32+col+(32*10)] = BLACK;
 				}
 			}
 		}
 		for(invader = 0; invader < 55; invader++){
 			for (row = 0; row < 16; row ++){
 				for (col = 0; col < 32; col ++){
+					curPix = (aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col;
 					if(invader < 11){
 						if(aBlockT){
 							if ((topInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
-							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
+								framePointer[curPix] = ALIEN_COLOR;
+							}else if (framePointer[curPix] ==  ALIEN_COLOR){
+								framePointer[curPix] = BLACK;
 							}
 						}
 						else{
 							if ((topOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
-							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
+								framePointer[curPix] = ALIEN_COLOR;
+							}else if (framePointer[curPix] ==  ALIEN_COLOR){
+								framePointer[curPix] = BLACK;
 							}
 						}
 					}
 					else if(invader < 33){
 						if(aBlockT){
 							if ((midInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
-							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
+								framePointer[curPix] = ALIEN_COLOR;
+							}else if (framePointer[curPix] ==  ALIEN_COLOR){
+								framePointer[curPix] = BLACK;
 							}
 						}
 						else{
 							if ((midOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
-							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
+								framePointer[curPix] = ALIEN_COLOR;
+							}else if (framePointer[curPix] ==  ALIEN_COLOR){
+								framePointer[curPix] = BLACK;
 							}
 						}
 					}
 					else{
 						if(aBlockT){
 							if ((bottomInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
-							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
+								framePointer[curPix] = ALIEN_COLOR;
+							}else if (framePointer[curPix] ==  ALIEN_COLOR){
+								framePointer[curPix] = BLACK;
 							}
 						}
 						else{
 							if ((bottomOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00FFFFFF;
-							}else{
-								framePointer[(aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col] = 0x00000000;
+								framePointer[curPix] = ALIEN_COLOR;
+							}else if (framePointer[curPix ] ==  ALIEN_COLOR){
+								framePointer[curPix] = BLACK;
 							}
 						}
 					}
@@ -988,13 +1410,13 @@ void render(int caller){
 		if(!ts){
 			for (row = 0; row < 14; row ++){
 				for (col = 0; col < 2; col ++){
-					framePointer[(tBulletY+row+14)*640+tBulletX+col] = 0x00000000;
+					framePointer[(tBulletY+row+7)*640+tBulletX+col] = BLACK;
 				}
 			}
 			// Move tank bullet.
 			for (row = 0; row < 14; row ++){
 				for (col = 0; col < 2; col ++){
-					framePointer[(tBulletY+row)*640+tBulletX+col] = 0x00FFFFFF;
+					framePointer[(tBulletY+row)*640+tBulletX+col] = BULLET_COLOR;
 				}
 			}
 		}
@@ -1005,38 +1427,38 @@ void render(int caller){
 					switch (bsc){
 					case 0:
 						if (bs[bsc] == 0){
-							if (aBullet0T == 0){
+							if (aBullet0T){
 								if (abs0){
 									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = 0x00000000;
+										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = BLACK;
 									}
 									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = 0x00FFFFFF;
+										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = BULLET_COLOR;
 									}
 
 								}else{
 									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = 0x00000000;
+										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = BLACK;
 									}
 									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = 0x00FFFFFF;
+										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = BULLET_COLOR;
 									}
 								}
 							}else{
 								if (abs0){
 									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = 0x00000000;
+										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = BLACK;
 									}
 									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = 0x00FFFFFF;
+										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = BULLET_COLOR;
 									}
 
 								}else{
 									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = 0x00000000;
+										framePointer[(aBullet0Y-A_B_MOVE+row)*640+aBullet0X+col] = BLACK;
 									}
 									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = 0x00FFFFFF;
+										framePointer[(aBullet0Y+row)*640+aBullet0X+col] = BULLET_COLOR;
 									}
 								}
 							}
@@ -1044,38 +1466,38 @@ void render(int caller){
 						break;
 					case 1:
 						if (bs[bsc] == 0){
-							if (aBullet1T == 0){
+							if (aBullet1T){
 								if (abs1){
 									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = 0x00000000;
+										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = BLACK;
 									}
 									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = 0x00FFFFFF;
+										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = BULLET_COLOR;
 									}
 
 								}else{
 									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = 0x00000000;
+										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = BLACK;
 									}
 									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = 0x00FFFFFF;
+										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = BULLET_COLOR;
 									}
 								}
 							}else{
 								if (abs1){
 									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = 0x00000000;
+										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = BLACK;
 									}
 									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = 0x00FFFFFF;
+										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = BULLET_COLOR;
 									}
 
 								}else{
 									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = 0x00000000;
+										framePointer[(aBullet1Y-A_B_MOVE+row)*640+aBullet1X+col] = BLACK;
 									}
 									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = 0x00FFFFFF;
+										framePointer[(aBullet1Y+row)*640+aBullet1X+col] = BULLET_COLOR;
 									}
 								}
 							}
@@ -1083,38 +1505,38 @@ void render(int caller){
 						break;
 					case 2:
 						if (bs[bsc] == 0){
-							if (aBullet2T == 0){
+							if (aBullet2T){
 								if (abs2){
 									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = 0x00000000;
+										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = BLACK;
 									}
 									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = 0x00FFFFFF;
+										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = BULLET_COLOR;
 									}
 
 								}else{
 									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = 0x00000000;
+										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = BLACK;
 									}
 									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = 0x00FFFFFF;
+										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = BULLET_COLOR;
 									}
 								}
 							}else{
 								if (abs2){
 									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = 0x00000000;
+										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = BLACK;
 									}
 									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = 0x00FFFFFF;
+										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = BULLET_COLOR;
 									}
 
 								}else{
 									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = 0x00000000;
+										framePointer[(aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col] = BLACK;
 									}
 									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = 0x00FFFFFF;
+										framePointer[(aBullet2Y+row)*640+aBullet2X+col] = BULLET_COLOR;
 									}
 								}
 							}
@@ -1123,38 +1545,38 @@ void render(int caller){
 						break;
 					case 3:
 						if (bs[bsc] == 0){
-							if (aBullet3T == 0){
+							if (aBullet3T){
 								if (abs3){
 									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = 0x00000000;
+										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = BLACK;
 									}
 									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = 0x00FFFFFF;
+										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = BULLET_COLOR;
 									}
 
 								}else{
 									if (bulletType10[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = 0x00000000;
+										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = BLACK;
 									}
 									if (bulletType00[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = 0x00FFFFFF;
+										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = BULLET_COLOR;
 									}
 								}
 							}else{
 								if (abs3){
 									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = 0x00000000;
+										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = BLACK;
 									}
 									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = 0x00FFFFFF;
+										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = BULLET_COLOR;
 									}
 
 								}else{
 									if (bulletType11[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = 0x00000000;
+										framePointer[(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col] = BLACK;
 									}
 									if (bulletType01[row] & (1 << (31-col))){
-										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = 0x00FFFFFF;
+										framePointer[(aBullet3Y+row)*640+aBullet3X+col] = BULLET_COLOR;
 									}
 								}
 							}

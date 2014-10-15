@@ -62,5 +62,11 @@ int midInAlienSymbol[ALIEN_HEIGHT];
 int bottomOutAlienSymbol[ALIEN_HEIGHT];
 int bottomInAlienSymbol[ALIEN_HEIGHT];
 int tankSymbol[ALIEN_HEIGHT];
+int mothershipSymbol[ALIEN_HEIGHT];
+int alienExplosionSymbol[20];
+int tankDestoyedInSymbol[18];
+int tankDestoyedOutSymbol[ALIEN_HEIGHT];
+
+
 
 #endif /* BITMAP_H_ */

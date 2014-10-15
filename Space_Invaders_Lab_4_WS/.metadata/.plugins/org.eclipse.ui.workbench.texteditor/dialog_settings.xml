@@ -13,15 +13,20 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value=" ts " key="selection"/>
+		<item value="%2" key="selection"/>
 		<list key="findhistory">
-			<item value=" ts "/>
-			<item value="ts"/>
-			<item value="tBullet"/>
-			<item value="framePointer"/>
-			<item value="bNum"/>
+			<item value="(aBullet0X/BUL_TOGGEL_SIZE)%2"/>
+			<item value="%2"/>
+			<item value="(aBullet3Y+row)*640+aBullet3X+col"/>
+			<item value="(aBullet3Y-A_B_MOVE+row)*640+aBullet3X+col"/>
+			<item value="(aBullet2Y+row)*640+aBullet2X+col"/>
+			<item value="aBullet2Y-A_B_MOVE+row)*640+aBullet2X+col"/>
+			<item value="(aBullet1Y-A_B_MOVE+row)*640+aBullet2X+col"/>
+			<item value="framePointer[(aBullet0Y+row)*640+aBullet0X+col]"/>
 		</list>
 		<list key="replacehistory">
+			<item value="bulPixTempNew"/>
+			<item value="bulPixTempOld"/>
 		</list>
 	</section>
 </section>
