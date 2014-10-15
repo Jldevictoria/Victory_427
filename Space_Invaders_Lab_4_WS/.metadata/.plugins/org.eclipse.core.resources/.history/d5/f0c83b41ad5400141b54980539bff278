@@ -87,16 +87,14 @@ void updateBlockBlank(){
 	int i,done;
 	for (i = 0; i < 11; i++){
 		done = 0;
-		if((bottomAlien[i] == 0) && !done){
+		if((bottomAlien[i] == -1) && done){
 			aBlockLeftBlank = i+1;
-			done = 1;
 		}
 	}
 	for (i = 0; i < 11; i++){
 		done = 0;
-		if((bottomAlien[10 - i] == 0) && !done){
+		if((bottomAlien[10 - i] == -1) && done){
 			aBlockRightBlank = i+1;
-			done = 1;
 		}
 	}
 	xil_printf("Right blank: %d\n\r",aBlockRightBlank);

@@ -1251,7 +1251,7 @@ void render(int caller){
 					}
 				}
 			}
-		}else if ((aBlockD == 1) && (aBlockX <= X_BOUND_RIGHT-aBlockLeftBlank*32 + BLOCK_SHIFT)){
+		}else if ((aBlockD == 1) && (aBlockX <= X_BOUND_RIGHT + BLOCK_SHIFT)){
 			for(bar = 0; bar < 5; bar++){
 				for (row = 0; row < 16; row ++){
 					for (col = 0; col < 32*11; col ++){

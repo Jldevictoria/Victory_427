@@ -99,6 +99,52 @@ void drawAlienBullets(){
 			}
 		}
 	}
+/*
+	for(bsc = 0; bsc < 4; bsc++){
+		for (row = 0; row < 14; row ++){
+			for (col = 0; col < 8; col ++){
+				if (bs[bsc] == 0){
+					if (aBulletT[bsc]){
+						if (abs_[bsc]){
+							if (bulletType00[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]-A_B_MOVE+row)*640+aBulletX[bsc]+col] = BLACK;
+							}
+							if (bulletType10[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]+row)*640+aBulletX[bsc]+col] = BULLET_COLOR;
+							}
+
+						}else{
+							if (bulletType10[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]-A_B_MOVE+row)*640+aBulletX[bsc]+col] = BLACK;
+							}
+							if (bulletType00[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]+row)*640+aBulletX[bsc]+col] = BULLET_COLOR;
+							}
+						}
+					}else{
+						if (abs_[bsc]){
+							if (bulletType01[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]-A_B_MOVE+row)*640+aBulletX[bsc]+col] = BLACK;
+							}
+							if (bulletType11[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]+row)*640+aBulletX[bsc]+col] = BULLET_COLOR;
+							}
+
+						}else{
+							if (bulletType11[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]-A_B_MOVE+row)*640+aBulletX[bsc]+col] = BLACK;
+							}
+							if (bulletType01[row] & (1 << (31-col))){
+								framePointer[(aBulletY[bsc]+row)*640+aBulletX[bsc]+col] = BULLET_COLOR;
+							}
+						}
+					}
+				}
+
+			}
+		}
+	}
+*/
 }
 
 void drawBunkerBlock(int block, int bunkerNum){
@@ -1243,7 +1289,7 @@ void render(int caller){
 		break;
 	case 8:
 		//Draw Invader
-		if ((aBlockD == 0) && (aBlockX >= X_BOUND_LEFT - (A_BLOCK_WIDTH-aBlockRightBlank*32) - BLOCK_SHIFT)){
+		if ((aBlockD == 0) && (aBlockX >= X_BOUND_LEFT - A_BLOCK_WIDTH - BLOCK_SHIFT)){
 			for(bar = 0; bar < 5; bar++){
 				for (row = 0; row < 16; row ++){
 					for (col = 0; col < 32*11; col ++){
@@ -1251,7 +1297,7 @@ void render(int caller){
 					}
 				}
 			}
-		}else if ((aBlockD == 1) && (aBlockX <= X_BOUND_RIGHT-aBlockLeftBlank*32 + BLOCK_SHIFT)){
+		}else if ((aBlockD == 1) && (aBlockX <= X_BOUND_RIGHT + BLOCK_SHIFT)){
 			for(bar = 0; bar < 5; bar++){
 				for (row = 0; row < 16; row ++){
 					for (col = 0; col < 32*11; col ++){

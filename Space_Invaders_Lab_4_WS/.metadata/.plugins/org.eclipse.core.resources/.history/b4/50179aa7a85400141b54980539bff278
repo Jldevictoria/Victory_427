@@ -48,29 +48,27 @@ void alienCollision(int pixelHit){
 	int alienGridY = 0;
 	alienGridX = ((pixelHit%640)- aBlockX)/32;
 	alienGridY = ((pixelHit/640)- aBlockY)/INV_VERT;
-	whichAlien = alienGridX + (alienGridY*11);
-	alien_life[whichAlien] = 0;
+	//xil_printf("Which X: %d\n\r",alienGridX);
+	//xil_printf("Which Y: %d\n\r",alienGridY);
 
+	whichAlien = alienGridX + (alienGridY*11);
+	//xil_printf("Which A: %d\n\r",whichAlien);
+	alien_life[whichAlien] = 0;
 	// Decrement bottomAlien for corresponding column.
 	if ((whichAlien/11) == bottomAlien[(whichAlien%11)]){
 		bottomAlien[(whichAlien%11)] = (bottomAlien[(whichAlien%11)] - 1);
-		updateBlockBlank();
 		if (11 < whichAlien){
 			if (alien_life[whichAlien-11] != 1){
 				bottomAlien[(whichAlien%11)] = (bottomAlien[(whichAlien%11)] - 1);
-				updateBlockBlank();
 				if (22 < whichAlien){
 					if (alien_life[whichAlien-22] != 1){
 						bottomAlien[(whichAlien%11)] = (bottomAlien[(whichAlien%11)] - 1);
-						updateBlockBlank();
 						if (33 < whichAlien){
 							if (alien_life[whichAlien-33] != 1){
 								bottomAlien[(whichAlien%11)] = (bottomAlien[(whichAlien%11)] - 1);
-								updateBlockBlank();
 								if (44 < whichAlien){
 									if (alien_life[whichAlien-44] != 1){
 										bottomAlien[(whichAlien%11)] = (bottomAlien[(whichAlien%11)] - 1);
-										updateBlockBlank();
 									}
 								}
 							}
@@ -83,26 +81,8 @@ void alienCollision(int pixelHit){
 	alienMarchSpeed--;
 	clearAlien(whichAlien);
 }
-void updateBlockBlank(){
-	int i,done;
-	for (i = 0; i < 11; i++){
-		done = 0;
-		if((bottomAlien[i] == 0) && !done){
-			aBlockLeftBlank = i+1;
-			done = 1;
-		}
-	}
-	for (i = 0; i < 11; i++){
-		done = 0;
-		if((bottomAlien[10 - i] == 0) && !done){
-			aBlockRightBlank = i+1;
-			done = 1;
-		}
-	}
-	xil_printf("Right blank: %d\n\r",aBlockRightBlank);
-	xil_printf("Left blank: %d\n\r",aBlockLeftBlank);
-}
 void bunkerCollision(int pixelHit){
+	//framePointer[(BUNKER_ROW+row)*640+(BUNK_SPACE*bunkerNum)+col+BUNK_SHIFT]
 
 	//find which bunker was hit
 	int whichBunker = 0;
@@ -172,21 +152,26 @@ void control(int input){
 	// Get command from user.
 	char cmd = input;
 	if (cmd == 4){
+		//xil_printf("%c\r\n", cmd);
 		if (tankX > X_BOUND_RIGHT)
 			tankX -= 4;
 		render(4);
+		//xil_printf("%d\r\n", tankX);
 	}
 	if (cmd == 6){
+		//xil_printf("%c\r\n", cmd);
 		if (tankX < X_BOUND_LEFT - TANK_WIDTH)
 			tankX += 4;
 		render(6);
+		//xil_printf("%d\r\n", tankX);
 	}
 	if (cmd == 8){
+		//xil_printf("%c\r\n", cmd);
 		aBlockT = !aBlockT;
-		if ((aBlockD == 1) && (aBlockX >= X_BOUND_LEFT - (A_BLOCK_WIDTH-aBlockRightBlank*32) - BLOCK_SHIFT)){
+		if ((aBlockD == 1) && (aBlockX >= X_BOUND_LEFT - A_BLOCK_WIDTH - BLOCK_SHIFT)){
 			aBlockD = 0;
 			aBlockY += BLOCK_SHIFT;
-		}else if ((aBlockD == 0) && (aBlockX <= X_BOUND_RIGHT-aBlockLeftBlank*32 + BLOCK_SHIFT)){
+		}else if ((aBlockD == 0) && (aBlockX <= X_BOUND_RIGHT + BLOCK_SHIFT)){
 			aBlockD = 1;
 			aBlockY += BLOCK_SHIFT;
 		}else if (aBlockD == 1){
@@ -198,6 +183,8 @@ void control(int input){
 		render(8);
 	}
 	if (cmd == 2){
+		//xil_printf("%c\r\n", cmd);
+		//xil_printf("Please provide the number of the alien you want to kill\n\r");
 		int toKill;
 		scanf("%d", &toKill);
 		xil_printf("%d\r\n", toKill);
@@ -509,9 +496,6 @@ int main(){
     	 }
      }
 
-     aBlockRightBlank = 0;
-     aBlockLeftBlank = 0;
-
      int bullStat;
      for(bullStat = 0; bullStat < 4; bullStat++){
     	 aBulletX[bullStat] = 0;
@@ -550,7 +534,7 @@ int main(){
      drawGreenLine();
      while(1){
      }
-     xil_printf("We do not what to be here\n\r");
+
      cleanup_platform();
 
     return 0;

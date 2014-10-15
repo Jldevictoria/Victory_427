@@ -64,9 +64,6 @@ int fit_counter, runtime;
 int random;
 int rando;
 int randomT;
-int aBlockLeftBlank;
-int aBlockRightBlank;
-
 extern int alienMarchSpeed;
 // Pointer to the frame used by the hdmi controller.
 unsigned int * framePointer;
@@ -87,6 +84,5 @@ void drawBunkerBlock(int block, int bunkerNum);
 void drawAlienBullets();
 void alienCollision(int pixelHit);
 void clearAlien(int alienNum);
-void updateBlockBlank();
 
 #endif /* GLOBALS_H_ */

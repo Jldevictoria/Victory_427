@@ -87,6 +87,5 @@ void drawBunkerBlock(int block, int bunkerNum);
 void drawAlienBullets();
 void alienCollision(int pixelHit);
 void clearAlien(int alienNum);
-void updateBlockBlank();
 
 #endif /* GLOBALS_H_ */
