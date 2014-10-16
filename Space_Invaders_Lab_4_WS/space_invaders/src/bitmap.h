@@ -7,8 +7,10 @@
 
 #ifndef BITMAP_H_
 #define BITMAP_H_
+#include "globals.h"
 
 #define ALIEN_HEIGHT 16
+//#define ALIEN_BULLET_HIGHT 10
 
 // Packs each horizontal line of the figures into a single 32 bit word.
 #define packWord32(b31,b30,b29,b28,b27,b26,b25,b24,b23,b22,b21,b20,b19,b18,b17,b16,b15,b14,b13,b12,b11,b10,b9,b8,b7,b6,b5,b4,b3,b2,b1,b0) \
@@ -21,10 +23,10 @@
  (b23 << 23) | (b22 << 22) | (b21 << 21) | (b20 << 20) )
 
 int bunkerBlank[12];
-int bulletType10[14];
-int bulletType00[14];
-int bulletType01[14];
-int bulletType11[14];
+int bulletType10[ALIEN_BULLET_HIGHT];
+int bulletType00[ALIEN_BULLET_HIGHT];
+int bulletType01[ALIEN_BULLET_HIGHT];
+int bulletType11[ALIEN_BULLET_HIGHT];
 int bunker[12];
 int bunkerD1[12];
 int bunkerD2[12];
@@ -65,7 +67,7 @@ int tankSymbol[ALIEN_HEIGHT];
 int mothershipSymbol[ALIEN_HEIGHT];
 int alienExplosionSymbol[20];
 int tankDestoyedInSymbol[18];
-int tankDestoyedOutSymbol[ALIEN_HEIGHT];
+int tankDestoyedOutSymbol[18];
 
 
 

@@ -17,11 +17,76 @@ void clearAlien(int alienNum){
 	aRow = (aBlockY+(alienGridY*INV_VERT));
 	aCol = (aBlockX+(alienGridX*32));
 
-	for(row = 0; row < 16; row++){
+	if(lastDebrisRow != 0){
+		clearDebris();
+	}
+
+	lastDebrisRow = aRow;
+	lastDebrisCol = aCol;
+
+	for(row = 0; row < 20; row++){
 		for(col = 0; col < 32; col++){
-			tempPix = (aRow+row)*640+aCol+col;
+			tempPix = (aRow+row)*640+aCol+col-4;
+			if (alienExplosionSymbol[row] & (1 << (31-col))){
+				framePointer[tempPix] = BULLET_COLOR;
+			}
 			if(framePointer[tempPix] == ALIEN_COLOR){
+				if (!(alienExplosionSymbol[row] & (1 << (31-col)))){
+					framePointer[tempPix] = BLACK;
+				}
+			}
+		}
+	}
+}
+
+void clearDebris(){
+	int row,col,tempPix;
+	for(row = 0; row < 20; row++){
+		for(col = 0; col < 32; col++){
+			tempPix = (lastDebrisRow+row)*640+lastDebrisCol+col-4;
+			if(framePointer[tempPix] == BULLET_COLOR){
 				framePointer[tempPix] = BLACK;
+			}
+		}
+	}
+	lastDebrisRow = 0;
+	lastDebrisCol = 0;
+}
+void renderTankBlank(){
+	int row,col,curPix;
+	for (row = 0; row < 18; row++){
+		for (col = 0; col < 32; col++){
+			curPix = (tankY+row)*640+tankX+col;
+			if(framePointer[curPix] == GREEN)
+			{
+				framePointer[curPix] = BLACK;
+			}
+		}
+	}
+}
+
+void renderTankFlicker(){
+	int row,col,curPix;
+	for (row = 0; row < 18; row++){
+		for (col = 0; col < 32; col++){
+			curPix = (tankY+row)*640+tankX+col;
+			if(framePointer[curPix] == GREEN)
+			{
+				framePointer[curPix] = BLACK;
+			}
+		}
+	}
+	for (row = 0; row < 18; row++){
+		for (col = 0; col < 32; col++){
+			curPix = (tankY+row)*640+tankX+col;
+			if(tankState == 1){
+				if (tankDestoyedOutSymbol[row] & (1 << (31-col))){
+					framePointer[curPix] = GREEN;
+				}
+			}else{
+				if (tankDestoyedInSymbol[row] & (1 << (31-col))){
+					framePointer[curPix] = GREEN;
+				}
 			}
 		}
 	}
@@ -31,7 +96,7 @@ void drawAlienBullets(){
 	int bsc,row,col,pixTemp;
 	//Clear alien bullet
 	for(bsc = 0; bsc < 4; bsc++){
-		for (row = 0; row < 14; row ++){
+		for (row = 0; row < ALIEN_BULLET_HIGHT; row ++){
 			for (col = 0; col < 8; col ++){
 				pixTemp = (aBulletY[bsc]-A_B_MOVE+row)*640+aBulletX[bsc]+col;
 				if(framePointer[pixTemp] == BULLET_COLOR){
@@ -70,7 +135,7 @@ void drawAlienBullets(){
 
 	//Draw alien bullets
 	for(bsc = 0; bsc < 4; bsc++){
-		for (row = 0; row < 14; row ++){
+		for (row = 0; row < ALIEN_BULLET_HIGHT; row ++){
 			for (col = 0; col < 8; col ++){
 				if (bs[bsc] == 0){
 					if (aBulletT[bsc]){
@@ -707,7 +772,7 @@ void render(int caller){
 
 		break;
 	case 5:
-		for (row = 0; row < 14; row ++){
+		for (row = 0; row < T_BULLET_HEIGHT; row ++){
 			for (col = 0; col < 2; col ++){
 				framePointer[(tBulletY+row)*640+tBulletX+col] = BULLET_COLOR;
 			}
@@ -1242,36 +1307,46 @@ void render(int caller){
 		}
 		break;
 	case 8:
-		//Draw Invader
-		if ((aBlockD == 0) && (aBlockX >= X_BOUND_LEFT - (A_BLOCK_WIDTH-aBlockRightBlank*32) - BLOCK_SHIFT)){
+		//Draw Black
+		if ((aBlockD == 0) && (aBlockX >= X_BOUND_RIGHT - (A_BLOCK_WIDTH-aBlockRightBlank*32) - BLOCK_SHIFT)){
 			for(bar = 0; bar < 5; bar++){
 				for (row = 0; row < 16; row ++){
 					for (col = 0; col < 32*11; col ++){
-						framePointer[(aBlockY+((bar)*INV_VERT)-16+row)*640+aBlockX+col] = BLACK;
+						if(framePointer[(aBlockY+((bar)*INV_VERT)-16+row)*640+aBlockX+col] == ALIEN_COLOR){
+							framePointer[(aBlockY+((bar)*INV_VERT)-16+row)*640+aBlockX+col] = BLACK;
+						}
 					}
 				}
 			}
-		}else if ((aBlockD == 1) && (aBlockX <= X_BOUND_RIGHT-aBlockLeftBlank*32 + BLOCK_SHIFT)){
+		}else if ((aBlockD == 1) && (aBlockX <= X_BOUND_LEFT-aBlockLeftBlank*32 + BLOCK_SHIFT)){
 			for(bar = 0; bar < 5; bar++){
 				for (row = 0; row < 16; row ++){
 					for (col = 0; col < 32*11; col ++){
-						framePointer[(aBlockY+((bar)*INV_VERT)-16+row)*640+aBlockX+col] = BLACK;
+						if(framePointer[(aBlockY+((bar)*INV_VERT)-16+row)*640+aBlockX+col] == ALIEN_COLOR){
+							framePointer[(aBlockY+((bar)*INV_VERT)-16+row)*640+aBlockX+col] = BLACK;
+						}
 					}
 				}
 			}
 		}else if (aBlockD == 1){
 			for (row = 0; row < ((INV_VERT * 5)-12); row ++){
 				for (col = 0; col < 32; col ++){
-					framePointer[(aBlockY+row)*640+aBlockX-32+col] = BLACK;
+					if(framePointer[(aBlockY+row)*640+aBlockX-32+col] == ALIEN_COLOR){
+						framePointer[(aBlockY+row)*640+aBlockX-32+col] = BLACK;
+					}
 				}
 			}
 		}else if (aBlockD == 0){
 			for (row = 0; row < ((INV_VERT * 5)-12); row ++){
 				for (col = 0; col < 32; col ++){
-					framePointer[(aBlockY+row)*640+aBlockX+32+col+(32*10)] = BLACK;
+					if(framePointer[(aBlockY+row)*640+aBlockX+32+col+(32*10)] == ALIEN_COLOR){
+						framePointer[(aBlockY+row)*640+aBlockX+32+col+(32*10)] = BLACK;
+					}
 				}
 			}
 		}
+
+		//Draw invaders
 		for(invader = 0; invader < 55; invader++){
 			for (row = 0; row < 16; row ++){
 				for (col = 0; col < 32; col ++){
@@ -1326,19 +1401,29 @@ void render(int caller){
 					}
 				}
 			}
+			// Clean up bottom for explosion
+			for (row = 16; row < 20; row ++){
+				for (col = 0; col < 32; col ++){
+					curPix = (aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col;
+					if(framePointer[curPix] == ALIEN_COLOR){
+						framePointer[curPix] = BLACK;
+					}
+				}
+			}
+
 		}
 		break;
 	case 9:
 		// Move bullets
 		// Cleanup tank bullet.
 		if(!ts){
-			for (row = 0; row < 14; row ++){
+			for (row = 0; row < T_BULLET_HEIGHT; row ++){
 				for (col = 0; col < 2; col ++){
 					framePointer[(tBulletY+row+7)*640+tBulletX+col] = BLACK;
 				}
 			}
 			// Move tank bullet.
-			for (row = 0; row < 14; row ++){
+			for (row = 0; row < T_BULLET_HEIGHT; row ++){
 				for (col = 0; col < 2; col ++){
 					framePointer[(tBulletY+row)*640+tBulletX+col] = BULLET_COLOR;
 				}

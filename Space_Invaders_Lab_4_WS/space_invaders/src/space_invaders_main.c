@@ -82,25 +82,41 @@ void alienCollision(int pixelHit){
 	}
 	alienMarchSpeed--;
 	clearAlien(whichAlien);
+	debrisTimer = alienMarchSpeed;
 }
+
+void cleanDebris(){
+	if(debrisTimer > 0){
+		if((debrisTimer--) == 1){
+			clearDebris();
+			debrisTimer = 0;
+		}
+	}
+}
+
+void tankCollision(int pixelHit){
+	playerLives--;
+	tankState = TANK_DEAD_ONE;
+}
+
 void updateBlockBlank(){
 	int i,done;
+	done = 0;
 	for (i = 0; i < 11; i++){
-		done = 0;
-		if((bottomAlien[i] == 0) && !done){
+		if((bottomAlien[i] == -1) && !done){
 			aBlockLeftBlank = i+1;
+		}else{
 			done = 1;
 		}
 	}
+	done = 0;
 	for (i = 0; i < 11; i++){
-		done = 0;
-		if((bottomAlien[10 - i] == 0) && !done){
+		if((bottomAlien[10 - i] == -1) && !done){
 			aBlockRightBlank = i+1;
+		}else{
 			done = 1;
 		}
 	}
-	xil_printf("Right blank: %d\n\r",aBlockRightBlank);
-	xil_printf("Left blank: %d\n\r",aBlockLeftBlank);
 }
 void bunkerCollision(int pixelHit){
 
@@ -172,21 +188,25 @@ void control(int input){
 	// Get command from user.
 	char cmd = input;
 	if (cmd == 4){
-		if (tankX > X_BOUND_RIGHT)
-			tankX -= 4;
-		render(4);
+		if (tankState == TANK_ALIVE){
+			if (tankX > X_BOUND_LEFT)
+				tankX -= 4;
+			render(4);
+		}
 	}
 	if (cmd == 6){
-		if (tankX < X_BOUND_LEFT - TANK_WIDTH)
-			tankX += 4;
-		render(6);
+		if (tankState == TANK_ALIVE){
+			if (tankX < X_BOUND_RIGHT - TANK_WIDTH)
+				tankX += 4;
+			render(6);
+		}
 	}
 	if (cmd == 8){
 		aBlockT = !aBlockT;
-		if ((aBlockD == 1) && (aBlockX >= X_BOUND_LEFT - (A_BLOCK_WIDTH-aBlockRightBlank*32) - BLOCK_SHIFT)){
+		if ((aBlockD == 1) && (aBlockX >= X_BOUND_RIGHT - (A_BLOCK_WIDTH-aBlockRightBlank*32) - BLOCK_SHIFT)){
 			aBlockD = 0;
 			aBlockY += BLOCK_SHIFT;
-		}else if ((aBlockD == 0) && (aBlockX <= X_BOUND_RIGHT-aBlockLeftBlank*32 + BLOCK_SHIFT)){
+		}else if ((aBlockD == 0) && (aBlockX <= X_BOUND_LEFT-aBlockLeftBlank*32 + BLOCK_SHIFT)){
 			aBlockD = 1;
 			aBlockY += BLOCK_SHIFT;
 		}else if (aBlockD == 1){
@@ -215,11 +235,42 @@ void control(int input){
 		if(ts){
 			ts = 0;
 			tBulletX = tankX+15;
-			tBulletY = tankY-14;
+			tBulletY = tankY-T_BULLET_HEIGHT;
 			render(5);
 		}
 	}
 	if (cmd == 3){
+		int noAliens,i;
+		noAliens = 1;
+		for(i = 0; i < 55; i++){
+			if(alien_life[i] == 1){
+				noAliens = 0;
+			}
+		}
+		randomRow = rand()%11;
+		randomT = rand()%2;
+		if(!noAliens){
+			while (bottomAlien[randomRow] < 0){
+				randomRow = rand()%11;
+			}
+			if(bNum < 4){
+				bDone = 0;
+				for(i=0; i<4; i++){
+					if(!bDone){
+						if (bs[i] == 1){
+							bDone = 1;
+							bNum++;
+							bs[i] = 0;
+							aBulletX[i] = aBlockX + ((randomRow)*32) + A_B_X_OFF;
+							aBulletY[i] = aBlockY + (INV_VERT*(bottomAlien[randomRow]+1)-10);
+							aBulletT[i] = randomT;
+						}
+					}
+				}
+			}
+			render(3);
+		}
+/*
 		random = rand()%55;
 		randomT = rand()%2;
 		while (alien_life[random] != 1 || ((random/11) != bottomAlien[(random/5)])){
@@ -242,6 +293,7 @@ void control(int input){
 			}
 		}
 		render(3);
+*/
 	}
 	if (cmd == 9){
 		//xil_printf("%c\r\n", cmd);
@@ -312,8 +364,10 @@ void control(int input){
 								clearBullet(i);
 								bNum--;
 								bs[i] = 1;
-								if(aBulletY[i] < TANK_ROW){
+								if((aBulletY[i]+ALIEN_BULLET_HIGHT) < TANK_ROW-8){
 									bunkerCollision((aBulletY[i]+l)*640+aBulletX[i]+k);
+								}else if ((aBulletY[i]+ALIEN_BULLET_HIGHT) <= GREEN_LINE_ROW){
+									tankCollision((aBulletY[i]+l)*640+aBulletX[i]+k);
 								}
 							}
 						}
@@ -329,21 +383,23 @@ void control(int input){
 }
 
 void pollButtons(){
-	currentButtonState = XGpio_DiscreteRead(&gpPB, 1);  // Get the current state of the buttons.
-	//xil_printf("poll the buttons! %d \n\r", currentButtonState);
-	char left = currentButtonState&(0x8);
-	char mid = currentButtonState&(0x1);
-	char right = currentButtonState&(0x2);
-	//char up = currentButtonState&(0x10);
-	//char down = currentButtonState&(0x4);
-	if (left){
-		control(4);
-	}
-	if (right){
-		control(6);
-	}
-	if (mid){
-		control(5);
+	if((fit_counter % TANK_SPEED) == 0){
+		currentButtonState = XGpio_DiscreteRead(&gpPB, 1);  // Get the current state of the buttons.
+		//xil_printf("poll the buttons! %d \n\r", currentButtonState);
+		char left = currentButtonState&(0x8);
+		char mid = currentButtonState&(0x1);
+		char right = currentButtonState&(0x2);
+		//char up = currentButtonState&(0x10);
+		//char down = currentButtonState&(0x4);
+		if (left && (right == 0)){
+			control(4);
+		}
+		if (right){
+			control(6);
+		}
+		if (mid && (tankState == TANK_ALIVE)){
+			control(5);
+		}
 	}
 }
 
@@ -369,19 +425,51 @@ void spawnBullets(){
 void drawGreenLine(){
 	int row,col;
 	for(row = 0; row < 2; row ++){
-		for (col = 0; col < X_BOUND_LEFT - X_BOUND_RIGHT; col ++){
-			framePointer[(GREEN_LINE_ROW+row)*640+X_BOUND_RIGHT+col] = 0x0000FF00;
+		for (col = 0; col < X_BOUND_RIGHT - X_BOUND_LEFT; col ++){
+			framePointer[(GREEN_LINE_ROW+row)*640+X_BOUND_LEFT+col] = 0x0000FF00;
+		}
+	}
+}
+
+void tankFlicker(){
+	if ((tankState == TANK_DEAD_ONE) || (tankState == TANK_DEAD_TWO)){
+		if ((fit_counter % FLICKER_SPEED) == 0){
+			if (0 < tankDestroyedFlicker){
+				renderTankFlicker();
+				if (tankState == TANK_DEAD_ONE){
+					tankState = TANK_DEAD_TWO;
+				}else{
+					tankState = TANK_DEAD_ONE;
+				}
+				tankDestroyedFlicker--;
+			}else{
+				renderTankBlank();
+				tankState = TANK_ALIVE;
+			    tankX = TANK_X_INIT;					// Tank Initial Position.
+			    tankY = TANK_ROW;
+				render(4);
+				tankDestroyedFlicker = 8;
+			}
 		}
 	}
 }
 
 // This is invoked in response to a timer interrupt.
 void timer_interrupt_handler() {
-	fit_counter++;
+	if(gameStatus != RUNNING){
+		return;
+	}
+	if(fit_counter++ == FIT_COUNT_MAX){
+		xil_printf("fit maxed out \n\r");
+		fit_counter = 0;
+	}
+
 	//xil_printf("A FIT interrupt came in! %d \n\r", fit_counter);
 	pollButtons();
 	updatePositions();
 	spawnBullets();
+	tankFlicker();
+	cleanDebris();
 }
 
 // Main interrupt handler, queries the interrupt controller to see what peripheral
@@ -397,7 +485,16 @@ void interrupt_handler_dispatcher(void* ptr) {
 	}
 }
 
+void clearConsole(){
+
+	int i;
+	for(i = 0; i < 30; i++){
+		xil_printf("\n\r");
+	}
+}
+
 int main(){
+	gameStatus = STOPPED;
 	init_platform();                   // Necessary for all programs.
 	int Status;                        // Keep track of success/failure of system function calls.
 	XAxiVdma videoDMAController;
@@ -500,6 +597,8 @@ int main(){
      XIntc_MasterEnable(XPAR_INTC_0_BASEADDR);
      microblaze_enable_interrupts();
 
+     clearConsole();
+
      //initilize bunker status
      int bunk;
      int blk;
@@ -509,8 +608,10 @@ int main(){
     	 }
      }
 
-     aBlockRightBlank = 0;
-     aBlockLeftBlank = 0;
+ 	lastDebrisRow = 0;
+ 	lastDebrisCol = 0;
+    aBlockRightBlank = 0;
+    aBlockLeftBlank = 0;
 
      int bullStat;
      for(bullStat = 0; bullStat < 4; bullStat++){
@@ -529,13 +630,20 @@ int main(){
      }
      srand(time(0));
      // Initialize positions
-     tankX = 304;					// Tank Initial Position.
+     tankX = TANK_X_INIT;					// Tank Initial Position.
      tankY = TANK_ROW;
      aBlockX = 144;					// Alien Block Initial Position.
      aBlockY = A_B_Y_INIT;
      aBlockT = 0;
      aBlockD = 1;
      ts = 1;
+     // Initialize fit counter
+     fit_counter = 0;
+
+     // Initialize player
+     playerLives = 3;
+     tankDestroyedFlicker = 8;
+     tankState = TANK_ALIVE;
 
      // Initialize alien array.
      int a;
@@ -548,6 +656,8 @@ int main(){
      render(7);
 
      drawGreenLine();
+
+     gameStatus = RUNNING;
      while(1){
      }
      xil_printf("We do not what to be here\n\r");
