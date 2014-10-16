@@ -8,8 +8,10 @@
 #ifndef GLOBALS_H_
 #define GLOBALS_H_
 
+
+
 // All define macros for this file.
-#define DEBUG void print(char *str);
+//#define DEBUG void print(char *str);
 #define WRD_WIDTH 32
 #define FRAME_BUFFER_0_ADDR 0xC1000000  // Starting location in DDR where we will store the images that we display.
 #define NUM_OF_PIXELS 307200
@@ -31,7 +33,6 @@
 #define A_B_X_OFF 9
 #define BUNK_SPACE 108
 #define ALIEN_FIRE_RATE 2000
-#define BULLET_MOVE_SPEED 2
 #define ALIEN_BULLET_SPEED 2
 #define ALIEN_COLOR 0x00FFFFFF
 #define BULLET_COLOR 0x00FFFFFE
@@ -45,10 +46,12 @@
 #define FLICKER_SPEED 14
 #define TANK_X_INIT X_BOUND_LEFT
 #define FIT_COUNT_MAX 1000000
-#define RUNNING 0
+#define RUNNING 1
 #define STOPPED 0
 #define T_BULLET_HEIGHT 10
 #define TANK_SPEED 2
+#define NUM_OF_T_FLICKERS 10
+#define GAME_OVER 2
 
 
 // Declare Global Variables for game objects.
@@ -56,17 +59,15 @@ int tankX, tankY;
 int tBulletX, tBulletY;
 int aBlockX, aBlockY;
 int oldABlockX, oldABlockY;
-extern int playerScore;
+int playerScore;
 _Bool aBlockT, aBlockD;
 int aBulletX[4];
 int aBulletY[4];
 _Bool bDone;
-extern _Bool bs[4];
+_Bool bs[4];
 _Bool ts;
-_Bool aBullet0T, aBullet1T, aBullet2T, aBullet3T;
 _Bool aBulletT[4];
-extern int bottomAlien[11];
-int bai;
+int bottomAlien[11];
 _Bool abs_[4];
 int bErosion[4][10];
 _Bool alien_life[55];
@@ -84,8 +85,11 @@ int lastDebrisRow;
 int lastDebrisCol;
 int debrisTimer;
 int gameStatus;
+int  tankBulletSpeed;
+int bNum;
 
-extern int alienMarchSpeed;
+
+int alienMarchSpeed;
 // Pointer to the frame used by the hdmi controller.
 unsigned int * framePointer;
 int currentButtonState;
@@ -95,7 +99,7 @@ void render(int caller);
 void clearBullet(int sel);
 void control();
 void pollButtons();
-void updatePositions();
+void updateAliens();
 void drawGreenLine();
 void timer_interrupt_handler();
 void interrupt_handler_dispatcher(void* ptr);
@@ -114,4 +118,8 @@ void renderTankBlank();
 void cleanDebris();
 void clearDebris();
 void clearConsole();
+void updateBullets();
+void nextLevel();
+void spawnBullets();
+void initilizeGame();
 #endif /* GLOBALS_H_ */

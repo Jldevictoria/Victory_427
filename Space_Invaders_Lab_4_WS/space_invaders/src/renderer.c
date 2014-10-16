@@ -9,6 +9,44 @@
 #include "globals.h"
 #include "bitmap.h"
 
+void clearBullet(int sel){
+	int tempPixel;
+	int tempY = 0;
+	int tempX = 0;
+	switch(sel){
+	case 0:
+		tempY = aBulletY[0];
+		tempX = aBulletX[0];
+		break;
+	case 1:
+		tempY = aBulletY[1];
+		tempX = aBulletX[1];
+		break;
+	case 2:
+		tempY = aBulletY[2];
+		tempX = aBulletX[2];
+		break;
+	case 3:
+		tempY = aBulletY[3];
+		tempX = aBulletX[3];
+		break;
+	case 4:
+		tempY = tBulletY;
+		tempX = tBulletX;
+		break;
+	}
+	int row,col;
+	for (row = 0; row < (21+10); row ++){
+		for (col = 0; col < 8; col ++){
+			tempPixel = (tempY+row-10)*640+tempX+col;
+			if(framePointer[tempPixel] == BULLET_COLOR){
+				framePointer[tempPixel] = BLACK;
+			}
+		}
+	}
+}
+
+
 void clearAlien(int alienNum){
 	int aRow,aCol,row,col,tempPix;
 	int alienGridX = alienNum%11;
@@ -102,32 +140,6 @@ void drawAlienBullets(){
 				if(framePointer[pixTemp] == BULLET_COLOR){
 					framePointer[pixTemp] = BLACK;
 				}
-/*
-				if (bs[bsc] == 0){
-					if (aBulletT[bsc]){
-						if (((aBulletY[bsc]-A_B_MOVE)/(BUL_TOGGLE_SIZE))%2){
-							if (bulletType10[row] & (1 << (31-col))){
-								framePointer[(aBulletY[bsc]-A_B_MOVE+row)*640+aBulletX[bsc]+col] = BLACK;
-							}
-
-						}else{
-							if (bulletType00[row] & (1 << (31-col))){
-								framePointer[(aBulletY[bsc]-A_B_MOVE+row)*640+aBulletX[bsc]+col] = BLACK;
-							}
-						}
-					}else{
-						if (abs_[bsc]){
-							if (bulletType11[row] & (1 << (31-col))){
-								framePointer[(aBulletY[bsc]-A_B_MOVE+row)*640+aBulletX[bsc]+col] = BLACK;
-							}
-						}else{
-							if (bulletType01[row] & (1 << (31-col))){
-								framePointer[(aBulletY[bsc]-A_B_MOVE+row)*640+aBulletX[bsc]+col] = BLACK;
-							}
-						}
-					}
-				}
-*/
 			}
 		}
 	}

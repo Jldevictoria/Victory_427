@@ -3,28 +3,29 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="257" key="DIALOG_WIDTH"/>
 		<item value="493" key="DIALOG_Y_ORIGIN"/>
-		<item value="1486" key="DIALOG_X_ORIGIN"/>
 		<item value="380" key="DIALOG_HEIGHT"/>
+		<item value="1486" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="TOGGLE" key="selection"/>
+		<item value="fit_count" key="selection"/>
 		<list key="findhistory">
-			<item value="TOGGLE"/>
-			<item value="TOGGEL"/>
-			<item value="ALIEN_BULLET_HIGHT"/>
-			<item value="timer"/>
-			<item value="SPEED"/>
-			<item value="A_BULLET_HEIGHT"/>
-			<item value="T_BULLET_HEIGHT"/>
-			<item value="A_BULLET_HIGHT"/>
+			<item value="fit_count"/>
+			<item value="fit_timer"/>
+			<item value="toKill"/>
+			<item value="extern"/>
+			<item value="spawnBullets"/>
+			<item value="print"/>
+			<item value="tempPixel"/>
+			<item value="gameStatus"/>
 		</list>
 		<list key="replacehistory">
+			<item value="tankBulletSpeed"/>
 			<item value="ALIEN_BULLET_HIGHT"/>
 			<item value="T_BULLET_HEIGHT"/>
 			<item value="A_BULLET_HEIGHT"/>
@@ -32,7 +33,6 @@
 			<item value="lastDebrisRow"/>
 			<item value="X_BOUND_LEFT"/>
 			<item value="X_BOUND_RIGHT"/>
-			<item value="X_BOUND_RIGHTtmpe"/>
 		</list>
 	</section>
 </section>
