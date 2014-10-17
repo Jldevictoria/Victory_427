@@ -95,11 +95,11 @@ void drawGreenLine(){
 
 // This is invoked in response to a timer interrupt.
 void timer_interrupt_handler() {
+	//runTimeO = fit_counter;
 	if(fit_counter++ == FIT_COUNT_MAX){
 		xil_printf("fit maxed out \n\r");
 		fit_counter = 0;
 	}
-
 	pollButtons();
 
 	if(gameStatus != STOPPED){
@@ -111,6 +111,9 @@ void timer_interrupt_handler() {
 			spawnMothership();
 			updateMothership();
 			clearMotherScoreTimer();
+			runTimeN = fit_counter;
+			//deltaRunTime = runTimeN - runTimeO;
+			//xil_printf("Instructions for one game loop: %d\n\r", deltaRunTime);
 		}
 		if(tankState != TANK_ALIVE){
 			tankFlicker();
@@ -234,7 +237,6 @@ void initilizeGame(){
     scoreToString();
     printLetters("0",GREEN,(SCORE_X_POS),TOP_MARGINE);
     drawLives();
-
     drawGreenLine();
 }
 
@@ -344,6 +346,14 @@ int main(){
      initilizeGame();
 
      while(1){
+//    	 idleTime++;
+//    	 if (idleTime >= 1000000){
+//    		 runTimeO = runTimeN;
+//    		 runTimeN = fit_counter;
+//    		 deltaRunTime = runTimeN - runTimeO;
+//    		 xil_printf("Active instructions to idle instructions ratio: %d / 1\n\r", (deltaRunTime-1));
+//    		 idleTime = 0;
+//    	 }
      }
      xil_printf("We do not what to be here\n\r");
      cleanup_platform();
