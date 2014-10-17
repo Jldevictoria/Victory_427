@@ -1,4 +1,6 @@
 /*
+ * space_invaders_main.c
+ *
  * Copyright (c) 2009 Xilinx, Inc.  All rights reserved.
  *
  * Xilinx, Inc.
@@ -21,7 +23,7 @@
 // Includes
 #include <stdio.h>
 #include "bitmap.h"
-#include "stdlib.h"
+#include "letters.h"
 #include "platform.h"
 #include "xparameters.h"
 #include "xaxivdma.h"
@@ -37,25 +39,35 @@ unsigned int * framePointer = (unsigned int *) FRAME_BUFFER_0_ADDR;
 
 XGpio gpPB;   // This is a handle for the push-button GPIO block.
 
-
-
-
-
 void pollButtons(){
 	if((fit_counter % TANK_SPEED) == 0){
 		currentButtonState = XGpio_DiscreteRead(&gpPB, 1);  // Get the current state of the buttons.
 		char left = currentButtonState&(0x8);
 		char mid = currentButtonState&(0x1);
 		char right = currentButtonState&(0x2);
-		//char up = currentButtonState&(0x10);
+		char up = currentButtonState&(0x10);
 		char down = currentButtonState&(0x4);
 		if((gameStatus == STOPPED)&& down){
 			if(tankBulletSpeed > 1){
 				tankBulletSpeed--;
 			}
 		}
-		if(gameStatus == STOPPED &&(left || right || mid)){
+		if(((gameStatus == RUNNING)&& down)&& mothershipSpawned == 0){
+			mothershipD = rand()%2;
+			mothershipSpawned = 1;
+			if (mothershipD == 1){
+				mothershipX = 1;
+			}else{
+				mothershipX = 639;
+			}
+		}
+
+		if((up && (playerLives <= 0)) || (up && (gameStatus != STOPPED))){
+			initilizeGame();
+		}
+		if(gameStatus == STOPPED && (left || right || mid) && (0 < playerLives)){
 			gameStatus = RUNNING;
+			srand(fit_counter);
 		}
 		//xil_printf("poll the buttons! %d \n\r", currentButtonState);
 		if (left && (right == 0)){
@@ -70,8 +82,6 @@ void pollButtons(){
 	}
 }
 
-
-
 void drawGreenLine(){
 	int row,col;
 	for(row = 0; row < 2; row ++){
@@ -81,11 +91,8 @@ void drawGreenLine(){
 	}
 }
 
-
 // This is invoked in response to a timer interrupt.
 void timer_interrupt_handler() {
-
-
 	if(fit_counter++ == FIT_COUNT_MAX){
 		xil_printf("fit maxed out \n\r");
 		fit_counter = 0;
@@ -99,9 +106,20 @@ void timer_interrupt_handler() {
 		if(tankState == TANK_ALIVE){
 			updateAliens();
 			spawnBullets();
+			spawnMothership();
+			updateMothership();
+			clearMotherScoreTimer();
 		}
 		if(tankState != TANK_ALIVE){
 			tankFlicker();
+		}
+		if (gameStatus == GAME_OVER){
+			if (finalFlicker == 0){
+				gameStatus = STOPPED;
+				clearAliens();
+				clearMothership();
+				printLetters("GAME OVER",WHITE,GAME_OVER_X_POS,GAME_OVER_Y_POS);
+			}
 		}
 	}
 }
@@ -120,7 +138,6 @@ void interrupt_handler_dispatcher(void* ptr) {
 }
 
 void clearConsole(){
-
 	int i;
 	for(i = 0; i < 30; i++){
 		xil_printf("\n\r");
@@ -129,6 +146,7 @@ void clearConsole(){
 
 void initilizeGame(){
 	int i;
+	level = 0;
 	gameStatus = STOPPED;
 	for(i = 0; i < 4; i++){
 		bs[i] = 1;
@@ -143,23 +161,23 @@ void initilizeGame(){
     int bunk;
     int blk;
     for(bunk = 0; bunk < 4; bunk++){
-   	 for(blk = 0; blk < 10; blk ++){
-   		 bErosion[bunk][blk] = 0;
-   	 }
+    	for(blk = 0; blk < 10; blk ++){
+    		bErosion[bunk][blk] = 0;
+    	}
     }
 
 	lastDebrisRow = 0;
 	lastDebrisCol = 0;
-   aBlockRightBlank = 0;
-   aBlockLeftBlank = 0;
+    aBlockRightBlank = 0;
+    aBlockLeftBlank = 0;
 
-   tankBulletSpeed = 2;
+    tankBulletSpeed = 2;
 
     int bullStat;
     for(bullStat = 0; bullStat < 4; bullStat++){
-   	 aBulletX[bullStat] = 0;
-   	 aBulletY[bullStat] = 0;
-   	 abs_[bullStat] = 0;
+    	aBulletX[bullStat] = 0;
+    	aBulletY[bullStat] = 0;
+    	abs_[bullStat] = 0;
     }
 
     // Write black to all pixels in frame buffer.
@@ -170,7 +188,7 @@ void initilizeGame(){
     		 framePointer[row*640+col] = BLACK;
       	 }
     }
-    srand(time(0));
+    srand(fit_counter);
     // Initialize positions
     tankX = TANK_X_INIT;					// Tank Initial Position.
     tankY = TANK_ROW;
@@ -187,16 +205,25 @@ void initilizeGame(){
     playerLives = 3;
     tankDestroyedFlicker = 8;
     tankState = TANK_ALIVE;
+    finalFlicker = 1;
 
     // Initialize alien array.
     int a;
     for (a=0; a<55; a++){
-   	 alien_life[a] = 1;
+    	alien_life[a] = 1;
     }
+    mothershipSpawned = 0;
+    mothershipX = 0;
+    mothershipY = MOTHERSHIP_Y_POS;
 
     render(8);
     render(4);
     render(7);
+    printLetters("SCORE",WHITE,SCORE_TEXT_X_POS,TOP_MARGINE);
+    printLetters("LIVES",WHITE,LIVES_X_POS,TOP_MARGINE);
+    scoreToString();
+    printLetters("0",GREEN,(SCORE_X_POS),TOP_MARGINE);
+    drawLives();
 
     drawGreenLine();
 }
@@ -269,8 +296,6 @@ int main(){
      // positions of the image for each frame in the buffer (framePointer0 and framePointer1).
      //    			 framePointer[row*640 + col] = 0x0000FF00;  // frame 1 is green here.
 
-
-
      // This tells the HDMI controller the resolution of your display (there must be a better way to do this).
      XIo_Out32(XPAR_AXI_HDMI_0_BASEADDR, 640*480);
 
@@ -284,7 +309,6 @@ int main(){
      if (XST_FAILURE == XAxiVdma_StartParking(&videoDMAController, frameIndex,  XAXIVDMA_READ)) {
     	 xil_printf("vdma parking failed\n\r");
      }
-
 
      // Initialize the GPIO peripherals.
      int success;
