@@ -147,7 +147,7 @@ void clearAliens(){
 
 void clearAllBunkers(){
 	int row,col;
-	for (row = MOTHERSHIP_Y_POS; row < (TANK_ROW-4); row++){
+	for (row = TOP_MARGINE; row < (TANK_ROW-4); row++){
 		for (col = 0; col < 640; col++){
 			if (framePointer[((row*640)+col)] == GREEN){
 				framePointer[((row*640)+col)] = BLACK;
@@ -1580,11 +1580,9 @@ void render(int caller){
 						if(framePointer[curPix] == GREEN){
 							alienBunkerCollision(curPix);
 						}
-						if (alien_life[invader] == 1){
-							if((aBlockY+((invader/11)*INV_VERT)+row) > A_BLOCK_Y_LOWER_LIMIT){
-								reachedBottom = 1;
-								gameStatus = GAME_OVER;
-							}
+						if((aBlockY+((invader/11)*INV_VERT)+row) > A_BLOCK_Y_LOWER_LIMIT){
+							reachedBottom = 1;
+							gameStatus = GAME_OVER;
 						}
 						framePointer[curPix] = ALIEN_COLOR;
 					}else if (framePointer[curPix] ==  ALIEN_COLOR){

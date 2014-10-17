@@ -116,7 +116,6 @@ _Bool mothershipScoreFlag;
 int mothershipScoreX, mothershipScoreY;
 int alienMarchSpeed;
 int level;
-_Bool reachedBottom;
 // Pointer to the frame used by the hdmi controller.
 unsigned int * framePointer;
 int currentButtonState;
@@ -143,7 +142,6 @@ void alienCollision(int pixelHit);
 void mothershipCollision();
 void clearAliens();
 void clearAlien(int alienNum);
-void clearAllBunkers();
 void updateBlockBlank();
 void updateMothership();
 void renderTankFlicker();
