@@ -1,7 +1,24 @@
+/*
+ * control.c
+ *
+ * Taylor Simons + Joseph DeVictoria
+ * ECEN 425 Lab 3 aliens source.
+ */
+
 #include "globals.h"
 #include <stdio.h>
 #include "stdlib.h"
 
+void clearMotherScoreTimer(){
+	if(mothershipScoreFlag == 1){
+		if(mothershipScoreTimer > 0){
+			mothershipScoreTimer--;
+		}else{
+			clearMothershipScore();
+			mothershipScoreFlag = 0;
+		}
+	}
+}
 
 void tankFlicker(){
 	if ((tankState == TANK_DEAD_ONE) || (tankState == TANK_DEAD_TWO)){
@@ -21,6 +38,8 @@ void tankFlicker(){
 			    tankY = TANK_ROW;
 				render(4);
 				tankDestroyedFlicker = NUM_OF_T_FLICKERS;
+			}else{
+				finalFlicker = 0;
 			}
 		}
 	}
@@ -49,9 +68,13 @@ void updateBlockBlank(){
 
 void nextLevel(){
     int i;
+    level++;
     clearDebris();
 	aBlockX = 144;					// Alien Block Initial Position.
-    aBlockY = A_B_Y_INIT;
+    aBlockY = A_B_Y_INIT + (level*NEXT_LEVEL_BLOCK_INC);
+    if(aBlockY >= (A_BLOCK_Y_LOWER_LIMIT-(INV_VERT * 5))){
+    	aBlockY = A_BLOCK_Y_LOWER_LIMIT-(INV_VERT * 5);
+    }
     aBlockT = 0;
     aBlockD = 1;
     alienMarchSpeed = 65;
@@ -93,9 +116,23 @@ void cleanDebris(){
 	}
 }
 
-
-
-
+void scoreToString(){
+	int workScore = playerScore;
+	int lengther = workScore;
+	int sLength = 0;
+	int k;
+	while (lengther > 0){
+		lengther = lengther/10;
+		sLength++;
+	}
+	for (k = 0; k < 20; k++){
+		playerScoreChars[k] = 0;
+	}
+	for (k = 0; k < sLength; k++){
+		playerScoreChars[(19-(20-sLength))-k] = ((workScore%10) + '0');
+		workScore/=10;
+	}
+}
 
 void updateBullets(){
 	if ((fit_counter % tankBulletSpeed) == 0){
@@ -111,10 +148,44 @@ void updateAliens(){
 	}
 }
 
+void updateMothership(){
+	if (mothershipSpawned == 1){
+		if ((fit_counter % MOTHERSHIP_SPEED) == 0){
+			renderMothership();
+			if (mothershipD == 1){
+				mothershipX+=MOTHERSHIP_MOVE;
+			}else{
+				mothershipX-=MOTHERSHIP_MOVE;
+			}
+			if (mothershipX <= 0){
+				mothershipSpawned = 0;
+			}
+			if (mothershipX >= 640){
+				mothershipSpawned = 0;
+			}
+		}
+	}
+}
+
 void spawnBullets(){
 	rando = rand()%ALIEN_FIRE_RATE;
 	if ((fit_counter % rando) == 0){
 		control(3);
+	}
+}
+
+void spawnMothership(){
+	if (mothershipSpawned == 0){
+		rando = rand()%MOTHERSHIP_SPAWN_RATE;
+		if ((fit_counter % rando) == 0){
+			mothershipD = rand()%2;
+			mothershipSpawned = 1;
+			if (mothershipD == 1){
+				mothershipX = 1;
+			}else{
+				mothershipX = 639;
+			}
+		}
 	}
 }
 
@@ -139,10 +210,10 @@ void control(int input){
 		aBlockT = !aBlockT;
 		if ((aBlockD == 1) && (aBlockX >= X_BOUND_RIGHT - (A_BLOCK_WIDTH-aBlockRightBlank*32) - BLOCK_SHIFT)){
 			aBlockD = 0;
-			aBlockY += BLOCK_SHIFT;
+			aBlockY += BLOCK_SHIFT_VERT;
 		}else if ((aBlockD == 0) && (aBlockX <= X_BOUND_LEFT-aBlockLeftBlank*32 + BLOCK_SHIFT)){
 			aBlockD = 1;
-			aBlockY += BLOCK_SHIFT;
+			aBlockY += BLOCK_SHIFT_VERT;
 		}else if (aBlockD == 1){
 			aBlockX += BLOCK_SHIFT;
 		}else if (aBlockD == 0){
@@ -221,6 +292,11 @@ void control(int input){
 						clearBullet(4);
 						ts = 1;
 						alienCollision((tBulletY-l)*640+tBulletX+k);
+					}else if((tempPixel == RED) && !done){
+						done = 1;
+						clearBullet(4);
+						ts = 1;
+						mothershipCollision();
 					}
 				}
 			}

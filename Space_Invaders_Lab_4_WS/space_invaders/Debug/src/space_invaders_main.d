@@ -1,6 +1,6 @@
 src/space_invaders_main.d src/space_invaders_main.o:  \
  ../src/space_invaders_main.c ../src/bitmap.h ../src/globals.h \
-  ../src/platform.h ../src/platform_config.h \
+  ../src/letters.h ../src/platform.h ../src/platform_config.h \
   ../../space_invaders_bsp/microblaze_0/include/xparameters.h \
   ../../space_invaders_bsp/microblaze_0/include/xaxivdma.h \
   ../../space_invaders_bsp/microblaze_0/include/xaxivdma_hw.h \
@@ -22,6 +22,8 @@ src/space_invaders_main.d src/space_invaders_main.o:  \
 ../src/bitmap.h:
 
 ../src/globals.h:
+
+../src/letters.h:
 
 ../src/platform.h:
 

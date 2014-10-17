@@ -1,13 +1,101 @@
 /*
  * renderer.c
  *
- *  Created on: Oct 13, 2014
- *      Author: superman
+ * Taylor Simons + Joseph DeVictoria
+ * ECEN 425 Lab 3 aliens source.
  */
 
 #include <stdio.h>
 #include "globals.h"
 #include "bitmap.h"
+#include "letters.h"
+#include <stdio.h>
+
+
+void printLetters(char* letters,int color,int printX,int printY){
+	int stringLength = 0;
+	int i,row,col;
+	int * tempBitMap;
+	for (i = 0; letters[i] != '\0'; i++){
+		stringLength = i + 1;
+	}
+	for (row = 0; row < LETTER_HEIGHT;row++ ){
+		for (col = 0; col < (LETTER_WIDTH*stringLength); col ++){
+			switch(letters[(col/12)]){
+			case'0':
+				tempBitMap = number0;
+				break;
+			case'1':
+				tempBitMap = number1;
+				break;
+			case'2':
+				tempBitMap = number2;
+				break;
+			case'3':
+				tempBitMap = number3;
+				break;
+			case'4':
+				tempBitMap = number4;
+				break;
+			case'5':
+				tempBitMap = number5;
+				break;
+			case'6':
+				tempBitMap = number6;
+				break;
+			case'7':
+				tempBitMap = number7;
+				break;
+			case'8':
+				tempBitMap = number8;
+				break;
+			case'9':
+				tempBitMap = number9;
+				break;
+			case'S':
+				tempBitMap = capitalS;
+				break;
+			case'C':
+				tempBitMap = capitalC;
+				break;
+			case'O':
+				tempBitMap = capitalO;
+				break;
+			case'R':
+				tempBitMap = capitalR;
+				break;
+			case'E':
+				tempBitMap = capitalE;
+				break;
+			case'L':
+				tempBitMap = capitalL;
+				break;
+			case'I':
+				tempBitMap = capitalI;
+				break;
+			case'V':
+				tempBitMap = capitalV;
+				break;
+			case'G':
+				tempBitMap = capitalG;
+				break;
+			case'A':
+				tempBitMap = capitalA;
+				break;
+			case'M':
+				tempBitMap = capitalM;
+				break;
+			default:
+				tempBitMap = space;
+				break;
+			}
+			if (tempBitMap[row] & (1 << (31-col%12))){
+				framePointer[(printY+row)*640+printX+col] = color;
+			}
+
+		}
+	}
+}
 
 void clearBullet(int sel){
 	int tempPixel;
@@ -41,6 +129,17 @@ void clearBullet(int sel){
 			tempPixel = (tempY+row-10)*640+tempX+col;
 			if(framePointer[tempPixel] == BULLET_COLOR){
 				framePointer[tempPixel] = BLACK;
+			}
+		}
+	}
+}
+
+void clearAliens(){
+	int row,col;
+	for (row = TOP_MARGINE; row < 480; row++){
+		for (col = 0; col < 640; col++){
+			if (framePointer[((row*640)+col)] == ALIEN_COLOR){
+				framePointer[((row*640)+col)] = BLACK;
 			}
 		}
 	}
@@ -90,6 +189,38 @@ void clearDebris(){
 	lastDebrisRow = 0;
 	lastDebrisCol = 0;
 }
+
+void clearScore(){
+	int row,col;
+	for (row = TOP_MARGINE; row < (TOP_MARGINE+12); row++){
+		for (col = 190; col < 340; col++){
+			framePointer[((row*640)+col)] = BLACK;
+		}
+	}
+}
+
+void clearLives(int tank_life){
+	int row,col,toErase;
+	_Bool eb = 0;
+	if (tank_life == 0){
+		toErase = LIFE_ONE_POSITION;
+		eb = 1;
+	}else if (tank_life == 1){
+		toErase = LIFE_TWO_POSITION;
+		eb = 1;
+	}else if (tank_life == 2){
+		toErase = LIFE_THREE_POSITION;
+		eb = 1;
+	}
+	if (eb == 1){
+		for (row = (TOP_MARGINE-6); row < TOP_MARGINE+13; row++){
+			for (col = toErase; col < (toErase+TANK_WIDTH); col++){
+				framePointer[((row*640)+col)] = BLACK;
+			}
+		}
+	}
+}
+
 void renderTankBlank(){
 	int row,col,curPix;
 	for (row = 0; row < 18; row++){
@@ -98,6 +229,42 @@ void renderTankBlank(){
 			if(framePointer[curPix] == GREEN)
 			{
 				framePointer[curPix] = BLACK;
+			}
+		}
+	}
+}
+
+void clearMothership(){
+	int row,col;
+	for (row = 0; row < ALIEN_HEIGHT; row++){
+		for (col = 0; col < (32+(2*MOTHERSHIP_MOVE)); col++){
+			framePointer[(((mothershipY+row)*640)+(mothershipX-(MOTHERSHIP_MOVE)+col))] = BLACK;
+		}
+	}
+}
+
+void clearMothershipScore(){
+	int row,col;
+	for (row = 0; row < ALIEN_HEIGHT; row++){
+		for (col = 0; col < (32+(2*MOTHERSHIP_MOVE)); col++){
+			framePointer[(((mothershipScoreY+row)*640)+(mothershipScoreX-(MOTHERSHIP_MOVE)+col))] = BLACK;
+		}
+	}
+}
+
+void renderMothership(){
+	int row,col;
+	for (row = 0; row < ALIEN_HEIGHT; row++){
+		for (col = 0; col < (32+(2*MOTHERSHIP_MOVE)); col++){
+			framePointer[(((mothershipY+row)*640)+(mothershipX-(MOTHERSHIP_MOVE)+col))] = BLACK;
+		}
+	}
+	for (row = 0; row < ALIEN_HEIGHT; row++){
+		for (col = 0; col < 32; col++){
+			if (mothershipSymbol[row] & (1 << (31 - col))){
+				if(((mothershipX+col) > (X_BOUND_LEFT)) && ((mothershipX+col) < (X_BOUND_RIGHT))){
+					framePointer[(((mothershipY+row)*640)+(mothershipX+col))] = RED;
+				}
 			}
 		}
 	}
@@ -123,6 +290,21 @@ void renderTankFlicker(){
 				}
 			}else{
 				if (tankDestoyedInSymbol[row] & (1 << (31-col))){
+					framePointer[curPix] = GREEN;
+				}
+			}
+		}
+	}
+}
+
+void drawLives(){
+	int row,col,curPix,k;
+	int tankLives[3] = { LIFE_ONE_POSITION, LIFE_TWO_POSITION, LIFE_THREE_POSITION };
+	for (k = 0; k < 3; k++){
+		for (row = 0; row < 16; row++){
+			for (col = 0; col < TANK_WIDTH; col++){
+				curPix = (((row+(TOP_MARGINE-4))*640)+tankLives[k]+col);
+				if (tankSymbol[row] & (1 << (31-col))){
 					framePointer[curPix] = GREEN;
 				}
 			}
@@ -684,12 +866,6 @@ void drawBunkerBlock(int block, int bunkerNum){
 		default:
 			break;
 		}
-}
-
-
-
-void drawScore(){
-
 }
 
 void render(int caller){
@@ -1323,7 +1499,7 @@ void render(int caller){
 		if ((aBlockD == 0) && (aBlockX >= X_BOUND_RIGHT - (A_BLOCK_WIDTH-aBlockRightBlank*32) - BLOCK_SHIFT)){
 			for(bar = 0; bar < 5; bar++){
 				for (row = 0; row < 16; row ++){
-					for (col = 0; col < 32*11; col ++){
+					for (col = 0; col < (32*11); col ++){
 						if(framePointer[(aBlockY+((bar)*INV_VERT)-16+row)*640+aBlockX+col] == ALIEN_COLOR){
 							framePointer[(aBlockY+((bar)*INV_VERT)-16+row)*640+aBlockX+col] = BLACK;
 						}
@@ -1333,7 +1509,7 @@ void render(int caller){
 		}else if ((aBlockD == 1) && (aBlockX <= X_BOUND_LEFT-aBlockLeftBlank*32 + BLOCK_SHIFT)){
 			for(bar = 0; bar < 5; bar++){
 				for (row = 0; row < 16; row ++){
-					for (col = 0; col < 32*11; col ++){
+					for (col = 0; col < (32*11); col ++){
 						if(framePointer[(aBlockY+((bar)*INV_VERT)-16+row)*640+aBlockX+col] == ALIEN_COLOR){
 							framePointer[(aBlockY+((bar)*INV_VERT)-16+row)*640+aBlockX+col] = BLACK;
 						}
@@ -1359,61 +1535,49 @@ void render(int caller){
 		}
 
 		//Draw invaders
+
+		int * tempMap;
 		for(invader = 0; invader < 55; invader++){
 			for (row = 0; row < 16; row ++){
 				for (col = 0; col < 32; col ++){
 					curPix = (aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col;
 					if(invader < 11){
 						if(aBlockT){
-							if ((topInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[curPix] = ALIEN_COLOR;
-							}else if (framePointer[curPix] ==  ALIEN_COLOR){
-								framePointer[curPix] = BLACK;
-							}
+							tempMap = topInAlienSymbol;
 						}
 						else{
-							if ((topOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[curPix] = ALIEN_COLOR;
-							}else if (framePointer[curPix] ==  ALIEN_COLOR){
-								framePointer[curPix] = BLACK;
-							}
+							tempMap = topOutAlienSymbol;
 						}
 					}
 					else if(invader < 33){
 						if(aBlockT){
-							if ((midInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[curPix] = ALIEN_COLOR;
-							}else if (framePointer[curPix] ==  ALIEN_COLOR){
-								framePointer[curPix] = BLACK;
-							}
+							tempMap = midInAlienSymbol;
 						}
 						else{
-							if ((midOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[curPix] = ALIEN_COLOR;
-							}else if (framePointer[curPix] ==  ALIEN_COLOR){
-								framePointer[curPix] = BLACK;
-							}
+							tempMap = midOutAlienSymbol;
 						}
 					}
 					else{
 						if(aBlockT){
-							if ((bottomInAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[curPix] = ALIEN_COLOR;
-							}else if (framePointer[curPix] ==  ALIEN_COLOR){
-								framePointer[curPix] = BLACK;
-							}
+							tempMap = bottomInAlienSymbol;
 						}
 						else{
-							if ((bottomOutAlienSymbol[row] & (1 << (31-col))) && alien_life[invader]){
-								framePointer[curPix] = ALIEN_COLOR;
-							}else if (framePointer[curPix ] ==  ALIEN_COLOR){
-								framePointer[curPix] = BLACK;
-							}
+							tempMap = bottomOutAlienSymbol;
 						}
+					}
+					if ((tempMap[row] & (1 << (31-col))) && alien_life[invader]){
+						if(framePointer[curPix] == GREEN){
+							alienBunkerCollision(curPix);
+						}
+						if((aBlockY+((invader/11)*INV_VERT)+row) > A_BLOCK_Y_LOWER_LIMIT){
+							gameStatus = GAME_OVER;
+						}
+						framePointer[curPix] = ALIEN_COLOR;
+					}else if (framePointer[curPix] ==  ALIEN_COLOR){
+						framePointer[curPix] = BLACK;
 					}
 				}
 			}
-			// Clean up bottom for explosion
 			for (row = 16; row < 20; row ++){
 				for (col = 0; col < 32; col ++){
 					curPix = (aBlockY+((invader/11)*INV_VERT)+row)*640+aBlockX+((invader%11)*32)+col;
@@ -1424,6 +1588,10 @@ void render(int caller){
 			}
 
 		}
+
+
+
+			// Clean up bottom for explosion
 		break;
 	case 9:
 		// Move bullets

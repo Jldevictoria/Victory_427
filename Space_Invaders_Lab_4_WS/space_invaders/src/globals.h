@@ -1,14 +1,12 @@
 /*
  * globals.h
  *
- *  Created on: Oct 13, 2014
- *      Author: superman
+ * Taylor Simons + Joseph DeVictoria
+ * ECEN 425 Lab 3 aliens source.
  */
 
 #ifndef GLOBALS_H_
 #define GLOBALS_H_
-
-
 
 // All define macros for this file.
 //#define DEBUG void print(char *str);
@@ -21,23 +19,27 @@
 #define X_BOUND_RIGHT 640 - SIDE_MARGINE
 #define GREEN_LINE_ROW 480 - TOP_MARGINE - 16
 #define TANK_ROW (GREEN_LINE_ROW - 32)
-#define TOP_BULLET_END (TOP_MARGINE + 28)
+#define TOP_BULLET_END (TOP_MARGINE + 35)
 #define A_BLOCK_WIDTH (11*32)
 #define TANK_WIDTH  32
 #define BUNKER_ROW (GREEN_LINE_ROW - 90)
 #define BUNK_SHIFT (X_BOUND_LEFT + 74)
 #define BLOCK_SHIFT 4
+#define BLOCK_SHIFT_VERT 16
 #define INV_VERT 28
 #define A_B_MOVE 4
-#define A_B_Y_INIT TOP_MARGINE + 64
+#define A_B_Y_INIT  TOP_MARGINE + 64
 #define A_B_X_OFF 9
 #define BUNK_SPACE 108
 #define ALIEN_FIRE_RATE 2000
 #define ALIEN_BULLET_SPEED 2
 #define ALIEN_COLOR 0x00FFFFFF
 #define BULLET_COLOR 0x00FFFFFE
+#define WHITE 0x00FFFFFE
 #define BLACK 0x00000000
 #define GREEN 0x0000FF00
+#define RED   0x00FF0000
+#define SCORE_RED 0x00FE0000
 #define BUL_TOGGLE_SIZE 10
 #define ALIEN_BULLET_HIGHT 10
 #define TANK_ALIVE 0
@@ -52,10 +54,29 @@
 #define TANK_SPEED 2
 #define NUM_OF_T_FLICKERS 10
 #define GAME_OVER 2
-
+#define LETTER_HEIGHT 10
+#define LETTER_WIDTH 12
+#define LIFE_ONE_POSITION 420
+#define LIFE_TWO_POSITION (LIFE_ONE_POSITION+TANK_WIDTH+5)
+#define LIFE_THREE_POSITION (LIFE_TWO_POSITION+TANK_WIDTH+5)
+#define SCORE_TEXT_X_POS (X_BOUND_LEFT+60)
+#define LIVES_X_POS (((X_BOUND_RIGHT-X_BOUND_LEFT)/2)+80)
+#define SCORE_X_POS (X_BOUND_LEFT+140)
+#define GAME_OVER_X_POS (((X_BOUND_RIGHT-X_BOUND_LEFT)/2))
+#define GAME_OVER_Y_POS 200
+#define TOP_TEXT_Y 10
+#define MOTHERSHIP_SPAWN_RATE 15000
+#define MOTHERSHIP_Y_POS (TOP_MARGINE+28)
+#define MOTHERSHIP_SPEED 5
+#define MOTHERSHIP_MOVE 4
+#define MOTHERSHIP_SCORE_TIMER_INIT 50
+#define NEXT_LEVEL_BLOCK_INC 50
+#define A_BLOCK_Y_LOWER_LIMIT TANK_ROW - 24
 
 // Declare Global Variables for game objects.
 int tankX, tankY;
+int mothershipX, mothershipY;
+_Bool mothershipD;
 int tBulletX, tBulletY;
 int aBlockX, aBlockY;
 int oldABlockX, oldABlockY;
@@ -85,11 +106,16 @@ int lastDebrisRow;
 int lastDebrisCol;
 int debrisTimer;
 int gameStatus;
-int  tankBulletSpeed;
+int tankBulletSpeed;
 int bNum;
-
-
+_Bool finalFlicker;
+char playerScoreChars[20];
+_Bool mothershipSpawned;
+int mothershipScoreTimer;
+_Bool mothershipScoreFlag;
+int mothershipScoreX, mothershipScoreY;
 int alienMarchSpeed;
+int level;
 // Pointer to the frame used by the hdmi controller.
 unsigned int * framePointer;
 int currentButtonState;
@@ -106,20 +132,34 @@ void interrupt_handler_dispatcher(void* ptr);
 void drawInvaderBlock();
 void bunkerCollision(int pixelHit);
 void drawBunkerBlock(int block, int bunkerNum);
+void drawLives();
 void drawAlienBullets();
 void tankCollision(int pixelHit);
 void tankFlicker();
 void renderTankFlicker();
+void renderMothership();
 void alienCollision(int pixelHit);
+void mothershipCollision();
+void clearAliens();
 void clearAlien(int alienNum);
 void updateBlockBlank();
+void updateMothership();
 void renderTankFlicker();
 void renderTankBlank();
 void cleanDebris();
 void clearDebris();
 void clearConsole();
+void clearScore();
+void scoreToString();
+void clearLives(int tank_life);
 void updateBullets();
 void nextLevel();
 void spawnBullets();
+void spawnMothership();
 void initilizeGame();
+void printLetters(char* letters,int color,int printX,int printY);
+void clearMothership();
+void clearMotherScoreTimer();
+void clearMothershipScore();
+void alienBunkerCollision(int pixelHit);
 #endif /* GLOBALS_H_ */

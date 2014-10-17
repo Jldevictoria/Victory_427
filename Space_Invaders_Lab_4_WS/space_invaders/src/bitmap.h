@@ -1,8 +1,8 @@
 /*
  * bitmap.h
  *
- *  Created on: Oct 13, 2014
- *      Author: superman
+ * Taylor Simons + Joseph DeVictoria
+ * ECEN 425 Lab 3 aliens source.
  */
 
 #ifndef BITMAP_H_
@@ -47,14 +47,6 @@ int bunker6[12];
 int bunkerD16[12];
 int bunkerD26[12];
 int bunkerD36[12];
-int capitalS[10];
-int capitalC[10];
-int capitalO[10];
-int capitalR[10];
-int capitalE[10];
-int capitalL[10];
-int capitalI[10];
-int capitalV[10];
 int box1[ALIEN_HEIGHT];
 int box2[ALIEN_HEIGHT];
 int topOutAlienSymbol[ALIEN_HEIGHT];
