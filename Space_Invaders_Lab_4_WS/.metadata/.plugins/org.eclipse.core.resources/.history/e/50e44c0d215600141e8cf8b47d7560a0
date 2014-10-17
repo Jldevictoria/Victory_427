@@ -62,24 +62,22 @@ void pollButtons(){
 			}
 		}
 
-		if((up && (playerLives <= 0)) || (up && (gameStatus != STOPPED)) || (up && (reachedBottom == 1))){
+		if((up && (playerLives <= 0)) || (up && (gameStatus != STOPPED))){
 			initilizeGame();
 		}
-		if(gameStatus == STOPPED && (left || right || mid) && (0 < playerLives) && (reachedBottom != 1)){
+		if(gameStatus == STOPPED && (left || right || mid) && (0 < playerLives)){
 			gameStatus = RUNNING;
 			srand(fit_counter);
 		}
 		//xil_printf("poll the buttons! %d \n\r", currentButtonState);
-		if (gameStatus != STOPPED){
-			if (left && (right == 0)){
-				control(4);
-			}
-			if (right){
-				control(6);
-			}
-			if (mid && (tankState == TANK_ALIVE)){
-				control(5);
-			}
+		if (left && (right == 0)){
+			control(4);
+		}
+		if (right){
+			control(6);
+		}
+		if (mid && (tankState == TANK_ALIVE)){
+			control(5);
 		}
 	}
 }

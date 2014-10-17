@@ -27,7 +27,7 @@
 #define BLOCK_SHIFT 4
 #define BLOCK_SHIFT_VERT 16
 #define INV_VERT 28
-#define A_B_MOVE 4
+#define A_B_MOVE 10
 #define A_B_Y_INIT  TOP_MARGINE + 64
 #define A_B_X_OFF 9
 #define BUNK_SPACE 108
@@ -143,7 +143,6 @@ void alienCollision(int pixelHit);
 void mothershipCollision();
 void clearAliens();
 void clearAlien(int alienNum);
-void clearAllBunkers();
 void updateBlockBlank();
 void updateMothership();
 void renderTankFlicker();

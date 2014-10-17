@@ -164,7 +164,7 @@ void initilizeGame(){
 		bottomAlien[i] = 4;
 	}
 	bNum = 0;
-	alienMarchSpeed = 65;
+	alienMarchSpeed = 56;
 	playerScore = 0;
 
     int bunk;

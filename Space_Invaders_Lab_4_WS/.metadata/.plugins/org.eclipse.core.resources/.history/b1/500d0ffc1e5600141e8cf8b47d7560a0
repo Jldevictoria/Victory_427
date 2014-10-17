@@ -143,7 +143,6 @@ void alienCollision(int pixelHit);
 void mothershipCollision();
 void clearAliens();
 void clearAlien(int alienNum);
-void clearAllBunkers();
 void updateBlockBlank();
 void updateMothership();
 void renderTankFlicker();
