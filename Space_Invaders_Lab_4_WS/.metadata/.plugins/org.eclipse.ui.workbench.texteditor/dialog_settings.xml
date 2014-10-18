@@ -13,16 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="invader" key="selection"/>
+		<item value="bul" key="selection"/>
 		<list key="findhistory">
+			<item value="bul"/>
+			<item value="updateBull"/>
+			<item value="ALIEN_FIRE_RATE"/>
+			<item value="fit_counter"/>
+			<item value="xil_print"/>
 			<item value="invader"/>
 			<item value="clearAliens"/>
 			<item value="MOVE"/>
-			<item value="GREEN"/>
-			<item value="next"/>
-			<item value="game"/>
-			<item value="gameStatus = GAME_OVER;"/>
-			<item value="TANK_ROW"/>
 		</list>
 		<list key="replacehistory">
 			<item value="packWord12("/>

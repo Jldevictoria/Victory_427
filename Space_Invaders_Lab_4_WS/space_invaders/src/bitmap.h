@@ -23,6 +23,8 @@
  (b23 << 23) | (b22 << 22) | (b21 << 21) | (b20 << 20) )
 
 int bunkerBlank[12];
+int bulletType30[ALIEN_BULLET_HIGHT];
+int bulletType20[ALIEN_BULLET_HIGHT];
 int bulletType10[ALIEN_BULLET_HIGHT];
 int bulletType00[ALIEN_BULLET_HIGHT];
 int bulletType01[ALIEN_BULLET_HIGHT];

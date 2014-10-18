@@ -142,6 +142,7 @@ void updateBullets(){
 		control(10);
 	}
 }
+
 void updateAliens(){
 	if ((fit_counter % alienMarchSpeed) == 0){
 		control(8);
@@ -329,23 +330,23 @@ void control(int input){
 		if(bNum > 0){
 			for(i=0; i<4; i++){
 				if (bs[i] == 0){
-					if (aBulletY[i] >= GREEN_LINE_ROW - (ALIEN_BULLET_HIGHT+2)){
+					if (aBulletY[i] > ALIEN_BULLET_END){
 						bs[i] = 1;
 						bNum--;
 						clearBullet(i);
 					}
-					for(k = 0; k < 8;k++){
+					for(k = 0; k < 8; k++){
 						for(l = 0; l < (ALIEN_BULLET_HIGHT); l++){
-							tempPixel = framePointer[(aBulletY[i]+l)*640+aBulletX[i]+k];
+							tempPixel = framePointer[(aBulletY[i]+ ALIEN_BULLET_HIGHT+1)*640+aBulletX[i]+k];
 							if ((tempPixel == GREEN) && !done){
 								done = 1;
 								clearBullet(i);
 								bNum--;
 								bs[i] = 1;
-								if((aBulletY[i]+ALIEN_BULLET_HIGHT) < TANK_ROW-8){
-									bunkerCollision((aBulletY[i]+l)*640+aBulletX[i]+k);
-								}else if ((aBulletY[i]+ALIEN_BULLET_HIGHT) <= GREEN_LINE_ROW){
-									tankCollision((aBulletY[i]+l)*640+aBulletX[i]+k);
+								if((aBulletY[i]+ALIEN_BULLET_HIGHT+1) < TANK_ROW-20){
+									bunkerCollision((aBulletY[i]+ALIEN_BULLET_HIGHT+1)*640+aBulletX[i]+k);
+								}else if ((aBulletY[i]) <= ALIEN_BULLET_END){
+									tankCollision((aBulletY[i]+ALIEN_BULLET_HIGHT+1)*640+aBulletX[i]+k);
 								}
 							}
 						}

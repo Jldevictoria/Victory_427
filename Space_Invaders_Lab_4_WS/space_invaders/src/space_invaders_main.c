@@ -111,7 +111,7 @@ void timer_interrupt_handler() {
 			spawnMothership();
 			updateMothership();
 			clearMotherScoreTimer();
-			runTimeN = fit_counter;
+			//runTimeN = fit_counter;
 			//deltaRunTime = runTimeN - runTimeO;
 			//xil_printf("Instructions for one game loop: %d\n\r", deltaRunTime);
 		}
