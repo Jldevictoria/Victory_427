@@ -326,7 +326,7 @@ void control(int input){
 		int tempPixel;
 		int k,l;
 		int i;
-		char done = 0;
+		char done;
 		if(bNum > 0){
 			for(i=0; i<4; i++){
 				if (bs[i] == 0){
@@ -335,24 +335,27 @@ void control(int input){
 						bNum--;
 						clearBullet(i);
 					}
+					done = 0;
 					for(k = 0; k < 8; k++){
 						for(l = 0; l < (ALIEN_BULLET_HIGHT); l++){
-							tempPixel = framePointer[(aBulletY[i]+ ALIEN_BULLET_HIGHT+1)*640+aBulletX[i]+k];
+							tempPixel = framePointer[(aBulletY[i]+ ALIEN_BULLET_HIGHT+2)*640+aBulletX[i]+k];
 							if ((tempPixel == GREEN) && !done){
 								done = 1;
 								clearBullet(i);
 								bNum--;
 								bs[i] = 1;
-								if((aBulletY[i]+ALIEN_BULLET_HIGHT+1) < TANK_ROW-20){
-									bunkerCollision((aBulletY[i]+ALIEN_BULLET_HIGHT+1)*640+aBulletX[i]+k);
+								if((aBulletY[i]+ALIEN_BULLET_HIGHT+2) < TANK_ROW-20){
+									bunkerCollision((aBulletY[i]+ALIEN_BULLET_HIGHT+2)*640+aBulletX[i]+k);
 								}else if ((aBulletY[i]) <= ALIEN_BULLET_END){
-									tankCollision((aBulletY[i]+ALIEN_BULLET_HIGHT+1)*640+aBulletX[i]+k);
+									tankCollision((aBulletY[i]+ALIEN_BULLET_HIGHT+2)*640+aBulletX[i]+k);
 								}
 							}
 						}
 					}
-					aBulletY[i] += A_B_MOVE;
-					abs_[i] = !abs_[i];
+					if (bs[i] == 0){
+						aBulletY[i] += A_B_MOVE;
+						abs_[i] = !abs_[i];
+					}
 
 				}
 			}

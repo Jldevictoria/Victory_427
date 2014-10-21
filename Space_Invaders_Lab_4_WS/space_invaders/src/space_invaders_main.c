@@ -119,10 +119,14 @@ void timer_interrupt_handler() {
 			tankFlicker();
 		}
 		if (gameStatus == GAME_OVER){
+			int i;
 			if (finalFlicker == 0){
 				gameStatus = STOPPED;
 				clearAliens();
 				clearMothership();
+				for (i = 0; i < 5; i++){
+					clearBullet(i);
+				}
 				printLetters("GAME OVER",WHITE,GAME_OVER_X_POS,GAME_OVER_Y_POS);
 			}
 			if (reachedBottom == 1){

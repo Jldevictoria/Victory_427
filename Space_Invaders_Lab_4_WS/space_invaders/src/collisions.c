@@ -26,13 +26,13 @@ void bunkerCollision(int pixelHit){
 	int whichBlock = 0;
 	int bunkGridX = 0;
 	int bunkGridY = 0;
-	if((pixelHit % 640) > (BUNK_SPACE*1+ BUNK_SHIFT)){
+	if((pixelHit % 640) > (BUNK_SPACE*1+ BUNK_SHIFT- BUNKER_COLLISION_BUFFER)){
 		whichBunker = 1;
 	}
-	if((pixelHit % 640) > (BUNK_SPACE*2+ BUNK_SHIFT)){
+	if((pixelHit % 640) > (BUNK_SPACE*2+ BUNK_SHIFT - BUNKER_COLLISION_BUFFER)){
 		whichBunker = 2;
 	}
-	if((pixelHit % 640) > (BUNK_SPACE*3+ BUNK_SHIFT)){
+	if((pixelHit % 640) > (BUNK_SPACE*3+ BUNK_SHIFT - BUNKER_COLLISION_BUFFER)){
 		whichBunker = 3;
 	}
 
