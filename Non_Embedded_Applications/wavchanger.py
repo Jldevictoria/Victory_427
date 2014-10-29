@@ -1,24 +1,33 @@
 #!/usr/bin/python
 import wave
+import sys
+from bitstring import *
 from binascii import *
 from struct import *
-w = wave.open("ufo_highpitch.wav", "rb")
+inf = sys.argv[1]
+outf = sys.argv[2]
+w = wave.open(inf, "rb")
 binary_data = w.readframes(w.getnframes())
-s = bytes(binary_data)
-f = open('ufo_highpitch.c', 'w')
+s = binary_data
+inf = inf[:-4]
+f = open(outf, 'w')
 f.write("// Joseph DeVictoria\n")
 f.write("// Taylor Simons\n")
 f.write("// ECEN 427 2014\n\n")
-f.write("int ufo_highpitch[] = {\n")
-j = 0
-temp=''
+f.write("int "+inf+"_soundData[] = {\n")
+k = 1
 for i in s:
-	temp+=i
-	if j == 4:
-		f.write('0x'+temp+'\n')
-		temp=''
-		j = 0
+	if k == 10:
+		f.write(str(unpack("<b", i)[0])+',\n')
+		k = 1
 	else:
-		j+=1
-f.write("};\n")
+		f.write(str(unpack("<b", i)[0])+',')
+		k+=1
+	temp=''
+f.write("};\n\n")
+frames = w.getnframes()
+rate = w.getframerate()
+f.write(inf+"_numberOfSamples = "+str(frames)+"\n\n")
+f.write(inf+"_sampleRate = "+str(rate)+"\n")
 w.close
+f.close
