@@ -2,32 +2,14 @@
 **** Build of configuration Debug for project space_invaders ****
 
 make all 
-Building file: ../src/renderer.c
+Building file: ../src/space_invaders_main.c
 Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O2 -g3 -c -fmessage-length=0 -I../../space_invaders_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"src/renderer.d" -MT"src/renderer.d" -o"src/renderer.o" "../src/renderer.c"
-Finished building: ../src/renderer.c
-' '
-Building target: space_invaders.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../space_invaders_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -o"space_invaders.elf"  ./src/bitmap.o ./src/collisions.o ./src/control.o ./src/letters.o ./src/platform.o ./src/renderer.o ./src/space_invaders_main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: space_invaders.elf
-' '
-Invoking: MicroBlaze Print Size
-mb-size space_invaders.elf  |tee "space_invaders.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  45402	   4408	  68374	 118184	  1cda8	space_invaders.elf
-Finished building: space_invaders.elf.size
-' '
-Invoking: Xilinx ELF Check
-elfcheck space_invaders.elf -hw ../../SpaceInvaderTestHW2_hw_platform/system.xml -pe microblaze_0  |tee "space_invaders.elf.elfcheck"
-elfcheck
-Xilinx EDK 13.4 Build EDK_O.87xd
-Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
-
-Command Line: elfcheck -hw ../../SpaceInvaderTestHW2_hw_platform/system.xml -pe
-microblaze_0 space_invaders.elf 
-
-ELF file	: space_invaders.elf
-elfcheck passed.
-Finished building: space_invaders.elf.elfcheck
-' '
+mb-gcc -Wall -O2 -g3 -c -fmessage-length=0 -I../../space_invaders_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"src/space_invaders_main.d" -MT"src/space_invaders_main.d" -o"src/space_invaders_main.o" "../src/space_invaders_main.c"
+../src/space_invaders_main.c: In function 'pollButtons':
+../src/space_invaders_main.c:57: warning: implicit declaration of function 'rand'
+../src/space_invaders_main.c:71: warning: implicit declaration of function 'srand'
+../src/space_invaders_main.c: In function 'main':
+../src/space_invaders_main.c:351: error: 'XPAR_AUDIO_CODEC_BASEADDR' undeclared (first use in this function)
+../src/space_invaders_main.c:351: error: (Each undeclared identifier is reported only once
+../src/space_invaders_main.c:351: error: for each function it appears in.)
+make: *** [src/space_invaders_main.o] Error 1

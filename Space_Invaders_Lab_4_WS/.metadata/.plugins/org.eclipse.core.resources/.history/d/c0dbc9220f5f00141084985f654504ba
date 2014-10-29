@@ -34,7 +34,6 @@
 #include "mb_interface.h"
 #include "xintc_l.h"
 #include "globals.h"
-#include "xac97_l.h"
 
 unsigned int * framePointer = (unsigned int *) FRAME_BUFFER_0_ADDR;
 
@@ -347,8 +346,6 @@ int main(){
      microblaze_enable_interrupts();
 
      clearConsole();
-
-     XAC97_HardReset(XPAR_AUDIO_CODEC_BASEADDR);
 
      initilizeGame();
 

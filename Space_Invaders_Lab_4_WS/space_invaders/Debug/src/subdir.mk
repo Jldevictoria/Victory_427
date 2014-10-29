@@ -10,7 +10,8 @@ C_SRCS += \
 ../src/letters.c \
 ../src/platform.c \
 ../src/renderer.c \
-../src/space_invaders_main.c 
+../src/space_invaders_main.c \
+../src/xac97_l.c 
 
 LD_SRCS += \
 ../src/lscript.ld 
@@ -22,7 +23,8 @@ OBJS += \
 ./src/letters.o \
 ./src/platform.o \
 ./src/renderer.o \
-./src/space_invaders_main.o 
+./src/space_invaders_main.o \
+./src/xac97_l.o 
 
 C_DEPS += \
 ./src/bitmap.d \
@@ -31,7 +33,8 @@ C_DEPS += \
 ./src/letters.d \
 ./src/platform.d \
 ./src/renderer.d \
-./src/space_invaders_main.d 
+./src/space_invaders_main.d \
+./src/xac97_l.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
