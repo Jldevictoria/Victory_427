@@ -348,7 +348,7 @@ int main(){
 
      clearConsole();
 
-     XAC97_HardReset(XPAR_AUDIO_CODEC_BASEADDR);
+     XAC97_HardReset();
 
      initilizeGame();
 
