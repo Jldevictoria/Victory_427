@@ -7,6 +7,7 @@
 
 #include "globals.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 void tankCollision(int pixelHit){
 	if (tankState == TANK_ALIVE){
@@ -154,7 +155,7 @@ void mothershipCollision(){
 	clearScore();
 	scoreToString();
 	printLetters(playerScoreChars,GREEN,SCORE_X_POS,TOP_MARGINE);
-	char* tempString;
+	char* tempString = "";
 	switch(randScore){
 	case 50:
 		tempString = "50";

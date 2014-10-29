@@ -27,7 +27,7 @@ for i in s:
 f.write("};\n\n")
 frames = w.getnframes()
 rate = w.getframerate()
-f.write(inf+"_numberOfSamples = "+str(frames)+"\n\n")
-f.write(inf+"_sampleRate = "+str(rate)+"\n")
+f.write("int "+inf+"_numberOfSamples = "+str(frames)+";\n\n")
+f.write("int "+inf+"_sampleRate = "+str(rate)+";\n")
 w.close
 f.close

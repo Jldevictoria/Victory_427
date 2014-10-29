@@ -8,6 +8,8 @@
 #include "globals.h"
 #include <stdio.h>
 #include "stdlib.h"
+#include "xac97_l.h"
+#include "xparameters.h"
 
 void clearMotherScoreTimer(){
 	if(mothershipScoreFlag == 1){
@@ -145,6 +147,7 @@ void updateBullets(){
 
 void updateAliens(){
 	if ((fit_counter % alienMarchSpeed) == 0){
+		XAC97_PlayAudio(XPAR_AXI_AC97_0_BASEADDR, fastinvader4_soundData, (tankFireSound+tankFireSoundFrames));
 		control(8);
 	}
 }

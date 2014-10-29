@@ -76,6 +76,7 @@
 #define ALIEN_BULLET_END TANK_ROW+15
 #define BUNKER_WIDTH 12
 #define BUNKER_COLLISION_BUFFER 10
+#define FIFO_SIZE 256
 
 // Declare Global Variables for game objects.
 int tankX, tankY;
@@ -127,6 +128,14 @@ int currentButtonState;
 int idleTime;
 int runTimeN, runTimeO, deltaRunTime;
 
+//Sound files.
+extern int tankFireSound;
+extern int tankFireSoundRate;
+extern int tankFireSoundFrames;
+extern int fastinvader4_soundData;
+extern int fastinvader4_numberOfSamples;
+extern int fastinvader4_sampleRate;
+
 void drawScore();
 void render(int caller);
 void clearBullet(int sel);
@@ -167,6 +176,7 @@ void spawnMothership();
 void initilizeGame();
 void printLetters(char* letters,int color,int printX,int printY);
 void clearMothership();
+void AC97_interrupt_handler();
 void clearMotherScoreTimer();
 void clearMothershipScore();
 void alienBunkerCollision(int pixelHit);
