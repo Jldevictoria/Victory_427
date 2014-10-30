@@ -13,16 +13,16 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="" key="selection"/>
+		<item value="mother" key="selection"/>
 		<list key="findhistory">
-			<item value="XPAR_AUDIO_CODEC_BASEADDR"/>
-			<item value="BaseAddress"/>
-			<item value="bul"/>
-			<item value="updateBull"/>
-			<item value="ALIEN_FIRE_RATE"/>
-			<item value="fit_counter"/>
-			<item value="xil_print"/>
-			<item value="invader"/>
+			<item value="Mother"/>
+			<item value="updateMother"/>
+			<item value="updateAliens"/>
+			<item value="tankCo"/>
+			<item value="alienCollision"/>
+			<item value="ts"/>
+			<item value="derp"/>
+			<item value="derpFlag"/>
 		</list>
 		<list key="replacehistory">
 			<item value="packWord12("/>

@@ -18,10 +18,10 @@ f.write("int "+inf+"_soundData["+str(frames)+"]" = {\n")
 k = 1
 for i in s:
 	if k == 10:
-		f.write(str(unpack("<b", i)[0])+',\n')
+		f.write(str(unpack("<B", i)[0])+',\n')
 		k = 1
 	else:
-		f.write(str(unpack("<b", i)[0])+',')
+		f.write(str(unpack("<B", i)[0])+',')
 		k+=1
 	temp=''
 f.write("};\n\n")

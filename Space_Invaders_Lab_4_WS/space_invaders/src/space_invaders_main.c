@@ -144,20 +144,153 @@ void timer_interrupt_handler() {
 }
 
 void AC97_interrupt_handler(){
-
-
+	if (sFlags[8] == 1){
+		play_sound(8);
+		return;
+	}else if (sFlags[9] == 1){
+		play_sound(9);
+		return;
+	}else if (sFlags[7] == 1){
+		play_sound(7);
+		return;
+	}else if (sFlags[5] == 1){
+		play_sound(5);
+		return;
+	}else if (sFlags[6] == 1){
+		play_sound(6);
+		return;
+	}else if (sFlags[4] == 1){
+		play_sound(4);
+		return;
+	}else if (sFlags[3] == 1){
+		play_sound(3);
+		return;
+	}else if (sFlags[2] == 1){
+		play_sound(2);
+		return;
+	}else if (sFlags[1] == 1){
+		play_sound(1);
+		return;
+	}else{
+		play_sound(0);
+	}
 }
 
 void play_sound(int s){
+	// Sorry Taylor I tried literally for like 2 hours to get the struct thing to work and it was not having it.
+	// I figured my time would be better spent getting something to work.
+	int * curData;
+	int curFrames;
+	int curRate;
+	int * curCount;
+	switch (s){
+	case 0:
+		curData = 0;
+		curFrames = 0;
+		curRate = 0;
+		curCount = 0;
+		break;
+	case 1:
+		curData = fastinvader1_soundData;
+		curFrames = fastinvader1_numberOfSamples;
+		curRate = fastinvader1_sampleRate;
+		curCount = &fastinvader1_count;
+		break;
+	case 2:
+		curData = fastinvader2_soundData;
+		curFrames = fastinvader2_numberOfSamples;
+		curRate = fastinvader2_sampleRate;
+		curCount = &fastinvader2_count;
+		break;
+	case 3:
+		curData = fastinvader3_soundData;
+		curFrames = fastinvader3_numberOfSamples;
+		curRate = fastinvader3_sampleRate;
+		curCount = &fastinvader3_count;
+		break;
+	case 4:
+		curData = fastinvader4_soundData;
+		curFrames = fastinvader4_numberOfSamples;
+		curRate = fastinvader4_sampleRate;
+		curCount = &fastinvader4_count;
+		break;
+	case 5:
+		curData = ufo_highpitch_soundData;
+		curFrames = ufo_highpitch_numberOfSamples;
+		curRate = ufo_highpitch_sampleRate;
+		curCount = &ufo_highpitch_count;
+		break;
+	case 6:
+		curData = ufo_lowpitch_soundData;
+		curFrames = ufo_lowpitch_numberOfSamples;
+		curRate = ufo_lowpitch_sampleRate;
+		curCount = &ufo_lowpitch_count;
+		break;
+	case 7:
+		curData = shoot_soundData;
+		curFrames = shoot_numberOfSamples;
+		curRate = shoot_sampleRate;
+		curCount = &shoot_count;
+		break;
+	case 8:
+		curData = explosion_soundData;
+		curFrames = explosion_numberOfSamples;
+		curRate = explosion_sampleRate;
+		curCount = &explosion_count;
+		break;
+	case 9:
+		curData = invaderkilled_soundData;
+		curFrames = invaderkilled_numberOfSamples;
+		curRate = invaderkilled_sampleRate;
+		curCount = &invaderkilled_count;
+		break;
+	default:
+		return;
+		break;
+	}
 	int count;
 	for (count = 0; count < 100; count++){
-		if (derpFlag == 1){
-			int curVal = ((sounds[s]->sound_data[testCount]<<16)&0xFFFF0000)+(sounds[s]->sound_data&0xFFFF);
+		if (s != 0){
+			int curVal = ((((curData[(*curCount)])<<16)&0xFFFF0000)+((curData[(*curCount)])&0xFFFF));
 			XAC97_mSetInFifoData(XPAR_AXI_AC97_0_BASEADDR,curVal);
-			testCount++;
-			if(testCount >= sounds[s]->sound_count){
-				testCount = 0;
-				derpFlag = 0;
+			(*curCount)++;
+			if((*curCount) >= curFrames){
+				*curCount = 0;
+				switch(s){
+				case 1:
+					sFlags[1] = 0;
+					alienMarchSoundTurn = 4;
+					break;
+				case 2:
+					sFlags[2] = 0;
+					alienMarchSoundTurn = 1;
+					break;
+				case 3:
+					sFlags[3] = 0;
+					alienMarchSoundTurn = 2;
+					break;
+				case 4:
+					sFlags[4] = 0;
+					alienMarchSoundTurn = 3;
+					break;
+				case 5:
+					sFlags[5] = 0;
+					mothershipSoundTurn = 6;
+					break;
+				case 6:
+					sFlags[6] = 0;
+					mothershipSoundTurn = 5;
+					break;
+				case 7:
+					sFlags[7] = 0;
+					break;
+				case 8:
+					sFlags[8] = 0;
+					break;
+				case 9:
+					sFlags[9] = 0;
+					break;
+				}
 			}
 		}else{
 			XAC97_mSetInFifoData(XPAR_AXI_AC97_0_BASEADDR,0);
@@ -380,16 +513,11 @@ int main(){
 
      //Initialize the AC97
      XAC97_HardReset(XPAR_AXI_AC97_0_BASEADDR);
-
-     XAC97_WriteReg(XPAR_AXI_AC97_0_BASEADDR,AC97_ExtendedAudioStat,1);
-     XAC97_WriteReg(XPAR_AXI_AC97_0_BASEADDR,AC97_PCM_DAC_Rate, AC97_PCM_RATE_11025_HZ);
-     XAC97_mSetControl(XPAR_AXI_AC97_0_BASEADDR,AC97_ENABLE_IN_FIFO_INTERRUPT);
-
-
-
-     //test--we are going to fill the fifo for the first time
-
-     //write a 1 to extended
+     XAC97_WriteReg(XPAR_AXI_AC97_0_BASEADDR, AC97_ExtendedAudioStat, 1);
+     XAC97_WriteReg(XPAR_AXI_AC97_0_BASEADDR, AC97_PCM_DAC_Rate,      AC97_PCM_RATE_11025_HZ);
+     XAC97_mSetControl(XPAR_AXI_AC97_0_BASEADDR, AC97_ENABLE_IN_FIFO_INTERRUPT);
+     alienMarchSoundTurn = 4;
+     mothershipSoundTurn = 5;
 
      initilizeGame();
 

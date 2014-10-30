@@ -11,20 +11,6 @@
 #include "xac97_l.h"
 #include "xparameters.h"
 
-// Initialize array of sounds.
-struct sound sounds[8] = {
-		{ &fastinvader4_soundData[0], fastinvader4_numberOfSamples, fastinvader4_sampleRate, 0 },
-		{ &fastinvader3_soundData[0], fastinvader3_numberOfSamples, fastinvader3_sampleRate, 0 },
-		{ &fastinvader2_soundData[0], fastinvader2_numberOfSamples, fastinvader2_sampleRate, 0 },
-		{ &fastinvader1_soundData[0], fastinvader1_numberOfSamples, fastinvader1_sampleRate, 0 },
-		{ &explosion_soundData[0], explosion_numberOfSamples, explosion_sampleRate, 0 },
-		{ &shoot_soundData[0], shoot_numberOfSamples, shoot_sampleRate, 0 },
-		{ &ufo_highpitch_soundData[0], ufo_highpitch_numberOfSamples, ufo_highpitch_sampleRate, 0 },
-		{ &ufo_lowpitch_soundData[0], ufo_lowpitch_numberOfSamples, ufo_lowpitch_sampleRate, 0 }
-};
-
-
-
 void clearMotherScoreTimer(){
 	if(mothershipScoreFlag == 1){
 		if(mothershipScoreTimer > 0){
@@ -161,12 +147,26 @@ void updateBullets(){
 
 void updateAliens(){
 	if ((fit_counter % alienMarchSpeed) == 0){
+		if (alienMarchSoundTurn == 4){
+			sFlags[4] = 1;
+		}else if (alienMarchSoundTurn == 3){
+			sFlags[3] = 1;
+		}else if (alienMarchSoundTurn == 2){
+			sFlags[2] = 1;
+		}else if (alienMarchSoundTurn == 1){
+			sFlags[1] = 1;
+		}
 		control(8);
 	}
 }
 
 void updateMothership(){
 	if (mothershipSpawned == 1){
+		if (mothershipSoundTurn == 5){
+			sFlags[5] = 1;
+		}else if (mothershipSoundTurn == 6){
+			sFlags[6] = 1;
+		}
 		if ((fit_counter % MOTHERSHIP_SPEED) == 0){
 			renderMothership();
 			if (mothershipD == 1){
@@ -251,8 +251,8 @@ void control(int input){
 	}
 	if (cmd == 5){
 		if(ts){
-			testCount = 0;
-			derpFlag = 1;
+			shoot_count = 0;
+			sFlags[7] = 1;
 			ts = 0;
 			tBulletX = tankX+15;
 			tBulletY = tankY-T_BULLET_HEIGHT;
@@ -310,11 +310,13 @@ void control(int input){
 						done = 1;
 						clearBullet(4);
 						ts = 1;
+						sFlags[9] = 1;
 						alienCollision((tBulletY-l)*640+tBulletX+k);
 					}else if((tempPixel == RED) && !done){
 						done = 1;
 						clearBullet(4);
 						ts = 1;
+						sFlags[9] = 1;
 						mothershipCollision();
 					}
 				}
@@ -365,6 +367,7 @@ void control(int input){
 								if((aBulletY[i]+ALIEN_BULLET_HIGHT+2) < TANK_ROW-20){
 									bunkerCollision((aBulletY[i]+ALIEN_BULLET_HIGHT+2)*640+aBulletX[i]+k);
 								}else if ((aBulletY[i]) <= ALIEN_BULLET_END){
+									sFlags[8] = 1;
 									tankCollision((aBulletY[i]+ALIEN_BULLET_HIGHT+2)*640+aBulletX[i]+k);
 								}
 							}

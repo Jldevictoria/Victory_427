@@ -149,6 +149,8 @@ void mothershipCollision(){
 	mothershipScoreY = mothershipY;
 
 	clearMothership();
+	sFlags[5] = 0;
+	sFlags[6] = 0;
 	mothershipSpawned =0;
 	randScore = ((rand()%7)+1)*50;
 	playerScore += randScore;
