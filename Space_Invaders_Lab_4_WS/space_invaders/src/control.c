@@ -155,7 +155,10 @@ void updateAliens(){
 			sFlags[2] = 1;
 		}else if (alienMarchSoundTurn == 1){
 			sFlags[1] = 1;
+		}else{
+			sFlags[1] = 1;
 		}
+
 		control(8);
 	}
 }
@@ -176,9 +179,13 @@ void updateMothership(){
 			}
 			if (mothershipX <= 0){
 				mothershipSpawned = 0;
+				ufo_highpitch_count = 0;
+				ufo_lowpitch_count = 0;
 			}
 			if (mothershipX >= 640){
 				mothershipSpawned = 0;
+				ufo_highpitch_count = 0;
+				ufo_lowpitch_count = 0;
 			}
 		}
 	}

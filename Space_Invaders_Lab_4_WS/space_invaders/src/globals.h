@@ -168,6 +168,7 @@ extern int ufo_lowpitch_soundData[25805];
 extern int ufo_lowpitch_numberOfSamples;
 extern int ufo_lowpitch_sampleRate;
 int ufo_lowpitch_count;
+int masterVolume;
 
 void drawScore();
 void render(int caller);
