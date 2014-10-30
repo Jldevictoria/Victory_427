@@ -19,6 +19,7 @@ C_SRCS += \
 ../src/shoot.c \
 ../src/space_invaders_main.c \
 ../src/tankFireSound.c \
+../src/ufo_explosion.c \
 ../src/ufo_highpitch.c \
 ../src/ufo_lowpitch.c \
 ../src/xac97_l.c 
@@ -42,6 +43,7 @@ OBJS += \
 ./src/shoot.o \
 ./src/space_invaders_main.o \
 ./src/tankFireSound.o \
+./src/ufo_explosion.o \
 ./src/ufo_highpitch.o \
 ./src/ufo_lowpitch.o \
 ./src/xac97_l.o 
@@ -62,6 +64,7 @@ C_DEPS += \
 ./src/shoot.d \
 ./src/space_invaders_main.d \
 ./src/tankFireSound.d \
+./src/ufo_explosion.d \
 ./src/ufo_highpitch.d \
 ./src/ufo_lowpitch.d \
 ./src/xac97_l.d 

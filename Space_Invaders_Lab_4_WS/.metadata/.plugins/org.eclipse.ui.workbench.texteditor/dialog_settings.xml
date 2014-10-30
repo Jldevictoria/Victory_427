@@ -13,18 +13,19 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="mother" key="selection"/>
+		<item value="curData" key="selection"/>
 		<list key="findhistory">
-			<item value="Mother"/>
-			<item value="updateMother"/>
-			<item value="updateAliens"/>
-			<item value="tankCo"/>
-			<item value="alienCollision"/>
-			<item value="ts"/>
-			<item value="derp"/>
-			<item value="derpFlag"/>
+			<item value="curData"/>
+			<item value="AC97_PCM_RATE_11025_HZ"/>
+			<item value="rate"/>
+			<item value="sFlags"/>
+			<item value="mother"/>
+			<item value="mothershipSoundTurn"/>
+			<item value="bound"/>
+			<item value="mute"/>
 		</list>
 		<list key="replacehistory">
+			<item value="curFrame"/>
 			<item value="packWord12("/>
 			<item value="tankBulletSpeed"/>
 			<item value="ALIEN_BULLET_HIGHT"/>
@@ -32,7 +33,6 @@
 			<item value="A_BULLET_HEIGHT"/>
 			<item value="T_BULLET"/>
 			<item value="lastDebrisRow"/>
-			<item value="X_BOUND_LEFT"/>
 		</list>
 	</section>
 </section>
