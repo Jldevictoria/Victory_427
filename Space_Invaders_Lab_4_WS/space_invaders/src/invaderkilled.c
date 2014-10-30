@@ -2,7 +2,7 @@
 // Taylor Simons
 // ECEN 427 2014
 
-int invaderkilled_soundData[] = {
+int invaderkilled_soundData[3377] = {
 -128,-128,-128,-128,-128,-128,-128,-128,-128,-128,
 -128,-128,-128,-128,-128,-128,-128,-128,-128,-128,
 -128,-128,-128,-128,-128,-128,-128,-128,-128,-128,
@@ -342,6 +342,6 @@ int invaderkilled_soundData[] = {
 116,126,-102,-111,108,111,115,-115,-106,110,
 116,122,-123,-98,115,111,-128,};
 
-int invaderkilled_numberOfSamples = 3377;
+const int invaderkilled_numberOfSamples = 3377;
 
-int invaderkilled_sampleRate = 11025;
+const int invaderkilled_sampleRate = 11025;

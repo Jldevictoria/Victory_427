@@ -2,4 +2,39 @@
 **** Build of configuration Debug for project space_invaders ****
 
 make all 
-make: Nothing to be done for `all'.
+Building file: ../src/control.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O2 -g3 -c -fmessage-length=0 -I../../space_invaders_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"src/control.d" -MT"src/control.d" -o"src/control.o" "../src/control.c"
+../src/control.c:16: error: initializer element is not constant
+../src/control.c:16: error: (near initialization for 'sounds[0].sound_frames')
+../src/control.c:16: error: initializer element is not constant
+../src/control.c:16: error: (near initialization for 'sounds[0].sound_rate')
+../src/control.c:17: error: initializer element is not constant
+../src/control.c:17: error: (near initialization for 'sounds[1].sound_frames')
+../src/control.c:17: error: initializer element is not constant
+../src/control.c:17: error: (near initialization for 'sounds[1].sound_rate')
+../src/control.c:18: error: initializer element is not constant
+../src/control.c:18: error: (near initialization for 'sounds[2].sound_frames')
+../src/control.c:18: error: initializer element is not constant
+../src/control.c:18: error: (near initialization for 'sounds[2].sound_rate')
+../src/control.c:19: error: initializer element is not constant
+../src/control.c:19: error: (near initialization for 'sounds[3].sound_frames')
+../src/control.c:19: error: initializer element is not constant
+../src/control.c:19: error: (near initialization for 'sounds[3].sound_rate')
+../src/control.c:20: error: initializer element is not constant
+../src/control.c:20: error: (near initialization for 'sounds[4].sound_frames')
+../src/control.c:20: error: initializer element is not constant
+../src/control.c:20: error: (near initialization for 'sounds[4].sound_rate')
+../src/control.c:21: error: initializer element is not constant
+../src/control.c:21: error: (near initialization for 'sounds[5].sound_frames')
+../src/control.c:21: error: initializer element is not constant
+../src/control.c:21: error: (near initialization for 'sounds[5].sound_rate')
+../src/control.c:22: error: initializer element is not constant
+../src/control.c:22: error: (near initialization for 'sounds[6].sound_frames')
+../src/control.c:22: error: initializer element is not constant
+../src/control.c:22: error: (near initialization for 'sounds[6].sound_rate')
+../src/control.c:23: error: initializer element is not constant
+../src/control.c:23: error: (near initialization for 'sounds[7].sound_frames')
+../src/control.c:23: error: initializer element is not constant
+../src/control.c:23: error: (near initialization for 'sounds[7].sound_rate')
+make: *** [src/control.o] Error 1

@@ -127,14 +127,45 @@ unsigned int * framePointer;
 int currentButtonState;
 int idleTime;
 int runTimeN, runTimeO, deltaRunTime;
+_Bool derpFlag;
+unsigned int testCount;
+
 
 //Sound files.
-extern int tankFireSound;
-extern int tankFireSoundRate;
-extern int tankFireSoundFrames;
-extern int fastinvader4_soundData;
+struct sound{
+	void * sound_data;
+	int sound_frames;
+	int sound_rate;
+	int sound_count;
+};
+extern struct sound sounds[8];
+extern int fastinvader4_soundData[1098];
 extern int fastinvader4_numberOfSamples;
 extern int fastinvader4_sampleRate;
+extern int fastinvader3_soundData[1054];
+extern int fastinvader3_numberOfSamples;
+extern int fastinvader3_sampleRate;
+extern int fastinvader2_soundData[1042];
+extern int fastinvader2_numberOfSamples;
+extern int fastinvader2_sampleRate;
+extern int fastinvader1_soundData[982];
+extern int fastinvader1_numberOfSamples;
+extern int fastinvader1_sampleRate;
+extern int explosion_soundData[8731];
+extern int explosion_numberOfSamples;
+extern int explosion_sampleRate;
+extern int shoot_soundData[4080];
+extern int shoot_numberOfSamples;
+extern int shoot_sampleRate;
+extern int invaderkilled_soundData[3377];
+extern int invaderkilled_numberOfSamples;
+extern int invaderkilled_sampleRate;
+extern int ufo_highpitch_soundData[1802];
+extern int ufo_highpitch_numberOfSamples;
+extern int ufo_highpitch_sampleRate;
+extern int ufo_lowpitch_soundData[25805];
+extern int ufo_lowpitch_numberOfSamples;
+extern int ufo_lowpitch_sampleRate;
 
 void drawScore();
 void render(int caller);
@@ -177,6 +208,7 @@ void initilizeGame();
 void printLetters(char* letters,int color,int printX,int printY);
 void clearMothership();
 void AC97_interrupt_handler();
+void play_sound(int s);
 void clearMotherScoreTimer();
 void clearMothershipScore();
 void alienBunkerCollision(int pixelHit);

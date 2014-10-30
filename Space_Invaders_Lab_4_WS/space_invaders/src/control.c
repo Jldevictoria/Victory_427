@@ -11,6 +11,20 @@
 #include "xac97_l.h"
 #include "xparameters.h"
 
+// Initialize array of sounds.
+struct sound sounds[8] = {
+		{ &fastinvader4_soundData[0], fastinvader4_numberOfSamples, fastinvader4_sampleRate, 0 },
+		{ &fastinvader3_soundData[0], fastinvader3_numberOfSamples, fastinvader3_sampleRate, 0 },
+		{ &fastinvader2_soundData[0], fastinvader2_numberOfSamples, fastinvader2_sampleRate, 0 },
+		{ &fastinvader1_soundData[0], fastinvader1_numberOfSamples, fastinvader1_sampleRate, 0 },
+		{ &explosion_soundData[0], explosion_numberOfSamples, explosion_sampleRate, 0 },
+		{ &shoot_soundData[0], shoot_numberOfSamples, shoot_sampleRate, 0 },
+		{ &ufo_highpitch_soundData[0], ufo_highpitch_numberOfSamples, ufo_highpitch_sampleRate, 0 },
+		{ &ufo_lowpitch_soundData[0], ufo_lowpitch_numberOfSamples, ufo_lowpitch_sampleRate, 0 }
+};
+
+
+
 void clearMotherScoreTimer(){
 	if(mothershipScoreFlag == 1){
 		if(mothershipScoreTimer > 0){
@@ -147,7 +161,6 @@ void updateBullets(){
 
 void updateAliens(){
 	if ((fit_counter % alienMarchSpeed) == 0){
-		XAC97_PlayAudio(XPAR_AXI_AC97_0_BASEADDR, fastinvader4_soundData, (tankFireSound+tankFireSoundFrames));
 		control(8);
 	}
 }
@@ -238,6 +251,8 @@ void control(int input){
 	}
 	if (cmd == 5){
 		if(ts){
+			testCount = 0;
+			derpFlag = 1;
 			ts = 0;
 			tBulletX = tankX+15;
 			tBulletY = tankY-T_BULLET_HEIGHT;

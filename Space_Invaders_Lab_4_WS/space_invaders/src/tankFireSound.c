@@ -10,7 +10,7 @@
 int tankFireSoundRate = 11127;
 int tankFireSoundFrames = 4080;
 
-int tankFireSound[] = {
+int tankFireSound[4080] = {
 1,248,245,7,30,13,233,243,
 20,3,234,238,253,27,17,243,
 240,4,18,254,240,252,25,11,

@@ -14,7 +14,7 @@ f = open(outf, 'w')
 f.write("// Joseph DeVictoria\n")
 f.write("// Taylor Simons\n")
 f.write("// ECEN 427 2014\n\n")
-f.write("int "+inf+"_soundData[] = {\n")
+f.write("int "+inf+"_soundData["+str(frames)+"]" = {\n")
 k = 1
 for i in s:
 	if k == 10:

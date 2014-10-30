@@ -38,6 +38,7 @@
 #include "xac97_l.h"
 
 unsigned int * framePointer = (unsigned int *) FRAME_BUFFER_0_ADDR;
+unsigned int testCount = 0;
 
 XGpio gpPB;   // This is a handle for the push-button GPIO block.
 
@@ -143,7 +144,25 @@ void timer_interrupt_handler() {
 }
 
 void AC97_interrupt_handler(){
-	xil_printf("Swaggy\n\r");
+
+
+}
+
+void play_sound(int s){
+	int count;
+	for (count = 0; count < 100; count++){
+		if (derpFlag == 1){
+			int curVal = ((sounds[s]->sound_data[testCount]<<16)&0xFFFF0000)+(sounds[s]->sound_data&0xFFFF);
+			XAC97_mSetInFifoData(XPAR_AXI_AC97_0_BASEADDR,curVal);
+			testCount++;
+			if(testCount >= sounds[s]->sound_count){
+				testCount = 0;
+				derpFlag = 0;
+			}
+		}else{
+			XAC97_mSetInFifoData(XPAR_AXI_AC97_0_BASEADDR,0);
+		}
+	}
 }
 
 // Main interrupt handler, queries the interrupt controller to see what peripheral
@@ -158,7 +177,6 @@ void interrupt_handler_dispatcher(void* ptr) {
 		timer_interrupt_handler();
 	}
 	if (intc_status & XPAR_AXI_AC97_0_INTERRUPT_MASK){
-		xil_printf("Swaggy\n\r");
 		XIntc_AckIntr(XPAR_INTC_0_BASEADDR, XPAR_AXI_AC97_0_INTERRUPT_MASK);
 		AC97_interrupt_handler();
 	}
@@ -362,21 +380,14 @@ int main(){
 
      //Initialize the AC97
      XAC97_HardReset(XPAR_AXI_AC97_0_BASEADDR);
+
      XAC97_WriteReg(XPAR_AXI_AC97_0_BASEADDR,AC97_ExtendedAudioStat,1);
      XAC97_WriteReg(XPAR_AXI_AC97_0_BASEADDR,AC97_PCM_DAC_Rate, AC97_PCM_RATE_11025_HZ);
+     XAC97_mSetControl(XPAR_AXI_AC97_0_BASEADDR,AC97_ENABLE_IN_FIFO_INTERRUPT);
+
+
 
      //test--we are going to fill the fifo for the first time
-     int count;
-     for (count = 0; count < FIFO_SIZE; count++){
-    	 XAC97_mSetInFifoData(XPAR_AXI_AC97_0_BASEADDR,(tankFireSound+count));
-     }
-     xil_printf("%d\n\r", XAC97_ReadFifo(XPAR_AXI_AC97_0_BASEADDR));
-     xil_printf("%d\n\r", XAC97_ReadFifo(XPAR_AXI_AC97_0_BASEADDR));
-     xil_printf("%d\n\r", XAC97_ReadFifo(XPAR_AXI_AC97_0_BASEADDR));
-     xil_printf("%d\n\r", XAC97_ReadFifo(XPAR_AXI_AC97_0_BASEADDR));
-     xil_printf("%d\n\r", XAC97_ReadFifo(XPAR_AXI_AC97_0_BASEADDR));
-
-
 
      //write a 1 to extended
 

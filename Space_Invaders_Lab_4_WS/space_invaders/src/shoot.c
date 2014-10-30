@@ -2,7 +2,7 @@
 // Taylor Simons
 // ECEN 427 2014
 
-int shoot_soundData[] = {
+int shoot_soundData[4080] = {
 -127,99,103,-92,-42,-127,31,105,-52,118,
 55,92,-116,-31,-104,61,84,-102,-72,101,
 75,-127,-47,-121,47,94,125,-49,-90,72,
@@ -413,6 +413,6 @@ int shoot_soundData[] = {
 125,125,126,-128,-128,-127,125,-127,125,125,
 };
 
-int shoot_numberOfSamples = 4080;
+const int shoot_numberOfSamples = 4080;
 
-int shoot_sampleRate = 11025;
+const int shoot_sampleRate = 11025;

@@ -2,7 +2,7 @@
 // Taylor Simons
 // ECEN 427 2014
 
-int fastinvader2_soundData[] = {
+int fastinvader2_soundData[1042] = {
 -128,-128,116,94,71,54,31,20,9,20,
 31,48,65,88,105,-128,-117,-95,-78,-66,
 -49,-38,-27,-16,-4,-4,-4,-1,-1,-4,
@@ -109,6 +109,6 @@ int fastinvader2_soundData[] = {
 116,111,116,111,111,116,111,111,111,111,
 111,116,};
 
-int fastinvader2_numberOfSamples = 1042;
+const int fastinvader2_numberOfSamples = 1042;
 
-int fastinvader2_sampleRate = 11025;
+const int fastinvader2_sampleRate = 11025;

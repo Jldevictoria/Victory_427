@@ -60,7 +60,7 @@ void XAC97_HardReset(Xuint32 BaseAddress) {
 
 
 void XAC97_InitAudio(Xuint32 BaseAddress, Xuint8 Loopback) {
-  Xuint8 i;
+  //Xuint8 i;
 
   /** Reset audio codec **/
   XAC97_SoftReset(BaseAddress);
@@ -100,7 +100,7 @@ void XAC97_DisableInput(Xuint32 BaseAddress, Xuint8 InputType) {
 
 void XAC97_RecAudio(Xuint32 BaseAddress, Xuint32 StartAddress,
 		    Xuint32 EndAddress) {
-  Xuint32 i;
+  //Xuint32 i;
   Xuint32 sample;
   volatile Xuint32 *sound_ptr = (Xuint32*)StartAddress;
 
@@ -135,7 +135,7 @@ void XAC97_RecAudio(Xuint32 BaseAddress, Xuint32 StartAddress,
 
 void XAC97_PlayAudio(Xuint32 BaseAddress, Xuint32 StartAddress,
 		     Xuint32 EndAddress){
-  Xuint32 i;
+  //Xuint32 i;
   Xuint32 sample;
   volatile Xuint32 *sound_ptr = (Xuint32*)StartAddress;
 

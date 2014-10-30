@@ -2,7 +2,7 @@
 // Taylor Simons
 // ECEN 427 2014
 
-int ufo_highpitch_soundData[] = {
+int ufo_highpitch_soundData[1802] = {
 -1,-94,102,101,46,7,47,59,111,-106,
 -96,-80,-93,-30,-36,-57,-99,120,74,95,
 31,13,47,64,116,-101,-94,-85,-75,-10,
@@ -185,6 +185,6 @@ int ufo_highpitch_soundData[] = {
 96,78,0,34,54,99,-113,-96,-90,-73,
 -6,-49,};
 
-int ufo_highpitch_numberOfSamples = 1802;
+const int ufo_highpitch_numberOfSamples = 1802;
 
-int ufo_highpitch_sampleRate = 11025;
+const int ufo_highpitch_sampleRate = 11025;

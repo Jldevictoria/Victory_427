@@ -2,7 +2,7 @@
 // Taylor Simons
 // ECEN 427 2014
 
-int explosion_soundData[] = {
+int explosion_soundData [8731] = {
 120,119,119,119,120,120,-127,-126,-123,-127,
 125,119,119,119,125,-128,-121,-119,-123,123,
 109,99,91,92,101,116,-121,-116,-113,-126,
@@ -878,6 +878,6 @@ int explosion_soundData[] = {
 120,125,-128,-128,-128,-127,125,-127,-126,-128,
 -126,};
 
-int explosion_numberOfSamples = 8731;
+const int explosion_numberOfSamples = 8731;
 
-int explosion_sampleRate = 11025;
+const int explosion_sampleRate = 11025;
