@@ -78,6 +78,8 @@
 #define BUNKER_COLLISION_BUFFER 10
 #define FIFO_SIZE 256
 #define NUM_OF_SOUNDS 10
+#define FRAME_CUT 0
+#define A_MOVE_AMP 1
 
 // Declare Global Variables for game objects.
 int tankX, tankY;

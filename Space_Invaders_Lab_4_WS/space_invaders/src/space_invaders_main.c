@@ -156,115 +156,127 @@ void AC97_interrupt_handler(){
 	int whichSound = 0;
 	int curFrame = 0;
 	int count = 0;
+	int noSoundFlag = 1;
 	int multiSoundCount = 0;
+	for (whichSound = 0; whichSound < NUM_OF_SOUNDS; whichSound++){
+		if(sFlags[whichSound]){
+			noSoundFlag = 0;
+		}
+	}
 	for(count = 0; count < 100; count++){
 		curFrame = 0;
-		for (whichSound = 0; whichSound < NUM_OF_SOUNDS; whichSound++){
-			if(sFlags[whichSound]){
-				switch (whichSound){
-				case 0:
-					curFrame = 0;
-					break;
-				case 1:
-					curFrame += fastinvader1_soundData[fastinvader1_count];
-					fastinvader1_count++;
-					multiSoundCount++;
-					if(fastinvader1_count >= fastinvader1_numberOfSamples){
-						fastinvader1_count = 0;
-						sFlags[1] = 0;
-						alienMarchSoundTurn = 2;
+		if(!noSoundFlag){
+			for (whichSound = 0; whichSound < NUM_OF_SOUNDS; whichSound++){
+				if(sFlags[whichSound]){
+					switch (whichSound){
+					case 0:
+						curFrame = A_MOVE_AMP*128;
+						break;
+					case 1:
+						curFrame += A_MOVE_AMP*fastinvader1_soundData[fastinvader1_count];
+						fastinvader1_count++;
+						multiSoundCount++;
+						if(fastinvader1_count >= (fastinvader1_numberOfSamples+FRAME_CUT)){
+							fastinvader1_count = 0;
+							sFlags[1] = 0;
+							alienMarchSoundTurn = 2;
+						}
+						break;
+					case 2:
+						curFrame += A_MOVE_AMP*fastinvader2_soundData[fastinvader2_count];
+						fastinvader2_count++;
+						multiSoundCount++;
+						if(fastinvader2_count >= (fastinvader2_numberOfSamples+FRAME_CUT)){
+							fastinvader2_count = 0;
+							sFlags[2] = 0;
+							alienMarchSoundTurn = 3;
+						}
+						break;
+					case 3:
+						curFrame += A_MOVE_AMP*fastinvader3_soundData[fastinvader3_count];
+						fastinvader3_count++;
+						multiSoundCount++;
+						if(fastinvader3_count >= (fastinvader3_numberOfSamples+FRAME_CUT)){
+							fastinvader3_count = 0;
+							sFlags[3] = 0;
+							alienMarchSoundTurn = 4;
+						}
+						break;
+					case 4:
+						curFrame += A_MOVE_AMP*fastinvader4_soundData[fastinvader4_count];
+						fastinvader4_count++;
+						multiSoundCount++;
+						if(fastinvader4_count >= (fastinvader4_numberOfSamples+FRAME_CUT)){
+							fastinvader4_count = 0;
+							sFlags[4] = 0;
+							alienMarchSoundTurn = 1;
+						}
+						break;
+					case 5:
+						curFrame += ufo_highpitch_soundData[ufo_highpitch_count];
+						ufo_highpitch_count++;
+						multiSoundCount++;
+						if(!mothershipSpawned){
+							sFlags[5] = 0;
+						}
+						if(ufo_highpitch_count >= ufo_highpitch_numberOfSamples){
+							ufo_highpitch_count = 0;
+							sFlags[5] = 0;
+							mothershipSoundTurn = 6;
+						}
+						break;
+					case 6:
+						curFrame += ufo_lowpitch_soundData[ufo_lowpitch_count];
+						ufo_lowpitch_count++;
+						multiSoundCount++;
+						if(!mothershipSpawned){
+							sFlags[6] = 0;
+						}
+						if(ufo_lowpitch_count >= ufo_lowpitch_numberOfSamples){
+							ufo_lowpitch_count = 0;
+							sFlags[6] = 0;
+							mothershipSoundTurn = 5;
+						}
+						break;
+					case 7:
+						curFrame += shoot_soundData[shoot_count];
+						shoot_count++;
+						multiSoundCount++;
+						if(shoot_count >= shoot_numberOfSamples){
+							shoot_count = 0;
+							sFlags[7] = 0;
+						}
+						break;
+					case 8:
+						curFrame += explosion_soundData[explosion_count];
+						explosion_count++;
+						multiSoundCount++;
+						if(explosion_count >= explosion_numberOfSamples){
+							explosion_count = 0;
+							sFlags[8] = 0;
+						}
+						break;
+					case 9:
+						//xil_printf("data: %d \n\r",invaderkilled_soundData[invaderkilled_count]);
+						curFrame += invaderkilled_soundData[invaderkilled_count];
+						//xil_printf("curFrame: %d \n\r",curFrame);
+						invaderkilled_count++;
+						multiSoundCount++;
+						if(invaderkilled_count >= invaderkilled_numberOfSamples){
+							invaderkilled_count = 0;
+							sFlags[9] = 0;
+						}
+						break;
+					default:
+						curFrame = A_MOVE_AMP*128;
+						break;
 					}
-					break;
-				case 2:
-					curFrame += fastinvader2_soundData[fastinvader2_count];
-					fastinvader2_count++;
-					multiSoundCount++;
-					if(fastinvader2_count >= fastinvader2_numberOfSamples){
-						fastinvader2_count = 0;
-						sFlags[2] = 0;
-						alienMarchSoundTurn = 3;
-					}
-					break;
-				case 3:
-					curFrame += fastinvader3_soundData[fastinvader3_count];
-					fastinvader3_count++;
-					multiSoundCount++;
-					if(fastinvader3_count >= fastinvader3_numberOfSamples){
-						fastinvader3_count = 0;
-						sFlags[3] = 0;
-						alienMarchSoundTurn = 4;
-					}
-					break;
-				case 4:
-					curFrame += fastinvader4_soundData[fastinvader4_count];
-					fastinvader4_count++;
-					multiSoundCount++;
-					if(fastinvader4_count >= fastinvader4_numberOfSamples){
-						fastinvader4_count = 0;
-						sFlags[4] = 0;
-						alienMarchSoundTurn = 1;
-					}
-					break;
-				case 5:
-					curFrame += ufo_highpitch_soundData[ufo_highpitch_count];
-					ufo_highpitch_count++;
-					multiSoundCount++;
-					if(!mothershipSpawned){
-						sFlags[5] = 0;
-					}
-					if(ufo_highpitch_count >= ufo_highpitch_numberOfSamples){
-						ufo_highpitch_count = 0;
-						sFlags[5] = 0;
-						mothershipSoundTurn = 6;
-					}
-					break;
-				case 6:
-					curFrame += ufo_lowpitch_soundData[ufo_lowpitch_count];
-					ufo_lowpitch_count++;
-					multiSoundCount++;
-					if(!mothershipSpawned){
-						sFlags[6] = 0;
-					}
-					if(ufo_lowpitch_count >= ufo_lowpitch_numberOfSamples){
-						ufo_lowpitch_count = 0;
-						sFlags[6] = 0;
-						mothershipSoundTurn = 5;
-					}
-					break;
-				case 7:
-					curFrame += shoot_soundData[shoot_count];
-					shoot_count++;
-					multiSoundCount++;
-					if(shoot_count >= shoot_numberOfSamples){
-						shoot_count = 0;
-						sFlags[7] = 0;
-					}
-					break;
-				case 8:
-					curFrame += explosion_soundData[explosion_count];
-					explosion_count++;
-					multiSoundCount++;
-					if(explosion_count >= explosion_numberOfSamples){
-						explosion_count = 0;
-						sFlags[8] = 0;
-					}
-					break;
-				case 9:
-					//xil_printf("data: %d \n\r",invaderkilled_soundData[invaderkilled_count]);
-					curFrame += invaderkilled_soundData[invaderkilled_count];
-					//xil_printf("curFrame: %d \n\r",curFrame);
-					invaderkilled_count++;
-					multiSoundCount++;
-					if(invaderkilled_count >= invaderkilled_numberOfSamples){
-						invaderkilled_count = 0;
-						sFlags[9] = 0;
-					}
-					break;
-				default:
-					return;
-					break;
 				}
 			}
+		}
+		else{
+			//xil_printf("Test point1\n\r");
+			curFrame = A_MOVE_AMP*128;
 		}
 		//curFrame /= multiSoundCount;
 		int curVal = ((((curFrame)<<16)&0xFFFF0000)+((curFrame)&0xFFFF));
