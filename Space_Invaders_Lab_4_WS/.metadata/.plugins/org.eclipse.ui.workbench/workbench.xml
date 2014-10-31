@@ -40,17 +40,25 @@
 <part id="6"/>
 <part id="7"/>
 <part id="8"/>
+<part id="9"/>
+<part id="10"/>
+<part id="11"/>
+<part id="12"/>
+<part id="13"/>
+<part id="14"/>
+<part id="15"/>
+<part id="16"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="globals.h" partName="globals.h" path="C:/Victory_427/Space_Invaders_Lab_4_WS/space_invaders/src/globals.h" title="globals.h" tooltip="space_invaders/src/globals.h" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="globals.h" partName="globals.h" path="C:/Victory_427/Space_Invaders_Lab_4_WS/space_invaders/src/globals.h" title="globals.h" tooltip="space_invaders/src/globals.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/space_invaders/src/globals.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2479" selectionTopPixel="2647"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3756" selectionTopPixel="2291"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="space_invaders_main.c" partName="space_invaders_main.c" path="C:/Victory_427/Space_Invaders_Lab_4_WS/space_invaders/src/space_invaders_main.c" title="space_invaders_main.c" tooltip="space_invaders/src/space_invaders_main.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="space_invaders_main.c" partName="space_invaders_main.c" path="C:/Victory_427/Space_Invaders_Lab_4_WS/space_invaders/src/space_invaders_main.c" title="space_invaders_main.c" tooltip="space_invaders/src/space_invaders_main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/space_invaders/src/space_invaders_main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4652" selectionTopPixel="2506"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="8070" selectionTopPixel="4339"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="control.c" partName="control.c" path="C:/Victory_427/Space_Invaders_Lab_4_WS/space_invaders/src/control.c" title="control.c" tooltip="space_invaders/src/control.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/space_invaders/src/control.c"/>
@@ -70,15 +78,47 @@
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="ufo_lowpitch.c" partName="ufo_lowpitch.c" path="C:/Victory_427/Space_Invaders_Lab_4_WS/space_invaders/src/ufo_lowpitch.c" title="ufo_lowpitch.c" tooltip="space_invaders/src/ufo_lowpitch.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/space_invaders/src/ufo_lowpitch.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="126"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="100081" selectionTopPixel="43311"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="shoot.c" partName="shoot.c" path="C:/Victory_427/Space_Invaders_Lab_4_WS/space_invaders/src/shoot.c" title="shoot.c" tooltip="space_invaders/src/shoot.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/space_invaders/src/shoot.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="579" selectionOffset="15356" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="ufo_explosion.c" partName="ufo_explosion.c" path="C:/Victory_427/Space_Invaders_Lab_4_WS/space_invaders/src/ufo_explosion.c" title="ufo_explosion.c" tooltip="space_invaders/src/ufo_explosion.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/space_invaders/src/ufo_explosion.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="105529" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="105533" selectionTopPixel="46847"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="fastinvader4.c" partName="fastinvader4.c" path="C:/Victory_427/Space_Invaders_Lab_4_WS/space_invaders/src/fastinvader4.c" title="fastinvader4.c" tooltip="space_invaders/src/fastinvader4.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/space_invaders/src/fastinvader4.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="4" selectionOffset="87" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="fastinvader3.c" partName="fastinvader3.c" path="C:/Victory_427/Space_Invaders_Lab_4_WS/space_invaders/src/fastinvader3.c" title="fastinvader3.c" tooltip="space_invaders/src/fastinvader3.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/space_invaders/src/fastinvader3.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="4" selectionOffset="87" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="fastinvader2.c" partName="fastinvader2.c" path="C:/Victory_427/Space_Invaders_Lab_4_WS/space_invaders/src/fastinvader2.c" title="fastinvader2.c" tooltip="space_invaders/src/fastinvader2.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/space_invaders/src/fastinvader2.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="4" selectionOffset="87" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="fastinvader1.c" partName="fastinvader1.c" path="C:/Victory_427/Space_Invaders_Lab_4_WS/space_invaders/src/fastinvader1.c" title="fastinvader1.c" tooltip="space_invaders/src/fastinvader1.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/space_invaders/src/fastinvader1.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="3" selectionOffset="87" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="explosion.c" partName="explosion.c" path="C:/Victory_427/Space_Invaders_Lab_4_WS/space_invaders/src/explosion.c" title="explosion.c" tooltip="space_invaders/src/explosion.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/space_invaders/src/explosion.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="33868" selectionTopPixel="14292"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="bitmap.h" partName="bitmap.h" path="C:/Victory_427/Space_Invaders_Lab_4_WS/space_invaders/src/bitmap.h" title="bitmap.h" tooltip="space_invaders/src/bitmap.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/space_invaders/src/bitmap.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="ufo_highpitch.c" partName="ufo_highpitch.c" path="C:/Victory_427/Space_Invaders_Lab_4_WS/space_invaders/src/ufo_highpitch.c" title="ufo_highpitch.c" tooltip="space_invaders/src/ufo_highpitch.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/space_invaders/src/ufo_highpitch.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6829" selectionTopPixel="2511"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="tankFireSound.c" partName="tankFireSound.c" path="C:/Victory_427/Space_Invaders_Lab_4_WS/space_invaders/src/tankFireSound.c" title="tankFireSound.c" tooltip="space_invaders/src/tankFireSound.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/space_invaders/src/tankFireSound.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="13719" selectionTopPixel="6304"/>
 </editor>
 </editors>
 <views>
@@ -87,7 +127,18 @@
 <viewState/>
 </view>
 <view id="org.eclipse.cdt.debug.ui.executablesView" partName="Executables"/>
-<view id="org.eclipse.ui.views.TaskList" partName="Tasks"/>
+<view id="org.eclipse.ui.views.TaskList" partName="Tasks">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.completionField" categoryGroup="none" markerContentGenerator="org.eclipse.ui.ide.tasksGenerator" partName="Tasks">
+<columnWidths org.eclipse.ui.ide.completionField="40" org.eclipse.ui.ide.descriptionField="304" org.eclipse.ui.ide.locationField="64" org.eclipse.ui.ide.markerType="94" org.eclipse.ui.ide.pathField="124" org.eclipse.ui.ide.priorityField="20" org.eclipse.ui.ide.resourceField="94"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.completionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.priorityField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.descriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
 <view id="org.eclipse.debug.ui.VariableView" partName="Variables">
 <viewState/>
 </view>
@@ -101,16 +152,17 @@
 <viewState CommonNavigator.LINKING_ENABLED="0" CommonNavigator.LINKING_ENABLED.delayed="0" org.eclipse.cdt.ui.cview.groupincludes="false" org.eclipse.cdt.ui.cview.groupmacros="false" org.eclipse.cdt.ui.editor.CUChildren="true" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
 </view>
 <view id="com.xilinx.sdk.targetmanager.ui.XmdConsoleView" partName="XMD Console"/>
-<view id="org.eclipse.ui.views.PropertySheet" partName="Properties"/>
+<view id="org.eclipse.ui.views.PropertySheet" partName="Properties">
+<viewState/>
+</view>
 <view id="org.eclipse.cdt.make.ui.views.MakeView" partName="Make Target"/>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings (100 of 2806 items)"/>
-<category IMemento.internal.id="Warnings"/>
 <category IMemento.internal.id="Errors"/>
+<category IMemento.internal.id="Warnings"/>
 </expanded>
-<columnWidths org.eclipse.ui.ide.locationField="0" org.eclipse.ui.ide.markerType="0" org.eclipse.ui.ide.pathField="0" org.eclipse.ui.ide.resourceField="0" org.eclipse.ui.ide.severityAndDescriptionField="0"/>
+<columnWidths org.eclipse.ui.ide.locationField="64" org.eclipse.ui.ide.markerType="94" org.eclipse.ui.ide.pathField="124" org.eclipse.ui.ide.resourceField="94" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
@@ -349,168 +401,165 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/space_invaders/src/space_invaders_main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/space_invaders/src/control.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/space_invaders/src/fastinvader1.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/space_invaders/src/fastinvader2.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/space_invaders/src/fastinvader3.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/space_invaders/src/fastinvader4.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/space_invaders/src/ufo_lowpitch.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/space_invaders/src/shoot.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/space_invaders/src/ufo_explosion.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/space_invaders/src/globals.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/space_invaders/src/space_invaders_main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/space_invaders/src/control.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/space_invaders/src/ufo_lowpitch.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/space_invaders/src/fastinvader3.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/space_invaders/src/fastinvader2.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/space_invaders/src/fastinvader1.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/space_invaders/src/tankFireSound.c"/>
 </editors>
-<item historyLabel="fastinvader1.c" index="2">
-<position info="not_deleted" x="822" y="0"/>
+<item historyLabel="fastinvader2.c" index="6">
+<position info="not_deleted" x="5621" y="0"/>
 </item>
-<item historyLabel="fastinvader2.c" index="3">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="fastinvader4.c" index="0">
+<position info="not_deleted" x="5961" y="0"/>
 </item>
-<item historyLabel="fastinvader3.c" index="4">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="globals.h" index="3">
+<position info="not_deleted" x="3756" y="0"/>
 </item>
-<item historyLabel="fastinvader4.c" index="5">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="fastinvader2.c" index="6">
+<position info="not_deleted" x="5556" y="20"/>
 </item>
-<item historyLabel="fastinvader2.c" index="3">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="globals.h" index="3">
+<position info="not_deleted" x="3756" y="0"/>
 </item>
-<item historyLabel="fastinvader3.c" index="4">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="fastinvader2.c" index="6">
+<position info="not_deleted" x="5556" y="20"/>
 </item>
-<item historyLabel="fastinvader1.c" index="2">
-<position info="not_deleted" x="822" y="0"/>
+<item historyLabel="globals.h" index="3">
+<position info="not_deleted" x="3756" y="0"/>
 </item>
-<item historyLabel="fastinvader4.c" index="5">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="fastinvader1.c" index="7">
+<position info="not_deleted" x="5309" y="0"/>
 </item>
-<item historyLabel="fastinvader1.c" index="2">
-<position info="not_deleted" x="822" y="0"/>
+<item historyLabel="globals.h" index="3">
+<position info="not_deleted" x="4193" y="0"/>
 </item>
-<item historyLabel="fastinvader4.c" index="5">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="fastinvader2.c" index="6">
+<position info="not_deleted" x="5556" y="20"/>
 </item>
-<item historyLabel="fastinvader2.c" index="3">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="fastinvader1.c" index="7">
+<position info="not_deleted" x="5361" y="0"/>
 </item>
-<item historyLabel="fastinvader3.c" index="4">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="globals.h" index="3">
+<position info="not_deleted" x="4193" y="0"/>
 </item>
-<item historyLabel="fastinvader2.c" index="3">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="ufo_lowpitch.c" index="4">
+<position info="not_deleted" x="100081" y="0"/>
 </item>
-<item historyLabel="fastinvader1.c" index="2">
-<position info="not_deleted" x="822" y="0"/>
+<item historyLabel="fastinvader4.c" index="0">
+<position info="not_deleted" x="317" y="0"/>
 </item>
-<item historyLabel="fastinvader4.c" index="5">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="globals.h" index="3">
+<position info="not_deleted" x="4195" y="0"/>
 </item>
-<item historyLabel="fastinvader3.c" index="4">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="fastinvader4.c" index="0">
+<position info="not_deleted" x="91" y="0"/>
 </item>
-<item historyLabel="fastinvader4.c" index="5">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="fastinvader3.c" index="5">
+<position info="not_deleted" x="5991" y="0"/>
 </item>
-<item historyLabel="fastinvader3.c" index="4">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="tankFireSound.c" index="8">
+<position info="not_deleted" x="13719" y="0"/>
 </item>
-<item historyLabel="fastinvader2.c" index="3">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="ufo_explosion.c" index="2">
+<position info="not_deleted" x="105533" y="0"/>
 </item>
-<item historyLabel="fastinvader1.c" index="2">
-<position info="not_deleted" x="822" y="0"/>
+<item historyLabel="shoot.c" index="1">
+<position info="not_deleted" x="15356" y="579"/>
 </item>
-<item historyLabel="fastinvader2.c" index="3">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="fastinvader4.c" index="0">
+<position info="not_deleted" x="91" y="0"/>
 </item>
-<item historyLabel="fastinvader3.c" index="4">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="fastinvader3.c" index="5">
+<position info="not_deleted" x="91" y="0"/>
 </item>
-<item historyLabel="fastinvader4.c" index="5">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="fastinvader2.c" index="6">
+<position info="not_deleted" x="91" y="0"/>
 </item>
-<item historyLabel="space_invaders_main.c" index="0">
-<position info="not_deleted" x="16709" y="0"/>
+<item historyLabel="fastinvader1.c" index="7">
+<position info="not_deleted" x="90" y="0"/>
 </item>
-<item historyLabel="ufo_lowpitch.c" index="6">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="globals.h" index="3">
+<position/>
 </item>
-<item historyLabel="control.c" index="1">
-<position info="not_deleted" x="3297" y="0"/>
+<item historyLabel="fastinvader1.c" index="7">
+<position info="not_deleted" x="90" y="0"/>
 </item>
-<item historyLabel="ufo_lowpitch.c" index="6">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="fastinvader2.c" index="6">
+<position info="not_deleted" x="91" y="0"/>
 </item>
-<item historyLabel="shoot.c" index="7">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="globals.h" index="3">
+<position/>
 </item>
-<item historyLabel="ufo_explosion.c" index="8">
-<position info="not_deleted" x="105520" y="0"/>
+<item historyLabel="fastinvader2.c" index="6">
+<position info="not_deleted" x="91" y="0"/>
 </item>
-<item historyLabel="shoot.c" index="7">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="globals.h" index="3">
+<position/>
 </item>
-<item historyLabel="globals.h" index="9">
-<position info="not_deleted" x="3249" y="17"/>
+<item historyLabel="fastinvader2.c" index="6">
+<position info="not_deleted" x="91" y="0"/>
 </item>
-<item historyLabel="space_invaders_main.c" index="10">
-<position info="not_deleted" x="22901" y="0"/>
+<item historyLabel="globals.h" index="3">
+<position info="not_deleted" x="4048" y="0"/>
 </item>
-<item historyLabel="globals.h" index="9">
-<position info="not_deleted" x="3249" y="17"/>
+<item historyLabel="fastinvader2.c" index="6">
+<position info="not_deleted" x="351" y="0"/>
 </item>
-<item historyLabel="control.c" index="11">
-<position info="not_deleted" x="3297" y="0"/>
+<item historyLabel="fastinvader3.c" index="5">
+<position info="not_deleted" x="91" y="0"/>
 </item>
-<item historyLabel="space_invaders_main.c" index="10">
-<position info="not_deleted" x="14244" y="13"/>
+<item historyLabel="globals.h" index="3">
+<position info="not_deleted" x="4048" y="0"/>
 </item>
-<item historyLabel="globals.h" index="9">
-<position info="not_deleted" x="2479" y="0"/>
+<item historyLabel="fastinvader3.c" index="5">
+<position info="not_deleted" x="91" y="0"/>
 </item>
-<item historyLabel="space_invaders_main.c" index="10">
-<position info="not_deleted" x="14244" y="13"/>
+<item historyLabel="globals.h" index="3">
+<position info="not_deleted" x="3902" y="0"/>
 </item>
-<item historyLabel="space_invaders_main.c" index="10">
-<position info="not_deleted" x="14300" y="0"/>
+<item historyLabel="fastinvader4.c" index="0">
+<position info="not_deleted" x="91" y="0"/>
 </item>
-<item historyLabel="space_invaders_main.c" index="10">
-<position info="not_deleted" x="10446" y="11"/>
+<item historyLabel="globals.h" index="3">
+<position info="not_deleted" x="3756" y="0"/>
 </item>
-<item historyLabel="globals.h" index="9">
-<position info="not_deleted" x="4638" y="19"/>
+<item historyLabel="fastinvader1.c" index="7">
+<position info="not_deleted" x="90" y="0"/>
 </item>
-<item historyLabel="space_invaders_main.c" index="10">
-<position info="not_deleted" x="10446" y="11"/>
+<item historyLabel="fastinvader4.c" index="0">
+<position info="not_deleted" x="91" y="0"/>
 </item>
-<item historyLabel="space_invaders_main.c" index="10">
-<position info="not_deleted" x="11445" y="0"/>
+<item historyLabel="fastinvader3.c" index="5">
+<position info="not_deleted" x="91" y="0"/>
 </item>
-<item historyLabel="space_invaders_main.c" index="10">
-<position info="not_deleted" x="10510" y="5"/>
+<item historyLabel="fastinvader2.c" index="6">
+<position info="not_deleted" x="351" y="0"/>
 </item>
-<item historyLabel="space_invaders_main.c" index="10">
-<position info="not_deleted" x="4748" y="0"/>
+<item historyLabel="globals.h" index="3">
+<position info="not_deleted" x="4193" y="0"/>
 </item>
-<item historyLabel="space_invaders_main.c" index="10">
-<position info="not_deleted" x="7285" y="0"/>
+<item historyLabel="fastinvader2.c" index="6">
+<position info="not_deleted" x="87" y="4"/>
 </item>
-<item historyLabel="globals.h" index="9">
-<position info="not_deleted" x="2479" y="0"/>
+<item historyLabel="globals.h" index="3">
+<position info="not_deleted" x="4048" y="0"/>
 </item>
-<item historyLabel="space_invaders_main.c" index="10">
-<position info="not_deleted" x="7285" y="0"/>
+<item historyLabel="fastinvader3.c" index="5">
+<position info="not_deleted" x="87" y="4"/>
 </item>
-<item historyLabel="space_invaders_main.c" index="10">
-<position info="not_deleted" x="7283" y="0"/>
+<item historyLabel="globals.h" index="3">
+<position info="not_deleted" x="3902" y="0"/>
 </item>
-<item historyLabel="space_invaders_main.c" index="10">
-<position info="not_deleted" x="7285" y="0"/>
+<item historyLabel="fastinvader4.c" index="0">
+<position info="not_deleted" x="87" y="4"/>
 </item>
-<item active="true" historyLabel="space_invaders_main.c" index="10">
-<position info="not_deleted" x="6181" y="0"/>
+<item active="true" historyLabel="globals.h" index="3">
+<position info="not_deleted" x="3902" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -529,6 +578,30 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="tankFireSound.c" tooltip="space_invaders/src/tankFireSound.c">
+<persistable path="/space_invaders/src/tankFireSound.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="ufo_highpitch.c" tooltip="space_invaders/src/ufo_highpitch.c">
+<persistable path="/space_invaders/src/ufo_highpitch.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="bitmap.h" tooltip="space_invaders/src/bitmap.h">
+<persistable path="/space_invaders/src/bitmap.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="explosion.c" tooltip="space_invaders/src/explosion.c">
+<persistable path="/space_invaders/src/explosion.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="fastinvader1.c" tooltip="space_invaders/src/fastinvader1.c">
+<persistable path="/space_invaders/src/fastinvader1.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="fastinvader2.c" tooltip="space_invaders/src/fastinvader2.c">
+<persistable path="/space_invaders/src/fastinvader2.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="fastinvader3.c" tooltip="space_invaders/src/fastinvader3.c">
+<persistable path="/space_invaders/src/fastinvader3.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="fastinvader4.c" tooltip="space_invaders/src/fastinvader4.c">
+<persistable path="/space_invaders/src/fastinvader4.c"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="ufo_explosion.c" tooltip="space_invaders/src/ufo_explosion.c">
 <persistable path="/space_invaders/src/ufo_explosion.c"/>
 </file>
@@ -537,18 +610,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="ufo_lowpitch.c" tooltip="space_invaders/src/ufo_lowpitch.c">
 <persistable path="/space_invaders/src/ufo_lowpitch.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="fastinvader4.c" tooltip="space_invaders/src/fastinvader4.c">
-<persistable path="/space_invaders/src/fastinvader4.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="fastinvader3.c" tooltip="space_invaders/src/fastinvader3.c">
-<persistable path="/space_invaders/src/fastinvader3.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="fastinvader2.c" tooltip="space_invaders/src/fastinvader2.c">
-<persistable path="/space_invaders/src/fastinvader2.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="fastinvader1.c" tooltip="space_invaders/src/fastinvader1.c">
-<persistable path="/space_invaders/src/fastinvader1.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="xac97_l.h" tooltip="space_invaders/src/xac97_l.h">
 <persistable path="/space_invaders/src/xac97_l.h"/>
@@ -561,18 +622,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="control.c" tooltip="space_invaders/src/control.c">
 <persistable path="/space_invaders/src/control.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="space_invaders_main.c" tooltip="space_invaders/src/space_invaders_main.c">
-<persistable path="/space_invaders/src/space_invaders_main.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="globals.h" tooltip="space_invaders/src/globals.h">
-<persistable path="/space_invaders/src/globals.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="ufo_highpitch.c" tooltip="space_invaders/src/ufo_highpitch.c">
-<persistable path="/space_invaders/src/ufo_highpitch.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="invaderkilled.c" tooltip="space_invaders/src/invaderkilled.c">
-<persistable path="/space_invaders/src/invaderkilled.c"/>
 </file>
 </mruList>
 </workbench>
