@@ -1,0 +1,16 @@
+xst -intstyle ise -ifn "C:/Victory_427/Space_Invaders_Lab_4/pcores/pit_timer_v1_00_a/devl/projnav/pit_timer.xst" -ofn "C:/Victory_427/Space_Invaders_Lab_4/pcores/pit_timer_v1_00_a/devl/projnav/pit_timer.syr" 
+xst -intstyle ise -ifn "C:/Victory_427/Space_Invaders_Lab_4/pcores/pit_timer_v1_00_a/devl/projnav/pit_timer.xst" -ofn "C:/Victory_427/Space_Invaders_Lab_4/pcores/pit_timer_v1_00_a/devl/projnav/pit_timer.syr" 
+xst -intstyle ise -ifn "C:/Victory_427/Space_Invaders_Lab_4/pcores/pit_timer_v1_00_a/devl/projnav/pit_timer.xst" -ofn "C:/Victory_427/Space_Invaders_Lab_4/pcores/pit_timer_v1_00_a/devl/projnav/pit_timer.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-csg324-3 pit_timer.ngc pit_timer.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pit_timer_map.ncd pit_timer.ngd pit_timer.pcf 
+par -w -intstyle ise -ol high -mt off pit_timer_map.ncd pit_timer.ncd pit_timer.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml pit_timer.twx pit_timer.ncd -o pit_timer.twr pit_timer.pcf 
+xst -intstyle ise -ifn "C:/Victory_427/Space_Invaders_Lab_4/pcores/pit_timer_v1_00_a/devl/projnav/pit_timer.xst" -ofn "C:/Victory_427/Space_Invaders_Lab_4/pcores/pit_timer_v1_00_a/devl/projnav/pit_timer.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-csg324-3 pit_timer.ngc pit_timer.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pit_timer_map.ncd pit_timer.ngd pit_timer.pcf 
+par -w -intstyle ise -ol high -mt off pit_timer_map.ncd pit_timer.ncd pit_timer.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml pit_timer.twx pit_timer.ncd -o pit_timer.twr pit_timer.pcf 
+xst -intstyle ise -ifn "C:/Victory_427/Space_Invaders_Lab_4/pcores/pit_timer_v1_00_a/devl/projnav/pit_timer.xst" -ofn "C:/Victory_427/Space_Invaders_Lab_4/pcores/pit_timer_v1_00_a/devl/projnav/pit_timer.syr" 
+xst -intstyle ise -ifn "C:/Victory_427/Space_Invaders_Lab_4/pcores/pit_timer_v1_00_a/devl/projnav/pit_timer.xst" -ofn "C:/Victory_427/Space_Invaders_Lab_4/pcores/pit_timer_v1_00_a/devl/projnav/pit_timer.syr" 
+xst -intstyle ise -ifn "C:/Victory_427/Space_Invaders_Lab_4/pcores/pit_timer_v1_00_a/devl/projnav/pit_timer.xst" -ofn "C:/Victory_427/Space_Invaders_Lab_4/pcores/pit_timer_v1_00_a/devl/projnav/pit_timer.syr" 
+xst -intstyle ise -ifn "C:/Victory_427/Space_Invaders_Lab_4/pcores/pit_timer_v1_00_a/devl/projnav/pit_timer.xst" -ofn "C:/Victory_427/Space_Invaders_Lab_4/pcores/pit_timer_v1_00_a/devl/projnav/pit_timer.syr" 

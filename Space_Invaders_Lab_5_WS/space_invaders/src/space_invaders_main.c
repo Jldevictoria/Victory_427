@@ -24,6 +24,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "bitmap.h"
+#include "pit_timer.h"
 #include "letters.h"
 #include "platform.h"
 #include "xparameters.h"
@@ -583,10 +584,15 @@ void play_sound(int s){
 void interrupt_handler_dispatcher(void* ptr) {
 	int intc_status = XIntc_GetIntrStatus(XPAR_INTC_0_BASEADDR);
 	// Check the FIT interrupt first.
-	if (intc_status & XPAR_FIT_TIMER_0_INTERRUPT_MASK){
+	/*if (intc_status & XPAR_FIT_TIMER_0_INTERRUPT_MASK){
 		XIntc_AckIntr(XPAR_INTC_0_BASEADDR, XPAR_FIT_TIMER_0_INTERRUPT_MASK);
 		timer_interrupt_handler();
-	}
+	}*/
+	// Check Pit Timer.
+	if (intc_status & XPAR_PIT_TIMER_0_PIT_INTERRUPT_MASK){
+			XIntc_AckIntr(XPAR_INTC_0_BASEADDR, XPAR_PIT_TIMER_0_PIT_INTERRUPT_MASK);
+			timer_interrupt_handler();
+		}
 	if (intc_status & XPAR_AXI_AC97_0_INTERRUPT_MASK){
 		XIntc_AckIntr(XPAR_INTC_0_BASEADDR, XPAR_AXI_AC97_0_INTERRUPT_MASK);
 		AC97_interrupt_handler();
@@ -683,6 +689,8 @@ void initilizeGame(){
     printLetters("0",GREEN,(SCORE_X_POS),TOP_MARGINE);
     drawLives();
     drawGreenLine();
+
+    PIT_TIMER_mWriteReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG0_OFFSET, 7 );
 }
 
 int main(){
@@ -780,10 +788,13 @@ int main(){
      // Enable all interrupts in the push button peripheral.
      //XGpio_InterruptEnable(&gpPB, 0xFFFFFFFF);
 
+     //Initialize Pit Timer values
+     // Write 1,000,000 to the pit_timer delay register.
+     PIT_TIMER_mWriteReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG1_OFFSET, 0xF4240 );
+     PIT_TIMER_mWriteReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG0_OFFSET, 5 );
 
      microblaze_register_handler(interrupt_handler_dispatcher, NULL);
-     XIntc_EnableIntr(XPAR_INTC_0_BASEADDR, XPAR_AXI_AC97_0_INTERRUPT_MASK | XPAR_FIT_TIMER_0_INTERRUPT_MASK);
-     //XIntc_EnableIntr(XPAR_INTC_0_BASEADDR, );
+     XIntc_EnableIntr(XPAR_INTC_0_BASEADDR, XPAR_AXI_AC97_0_INTERRUPT_MASK | XPAR_PIT_TIMER_0_PIT_INTERRUPT_MASK);
      XIntc_MasterEnable(XPAR_INTC_0_BASEADDR);
      microblaze_enable_interrupts();
 
