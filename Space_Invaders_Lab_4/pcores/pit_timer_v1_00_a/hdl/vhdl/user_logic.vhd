@@ -98,6 +98,7 @@ entity user_logic is
   (
     -- ADD USER PORTS BELOW THIS LINE ------------------
     --USER ports added here
+    pit_interrupt				   : out std_logic;
     -- ADD USER PORTS ABOVE THIS LINE ------------------
 
     -- DO NOT EDIT BELOW THIS LINE ---------------------
@@ -111,9 +112,9 @@ entity user_logic is
     IP2Bus_Data                    : out std_logic_vector(C_SLV_DWIDTH-1 downto 0);
     IP2Bus_RdAck                   : out std_logic;
     IP2Bus_WrAck                   : out std_logic;
-    IP2Bus_Error                   : out std_logic;
+    IP2Bus_Error                   : out std_logic
     -- DO NOT EDIT ABOVE THIS LINE ---------------------
-		pit_interrupt									 : out std_logic
+		
   );
 
   attribute MAX_FANOUT : string;
@@ -143,9 +144,9 @@ architecture IMP of user_logic is
   signal slv_ip2bus_data                : std_logic_vector(C_SLV_DWIDTH-1 downto 0);
   signal slv_read_ack                   : std_logic;
   signal slv_write_ack                  : std_logic;
-	signal c0															: std_logic;
-  signal c1															: std_logic;
-	signal c2															: std_logic;
+  signal c0								: std_logic;
+  signal c1								: std_logic;
+  signal c2								: std_logic;
 
 
 begin
@@ -174,9 +175,9 @@ begin
   slv_reg_read_sel  <= Bus2IP_RdCE(2 downto 0);
   slv_write_ack     <= Bus2IP_WrCE(0) or Bus2IP_WrCE(1) or Bus2IP_WrCE(2);
   slv_read_ack      <= Bus2IP_RdCE(0) or Bus2IP_RdCE(1) or Bus2IP_RdCE(2);
-	c0								<= pit_control(0);
-	c1								<= pit_control(1);
-	c2								<= pit_control(2);
+  c0				<= pit_control(0);
+  c1				<= pit_control(1);
+  c2				<= pit_control(2);
 
   -- implement slave model software accessible register(s)
   SLAVE_REG_WRITE_PROC : process( Bus2IP_Clk ) is
@@ -225,27 +226,31 @@ begin
 	begin
 	
 		if Bus2IP_Clk'event and Bus2IP_Clk = '1' then
-			if c0 = '1' then
-				if pit_counter = 1 then
-					if c1 = '1' then
-						pit_interrupt <= '1';
+			if Bus2IP_Resetn = '0' then
+			    pit_counter <= "11111111111111111111111111111111";
+			else
+				if c0 = '1' then
+					if pit_counter = 1 then
+						if c1 = '1' then
+							pit_interrupt <= '1';
+						end if;
 					end if;
-				end if;
-				if pit_counter = 0 then
-					if c2 = '1' then
-					  pit_interrupt <= '0';
-						pit_counter <= pit_delay;
+					if pit_counter = 0 then
+						if c2 = '1' then
+						  pit_interrupt <= '0';
+							pit_counter <= pit_delay;
+						else
+						  pit_interrupt <= '0';
+							pit_counter <= pit_counter;
+						end if;
 					else
-					  pit_interrupt <= '0';
-						pit_counter <= pit_counter;
+						pit_interrupt <= '0';
+						pit_counter <= pit_counter - 1;
 					end if;
 				else
-					pit_interrupt <= '0';
-					pit_counter <= pit_counter - 1;
+				  pit_interrupt <= '0';
+					pit_counter <= pit_counter;
 				end if;
-			else
-			  pit_interrupt <= '0';
-				pit_counter <= pit_counter;
 			end if;
 		end if;
 	

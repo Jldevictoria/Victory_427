@@ -138,6 +138,7 @@ entity pit_timer is
   (
     -- ADD USER PORTS BELOW THIS LINE ------------------
     --USER ports added here
+    pit_interrupt							     : out std_logic;
     -- ADD USER PORTS ABOVE THIS LINE ------------------
 
     -- DO NOT EDIT BELOW THIS LINE ---------------------
@@ -304,6 +305,7 @@ begin
       --USER ports mapped here
       -- MAP USER PORTS ABOVE THIS LINE ------------------
 
+			pit_interrupt									 => pit_interrupt,
       Bus2IP_Clk                     => ipif_Bus2IP_Clk,
       Bus2IP_Resetn                  => ipif_Bus2IP_Resetn,
       Bus2IP_Data                    => ipif_Bus2IP_Data,

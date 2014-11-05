@@ -29,7 +29,7 @@ SEARCHPATHOPT = $(PROJECT_SEARCHPATHOPT) $(GLOBAL_SEARCHPATHOPT)
 
 SUBMODULE_OPT = 
 
-PLATGEN_OPTIONS = -p $(DEVICE) -lang $(LANGUAGE) -intstyle $(INTSTYLE) $(SEARCHPATHOPT) $(SUBMODULE_OPT) -msg __xps/ise/xmsgprops.lst
+PLATGEN_OPTIONS = -p $(DEVICE) -lang $(LANGUAGE) -intstyle $(INTSTYLE) $(SEARCHPATHOPT) $(SUBMODULE_OPT) -msg __xps/ise/xmsgprops.lst -parallel yes
 
 OBSERVE_PAR_OPTIONS = -error yes
 
@@ -129,7 +129,9 @@ pcores/axi_ac97_v1_00_a/hdl/vhdl/srl_fifo.vhd \
 pcores/axi_ac97_v1_00_a/hdl/vhdl/ac97_fifo.vhd \
 pcores/axi_ac97_v1_00_a/hdl/vhdl/opb_ac97.vhd \
 pcores/axi_ac97_v1_00_a/hdl/vhdl/user_logic.vhd \
-pcores/axi_ac97_v1_00_a/hdl/vhdl/axi_ac97.vhd
+pcores/axi_ac97_v1_00_a/hdl/vhdl/axi_ac97.vhd \
+pcores/pit_timer_v1_00_a/hdl/vhdl/user_logic.vhd \
+pcores/pit_timer_v1_00_a/hdl/vhdl/pit_timer.vhd
 
 WRAPPER_NGC_FILES = implementation/proc_sys_reset_0_wrapper.ngc \
 implementation/microblaze_0_ilmb_wrapper.ngc \
@@ -138,20 +140,21 @@ implementation/microblaze_0_dlmb_wrapper.ngc \
 implementation/microblaze_0_d_bram_ctrl_wrapper.ngc \
 implementation/microblaze_0_bram_block_wrapper.ngc \
 implementation/microblaze_0_wrapper.ngc \
+implementation/fit_timer_0_wrapper.ngc \
 implementation/debug_module_wrapper.ngc \
 implementation/clock_generator_0_wrapper.ngc \
 implementation/axi_vdma_0_wrapper.ngc \
-implementation/push_buttons_5bits_wrapper.ngc \
+implementation/axi_timer_0_wrapper.ngc \
+implementation/axi_intc_0_wrapper.ngc \
 implementation/axi_hdmi_0_wrapper.ngc \
 implementation/axi_ac97_0_wrapper.ngc \
 implementation/axi4lite_0_wrapper.ngc \
 implementation/axi4_0_wrapper.ngc \
 implementation/rs232_uart_1_wrapper.ngc \
+implementation/push_buttons_5bits_wrapper.ngc \
 implementation/mcb_ddr2_wrapper.ngc \
 implementation/digilent_quadspi_cntlr_wrapper.ngc \
-implementation/axi_intc_0_wrapper.ngc \
-implementation/axi_timer_0_wrapper.ngc \
-implementation/fit_timer_0_wrapper.ngc
+implementation/pit_timer_0_wrapper.ngc
 
 POSTSYN_NETLIST = implementation/$(SYSTEM).ngc
 
