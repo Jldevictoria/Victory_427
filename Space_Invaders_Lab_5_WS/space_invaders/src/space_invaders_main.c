@@ -108,6 +108,7 @@ void drawGreenLine(){
 
 // This is invoked in response to a timer interrupt.
 void timer_interrupt_handler() {
+	xil_printf("Pit interrupt came in!\n\r");
 	//runTimeO = fit_counter;
 	if(fit_counter++ == FIT_COUNT_MAX){
 		xil_printf("fit maxed out \n\r");
@@ -690,7 +691,6 @@ void initilizeGame(){
     drawLives();
     drawGreenLine();
 
-    PIT_TIMER_mWriteReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG0_OFFSET, 7 );
 }
 
 int main(){
@@ -791,7 +791,9 @@ int main(){
      //Initialize Pit Timer values
      // Write 1,000,000 to the pit_timer delay register.
      PIT_TIMER_mWriteReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG1_OFFSET, 0xF4240 );
-     PIT_TIMER_mWriteReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG0_OFFSET, 5 );
+     PIT_TIMER_mWriteReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG0_OFFSET, 15 );
+     xil_printf("Counter Val: %d\n\r", PIT_TIMER_mReadReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG2_OFFSET));
+     xil_printf("Counter Val: %d\n\r", PIT_TIMER_mReadReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG2_OFFSET));
 
      microblaze_register_handler(interrupt_handler_dispatcher, NULL);
      XIntc_EnableIntr(XPAR_INTC_0_BASEADDR, XPAR_AXI_AC97_0_INTERRUPT_MASK | XPAR_PIT_TIMER_0_PIT_INTERRUPT_MASK);
@@ -810,8 +812,12 @@ int main(){
      mothershipSoundTurn = 5;
 
      initilizeGame();
+ 	 PIT_TIMER_mWriteReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG0_OFFSET, 7 );
+
 
      while(1){
+     xil_printf("Counter Val: %d\n\r", PIT_TIMER_mReadReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG2_OFFSET));
+     xil_printf("Control Val: %d\n\r", PIT_TIMER_mReadReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG0_OFFSET));
 //    	 idleTime++;
 //    	 if (idleTime >= 1000000){
 //    		 runTimeO = runTimeN;

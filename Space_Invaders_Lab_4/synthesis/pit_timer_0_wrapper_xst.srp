@@ -610,7 +610,7 @@ WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/p
     Found 32-bit register for signal <pit_counter>.
     Found 1-bit register for signal <pit_interrupt>.
     Found 32-bit register for signal <pit_control>.
-    Found 32-bit subtractor for signal <GND_19_o_GND_19_o_sub_13_OUT<31:0>> created at line 248.
+    Found 32-bit subtractor for signal <GND_19_o_GND_19_o_sub_14_OUT<31:0>> created at line 253.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  97 D-type flip-flop(s).
@@ -696,6 +696,7 @@ WARNING:Xst:2677 - Node <pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODE
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 0) on block pit_timer_0_wrapper, actual ratio is 0.
+FlipFlop pit_timer_0/USER_LOGIC_I/pit_control_3 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -703,8 +704,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 141
- Flip-Flops                                            : 141
+# Registers                                            : 142
+ Flip-Flops                                            : 142
 
 =========================================================================
 
@@ -727,22 +728,21 @@ Top Level Output File Name         : pit_timer_0_wrapper.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 198
+# BELS                             : 225
 #      GND                         : 1
-#      INV                         : 33
-#      LUT1                        : 1
-#      LUT2                        : 8
-#      LUT3                        : 3
-#      LUT4                        : 4
-#      LUT5                        : 43
-#      LUT6                        : 41
+#      INV                         : 4
+#      LUT2                        : 9
+#      LUT3                        : 35
+#      LUT4                        : 2
+#      LUT5                        : 76
+#      LUT6                        : 34
 #      MUXCY                       : 31
 #      VCC                         : 1
 #      XORCY                       : 32
-# FlipFlops/Latches                : 141
+# FlipFlops/Latches                : 142
 #      FD                          : 5
 #      FDR                         : 8
-#      FDRE                        : 96
+#      FDRE                        : 97
 #      FDSE                        : 32
 
 Device utilization summary:
@@ -752,15 +752,15 @@ Selected Device : 6slx45csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             141  out of  54576     0%  
- Number of Slice LUTs:                  133  out of  27288     0%  
-    Number used as Logic:               133  out of  27288     0%  
+ Number of Slice Registers:             142  out of  54576     0%  
+ Number of Slice LUTs:                  160  out of  27288     0%  
+    Number used as Logic:               160  out of  27288     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    194
-   Number with an unused Flip Flop:      53  out of    194    27%  
-   Number with an unused LUT:            61  out of    194    31%  
-   Number of fully used LUT-FF pairs:    80  out of    194    41%  
+ Number of LUT Flip Flop pairs used:    160
+   Number with an unused Flip Flop:      18  out of    160    11%  
+   Number with an unused LUT:             0  out of    160     0%  
+   Number of fully used LUT-FF pairs:   142  out of    160    88%  
    Number of unique control sets:         7
 
 IO Utilization: 
@@ -790,7 +790,7 @@ Clock Information:
 -----------------------------------+--------------------------------------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                                              | Load  |
 -----------------------------------+--------------------------------------------------------------------+-------+
-S_AXI_ACLK                         | NONE(pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1)| 141   |
+S_AXI_ACLK                         | NONE(pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1)| 142   |
 -----------------------------------+--------------------------------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
@@ -802,9 +802,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 4.197ns (Maximum Frequency: 238.288MHz)
-   Minimum input arrival time before clock: 2.493ns
-   Maximum output required time after clock: 1.797ns
+   Minimum period: 4.135ns (Maximum Frequency: 241.832MHz)
+   Minimum input arrival time before clock: 2.500ns
+   Maximum output required time after clock: 2.584ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -813,33 +813,32 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'S_AXI_ACLK'
-  Clock period: 4.197ns (frequency: 238.288MHz)
-  Total number of paths / destination ports: 2401 / 244
+  Clock period: 4.135ns (frequency: 241.832MHz)
+  Total number of paths / destination ports: 2470 / 310
 -------------------------------------------------------------------------
-Delay:               4.197ns (Levels of Logic = 3)
-  Source:            pit_timer_0/USER_LOGIC_I/pit_counter_25 (FF)
-  Destination:       pit_timer_0/USER_LOGIC_I/pit_counter_16 (FF)
+Delay:               4.135ns (Levels of Logic = 2)
+  Source:            pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1 (FF)
+  Destination:       pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_31 (FF)
   Source Clock:      S_AXI_ACLK rising
   Destination Clock: S_AXI_ACLK rising
 
-  Data Path: pit_timer_0/USER_LOGIC_I/pit_counter_25 to pit_timer_0/USER_LOGIC_I/pit_counter_16
+  Data Path: pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1 to pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDSE:C->Q             4   0.447   1.048  pit_timer_0/USER_LOGIC_I/pit_counter_25 (pit_timer_0/USER_LOGIC_I/pit_counter_25)
-     LUT6:I0->O            2   0.203   0.961  pit_timer_0/USER_LOGIC_I/GND_19_o_GND_19_o_equal_11_o<31>5 (pit_timer_0/USER_LOGIC_I/GND_19_o_GND_19_o_equal_11_o<31>4)
-     LUT6:I1->O           17   0.203   1.028  pit_timer_0/USER_LOGIC_I/GND_19_o_GND_19_o_equal_11_o<31>7 (pit_timer_0/USER_LOGIC_I/GND_19_o_GND_19_o_equal_11_o)
-     LUT5:I4->O            1   0.205   0.000  pit_timer_0/USER_LOGIC_I/pit_counter_14_dpot (pit_timer_0/USER_LOGIC_I/pit_counter_14_dpot)
-     FDSE:D                    0.102          pit_timer_0/USER_LOGIC_I/pit_counter_14
+     FD:C->Q              70   0.447   1.784  pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1 (pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1)
+     LUT2:I0->O           32   0.203   1.396  pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i<1>1 (pit_timer_0/ipif_Bus2IP_RdCE<1>)
+     LUT6:I4->O            1   0.203   0.000  pit_timer_0/USER_LOGIC_I/Mmux_IP2Bus_Data91 (pit_timer_0/user_IP2Bus_Data<17>)
+     FDRE:D                    0.102          pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_17
     ----------------------------------------
-    Total                      4.197ns (1.160ns logic, 3.037ns route)
-                                       (27.6% logic, 72.4% route)
+    Total                      4.135ns (0.955ns logic, 3.180ns route)
+                                       (23.1% logic, 76.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'S_AXI_ACLK'
-  Total number of paths / destination ports: 204 / 169
+  Total number of paths / destination ports: 206 / 171
 -------------------------------------------------------------------------
-Offset:              2.493ns (Levels of Logic = 1)
+Offset:              2.500ns (Levels of Logic = 1)
   Source:            S_AXI_ARESETN (PAD)
   Destination:       pit_timer_0/USER_LOGIC_I/pit_counter_31 (FF)
   Destination Clock: S_AXI_ACLK rising
@@ -848,30 +847,30 @@ Offset:              2.493ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     INV:I->O             97   0.206   1.857  pit_timer_0/USER_LOGIC_I/Bus2IP_Resetn_inv1_INV_0 (pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst_rstpot)
-     FDRE:R                    0.430          pit_timer_0/USER_LOGIC_I/pit_control_0
+     INV:I->O             98   0.206   1.864  pit_timer_0/USER_LOGIC_I/Bus2IP_Resetn_inv1_INV_0 (pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst_rstpot)
+     FDRE:R                    0.430          pit_timer_0/USER_LOGIC_I/pit_delay_0
     ----------------------------------------
-    Total                      2.493ns (0.636ns logic, 1.857ns route)
-                                       (25.5% logic, 74.5% route)
+    Total                      2.500ns (0.636ns logic, 1.864ns route)
+                                       (25.4% logic, 74.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'S_AXI_ACLK'
   Total number of paths / destination ports: 49 / 37
 -------------------------------------------------------------------------
-Offset:              1.797ns (Levels of Logic = 1)
-  Source:            pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg (FF)
+Offset:              2.584ns (Levels of Logic = 1)
+  Source:            pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0 (FF)
   Destination:       S_AXI_ARREADY (PAD)
   Source Clock:      S_AXI_ACLK rising
 
-  Data Path: pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg to S_AXI_ARREADY
+  Data Path: pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0 to S_AXI_ARREADY
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               8   0.447   1.147  pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg (pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg)
-     LUT5:I0->O            2   0.203   0.000  pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rd_done1 (S_AXI_ARREADY)
+     FD:C->Q              71   0.447   1.934  pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0 (pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0)
+     LUT5:I1->O            2   0.203   0.000  pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rd_done1 (S_AXI_ARREADY)
     ----------------------------------------
-    Total                      1.797ns (0.650ns logic, 1.147ns route)
-                                       (36.2% logic, 63.8% route)
+    Total                      2.584ns (0.650ns logic, 1.934ns route)
+                                       (25.2% logic, 74.8% route)
 
 =========================================================================
 
@@ -883,18 +882,18 @@ Clock to Setup on destination clock S_AXI_ACLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-S_AXI_ACLK     |    4.197|         |         |         |
+S_AXI_ACLK     |    4.135|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 7.71 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 8.08 secs
  
 --> 
 
-Total memory usage is 276904 kilobytes
+Total memory usage is 276520 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   19 (   0 filtered)

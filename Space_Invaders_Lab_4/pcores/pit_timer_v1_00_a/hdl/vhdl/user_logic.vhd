@@ -147,6 +147,7 @@ architecture IMP of user_logic is
   signal c0								: std_logic;
   signal c1								: std_logic;
   signal c2								: std_logic;
+  signal c3								: std_logic;
 
 
 begin
@@ -178,6 +179,7 @@ begin
   c0				<= pit_control(0);
   c1				<= pit_control(1);
   c2				<= pit_control(2);
+  c3				<= pit_control(3);
 
   -- implement slave model software accessible register(s)
   SLAVE_REG_WRITE_PROC : process( Bus2IP_Clk ) is
@@ -229,27 +231,27 @@ begin
 			if Bus2IP_Resetn = '0' then
 			    pit_counter <= "11111111111111111111111111111111";
 			else
-				if c0 = '1' then
-					if pit_counter = 1 then
-						if c1 = '1' then
-							pit_interrupt <= '1';
+				if c3 = '1' then
+					pit_counter <= pit_delay;
+				else
+					if c0 = '1' then
+						if pit_counter = 1 then
+							if c1 = '1' then
+								pit_interrupt <= '1';
+							end if;
 						end if;
-					end if;
-					if pit_counter = 0 then
-						if c2 = '1' then
-						  pit_interrupt <= '0';
-							pit_counter <= pit_delay;
-						else
-						  pit_interrupt <= '0';
-							pit_counter <= pit_counter;
+						if pit_counter <= 0 then
+							if c2 = '1' then
+								pit_interrupt <= '0';
+								pit_counter <= pit_delay;
+							else
+								pit_interrupt <= '0';
+								pit_counter <= "00000000000000000000000000000000";
+							end if;
 						end if;
-					else
-						pit_interrupt <= '0';
+					  pit_interrupt <= '0';
 						pit_counter <= pit_counter - 1;
 					end if;
-				else
-				  pit_interrupt <= '0';
-					pit_counter <= pit_counter;
 				end if;
 			end if;
 		end if;
