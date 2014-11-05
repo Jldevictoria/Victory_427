@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="C:\Victory_427\Space_Invaders_Lab_5_WS\Space_Invaders_Lab_4_hw_platform\system_bd.bmm" key="Space_Invaders_Lab_4_hw_platform-bmmFile"/>
+	<item value="C:\Victory_427\Space_Invaders_Lab_5_WS\Space_Invaders_Lab_4_hw_platform\system.bit" key="Space_Invaders_Lab_4_hw_platform-bitFile"/>
+	<item value="bootloop" key="Space_Invaders_Lab_4_hw_platform-microblaze_0-initElf"/>
+</section>
