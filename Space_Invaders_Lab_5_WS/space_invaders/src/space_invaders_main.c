@@ -701,24 +701,35 @@ int main(){
      //Initialize the uart
      XUartLite_Initialize(&uart, XPAR_RS232_UART_1_DEVICE_ID);
      XUartLite_ResetFifos(&uart);
-
+     xil_printf("\rEnter delay:");
+     delayValue = 0;
      while(1){
     	 inputChar = XUartLite_RecvByte(XPAR_RS232_UART_1_BASEADDR);
-    	 xil_printf("Char input: %c \n\r",inputChar);
-
-//    	 xil_printf("We got a char\n\r");
-//    	 if (inputChar == '2'){
-//    		 if(delayValue < DELAY_MAX){
-//    			 delayValue += DELAY_CHANGE;
-//    		 }
-//    	 }
-//    	 if (inputChar == '8'){
-//    		 if(delayValue > DELAY_MIN){
-//    			 delayValue -= DELAY_CHANGE;
-//    		 }
-//    	 }
-//         xil_printf("Delay Val: %d\n\r",delayValue);
-//    	 PIT_TIMER_mWriteReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG1_OFFSET, delayValue );
+    	 if(inputChar == '\r'){
+    		 if(delayValue > DELAY_MAX){
+    			 xil_printf("\r                                                               ");
+    			 xil_printf("\rDelay value %d is too big! Try again.\n\r",delayValue);
+    			 delayValue = 0;
+    			 xil_printf("\rEnter delay:");
+    		 }
+    		 else if(delayValue < DELAY_MIN){
+    			 xil_printf("\r                                                                ");
+    			 xil_printf("\rDelay value %d is too small! Try again.\n\r",delayValue);
+    			 delayValue = 0;
+    			 xil_printf("\rEnter delay:");
+    		 }
+    		 else {
+				 PIT_TIMER_mWriteReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG1_OFFSET, delayValue );
+				 xil_printf("\r                                                                ");
+				 xil_printf("\rDelay set to: %d\n\r",delayValue);
+				 delayValue = 0;
+				 xil_printf("\rEnter delay:");
+    		 }
+    	 }
+    	 if((inputChar >= '0') && (inputChar <= '9')){
+    		 delayValue = delayValue*10 + (inputChar - '0');
+    		 xil_printf("\rEnter delay: %d",delayValue);
+    	 }
      }
      xil_printf("We do not what to be here\n\r");
      cleanup_platform();
