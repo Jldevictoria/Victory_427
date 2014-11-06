@@ -32,7 +32,7 @@ INFO:EDK:4130 - IPNAME: axi_vdma, INSTANCE:axi_vdma_0 - tcl is overriding
    C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_vdma_v5_00_a\dat
    a\axi_vdma_v2_1_0.mpd line 146 
 INFO:EDK:4130 - IPNAME: axi_intc, INSTANCE:axi_intc_0 - tcl is overriding
-   PARAMETER C_NUM_INTR_INPUTS value to 5 -
+   PARAMETER C_NUM_INTR_INPUTS value to 6 -
    C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_intc_v1_01_a\dat
    a\axi_intc_v2_1_0.mpd line 80 
 INFO:EDK:4130 - IPNAME: axi_interconnect, INSTANCE:axi4lite_0 - tcl is
@@ -318,9 +318,6 @@ implementation netlist
 IPNAME:axi_timer INSTANCE:axi_timer_0 -
 C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 209 - Copying cache
 implementation netlist
-IPNAME:axi_intc INSTANCE:axi_intc_0 -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 219 - Copying cache
-implementation netlist
 IPNAME:axi_hdmi INSTANCE:axi_hdmi_0 -
 C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 230 - Copying cache
 implementation netlist
@@ -337,13 +334,16 @@ IPNAME:axi_uartlite INSTANCE:rs232_uart_1 -
 C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 294 - Copying cache
 implementation netlist
 IPNAME:axi_gpio INSTANCE:push_buttons_5bits -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 309 - Copying cache
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 310 - Copying cache
 implementation netlist
 IPNAME:axi_s6_ddrx INSTANCE:mcb_ddr2 -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 324 - Copying cache
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 325 - Copying cache
 implementation netlist
 IPNAME:d_qspi_axi INSTANCE:digilent_quadspi_cntlr -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 372 - Copying cache
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 373 - Copying cache
+implementation netlist
+IPNAME:pit_timer INSTANCE:pit_timer_0 -
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 385 - Copying cache
 implementation netlist
 
 Elaborating instances ...
@@ -357,10 +357,10 @@ ClkGen elaborate status: PASSED
 Writing HDL for elaborated instances ...
 
 Inserting wrapper level ...
-Completion time: 1.00 seconds
+Completion time: 0.00 seconds
 
 Constructing platform-level connectivity ...
-Completion time: 0.00 seconds
+Completion time: 1.00 seconds
 
 Writing (top-level) BMM ...
 
@@ -376,9 +376,11 @@ INFO:EDK:4211 - The following instances are synthesized with XST. The MPD option
 INFO:EDK:4194 - Running XST parallelly on 2 processors
 INSTANCE:clock_generator_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line
 167 - Running XST synthesis
+INSTANCE:axi_intc_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 219 -
+Running XST synthesis
 INSTANCE:axi_ac97_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 264 -
 Running XST synthesis
-INSTANCE:pit_timer_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 384 -
+INSTANCE:pit_timer_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 385 -
 Running XST synthesis
 
 Running NGCBUILD ...
@@ -390,4 +392,4 @@ INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
 
 Rebuilding cache ...
 
-Total run time: 35.00 seconds
+Total run time: 39.00 seconds

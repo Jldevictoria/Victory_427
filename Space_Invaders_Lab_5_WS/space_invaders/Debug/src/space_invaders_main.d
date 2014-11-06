@@ -24,7 +24,9 @@ src/space_invaders_main.d src/space_invaders_main.o:  \
   ../../space_invaders_bsp/microblaze_0/include/xparameters.h \
   ../src/xac97_l.h \
   ../../space_invaders_bsp/microblaze_0/include/xbasic_types.h \
-  ../../space_invaders_bsp/microblaze_0/include/xio.h
+  ../../space_invaders_bsp/microblaze_0/include/xio.h \
+  ../../space_invaders_bsp/microblaze_0/include/xuartlite.h \
+  ../../space_invaders_bsp/microblaze_0/include/xuartlite_l.h
 
 ../src/bitmap.h:
 
@@ -83,3 +85,7 @@ src/space_invaders_main.d src/space_invaders_main.o:  \
 ../../space_invaders_bsp/microblaze_0/include/xbasic_types.h:
 
 ../../space_invaders_bsp/microblaze_0/include/xio.h:
+
+../../space_invaders_bsp/microblaze_0/include/xuartlite.h:
+
+../../space_invaders_bsp/microblaze_0/include/xuartlite_l.h:

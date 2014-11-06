@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map O.87xd on Tue Nov 04 23:03:18 2014
+// Written by: Map O.87xd on Thu Nov 06 11:15:20 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -581,8 +581,10 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         BEL "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/BAUD_RATE_I/count_8"
         BEL
         "RS232_Uart_1/RS232_Uart_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1"
+        BEL "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/tx_Buffer_Empty_Pre"
         BEL "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/reset_TX_FIFO" BEL
         "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/reset_RX_FIFO" BEL
+        "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/rx_Data_Present_Pre" BEL
         "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/BAUD_RATE_I/count_0" BEL
         "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_RX_I/stop_Bit_Position"
         BEL
@@ -592,7 +594,7 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_TX_I/tx_DataBits"
         BEL
         "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_TX_I/fifo_Read"
-        BEL
+        BEL "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/Interrupt" BEL
         "RS232_Uart_1/RS232_Uart_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
         BEL "RS232_Uart_1/RS232_Uart_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst"
         BEL "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/enable_interrupts" BEL
@@ -10558,6 +10560,8 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         BEL
         "axi_vdma_0/axi_vdma_0/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUFFER.GEN_ASYNC_FIFO.I_LINEBUFFER_FIFO/I_ASYNC_FIFOGEN_FIFO/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d2"
         BEL
+        "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_2"
+        BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1"
         BEL "axi_intc_0/axi_intc_0/INTC_CORE_I/Irq" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_0" BEL
@@ -10565,42 +10569,49 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_5" BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
         BEL "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst" BEL
         "axi_intc_0/axi_intc_0/ip2bus_rdack" BEL
         "axi_intc_0/axi_intc_0/ip2bus_wrack" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/mer_int_1" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_0" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_3" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_1" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_0" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/mer_int_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_4" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_1" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_0" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_3" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_2" BEL
@@ -10609,17 +10620,23 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bvalid_i"
         BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_p1_4"
+        BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_p1_1"
         BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_p1_4"
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_p1_5"
         BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_p2_1"
         BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_p2_4"
         BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_p2_5"
+        BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_d1_1"
         BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_d1_4"
+        BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_d1_5"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1"
         BEL
@@ -10646,6 +10663,8 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_3"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_4"
+        BEL
+        "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_5"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_31"
         BEL
@@ -12078,13 +12097,39 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "Digilent_QuadSPI_Cntlr/Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/count_nr_bytes_send_7"
         BEL
         "Digilent_QuadSPI_Cntlr/Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/count_nr_bytes_send_8"
-        BEL "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_control_3_1" BEL
-        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0"
-        BEL
-        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1"
-        BEL
-        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_2"
-        BEL
+        BEL "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_0" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_1" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_2" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_3" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_4" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_5" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_6" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_7" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_8" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_9" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_10" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_11" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_12" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_13" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_14" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_15" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_16" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_17" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_18" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_19" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_20" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_21" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_22" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_23" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_24" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_25" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_26" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_27" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_28" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_29" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_30" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_31" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_interrupt" BEL
         "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
         BEL "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst"
         BEL
@@ -12155,38 +12200,12 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_control_29" BEL
         "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_control_30" BEL
         "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_control_31" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_0" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_1" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_2" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_3" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_4" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_5" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_6" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_7" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_8" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_9" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_10" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_11" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_12" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_13" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_14" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_15" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_16" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_17" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_18" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_19" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_20" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_21" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_22" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_23" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_24" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_25" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_26" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_27" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_28" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_29" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_30" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_31" BEL
+        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0"
+        BEL
+        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1"
+        BEL
+        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_2"
+        BEL
         "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_0"
         BEL
         "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_1"
@@ -12823,8 +12842,10 @@ TIMEGRP s_axi_lite_aclk = PIN
         BEL "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/BAUD_RATE_I/count_8"
         BEL
         "RS232_Uart_1/RS232_Uart_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1"
+        BEL "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/tx_Buffer_Empty_Pre"
         BEL "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/reset_TX_FIFO" BEL
         "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/reset_RX_FIFO" BEL
+        "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/rx_Data_Present_Pre" BEL
         "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/BAUD_RATE_I/count_0" BEL
         "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_RX_I/stop_Bit_Position"
         BEL
@@ -12834,7 +12855,7 @@ TIMEGRP s_axi_lite_aclk = PIN
         "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_TX_I/tx_DataBits"
         BEL
         "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_TX_I/fifo_Read"
-        BEL
+        BEL "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/Interrupt" BEL
         "RS232_Uart_1/RS232_Uart_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
         BEL "RS232_Uart_1/RS232_Uart_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst"
         BEL "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/enable_interrupts" BEL
@@ -22800,6 +22821,8 @@ TIMEGRP s_axi_lite_aclk = PIN
         BEL
         "axi_vdma_0/axi_vdma_0/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUFFER.GEN_ASYNC_FIFO.I_LINEBUFFER_FIFO/I_ASYNC_FIFOGEN_FIFO/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d2"
         BEL
+        "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_2"
+        BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1"
         BEL "axi_intc_0/axi_intc_0/INTC_CORE_I/Irq" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_0" BEL
@@ -22807,42 +22830,49 @@ TIMEGRP s_axi_lite_aclk = PIN
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_5" BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
         BEL "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst" BEL
         "axi_intc_0/axi_intc_0/ip2bus_rdack" BEL
         "axi_intc_0/axi_intc_0/ip2bus_wrack" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/mer_int_1" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_0" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_3" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_1" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_0" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/mer_int_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_4" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_1" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_0" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_3" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_2" BEL
@@ -22851,17 +22881,23 @@ TIMEGRP s_axi_lite_aclk = PIN
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bvalid_i"
         BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_p1_4"
+        BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_p1_1"
         BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_p1_4"
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_p1_5"
         BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_p2_1"
         BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_p2_4"
         BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_p2_5"
+        BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_d1_1"
         BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_d1_4"
+        BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_d1_5"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1"
         BEL
@@ -22888,6 +22924,8 @@ TIMEGRP s_axi_lite_aclk = PIN
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_3"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_4"
+        BEL
+        "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_5"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_31"
         BEL
@@ -24320,13 +24358,39 @@ TIMEGRP s_axi_lite_aclk = PIN
         "Digilent_QuadSPI_Cntlr/Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/count_nr_bytes_send_7"
         BEL
         "Digilent_QuadSPI_Cntlr/Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/count_nr_bytes_send_8"
-        BEL "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_control_3_1" BEL
-        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0"
-        BEL
-        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1"
-        BEL
-        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_2"
-        BEL
+        BEL "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_0" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_1" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_2" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_3" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_4" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_5" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_6" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_7" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_8" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_9" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_10" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_11" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_12" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_13" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_14" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_15" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_16" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_17" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_18" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_19" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_20" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_21" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_22" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_23" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_24" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_25" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_26" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_27" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_28" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_29" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_30" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_31" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_interrupt" BEL
         "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
         BEL "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst"
         BEL
@@ -24397,38 +24461,12 @@ TIMEGRP s_axi_lite_aclk = PIN
         "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_control_29" BEL
         "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_control_30" BEL
         "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_control_31" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_0" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_1" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_2" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_3" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_4" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_5" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_6" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_7" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_8" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_9" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_10" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_11" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_12" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_13" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_14" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_15" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_16" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_17" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_18" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_19" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_20" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_21" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_22" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_23" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_24" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_25" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_26" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_27" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_28" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_29" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_30" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_31" BEL
+        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0"
+        BEL
+        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1"
+        BEL
+        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_2"
+        BEL
         "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_0"
         BEL
         "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_1"
@@ -25065,8 +25103,10 @@ TIMEGRP globclk = PIN
         BEL "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/BAUD_RATE_I/count_8"
         BEL
         "RS232_Uart_1/RS232_Uart_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1"
+        BEL "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/tx_Buffer_Empty_Pre"
         BEL "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/reset_TX_FIFO" BEL
         "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/reset_RX_FIFO" BEL
+        "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/rx_Data_Present_Pre" BEL
         "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/BAUD_RATE_I/count_0" BEL
         "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_RX_I/stop_Bit_Position"
         BEL
@@ -25076,7 +25116,7 @@ TIMEGRP globclk = PIN
         "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_TX_I/tx_DataBits"
         BEL
         "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_TX_I/fifo_Read"
-        BEL
+        BEL "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/Interrupt" BEL
         "RS232_Uart_1/RS232_Uart_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
         BEL "RS232_Uart_1/RS232_Uart_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst"
         BEL "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/enable_interrupts" BEL
@@ -35043,6 +35083,8 @@ TIMEGRP globclk = PIN
         BEL
         "axi_vdma_0/axi_vdma_0/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUFFER.GEN_ASYNC_FIFO.I_LINEBUFFER_FIFO/I_ASYNC_FIFOGEN_FIFO/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d2"
         BEL
+        "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_2"
+        BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1"
         BEL "axi_intc_0/axi_intc_0/INTC_CORE_I/Irq" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_0" BEL
@@ -35050,42 +35092,49 @@ TIMEGRP globclk = PIN
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_5" BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
         BEL "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst" BEL
         "axi_intc_0/axi_intc_0/ip2bus_rdack" BEL
         "axi_intc_0/axi_intc_0/ip2bus_wrack" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/mer_int_1" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_0" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_3" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_1" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_0" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/mer_int_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_4" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_1" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_0" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_3" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_2" BEL
@@ -35094,17 +35143,23 @@ TIMEGRP globclk = PIN
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bvalid_i"
         BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_p1_4"
+        BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_p1_1"
         BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_p1_4"
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_p1_5"
         BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_p2_1"
         BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_p2_4"
         BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_p2_5"
+        BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_d1_1"
         BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_d1_4"
+        BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_d1_5"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1"
         BEL
@@ -35131,6 +35186,8 @@ TIMEGRP globclk = PIN
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_3"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_4"
+        BEL
+        "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_5"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_31"
         BEL
@@ -36563,13 +36620,39 @@ TIMEGRP globclk = PIN
         "Digilent_QuadSPI_Cntlr/Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/count_nr_bytes_send_7"
         BEL
         "Digilent_QuadSPI_Cntlr/Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/count_nr_bytes_send_8"
-        BEL "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_control_3_1" BEL
-        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0"
-        BEL
-        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1"
-        BEL
-        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_2"
-        BEL
+        BEL "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_0" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_1" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_2" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_3" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_4" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_5" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_6" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_7" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_8" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_9" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_10" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_11" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_12" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_13" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_14" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_15" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_16" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_17" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_18" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_19" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_20" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_21" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_22" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_23" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_24" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_25" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_26" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_27" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_28" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_29" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_30" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_31" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_interrupt" BEL
         "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
         BEL "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst"
         BEL
@@ -36640,38 +36723,12 @@ TIMEGRP globclk = PIN
         "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_control_29" BEL
         "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_control_30" BEL
         "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_control_31" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_0" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_1" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_2" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_3" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_4" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_5" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_6" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_7" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_8" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_9" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_10" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_11" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_12" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_13" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_14" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_15" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_16" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_17" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_18" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_19" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_20" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_21" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_22" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_23" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_24" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_25" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_26" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_27" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_28" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_29" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_30" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_31" BEL
+        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0"
+        BEL
+        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1"
+        BEL
+        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_2"
+        BEL
         "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_0"
         BEL
         "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_1"
@@ -37318,8 +37375,10 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         BEL "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/BAUD_RATE_I/count_8"
         BEL
         "RS232_Uart_1/RS232_Uart_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1"
+        BEL "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/tx_Buffer_Empty_Pre"
         BEL "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/reset_TX_FIFO" BEL
         "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/reset_RX_FIFO" BEL
+        "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/rx_Data_Present_Pre" BEL
         "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/BAUD_RATE_I/count_0" BEL
         "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_RX_I/stop_Bit_Position"
         BEL
@@ -37329,7 +37388,7 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_TX_I/tx_DataBits"
         BEL
         "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_TX_I/fifo_Read"
-        BEL
+        BEL "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/Interrupt" BEL
         "RS232_Uart_1/RS232_Uart_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
         BEL "RS232_Uart_1/RS232_Uart_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst"
         BEL "RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/enable_interrupts" BEL
@@ -47304,6 +47363,8 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         BEL
         "axi_vdma_0/axi_vdma_0/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUFFER.GEN_ASYNC_FIFO.I_LINEBUFFER_FIFO/I_ASYNC_FIFOGEN_FIFO/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d2"
         BEL
+        "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_2"
+        BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1"
         BEL "axi_intc_0/axi_intc_0/INTC_CORE_I/Irq" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_0" BEL
@@ -47311,42 +47372,49 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_5" BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
         BEL "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst" BEL
         "axi_intc_0/axi_intc_0/ip2bus_rdack" BEL
         "axi_intc_0/axi_intc_0/ip2bus_wrack" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/mer_int_1" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_0" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_3" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_1" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_0" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/mer_int_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_4" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_1" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_0" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_3" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_4" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_5" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_2" BEL
@@ -47355,17 +47423,23 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bvalid_i"
         BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_p1_4"
+        BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_p1_1"
         BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_p1_4"
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_p1_5"
         BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_p2_1"
         BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_p2_4"
         BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_p2_5"
+        BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_d1_1"
         BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_d1_4"
+        BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_d1_5"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1"
         BEL
@@ -47392,6 +47466,8 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_3"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_4"
+        BEL
+        "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_5"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_31"
         BEL
@@ -48824,13 +48900,39 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "Digilent_QuadSPI_Cntlr/Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/count_nr_bytes_send_7"
         BEL
         "Digilent_QuadSPI_Cntlr/Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/count_nr_bytes_send_8"
-        BEL "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_control_3_1" BEL
-        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0"
-        BEL
-        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1"
-        BEL
-        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_2"
-        BEL
+        BEL "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_0" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_1" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_2" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_3" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_4" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_5" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_6" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_7" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_8" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_9" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_10" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_11" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_12" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_13" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_14" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_15" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_16" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_17" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_18" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_19" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_20" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_21" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_22" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_23" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_24" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_25" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_26" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_27" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_28" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_29" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_30" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_31" BEL
+        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_interrupt" BEL
         "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
         BEL "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst"
         BEL
@@ -48901,38 +49003,12 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_control_29" BEL
         "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_control_30" BEL
         "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_control_31" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_0" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_1" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_2" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_3" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_4" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_5" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_6" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_7" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_8" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_9" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_10" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_11" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_12" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_13" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_14" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_15" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_16" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_17" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_18" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_19" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_20" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_21" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_22" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_23" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_24" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_25" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_26" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_27" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_28" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_29" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_30" BEL
-        "pit_timer_0/pit_timer_0/USER_LOGIC_I/pit_counter_31" BEL
+        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0"
+        BEL
+        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1"
+        BEL
+        "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_2"
+        BEL
         "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_0"
         BEL
         "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_1"

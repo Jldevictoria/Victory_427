@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Victory_427/Space_Invaders_Lab_4/pcores/pit_timer_v1_00_a/devl/projnav/user_logic_isim_beh.exe" -prj "C:/Victory_427/Space_Invaders_Lab_4/pcores/pit_timer_v1_00_a/devl/projnav/user_logic_beh.prj" "pit_timer_v1_00_a.user_logic" 

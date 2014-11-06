@@ -1,5 +1,5 @@
 
-<EDKSYSTEM EDKVERSION="13.4" EDWVERSION="1.2" TIMESTAMP="Tue Nov 04 20:12:34 2014">
+<EDKSYSTEM EDKVERSION="13.4" EDWVERSION="1.2" TIMESTAMP="Thu Nov 06 11:10:40 2014">
 
   <SYSTEMINFO ARCH="spartan6" DEVICE="xc6slx45" PACKAGE="csg324" PART="xc6slx45csg324-3" SOURCE="C:/Victory_427/Space_Invaders_Lab_4/system.xmp" SPEEDGRADE="-3"/>
 
@@ -4431,7 +4431,7 @@
       </PORTS>
       <BUSINTERFACES/>
       <INTERRUPTINFO TYPE="SOURCE">
-        <TARGET INSTANCE="axi_intc_0" INTC_INDEX="0" PRIORITY="3"/>
+        <TARGET INSTANCE="axi_intc_0" INTC_INDEX="0" PRIORITY="4"/>
       </INTERRUPTINFO>
     </MODULE>
     <MODULE HWVERSION="2.00.b" INSTANCE="debug_module" IPTYPE="PERIPHERAL" MHS_INDEX="8" MODCLASS="DEBUG" MODTYPE="mdm">
@@ -6145,7 +6145,7 @@
         </MEMRANGE>
       </MEMORYMAP>
       <INTERRUPTINFO TYPE="SOURCE">
-        <TARGET INSTANCE="axi_intc_0" INTC_INDEX="0" PRIORITY="1"/>
+        <TARGET INSTANCE="axi_intc_0" INTC_INDEX="0" PRIORITY="2"/>
       </INTERRUPTINFO>
     </MODULE>
     <MODULE HWVERSION="1.01.a" INSTANCE="axi_intc_0" IPTYPE="PERIPHERAL" MHS_INDEX="12" MODCLASS="INTERRUPT_CNTLR" MODTYPE="axi_intc">
@@ -6171,7 +6171,7 @@
         <PARAMETER MPD_INDEX="4" NAME="C_S_AXI_DATA_WIDTH" TYPE="INTEGER" VALUE="32">
           <DESCRIPTION>AXI Data Width</DESCRIPTION>
         </PARAMETER>
-        <PARAMETER CHANGEDBY="SYSTEM" MPD_INDEX="5" NAME="C_NUM_INTR_INPUTS" TYPE="INTEGER" VALUE="5">
+        <PARAMETER CHANGEDBY="SYSTEM" MPD_INDEX="5" NAME="C_NUM_INTR_INPUTS" TYPE="INTEGER" VALUE="6">
           <DESCRIPTION>Number of Interrupt Inputs </DESCRIPTION>
         </PARAMETER>
         <PARAMETER CHANGEDBY="SYSTEM" MPD_INDEX="6" NAME="C_KIND_OF_INTR" TYPE="std_logic_vector" VALUE="0b11111111111111111111111111110010">
@@ -6211,8 +6211,9 @@
             <CONNECTION INSTANCE="clock_generator_0" PORT="CLKOUT2"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" ENDIAN="LITTLE" IS_INSTANTIATED="TRUE" LEFT="4" LSB="0" MHS_INDEX="1" MPD_INDEX="19" MSB="4" NAME="Intr" RIGHT="0" SENSITIVITY="EDGE_RISING" SIGIS="INTERRUPT" SIGNAME="axi_ac97_0_Interrupt &amp; axi_timer_0_Interrupt &amp; Push_Buttons_5Bits_IP2INTC_Irpt &amp; fit_timer_0_Interrupt &amp; pit_timer_0_pit_interrupt" VECFORMULA="[(C_NUM_INTR_INPUTS-1):0]">
+        <PORT DIR="I" ENDIAN="LITTLE" IS_INSTANTIATED="TRUE" LEFT="5" LSB="0" MHS_INDEX="1" MPD_INDEX="19" MSB="5" NAME="Intr" RIGHT="0" SENSITIVITY="EDGE_RISING" SIGIS="INTERRUPT" SIGNAME="RS232_Uart_1_Interrupt &amp; axi_ac97_0_Interrupt &amp; axi_timer_0_Interrupt &amp; Push_Buttons_5Bits_IP2INTC_Irpt &amp; fit_timer_0_Interrupt &amp; pit_timer_0_pit_interrupt" VECFORMULA="[(C_NUM_INTR_INPUTS-1):0]">
           <SIGNALS>
+            <SIGNAL NAME="RS232_Uart_1_Interrupt"/>
             <SIGNAL NAME="axi_ac97_0_Interrupt"/>
             <SIGNAL NAME="axi_timer_0_Interrupt"/>
             <SIGNAL NAME="Push_Buttons_5Bits_IP2INTC_Irpt"/>
@@ -6221,7 +6222,7 @@
           </SIGNALS>
           <DESCRIPTION>Interrupt Inputs</DESCRIPTION>
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ac97_0_Interrupt &amp; axi_timer_0_Interrupt &amp; Push_Buttons_5Bits_IP2INTC_Irpt &amp; fit_timer_0_Interrupt &amp; pit_timer_0_pit_interrupt"/>
+            <CONNECTION INSTANCE="RS232_Uart_1_Interrupt &amp; axi_ac97_0_Interrupt &amp; axi_timer_0_Interrupt &amp; Push_Buttons_5Bits_IP2INTC_Irpt &amp; fit_timer_0_Interrupt &amp; pit_timer_0_pit_interrupt"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" IS_INSTANTIATED="TRUE" MHS_INDEX="2" MPD_INDEX="20" NAME="Irq" SENSITIVITY="EDGE_RISING" SIGIS="INTERRUPT" SIGNAME="axi_intc_0_Irq">
@@ -6354,11 +6355,12 @@
         </MEMRANGE>
       </MEMORYMAP>
       <INTERRUPTINFO INTC_INDEX="0" TYPE="CONTROLLER">
-        <SOURCE INSTANCE="axi_ac97_0" PRIORITY="0" SIGNAME="axi_ac97_0_Interrupt"/>
-        <SOURCE INSTANCE="axi_timer_0" PRIORITY="1" SIGNAME="axi_timer_0_Interrupt"/>
-        <SOURCE INSTANCE="Push_Buttons_5Bits" PRIORITY="2" SIGNAME="Push_Buttons_5Bits_IP2INTC_Irpt"/>
-        <SOURCE INSTANCE="fit_timer_0" PRIORITY="3" SIGNAME="fit_timer_0_Interrupt"/>
-        <SOURCE INSTANCE="pit_timer_0" PRIORITY="4" SIGNAME="pit_timer_0_pit_interrupt"/>
+        <SOURCE INSTANCE="RS232_Uart_1" PRIORITY="0" SIGNAME="RS232_Uart_1_Interrupt"/>
+        <SOURCE INSTANCE="axi_ac97_0" PRIORITY="1" SIGNAME="axi_ac97_0_Interrupt"/>
+        <SOURCE INSTANCE="axi_timer_0" PRIORITY="2" SIGNAME="axi_timer_0_Interrupt"/>
+        <SOURCE INSTANCE="Push_Buttons_5Bits" PRIORITY="3" SIGNAME="Push_Buttons_5Bits_IP2INTC_Irpt"/>
+        <SOURCE INSTANCE="fit_timer_0" PRIORITY="4" SIGNAME="fit_timer_0_Interrupt"/>
+        <SOURCE INSTANCE="pit_timer_0" PRIORITY="5" SIGNAME="pit_timer_0_pit_interrupt"/>
         <TARGET INSTANCE="microblaze_0"/>
       </INTERRUPTINFO>
     </MODULE>
@@ -6910,7 +6912,7 @@
         </MEMRANGE>
       </MEMORYMAP>
       <INTERRUPTINFO TYPE="SOURCE">
-        <TARGET INSTANCE="axi_intc_0" INTC_INDEX="0" PRIORITY="0"/>
+        <TARGET INSTANCE="axi_intc_0" INTC_INDEX="0" PRIORITY="1"/>
       </INTERRUPTINFO>
     </MODULE>
     <MODULE BUSSTD="AXI" BUSSTD_PSF="AXI" HWVERSION="1.05.a" INSTANCE="axi4lite_0" IPTYPE="BUS" MHS_INDEX="15" MODCLASS="BUS" MODTYPE="axi_interconnect">
@@ -8838,12 +8840,16 @@
             <CONNECTION INSTANCE="External Ports" PORT="RS232_Uart_1_sin"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" IS_INSTANTIATED="TRUE" MHS_INDEX="3" MPD_INDEX="2" NAME="Interrupt" SENSITIVITY="EDGE_RISING" SIGIS="INTERRUPT" SIGNAME="RS232_Uart_1_Interrupt">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_intc_0" PORT="Intr"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT BUS="S_AXI" DEF_SIGNAME="axi4lite_0_M_ARESETN" DIR="I" MPD_INDEX="1" NAME="S_AXI_ARESETN" SIGIS="RST" SIGNAME="axi4lite_0_M_ARESETN">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi4lite_0" PORT="M_AXI_ARESET_OUT_N"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" MPD_INDEX="2" NAME="Interrupt" SENSITIVITY="EDGE_RISING" SIGIS="INTERRUPT" SIGNAME="__NOC__"/>
         <PORT BUS="S_AXI" DEF_SIGNAME="axi4lite_0_M_AWADDR" DIR="I" ENDIAN="LITTLE" LEFT="31" LSB="0" MPD_INDEX="3" MSB="31" NAME="S_AXI_AWADDR" RIGHT="0" SIGNAME="axi4lite_0_M_AWADDR" VECFORMULA="[(C_S_AXI_ADDR_WIDTH-1):0]">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi4lite_0" PORT="M_AXI_AWADDR"/>
@@ -8970,6 +8976,9 @@
           </SLAVES>
         </MEMRANGE>
       </MEMORYMAP>
+      <INTERRUPTINFO TYPE="SOURCE">
+        <TARGET INSTANCE="axi_intc_0" INTC_INDEX="0" PRIORITY="0"/>
+      </INTERRUPTINFO>
     </MODULE>
     <MODULE HWVERSION="1.01.b" INSTANCE="Push_Buttons_5Bits" IPTYPE="PERIPHERAL" MHS_INDEX="18" MODCLASS="PERIPHERAL" MODTYPE="axi_gpio">
       <DESCRIPTION TYPE="SHORT">AXI General Purpose IO</DESCRIPTION>
@@ -9194,7 +9203,7 @@
         </MEMRANGE>
       </MEMORYMAP>
       <INTERRUPTINFO TYPE="SOURCE">
-        <TARGET INSTANCE="axi_intc_0" INTC_INDEX="0" PRIORITY="2"/>
+        <TARGET INSTANCE="axi_intc_0" INTC_INDEX="0" PRIORITY="3"/>
       </INTERRUPTINFO>
     </MODULE>
     <MODULE HWVERSION="1.05.a" INSTANCE="MCB_DDR2" IPTYPE="PERIPHERAL" MHS_INDEX="19" MODCLASS="MEMORY_CNTLR" MODTYPE="axi_s6_ddrx">
@@ -10568,7 +10577,7 @@
         </MEMRANGE>
       </MEMORYMAP>
       <INTERRUPTINFO TYPE="SOURCE">
-        <TARGET INSTANCE="axi_intc_0" INTC_INDEX="0" PRIORITY="4"/>
+        <TARGET INSTANCE="axi_intc_0" INTC_INDEX="0" PRIORITY="5"/>
       </INTERRUPTINFO>
     </MODULE>
   </MODULES>

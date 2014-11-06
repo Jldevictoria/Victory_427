@@ -80,6 +80,9 @@
 #define NUM_OF_SOUNDS 10
 #define FRAME_CUT 0
 #define A_MOVE_AMP 1
+#define DELAY_CHANGE 0x00001000
+#define DELAY_MAX 0x01000000
+#define DELAY_MIN 0x00000100
 
 // Declare Global Variables for game objects.
 int tankX, tankY;

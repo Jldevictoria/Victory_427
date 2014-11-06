@@ -37,11 +37,16 @@
 #include "xintc_l.h"
 #include "globals.h"
 #include "xac97_l.h"
+#include "xuartlite.h"
+#include "xuartlite_l.h"
 
 unsigned int * framePointer = (unsigned int *) FRAME_BUFFER_0_ADDR;
 unsigned int testCount = 0;
+char inputChar;
+unsigned int delayValue;
 
 XGpio gpPB;   // This is a handle for the push-button GPIO block.
+XUartLite uart;
 
 void pollButtons(){
 	if((fit_counter % TANK_SPEED) == 0){
@@ -108,10 +113,9 @@ void drawGreenLine(){
 
 // This is invoked in response to a timer interrupt.
 void timer_interrupt_handler() {
-	xil_printf("Pit interrupt came in!\n\r");
+	//xil_printf("Pit interrupt came in!\n\r");
 	//runTimeO = fit_counter;
 	if(fit_counter++ == FIT_COUNT_MAX){
-		xil_printf("fit maxed out \n\r");
 		fit_counter = 0;
 	}
 	pollButtons();
@@ -458,124 +462,6 @@ void play_sound(int s){
 
 
 
-/*
-	switch (s){
-	case 0:
-		curData = 0;
-		curFrames = 0;
-		curRate = 0;
-		curCount = 0;
-		break;
-	case 1:
-		curData = fastinvader1_soundData;
-		curFrames = fastinvader1_numberOfSamples;
-		curRate = fastinvader1_sampleRate;
-		curCount = &fastinvader1_count;
-		break;
-	case 2:
-		curData = fastinvader2_soundData;
-		curFrames = fastinvader2_numberOfSamples;
-		curRate = fastinvader2_sampleRate;
-		curCount = &fastinvader2_count;
-		break;
-	case 3:
-		curData = fastinvader3_soundData;
-		curFrames = fastinvader3_numberOfSamples;
-		curRate = fastinvader3_sampleRate;
-		curCount = &fastinvader3_count;
-		break;
-	case 4:
-		curData = fastinvader4_soundData;
-		curFrames = fastinvader4_numberOfSamples;
-		curRate = fastinvader4_sampleRate;
-		curCount = &fastinvader4_count;
-		break;
-	case 5:
-		curData = ufo_highpitch_soundData;
-		curFrames = ufo_highpitch_numberOfSamples;
-		curRate = ufo_highpitch_sampleRate;
-		curCount = &ufo_highpitch_count;
-		break;
-	case 6:
-		curData = ufo_lowpitch_soundData;
-		curFrames = ufo_lowpitch_numberOfSamples;
-		curRate = ufo_lowpitch_sampleRate;
-		curCount = &ufo_lowpitch_count;
-		break;
-	case 7:
-		curData = shoot_soundData;
-		curFrames = shoot_numberOfSamples;
-		curRate = shoot_sampleRate;
-		curCount = &shoot_count;
-		break;
-	case 8:
-		curData = explosion_soundData;
-		curFrames = explosion_numberOfSamples;
-		curRate = explosion_sampleRate;
-		curCount = &explosion_count;
-		break;
-	case 9:
-		curData = invaderkilled_soundData;
-		curFrames = invaderkilled_numberOfSamples;
-		curRate = invaderkilled_sampleRate;
-		curCount = &invaderkilled_count;
-		break;
-	default:
-		return;
-		break;
-	}
-	int count;
-	for (count = 0; count < 100; count++){
-		if (s != 0){
-			int curVal = ((((curData[(*curCount)])<<16)&0xFFFF0000)+((curData[(*curCount)])&0xFFFF));
-			XAC97_mSetInFifoData(XPAR_AXI_AC97_0_BASEADDR,curVal);
-			(*curCount)++;
-			if((*curCount) >= curFrames){
-				*curCount = 0;
-				switch(s){
-				case 1:
-					sFlags[1] = 0;
-					alienMarchSoundTurn = 2;
-					break;
-				case 2:
-					sFlags[2] = 0;
-					alienMarchSoundTurn = 3;
-					break;
-				case 3:
-					sFlags[3] = 0;
-					alienMarchSoundTurn = 4;
-					break;
-				case 4:
-					sFlags[4] = 0;
-					alienMarchSoundTurn = 1;
-					break;
-				case 5:
-					sFlags[5] = 0;
-					mothershipSoundTurn = 6;
-					break;
-				case 6:
-					sFlags[6] = 0;
-					mothershipSoundTurn = 5;
-					break;
-				case 7:
-					sFlags[7] = 0;
-					break;
-				case 8:
-					sFlags[8] = 0;
-					break;
-				case 9:
-					sFlags[9] = 0;
-					break;
-				}
-				for (count = 0; count < NUM_OF_SOUNDS; count++){
-					sFlags[count] = 0;
-				}
-			}
-		}else{
-			XAC97_mSetInFifoData(XPAR_AXI_AC97_0_BASEADDR,0);
-		}
-	}
-*/
 }
 
 // Main interrupt handler, queries the interrupt controller to see what peripheral
@@ -788,13 +674,6 @@ int main(){
      // Enable all interrupts in the push button peripheral.
      //XGpio_InterruptEnable(&gpPB, 0xFFFFFFFF);
 
-     //Initialize Pit Timer values
-     // Write 1,000,000 to the pit_timer delay register.
-     PIT_TIMER_mWriteReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG1_OFFSET, 0xF4240 );
-     PIT_TIMER_mWriteReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG0_OFFSET, 15 );
-     xil_printf("Counter Val: %d\n\r", PIT_TIMER_mReadReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG2_OFFSET));
-     xil_printf("Counter Val: %d\n\r", PIT_TIMER_mReadReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG2_OFFSET));
-
      microblaze_register_handler(interrupt_handler_dispatcher, NULL);
      XIntc_EnableIntr(XPAR_INTC_0_BASEADDR, XPAR_AXI_AC97_0_INTERRUPT_MASK | XPAR_PIT_TIMER_0_PIT_INTERRUPT_MASK);
      XIntc_MasterEnable(XPAR_INTC_0_BASEADDR);
@@ -811,21 +690,35 @@ int main(){
      alienMarchSoundTurn = 4;
      mothershipSoundTurn = 5;
 
-     initilizeGame();
- 	 PIT_TIMER_mWriteReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG0_OFFSET, 7 );
+     //Initialize Pit Timer values
+	 // Write 1,000,000 to the pit_timer delay register.
+     delayValue = 0xF4240;
+	 PIT_TIMER_mWriteReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG1_OFFSET, delayValue );
+	 PIT_TIMER_mWriteReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG0_OFFSET, 7 );
 
+     initilizeGame();
+
+     //Initialize the uart
+     XUartLite_Initialize(&uart, XPAR_RS232_UART_1_DEVICE_ID);
+     XUartLite_ResetFifos(&uart);
 
      while(1){
-     xil_printf("Counter Val: %d\n\r", PIT_TIMER_mReadReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG2_OFFSET));
-     xil_printf("Control Val: %d\n\r", PIT_TIMER_mReadReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG0_OFFSET));
-//    	 idleTime++;
-//    	 if (idleTime >= 1000000){
-//    		 runTimeO = runTimeN;
-//    		 runTimeN = fit_counter;
-//    		 deltaRunTime = runTimeN - runTimeO;
-//    		 xil_printf("Active instructions to idle instructions ratio: %d / 1\n\r", (deltaRunTime-1));
-//    		 idleTime = 0;
+    	 inputChar = XUartLite_RecvByte(XPAR_RS232_UART_1_BASEADDR);
+    	 xil_printf("Char input: %c \n\r",inputChar);
+
+//    	 xil_printf("We got a char\n\r");
+//    	 if (inputChar == '2'){
+//    		 if(delayValue < DELAY_MAX){
+//    			 delayValue += DELAY_CHANGE;
+//    		 }
 //    	 }
+//    	 if (inputChar == '8'){
+//    		 if(delayValue > DELAY_MIN){
+//    			 delayValue -= DELAY_CHANGE;
+//    		 }
+//    	 }
+//         xil_printf("Delay Val: %d\n\r",delayValue);
+//    	 PIT_TIMER_mWriteReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG1_OFFSET, delayValue );
      }
      xil_printf("We do not what to be here\n\r");
      cleanup_platform();

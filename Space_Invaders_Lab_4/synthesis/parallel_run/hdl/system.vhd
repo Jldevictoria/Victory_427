@@ -1281,7 +1281,7 @@ architecture STRUCTURE of system is
       S_AXI_RRESP : out std_logic_vector(1 downto 0);
       S_AXI_RVALID : out std_logic;
       S_AXI_RREADY : in std_logic;
-      Intr : in std_logic_vector(4 downto 0);
+      Intr : in std_logic_vector(5 downto 0);
       Irq : out std_logic
     );
   end component;
@@ -2198,6 +2198,7 @@ architecture STRUCTURE of system is
   signal Ext_BRK : std_logic;
   signal Ext_NM_BRK : std_logic;
   signal Push_Buttons_5Bits_IP2INTC_Irpt : std_logic;
+  signal RS232_Uart_1_Interrupt : std_logic;
   signal S_AXIS_MM2S_ACLK_int : std_logic;
   signal axi4_0_M_ARADDR : std_logic_vector(31 downto 0);
   signal axi4_0_M_ARBURST : std_logic_vector(1 downto 0);
@@ -2451,7 +2452,7 @@ architecture STRUCTURE of system is
   signal net_gnd4096 : std_logic_vector(0 to 4095);
   signal net_vcc0 : std_logic;
   signal net_vcc4 : std_logic_vector(3 downto 0);
-  signal pgassign1 : std_logic_vector(4 downto 0);
+  signal pgassign1 : std_logic_vector(5 downto 0);
   signal pgassign2 : std_logic_vector(9 downto 0);
   signal pgassign3 : std_logic_vector(2 downto 0);
   signal pit_timer_0_pit_interrupt : std_logic;
@@ -2534,6 +2535,7 @@ begin
   axi4_0_S_ARLOCK(5 downto 4) <= B"00";
   axi4_0_S_ARQOS(11 downto 8) <= B"0000";
   axi4_0_S_ARUSER(14 downto 10) <= B"00000";
+  pgassign1(5) <= RS232_Uart_1_Interrupt;
   pgassign1(4) <= axi_ac97_0_Interrupt;
   pgassign1(3) <= axi_timer_0_Interrupt;
   pgassign1(2) <= Push_Buttons_5Bits_IP2INTC_Irpt;
@@ -4285,7 +4287,7 @@ begin
     port map (
       S_AXI_ACLK => pgassign2(9),
       S_AXI_ARESETN => axi4lite_0_M_ARESETN(6),
-      Interrupt => open,
+      Interrupt => RS232_Uart_1_Interrupt,
       S_AXI_AWADDR => axi4lite_0_M_AWADDR(223 downto 192),
       S_AXI_AWVALID => axi4lite_0_M_AWVALID(6),
       S_AXI_AWREADY => axi4lite_0_M_AWREADY(6),

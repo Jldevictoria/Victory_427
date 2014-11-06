@@ -146,7 +146,7 @@
 
 /******************************************************************/
 
-#define XPAR_INTC_MAX_NUM_INTR_INPUTS 5
+#define XPAR_INTC_MAX_NUM_INTR_INPUTS 6
 #define XPAR_XINTC_HAS_IPR 1
 #define XPAR_XINTC_HAS_SIE 1
 #define XPAR_XINTC_HAS_CIE 1
@@ -177,6 +177,8 @@
 #define XPAR_AXI_INTC_0_AXI_TIMER_0_INTERRUPT_INTR 3
 #define XPAR_AXI_AC97_0_INTERRUPT_MASK 0X000010
 #define XPAR_AXI_INTC_0_AXI_AC97_0_INTERRUPT_INTR 4
+#define XPAR_RS232_UART_1_INTERRUPT_MASK 0X000020
+#define XPAR_AXI_INTC_0_RS232_UART_1_INTERRUPT_INTR 5
 
 /******************************************************************/
 
@@ -188,6 +190,7 @@
 
 #define XPAR_INTC_0_GPIO_0_VEC_ID XPAR_AXI_INTC_0_PUSH_BUTTONS_5BITS_IP2INTC_IRPT_INTR
 #define XPAR_INTC_0_TMRCTR_0_VEC_ID XPAR_AXI_INTC_0_AXI_TIMER_0_INTERRUPT_INTR
+#define XPAR_INTC_0_UARTLITE_1_VEC_ID XPAR_AXI_INTC_0_RS232_UART_1_INTERRUPT_INTR
 
 /******************************************************************/
 
