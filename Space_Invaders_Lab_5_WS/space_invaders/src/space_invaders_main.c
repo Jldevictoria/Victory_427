@@ -50,17 +50,79 @@ XUartLite uart;
 
 void pollButtons(){
 	if((fit_counter % TANK_SPEED) == 0){
-		currentButtonState = XGpio_DiscreteRead(&gpPB, 1);  // Get the current state of the buttons.
-		char left = currentButtonState&(0x8);
-		char mid = currentButtonState&(0x1);
-		char right = currentButtonState&(0x2);
-		char up = currentButtonState&(0x10);
-		char down = currentButtonState&(0x4);
+		//currentButtonState = XGpio_DiscreteRead(&gpPB, 1);  // Get the current state of the buttons.
+		int left = currentButtonState&(0x8);
+		int button_b = currentButtonState&(0x1);
+		int right = currentButtonState&(0x2);
+		int up = currentButtonState&(0x10);
+		int down = currentButtonState&(0x4);
+
+		int button_start = currentButtonState&(0x20);
+		int button_a = currentButtonState&(0x40);
+		int button_y = currentButtonState&(0x80);
+		int button_l = currentButtonState&(0x100);
+		int button_r = currentButtonState&(0x200);
+		int button_sel = currentButtonState&(0x400);
+		int button_x = currentButtonState&(0x800);
+
+		if((delayValue < DELAY_MAX) && button_y){
+			delayValue += DELAY_CHANGE;
+			PIT_TIMER_mWriteReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG1_OFFSET, delayValue );
+			currentButtonState = currentButtonState & (~0x80);
+			//xil_printf("delay inc\n\r");
+		}else if(button_y){
+			delayValue  = DELAY_MAX;
+			PIT_TIMER_mWriteReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG1_OFFSET, delayValue );
+			currentButtonState = currentButtonState & (~0x80);
+			//xil_printf("delay inc\n\r");
+		}
+
+		if(button_a){
+			xil_printf("a pressed!\n\r");
+		}
+
+		if(button_l){
+			xil_printf("l pressed!\n\r");
+		}
+
+		if(button_r){
+			xil_printf("r pressed!\n\r");
+		}
+
+		if(button_sel){
+			xil_printf("select pressed!\n\r");
+		}
+
+		if(button_start){
+			if (gameStatus == GAME_OVER){
+				initilizeGame();
+				gameStatus = RUNNING;
+			}
+			if(gameStatus == STOPPED){
+				gameStatus = RUNNING;
+			}else if(gameStatus == RUNNING){
+				gameStatus = STOPPED;
+			}
+		}
+
+		if(( delayValue > DELAY_MIN) && button_x){
+			delayValue -= DELAY_CHANGE;
+			PIT_TIMER_mWriteReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG1_OFFSET, delayValue );
+			currentButtonState = currentButtonState & (~0x800);
+			//xil_printf("delay dec\n\r");
+		}else if(button_x){
+			delayValue = DELAY_MIN;
+			PIT_TIMER_mWriteReg(XPAR_PIT_TIMER_0_BASEADDR, PIT_TIMER_SLV_REG1_OFFSET, delayValue );
+			currentButtonState = currentButtonState & (~0x800);
+			//xil_printf("delay dec\n\r");
+		}
+
 		if((gameStatus == STOPPED)&& down){
 			if(tankBulletSpeed > 1){
 				tankBulletSpeed--;
 			}
 		}
+
 		if((gameStatus == RUNNING)&& down){
 			if(masterVolume < (AC97_VOL_ATTN_46_0_DB)){
 				masterVolume += AC97_VOL_ATTN_1_5_DB;
@@ -83,10 +145,11 @@ void pollButtons(){
 			}
 		}
 
-		if(gameStatus == STOPPED && (left || right || mid) && (0 < playerLives) && (reachedBottom != 1)){
+		if(gameStatus == STOPPED && (left || right || button_b) && (0 < playerLives) && (reachedBottom != 1)){
 			gameStatus = RUNNING;
 			srand(fit_counter);
 		}
+
 		//xil_printf("poll the buttons! %d \n\r", currentButtonState);
 		if (gameStatus != STOPPED){
 			if (left && (right == 0)){
@@ -95,10 +158,11 @@ void pollButtons(){
 			if (right){
 				control(6);
 			}
-			if (mid && (tankState == TANK_ALIVE)){
+			if (button_b && (tankState == TANK_ALIVE)){
 				control(5);
 			}
 		}
+
 	}
 }
 
@@ -701,10 +765,102 @@ int main(){
      //Initialize the uart
      XUartLite_Initialize(&uart, XPAR_RS232_UART_1_DEVICE_ID);
      XUartLite_ResetFifos(&uart);
-     xil_printf("\rEnter delay:");
-     delayValue = 0;
      while(1){
     	 inputChar = XUartLite_RecvByte(XPAR_RS232_UART_1_BASEADDR);
+
+    	 //xil_printf("%c\n\r",inputChar);
+
+    	 switch(inputChar){
+    	 case '0':
+    		 currentButtonState = currentButtonState | 0x800;//x
+    		 break;
+    	 case '1':
+    		 currentButtonState = currentButtonState | 0x40;//a
+    		 break;
+    	 case '2':
+    		 currentButtonState = currentButtonState | 0x1;//b
+    		 break;
+    	 case '3':
+    		 currentButtonState = currentButtonState | 0x80;//y
+    		 break;
+    	 case '4':
+    		 currentButtonState = currentButtonState | 0x100;//l
+    		 break;
+    	 case '5':
+    		 currentButtonState = currentButtonState | 0x200;//r
+    		 break;
+    	 case '8':
+    		 currentButtonState = currentButtonState | 0x400;//sel
+    		 break;
+    	 case '9':
+    		 currentButtonState = currentButtonState | 0x20;//start
+    		 break;
+    	 case ':':
+    		 currentButtonState = currentButtonState | 0x10;//up
+    		 break;
+    	 case ';':
+    		 currentButtonState = currentButtonState | 0x4;//down
+    		 break;
+    	 case '<':
+    		 currentButtonState = currentButtonState | 0x8; //left
+    		 break;
+    	 case '=':
+    		 currentButtonState = currentButtonState | 0x2;//Right
+    		 break;
+    	 case 'A':
+    		 currentButtonState = currentButtonState & (~0x800);//x
+    		 break;
+    	 case 'B':
+    		 currentButtonState = currentButtonState & (~0x40);//a
+    		 break;
+    	 case 'C':
+    		 currentButtonState = currentButtonState & (~0x1);//b
+    		 break;
+    	 case 'D':
+    		 currentButtonState = currentButtonState & (~0x80);//y
+    		 break;
+    	 case 'E':
+    		 currentButtonState = currentButtonState & (~0x100);//l
+    		 break;
+    	 case 'F':
+    		 currentButtonState = currentButtonState & (~0x200);//r
+    		 break;
+    	 case 'G':
+    		 currentButtonState = currentButtonState & (~0x400);//sel
+    		 break;
+    	 case 'H':
+    		 currentButtonState = currentButtonState & (~0x20);//start
+    		 break;
+    	 case 'I':
+    		 currentButtonState = currentButtonState & (~0x10);//up
+    		 break;
+    	 case 'J':
+    		 currentButtonState = currentButtonState & (~0x4);//down
+    		 break;
+    	 case 'K':
+    		 currentButtonState = currentButtonState & (~0x8);//left
+    		 break;
+    	 case 'L':
+    		 currentButtonState = currentButtonState & (~0x2);//right
+    		 break;
+    	 default:
+    		 break;
+    	 }
+
+    		 /*x=0/A
+    		  * a=1/B
+    		  * b=2/C
+    		  * y=3/D
+    		  * l=4/E
+    		  * r=5/F
+    		  * sel8/G
+    		  * start9/H
+    		  * up:/I
+    		  * down;/J
+    		  * left</K
+    		  *right=/L
+    		  */
+/*
     	 if(inputChar == '\r'){
     		 if(delayValue > DELAY_MAX){
     			 xil_printf("\r                                                               ");
@@ -730,6 +886,7 @@ int main(){
     		 delayValue = delayValue*10 + (inputChar - '0');
     		 xil_printf("\rEnter delay: %d",delayValue);
     	 }
+*/
      }
      xil_printf("We do not what to be here\n\r");
      cleanup_platform();
