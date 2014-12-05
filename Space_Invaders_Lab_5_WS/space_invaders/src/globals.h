@@ -132,6 +132,8 @@ _Bool reachedBottom;
 // Pointer to the frame used by the hdmi controller.
 unsigned int * framePointer;
 int currentButtonState;
+int ctlrButtons;
+int atlysButtons;
 int idleTime;
 int runTimeN, runTimeO, deltaRunTime;
 _Bool sFlags[10];

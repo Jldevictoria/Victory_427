@@ -51,7 +51,6 @@ XUartLite uart;
 void pollButtons(){
 	if((fit_counter % TANK_SPEED) == 0){
 		atlysButtons = XGpio_DiscreteRead(&gpPB, 1);  // Get the current state of the buttons.
-		currentButtonState = atlysButtons | ctlrButtons;
 		int left = currentButtonState&(0x8);
 		int button_b = currentButtonState&(0x1);
 		int right = currentButtonState&(0x2);
