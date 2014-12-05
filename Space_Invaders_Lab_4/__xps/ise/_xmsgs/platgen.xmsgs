@@ -20,7 +20,7 @@
 <msg type="info" file="EDK" num="4130" delta="old" >IPNAME: <arg fmt="%s" index="1">axi_vdma</arg>, INSTANCE:<arg fmt="%s" index="2">axi_vdma_0</arg> - <arg fmt="%s" index="3">tcl</arg> is overriding <arg fmt="%s" index="4">PARAMETER</arg> <arg fmt="%s" index="5">C_INTERCONNECT_M_AXI_S2MM_WRITE_FIFO_DEPTH</arg> value to <arg fmt="%s" index="6">512</arg> - <arg fmt="%s" index="7">C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_vdma_v5_00_a\data\axi_vdma_v2_1_0.mpd line 146</arg> 
 </msg>
 
-<msg type="info" file="EDK" num="4130" delta="new" >IPNAME: <arg fmt="%s" index="1">axi_intc</arg>, INSTANCE:<arg fmt="%s" index="2">axi_intc_0</arg> - <arg fmt="%s" index="3">tcl</arg> is overriding <arg fmt="%s" index="4">PARAMETER</arg> <arg fmt="%s" index="5">C_NUM_INTR_INPUTS</arg> value to <arg fmt="%s" index="6">6</arg> - <arg fmt="%s" index="7">C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_intc_v1_01_a\data\axi_intc_v2_1_0.mpd line 80</arg> 
+<msg type="info" file="EDK" num="4130" delta="old" >IPNAME: <arg fmt="%s" index="1">axi_intc</arg>, INSTANCE:<arg fmt="%s" index="2">axi_intc_0</arg> - <arg fmt="%s" index="3">tcl</arg> is overriding <arg fmt="%s" index="4">PARAMETER</arg> <arg fmt="%s" index="5">C_NUM_INTR_INPUTS</arg> value to <arg fmt="%s" index="6">6</arg> - <arg fmt="%s" index="7">C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_intc_v1_01_a\data\axi_intc_v2_1_0.mpd line 80</arg> 
 </msg>
 
 <msg type="info" file="EDK" num="4130" delta="old" >IPNAME: <arg fmt="%s" index="1">axi_interconnect</arg>, INSTANCE:<arg fmt="%s" index="2">axi4lite_0</arg> - <arg fmt="%s" index="3">tcl</arg> is overriding <arg fmt="%s" index="4">PARAMETER</arg> <arg fmt="%s" index="5">C_BASEFAMILY</arg> value to <arg fmt="%s" index="6">spartan6</arg> - <arg fmt="%s" index="7">C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_interconnect_v1_05_a\data\axi_interconnect_v2_1_0.mpd line 78</arg> 
@@ -52,6 +52,9 @@
 </msg>
 
 <msg type="info" file="EDK" num="4130" delta="old" >IPNAME: <arg fmt="%s" index="1">bram_block</arg>, INSTANCE:<arg fmt="%s" index="2">microblaze_0_bram_block</arg> - <arg fmt="%s" index="3">tool</arg> is overriding <arg fmt="%s" index="4">PARAMETER</arg> <arg fmt="%s" index="5">C_MEMSIZE</arg> value to <arg fmt="%s" index="6">0x8000</arg> - <arg fmt="%s" index="7">C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\bram_block_v1_00_a\data\bram_block_v2_1_0.mpd line 76</arg> 
+</msg>
+
+<msg type="warning" file="EDK" num="3977" delta="new" ><arg fmt="%s" index="1">AXI4</arg> protocol type BUSIF: <arg fmt="%s" index="2">S0_AXI</arg> of IPINSTANCE: <arg fmt="%s" index="3">MCB_DDR2</arg>  connected with <arg fmt="%s" index="4">AXI4LITE</arg> type BUSIF: <arg fmt="%s" index="5">M_AXI</arg> of IPINSTANCE: <arg fmt="%s" index="6">dma_screencap_0</arg>.
 </msg>
 
 <msg type="warning" file="EDK" num="4180" delta="old" >PORT: <arg fmt="%s" index="1">bscan_tdo1</arg>, CONNECTOR: <arg fmt="%s" index="2">bscan_tdo1</arg> - No driver found. Port will be driven to <arg fmt="%s" index="3">GND</arg> - <arg fmt="%s" index="4">C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\mdm_v2_00_b\data\mdm_v2_1_0.mpd line 239</arg> 

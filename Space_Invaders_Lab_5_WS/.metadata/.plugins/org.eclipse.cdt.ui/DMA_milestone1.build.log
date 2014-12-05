@@ -1,0 +1,276 @@
+
+**** Build of configuration Debug for project DMA_milestone1 ****
+
+make all 
+Building file: ../src/helloworld.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o"src/helloworld.o" "../src/helloworld.c"
+Finished building: ../src/helloworld.c
+' '
+Building file: ../src/platform.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o"src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+' '
+Building file: ../microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite.d" -MT"microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite.d" -o"microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite.o" "../microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite.c"
+Finished building: ../microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite.c
+' '
+Building file: ../microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_g.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_g.d" -MT"microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_g.d" -o"microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_g.o" "../microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_g.c"
+Finished building: ../microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_g.c
+' '
+Building file: ../microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_intr.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_intr.d" -MT"microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_intr.d" -o"microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_intr.o" "../microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_intr.c"
+Finished building: ../microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_intr.c
+' '
+Building file: ../microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_l.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_l.d" -MT"microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_l.d" -o"microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_l.o" "../microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_l.c"
+Finished building: ../microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_l.c
+' '
+Building file: ../microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_selftest.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_selftest.d" -MT"microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_selftest.d" -o"microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_selftest.o" "../microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_selftest.c"
+Finished building: ../microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_selftest.c
+' '
+Building file: ../microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_sinit.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_sinit.d" -MT"microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_sinit.d" -o"microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_sinit.o" "../microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_sinit.c"
+Finished building: ../microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_sinit.c
+' '
+Building file: ../microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_stats.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_stats.d" -MT"microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_stats.d" -o"microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_stats.o" "../microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_stats.c"
+Finished building: ../microblaze_0/libsrc/uartlite_v2_00_a/src/xuartlite_stats.c
+' '
+Building file: ../microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr.d" -MT"microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr.d" -o"microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr.o" "../microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr.c"
+Finished building: ../microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr.c
+' '
+Building file: ../microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_g.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_g.d" -MT"microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_g.d" -o"microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_g.o" "../microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_g.c"
+Finished building: ../microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_g.c
+' '
+Building file: ../microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_intr.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_intr.d" -MT"microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_intr.d" -o"microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_intr.o" "../microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_intr.c"
+Finished building: ../microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_intr.c
+' '
+Building file: ../microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_l.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_l.d" -MT"microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_l.d" -o"microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_l.o" "../microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_l.c"
+Finished building: ../microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_l.c
+' '
+Building file: ../microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_options.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_options.d" -MT"microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_options.d" -o"microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_options.o" "../microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_options.c"
+Finished building: ../microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_options.c
+' '
+Building file: ../microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_selftest.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_selftest.d" -MT"microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_selftest.d" -o"microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_selftest.o" "../microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_selftest.c"
+Finished building: ../microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_selftest.c
+' '
+Building file: ../microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_stats.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_stats.d" -MT"microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_stats.d" -o"microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_stats.o" "../microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_stats.c"
+Finished building: ../microblaze_0/libsrc/tmrctr_v2_04_a/src/xtmrctr_stats.c
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/_exit.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/_exit.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/_exit.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/_exit.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/_exit.c"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/_exit.c
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/errno.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/errno.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/errno.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/errno.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/errno.c"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/errno.c
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/fcntl.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/fcntl.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/fcntl.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/fcntl.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/fcntl.c"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/fcntl.c
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/hw_exception_handler.S
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/hw_exception_handler.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/hw_exception_handler.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/hw_exception_handler.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/hw_exception_handler.S"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/hw_exception_handler.S
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/inbyte.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/inbyte.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/inbyte.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/inbyte.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/inbyte.c"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/inbyte.c
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_dcache.S
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_dcache.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_dcache.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_dcache.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_dcache.S"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_dcache.S
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_exceptions.S
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_exceptions.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_exceptions.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_exceptions.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_exceptions.S"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_exceptions.S
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_icache.S
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_icache.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_icache.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_icache.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_icache.S"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_icache.S
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_interrupts.S
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_interrupts.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_interrupts.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_interrupts.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_interrupts.S"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_disable_interrupts.S
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_dcache.S
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_dcache.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_dcache.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_dcache.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_dcache.S"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_dcache.S
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_exceptions.S
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_exceptions.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_exceptions.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_exceptions.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_exceptions.S"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_exceptions.S
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_icache.S
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_icache.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_icache.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_icache.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_icache.S"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_icache.S
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_interrupts.S
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_interrupts.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_interrupts.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_interrupts.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_interrupts.S"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_enable_interrupts.S
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_exception_handler.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_exception_handler.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_exception_handler.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_exception_handler.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_exception_handler.c"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_exception_handler.c
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_flush_dcache.S
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_flush_dcache.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_flush_dcache.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_flush_dcache.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_flush_dcache.S"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_flush_dcache.S
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_flush_dcache_range.S
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_flush_dcache_range.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_flush_dcache_range.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_flush_dcache_range.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_flush_dcache_range.S"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_flush_dcache_range.S
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_init_dcache_range.S
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_init_dcache_range.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_init_dcache_range.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_init_dcache_range.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_init_dcache_range.S"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_init_dcache_range.S
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_init_icache_range.S
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_init_icache_range.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_init_icache_range.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_init_icache_range.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_init_icache_range.S"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_init_icache_range.S
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_interrupt_handler.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_interrupt_handler.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_interrupt_handler.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_interrupt_handler.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_interrupt_handler.c"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_interrupt_handler.c
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_interrupts_g.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_interrupts_g.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_interrupts_g.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_interrupts_g.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_interrupts_g.c"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_interrupts_g.c
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_dcache.S
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_dcache.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_dcache.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_dcache.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_dcache.S"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_dcache.S
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_dcache_range.S
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_dcache_range.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_dcache_range.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_dcache_range.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_dcache_range.S"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_dcache_range.S
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_icache.S
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_icache.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_icache.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_icache.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_icache.S"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_icache.S
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_icache_range.S
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_icache_range.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_icache_range.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_icache_range.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_icache_range.S"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_invalidate_icache_range.S
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_scrub.S
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_scrub.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_scrub.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_scrub.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_scrub.S"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_scrub.S
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_update_dcache.S
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_update_dcache.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_update_dcache.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_update_dcache.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_update_dcache.S"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_update_dcache.S
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_update_icache.S
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_update_icache.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_update_icache.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_update_icache.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_update_icache.S"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/microblaze_update_icache.S
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/outbyte.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/outbyte.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/outbyte.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/outbyte.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/outbyte.c"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/outbyte.c
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/pvr.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/pvr.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/pvr.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/pvr.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/pvr.c"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/pvr.c
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/xil_assert.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/xil_assert.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/xil_assert.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/xil_assert.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/xil_assert.c"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/xil_assert.c
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/xil_cache.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/xil_cache.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/xil_cache.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/xil_cache.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/xil_cache.c"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/xil_cache.c
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/xil_exception.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/xil_exception.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/xil_exception.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/xil_exception.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/xil_exception.c"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/xil_exception.c
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/xil_io.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/xil_io.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/xil_io.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/xil_io.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/xil_io.c"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/xil_io.c
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/xil_testcache.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/xil_testcache.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/xil_testcache.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/xil_testcache.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/xil_testcache.c"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/xil_testcache.c
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/xil_testio.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/xil_testio.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/xil_testio.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/xil_testio.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/xil_testio.c"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/xil_testio.c
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/xil_testmem.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/xil_testmem.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/xil_testmem.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/xil_testmem.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/xil_testmem.c"
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/xil_testmem.c
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/profile/_profile_clean.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/profile/_profile_clean.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/profile/_profile_clean.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/profile/_profile_clean.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/profile/_profile_clean.c"
+../microblaze_0/libsrc/standalone_v3_03_a/src/profile/_profile_clean.c: In function '_profile_clean':
+../microblaze_0/libsrc/standalone_v3_03_a/src/profile/_profile_clean.c:29: warning: implicit declaration of function 'disable_timer'
+Finished building: ../microblaze_0/libsrc/standalone_v3_03_a/src/profile/_profile_clean.c
+' '
+Building file: ../microblaze_0/libsrc/standalone_v3_03_a/src/profile/_profile_init.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../DMA_milestone1_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"microblaze_0/libsrc/standalone_v3_03_a/src/profile/_profile_init.d" -MT"microblaze_0/libsrc/standalone_v3_03_a/src/profile/_profile_init.d" -o"microblaze_0/libsrc/standalone_v3_03_a/src/profile/_profile_init.o" "../microblaze_0/libsrc/standalone_v3_03_a/src/profile/_profile_init.c"
+../microblaze_0/libsrc/standalone_v3_03_a/src/profile/_profile_init.c:45: error: 'CPU_FREQ_HZ' undeclared here (not in a function)
+make: *** [microblaze_0/libsrc/standalone_v3_03_a/src/profile/_profile_init.o] Error 1

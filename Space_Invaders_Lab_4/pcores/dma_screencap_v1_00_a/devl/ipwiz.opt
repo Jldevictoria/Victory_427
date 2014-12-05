@@ -1,0 +1,9 @@
+-batch 
+-create dma_screencap 
+-ver 1.00.a 
+-dir "C:\Victory_427\Space_Invaders_Lab_4" 
+-lang vhdl 
+-bus axi4lite ms 
+-reg 5 
+-xps 
+-driver 

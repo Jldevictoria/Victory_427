@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;space_invaders/src/DMA_test_main&apos; to &apos;DMA_test_main.c&apos;" description="Rename resource &apos;DMA_test_main&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/DMA_test_main" name="DMA_test_main.c" stamp="1417741247517" updateReferences="true"/>
+</session>

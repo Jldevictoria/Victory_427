@@ -59,6 +59,9 @@ er.ngc"...
 Loading design module
 "C:/Victory_427/Space_Invaders_Lab_4/implementation/pit_timer_0_wrapper.ngc"...
 Loading design module
+"C:/Victory_427/Space_Invaders_Lab_4/implementation/dma_screencap_0_wrapper.ngc"
+...
+Loading design module
 "C:/Victory_427/Space_Invaders_Lab_4/implementation/microblaze_0_bram_block_wrap
 per.ngc"...
 Applying constraints in
@@ -283,10 +286,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:  37
 
-Total memory usage is 289036 kilobytes
+Total memory usage is 299416 kilobytes
 
 Writing NGD file "system.ngd" ...
-Total REAL time to NGDBUILD completion: 1 min  1 sec
-Total CPU time to NGDBUILD completion:  1 min  1 sec
+Total REAL time to NGDBUILD completion: 1 min  2 sec
+Total CPU time to NGDBUILD completion:  1 min  2 sec
 
 Writing NGDBUILD log file "system.bld"...

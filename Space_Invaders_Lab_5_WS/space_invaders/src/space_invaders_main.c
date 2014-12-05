@@ -755,6 +755,10 @@ int main(){
      alienMarchSoundTurn = 4;
      mothershipSoundTurn = 5;
 
+     //Initialize DMA Screen Capture values.
+     DMA_SCREENCAP_mWriteReg(XPAR_DMA_SCREENCAP_0_BASEADDR, DMA_SCREENCAP_SLV_REG0_OFFSET, FRAME_BUFFER_0_ADDR);
+     DMA_SCREENCAP_mWriteReg(XPAR_DMA_SCREENCAP_0_BASEADDR, DMA_SCREENCAP_SLV_REG1_OFFSET, SCREENSHOT_BUFFER_0_ADDR);
+
      //Initialize Pit Timer values
 	 // Write 1,000,000 to the pit_timer delay register.
      delayValue = 0xF4240;

@@ -893,11 +893,11 @@ S_AXI_ACLK     |    4.250|         |         |         |
 
 
 Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 7.88 secs
+Total CPU time to Xst completion: 8.44 secs
  
 --> 
 
-Total memory usage is 276840 kilobytes
+Total memory usage is 280756 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   18 (   0 filtered)

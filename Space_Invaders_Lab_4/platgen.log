@@ -75,6 +75,7 @@ Address Map for Processor microblaze_0
   (0x41400000-0x4140ffff) debug_module	axi4lite_0
   (0x41c00000-0x41c0ffff) axi_timer_0	axi4lite_0
   (0x70e00000-0x70e0ffff) pit_timer_0	axi4lite_0
+  (0x7b000000-0x7b00ffff) dma_screencap_0	axi4lite_0
   (0x7e200000-0x7e20ffff) axi_vdma_0	axi4lite_0
   (0x7e220000-0x7e22ffff) axi_hdmi_0	axi4lite_0
   (0x7e240000-0x7e24ffff) axi_ac97_0	axi4lite_0
@@ -98,8 +99,10 @@ Checking platform address map ...
 Checking platform configuration ...
 IPNAME: lmb_v10, INSTANCE: microblaze_0_ilmb - 1 master(s) : 1 slave(s) 
 IPNAME: lmb_v10, INSTANCE: microblaze_0_dlmb - 1 master(s) : 1 slave(s) 
-IPNAME: axi_interconnect, INSTANCE: axi4lite_0 - 1 master(s) : 10 slave(s) 
-IPNAME: axi_interconnect, INSTANCE: axi4_0 - 3 master(s) : 1 slave(s) 
+IPNAME: axi_interconnect, INSTANCE: axi4lite_0 - 1 master(s) : 11 slave(s) 
+IPNAME: axi_interconnect, INSTANCE: axi4_0 - 4 master(s) : 1 slave(s) 
+WARNING:EDK:3977 - AXI4 protocol type BUSIF: S0_AXI of IPINSTANCE: MCB_DDR2 
+   connected with AXI4LITE type BUSIF: M_AXI of IPINSTANCE: dma_screencap_0.
 
 Checking port drivers...
 WARNING:EDK:4180 - PORT: bscan_tdo1, CONNECTOR: bscan_tdo1 - No driver found.
@@ -318,17 +321,14 @@ implementation netlist
 IPNAME:axi_timer INSTANCE:axi_timer_0 -
 C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 209 - Copying cache
 implementation netlist
+IPNAME:axi_intc INSTANCE:axi_intc_0 -
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 219 - Copying cache
+implementation netlist
 IPNAME:axi_hdmi INSTANCE:axi_hdmi_0 -
 C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 230 - Copying cache
 implementation netlist
 IPNAME:axi_ac97 INSTANCE:axi_ac97_0 -
 C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 264 - Copying cache
-implementation netlist
-IPNAME:axi_interconnect INSTANCE:axi4lite_0 -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 279 - Copying cache
-implementation netlist
-IPNAME:axi_interconnect INSTANCE:axi4_0 -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 287 - Copying cache
 implementation netlist
 IPNAME:axi_uartlite INSTANCE:rs232_uart_1 -
 C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 294 - Copying cache
@@ -376,20 +376,28 @@ INFO:EDK:4211 - The following instances are synthesized with XST. The MPD option
 INFO:EDK:4194 - Running XST parallelly on 2 processors
 INSTANCE:clock_generator_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line
 167 - Running XST synthesis
-INSTANCE:axi_intc_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 219 -
-Running XST synthesis
 INSTANCE:axi_ac97_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 264 -
+Running XST synthesis
+INSTANCE:axi4lite_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 279 -
+Running XST synthesis
+INSTANCE:axi4_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 287 -
 Running XST synthesis
 INSTANCE:pit_timer_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 385 -
 Running XST synthesis
+INSTANCE:dma_screencap_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line
+395 - Running XST synthesis
 
 Running NGCBUILD ...
 IPNAME:clock_generator_0_wrapper INSTANCE:clock_generator_0 -
 C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 167 - Running NGCBUILD
+IPNAME:axi4lite_0_wrapper INSTANCE:axi4lite_0 -
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 279 - Running NGCBUILD
+IPNAME:axi4_0_wrapper INSTANCE:axi4_0 -
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 287 - Running NGCBUILD
 INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
    If any constraint needs to be overridden, this should be done by modifying
    the data/system.ucf file.
 
 Rebuilding cache ...
 
-Total run time: 39.00 seconds
+Total run time: 168.00 seconds

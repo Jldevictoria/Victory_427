@@ -29,7 +29,7 @@ SEARCHPATHOPT = $(PROJECT_SEARCHPATHOPT) $(GLOBAL_SEARCHPATHOPT)
 
 SUBMODULE_OPT = 
 
-PLATGEN_OPTIONS = -p $(DEVICE) -lang $(LANGUAGE) -intstyle $(INTSTYLE) $(SEARCHPATHOPT) $(SUBMODULE_OPT) -msg __xps/ise/xmsgprops.lst
+PLATGEN_OPTIONS = -p $(DEVICE) -lang $(LANGUAGE) -intstyle $(INTSTYLE) $(SEARCHPATHOPT) $(SUBMODULE_OPT) -msg __xps/ise/xmsgprops.lst -parallel yes
 
 OBSERVE_PAR_OPTIONS = -error yes
 
@@ -131,7 +131,12 @@ pcores/axi_ac97_v1_00_a/hdl/vhdl/opb_ac97.vhd \
 pcores/axi_ac97_v1_00_a/hdl/vhdl/user_logic.vhd \
 pcores/axi_ac97_v1_00_a/hdl/vhdl/axi_ac97.vhd \
 pcores/pit_timer_v1_00_a/hdl/vhdl/user_logic.vhd \
-pcores/pit_timer_v1_00_a/hdl/vhdl/pit_timer.vhd
+pcores/pit_timer_v1_00_a/hdl/vhdl/pit_timer.vhd \
+C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_master_lite_v1_00_a/hdl/vhdl/axi_master_lite_reset.vhd \
+C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_master_lite_v1_00_a/hdl/vhdl/axi_master_lite_cntlr.vhd \
+C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_master_lite_v1_00_a/hdl/vhdl/axi_master_lite.vhd \
+pcores/dma_screencap_v1_00_a/hdl/vhdl/user_logic.vhd \
+pcores/dma_screencap_v1_00_a/hdl/vhdl/dma_screencap.vhd
 
 WRAPPER_NGC_FILES = implementation/proc_sys_reset_0_wrapper.ngc \
 implementation/microblaze_0_ilmb_wrapper.ngc \
@@ -154,7 +159,8 @@ implementation/rs232_uart_1_wrapper.ngc \
 implementation/push_buttons_5bits_wrapper.ngc \
 implementation/mcb_ddr2_wrapper.ngc \
 implementation/digilent_quadspi_cntlr_wrapper.ngc \
-implementation/pit_timer_0_wrapper.ngc
+implementation/pit_timer_0_wrapper.ngc \
+implementation/dma_screencap_0_wrapper.ngc
 
 POSTSYN_NETLIST = implementation/$(SYSTEM).ngc
 

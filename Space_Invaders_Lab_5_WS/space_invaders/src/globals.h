@@ -12,6 +12,7 @@
 //#define DEBUG void print(char *str);
 #define WRD_WIDTH 32
 #define FRAME_BUFFER_0_ADDR 0xC1000000  // Starting location in DDR where we will store the images that we display.
+#define SCREENSHOT_BUFFER_0_ADDR 0xC5000000  //Starting location in DDR where we will store the screenshot image.
 #define NUM_OF_PIXELS 307200
 #define SIDE_MARGINE 56
 #define TOP_MARGINE 44
