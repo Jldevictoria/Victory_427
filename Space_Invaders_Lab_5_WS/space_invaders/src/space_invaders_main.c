@@ -164,11 +164,13 @@ void pollButtons(){
 		if (SW6){
 			// Software DMA.
 			memcpy((void *)SCREENSHOT_BUFFER_0_ADDR, (void *)FRAME_BUFFER_0_ADDR, (size_t) BUFFER_FULL_SIZE);
+			xil_printf("SW6\n\r");
 		}
 
 		if (SW7){
 			// Send go command to dma_screencap.
 			DMA_SCREENCAP_mWriteReg(XPAR_DMA_SCREENCAP_0_BASEADDR, DMA_SCREENCAP_MST_GO_PORT_OFFSET, 0x0A);
+			xil_printf("SW7\n\r");
 		}
 
 		if((gameStatus == RUNNING)&& up){
@@ -585,6 +587,11 @@ void interrupt_handler_dispatcher(void* ptr) {
 		XIntc_AckIntr(XPAR_INTC_0_BASEADDR, XPAR_AXI_AC97_0_INTERRUPT_MASK);
 		AC97_interrupt_handler();
 	}
+	if (intc_status & XPAR_DMA_SCREENCAP_0_SCREENCAP_INTERRUPT_MASK){
+		XIntc_AckIntr(XPAR_INTC_0_BASEADDR, XPAR_DMA_SCREENCAP_0_SCREENCAP_INTERRUPT_MASK);
+		xil_printf("DMA interrupt\n\r");
+	}
+
 
 }
 
@@ -778,7 +785,7 @@ int main(){
      //XGpio_InterruptEnable(&gpPB, 0xFFFFFFFF);
 
      microblaze_register_handler(interrupt_handler_dispatcher, NULL);
-     XIntc_EnableIntr(XPAR_INTC_0_BASEADDR, XPAR_AXI_AC97_0_INTERRUPT_MASK | XPAR_PIT_TIMER_0_PIT_INTERRUPT_MASK);
+     XIntc_EnableIntr(XPAR_INTC_0_BASEADDR, XPAR_AXI_AC97_0_INTERRUPT_MASK | XPAR_PIT_TIMER_0_PIT_INTERRUPT_MASK | XPAR_DMA_SCREENCAP_0_SCREENCAP_INTERRUPT_MASK);
      XIntc_MasterEnable(XPAR_INTC_0_BASEADDR);
      microblaze_enable_interrupts();
 
@@ -796,7 +803,7 @@ int main(){
      //Initialize DMA Screen Capture values.
      DMA_SCREENCAP_mWriteReg(XPAR_DMA_SCREENCAP_0_BASEADDR, DMA_SCREENCAP_SLV_REG1_OFFSET, FRAME_BUFFER_0_ADDR);
      DMA_SCREENCAP_mWriteReg(XPAR_DMA_SCREENCAP_0_BASEADDR, DMA_SCREENCAP_SLV_REG2_OFFSET, SCREENSHOT_BUFFER_0_ADDR);
-     DMA_SCREENCAP_mWriteReg(XPAR_DMA_SCREENCAP_0_BASEADDR, DMA_SCREENCAP_SLV_REG3_OFFSET, BUFFER_FULL_SIZE);
+     DMA_SCREENCAP_mWriteReg(XPAR_DMA_SCREENCAP_0_BASEADDR, DMA_SCREENCAP_SLV_REG3_OFFSET, NUM_OF_DMA_TRANSFERS);
 
      //Initialize screenshot state.
      ss_status = 1;
@@ -812,6 +819,8 @@ int main(){
      //Initialize the uart
      XUartLite_Initialize(&uart, XPAR_RS232_UART_1_DEVICE_ID);
      XUartLite_ResetFifos(&uart);
+
+     xil_printf("Here we go!\n\r");
      while(1){
     	 inputChar = XUartLite_RecvByte(XPAR_RS232_UART_1_BASEADDR);
 

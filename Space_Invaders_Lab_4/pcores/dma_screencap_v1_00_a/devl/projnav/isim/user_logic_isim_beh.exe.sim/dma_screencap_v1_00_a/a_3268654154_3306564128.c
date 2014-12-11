@@ -28,6 +28,7 @@ extern char *IEEE_P_2592010699;
 unsigned char ieee_p_2592010699_sub_1605435078_503743352(char *, unsigned char , unsigned char );
 unsigned char ieee_p_2592010699_sub_1690584930_503743352(char *, unsigned char );
 unsigned char ieee_p_2592010699_sub_2545490612_503743352(char *, unsigned char , unsigned char );
+unsigned char ieee_p_3620187407_sub_4060537613_3965413181(char *, char *, char *, char *, char *);
 char *ieee_p_3620187407_sub_436279890_3965413181(char *, char *, char *, char *, int );
 char *ieee_p_3620187407_sub_767668596_3965413181(char *, char *, char *, char *, char *, char *);
 
@@ -4409,7 +4410,7 @@ LAB53:    xsi_set_current_line(628, ng0);
     t12 = *((char **)t11);
     t11 = (t0 + 45344U);
     t13 = ieee_p_3620187407_sub_767668596_3965413181(IEEE_P_3620187407, t15, t8, t5, t12, t11);
-    t1 = ieee_std_logic_unsigned_equal_stdv_stdv(IEEE_P_3620187407, t4, t2, t13, t15);
+    t1 = ieee_p_3620187407_sub_4060537613_3965413181(IEEE_P_3620187407, t4, t2, t13, t15);
     if (t1 != 0)
         goto LAB59;
 

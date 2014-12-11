@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map O.87xd on Thu Dec 11 01:42:07 2014
+// Written by: Map O.87xd on Thu Dec 11 05:25:48 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -12467,29 +12467,9 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         BEL
         "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1"
         BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_6"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_5"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_4"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_3_2"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_5_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_2_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_3_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_4_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_3"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0_1"
-        BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_2"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_1"
         BEL
@@ -12512,11 +12492,7 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_7"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_8"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1"
         BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_go" BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_wr_dst_rdy"
-        BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_awvalid"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wvalid"
@@ -12530,8 +12506,7 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_rd_src_rdy"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_cmdack"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/done_done" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/r_w_flag" BEL
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/r_w_flag" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_state_FSM_FFd1"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
@@ -12541,8 +12516,6 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_read_error"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_write_error"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_0"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_wr_in_prog"
         BEL
@@ -12568,83 +12541,70 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RESET_MODULE/sig_combined_reset"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_31_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_31"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_30_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_30"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_29_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_29"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_28_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_28"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_27_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_27"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_26_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_26"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_25_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_25"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_24_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_24"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_23_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_23"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_22_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_22"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_21_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_21"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_20_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_20"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_19_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_19"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_18_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_18"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_17_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_17"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_16_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_16"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_15_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_15"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_14_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_14"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_13_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_13"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_12_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_12"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_11_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_11"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_10_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_10"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_9_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_9"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_8_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_8"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_7_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_7"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_6_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_6"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_5_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_5"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_4_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_4"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_3_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_3"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_2_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_2"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_1_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_1"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_0_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/FIFO_Full"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_2"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_3"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_4"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_busy" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_0"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_2" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_3" BEL
@@ -12684,14 +12644,6 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_2" BEL
@@ -12708,6 +12660,22 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_2" BEL
@@ -12724,14 +12692,6 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_2" BEL
@@ -12740,102 +12700,102 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_8" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_9" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_10" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_11" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_12" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_13" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_14" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_15" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_16" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_17" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_18" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_19" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_20" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_21" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_22" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_23" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_24" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_25" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_26" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_27" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_28" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_29" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_30" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_31" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_8" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_9" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_10" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_11" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_12" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_13" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_14" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_15" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_16" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_17" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_18" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_19" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_20" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_21" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_22" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_23" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_24" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_25" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_26" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_27" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_28" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_29" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_30" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_31" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_8" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_9" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_10" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_11" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_12" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_13" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_14" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_15" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_16" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_17" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_18" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_19" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_20" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_21" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_22" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_23" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_24" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_25" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_26" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_27" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_28" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_29" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_30" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_31" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_8" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_9" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_10" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_11" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_12" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_13" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_14" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_15" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_16" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_17" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_18" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_19" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_20" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_21" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_22" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_23" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_24" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_25" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_26" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_27" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_28" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_29" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_30" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_31" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_8" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_9" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_10" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_11" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_12" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_13" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_14" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_15" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_16" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_17" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_18" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_19" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_20" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_21" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_22" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_23" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_24" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_25" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_26" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_27" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_28" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_29" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_30" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_31" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_8" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_9" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_10" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_11" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_12" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_13" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_14" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_15" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_16" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_17" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_18" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_19" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_20" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_21" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_22" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_23" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_24" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_25" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_26" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_27" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_28" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_29" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_30" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_31" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_2" BEL
@@ -12868,144 +12828,56 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_29" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_30" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_31" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_8" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_9" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_10" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_11" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_12" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_13" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_14" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_15" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_16" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_17" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_18" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_19" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_20" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_21" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_22" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_23" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_24" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_25" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_26" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_27" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_28" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_29" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_30" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_31" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_8" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_9" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_10" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_11" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_12" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_13" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_14" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_15" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_16" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_17" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_18" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_19" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_20" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_21" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_22" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_23" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_24" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_25" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_26" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_27" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_28" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_29" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_30" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_31" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_clr_go" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_wr_req" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_0"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_1"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_2"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_3"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_error"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_busy" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_2" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_clr_go" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_wr_req" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_8" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_9" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_10"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_11"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_12"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_13"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_14"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_15"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_16"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_17"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_18"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_19"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_20"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_21"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_22"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_23"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_24"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_25"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_26"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_27"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_28"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_29"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_30"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_31"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_error"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_2"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_3"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_4"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_5"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_6"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_7"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_8"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_9"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_10"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_11"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_12"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_13"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_14"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_15"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_16"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_17"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_18"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_19"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_20"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_21"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_22"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_23"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_24"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_25"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_26"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_rd_req"
-        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_rd_req" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_2"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_3"
@@ -13055,6 +12927,35 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_25"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_26"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_0"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_1"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_2"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_3"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_4"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_5"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_6"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_7"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_8"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_9"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_10"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_11"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_12"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_13"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_14"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_15"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_16"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_17"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_18"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_19"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_20"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_21"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_22"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_23"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_24"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_25"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_26"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_27"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_28"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_state_FSM_FFd2"
         BEL
@@ -13171,6 +13072,12 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_25"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_26"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_0"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_1"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_2"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_3"
         BEL
@@ -25756,29 +25663,9 @@ TIMEGRP s_axi_lite_aclk = PIN
         BEL
         "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1"
         BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_6"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_5"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_4"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_3_2"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_5_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_2_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_3_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_4_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_3"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0_1"
-        BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_2"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_1"
         BEL
@@ -25801,11 +25688,7 @@ TIMEGRP s_axi_lite_aclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_7"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_8"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1"
         BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_go" BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_wr_dst_rdy"
-        BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_awvalid"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wvalid"
@@ -25819,8 +25702,7 @@ TIMEGRP s_axi_lite_aclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_rd_src_rdy"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_cmdack"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/done_done" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/r_w_flag" BEL
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/r_w_flag" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_state_FSM_FFd1"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
@@ -25830,8 +25712,6 @@ TIMEGRP s_axi_lite_aclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_read_error"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_write_error"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_0"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_wr_in_prog"
         BEL
@@ -25857,83 +25737,70 @@ TIMEGRP s_axi_lite_aclk = PIN
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RESET_MODULE/sig_combined_reset"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_31_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_31"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_30_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_30"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_29_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_29"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_28_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_28"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_27_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_27"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_26_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_26"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_25_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_25"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_24_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_24"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_23_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_23"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_22_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_22"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_21_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_21"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_20_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_20"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_19_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_19"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_18_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_18"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_17_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_17"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_16_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_16"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_15_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_15"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_14_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_14"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_13_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_13"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_12_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_12"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_11_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_11"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_10_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_10"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_9_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_9"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_8_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_8"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_7_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_7"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_6_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_6"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_5_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_5"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_4_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_4"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_3_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_3"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_2_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_2"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_1_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_1"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_0_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/FIFO_Full"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_2"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_3"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_4"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_busy" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_0"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_2" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_3" BEL
@@ -25973,14 +25840,6 @@ TIMEGRP s_axi_lite_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_2" BEL
@@ -25997,6 +25856,22 @@ TIMEGRP s_axi_lite_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_2" BEL
@@ -26013,14 +25888,6 @@ TIMEGRP s_axi_lite_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_2" BEL
@@ -26029,102 +25896,102 @@ TIMEGRP s_axi_lite_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_8" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_9" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_10" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_11" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_12" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_13" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_14" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_15" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_16" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_17" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_18" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_19" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_20" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_21" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_22" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_23" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_24" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_25" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_26" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_27" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_28" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_29" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_30" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_31" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_8" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_9" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_10" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_11" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_12" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_13" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_14" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_15" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_16" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_17" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_18" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_19" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_20" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_21" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_22" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_23" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_24" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_25" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_26" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_27" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_28" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_29" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_30" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_31" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_8" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_9" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_10" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_11" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_12" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_13" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_14" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_15" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_16" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_17" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_18" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_19" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_20" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_21" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_22" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_23" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_24" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_25" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_26" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_27" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_28" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_29" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_30" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_31" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_8" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_9" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_10" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_11" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_12" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_13" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_14" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_15" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_16" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_17" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_18" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_19" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_20" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_21" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_22" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_23" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_24" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_25" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_26" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_27" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_28" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_29" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_30" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_31" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_8" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_9" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_10" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_11" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_12" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_13" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_14" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_15" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_16" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_17" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_18" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_19" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_20" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_21" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_22" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_23" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_24" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_25" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_26" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_27" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_28" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_29" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_30" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_31" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_8" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_9" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_10" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_11" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_12" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_13" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_14" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_15" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_16" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_17" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_18" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_19" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_20" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_21" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_22" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_23" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_24" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_25" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_26" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_27" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_28" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_29" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_30" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_31" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_2" BEL
@@ -26157,144 +26024,56 @@ TIMEGRP s_axi_lite_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_29" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_30" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_31" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_8" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_9" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_10" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_11" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_12" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_13" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_14" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_15" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_16" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_17" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_18" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_19" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_20" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_21" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_22" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_23" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_24" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_25" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_26" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_27" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_28" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_29" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_30" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_31" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_8" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_9" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_10" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_11" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_12" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_13" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_14" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_15" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_16" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_17" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_18" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_19" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_20" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_21" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_22" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_23" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_24" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_25" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_26" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_27" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_28" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_29" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_30" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_31" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_clr_go" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_wr_req" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_0"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_1"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_2"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_3"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_error"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_busy" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_2" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_clr_go" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_wr_req" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_8" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_9" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_10"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_11"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_12"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_13"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_14"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_15"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_16"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_17"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_18"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_19"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_20"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_21"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_22"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_23"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_24"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_25"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_26"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_27"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_28"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_29"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_30"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_31"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_error"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_2"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_3"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_4"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_5"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_6"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_7"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_8"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_9"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_10"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_11"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_12"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_13"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_14"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_15"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_16"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_17"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_18"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_19"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_20"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_21"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_22"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_23"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_24"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_25"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_26"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_rd_req"
-        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_rd_req" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_2"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_3"
@@ -26344,6 +26123,35 @@ TIMEGRP s_axi_lite_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_25"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_26"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_0"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_1"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_2"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_3"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_4"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_5"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_6"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_7"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_8"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_9"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_10"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_11"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_12"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_13"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_14"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_15"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_16"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_17"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_18"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_19"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_20"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_21"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_22"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_23"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_24"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_25"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_26"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_27"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_28"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_state_FSM_FFd2"
         BEL
@@ -26460,6 +26268,12 @@ TIMEGRP s_axi_lite_aclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_25"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_26"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_0"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_1"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_2"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_3"
         BEL
@@ -39046,29 +38860,9 @@ TIMEGRP globclk = PIN
         BEL
         "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1"
         BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_6"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_5"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_4"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_3_2"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_5_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_2_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_3_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_4_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_3"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0_1"
-        BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_2"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_1"
         BEL
@@ -39091,11 +38885,7 @@ TIMEGRP globclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_7"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_8"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1"
         BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_go" BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_wr_dst_rdy"
-        BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_awvalid"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wvalid"
@@ -39109,8 +38899,7 @@ TIMEGRP globclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_rd_src_rdy"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_cmdack"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/done_done" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/r_w_flag" BEL
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/r_w_flag" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_state_FSM_FFd1"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
@@ -39120,8 +38909,6 @@ TIMEGRP globclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_read_error"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_write_error"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_0"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_wr_in_prog"
         BEL
@@ -39147,83 +38934,70 @@ TIMEGRP globclk = PIN
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RESET_MODULE/sig_combined_reset"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_31_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_31"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_30_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_30"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_29_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_29"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_28_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_28"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_27_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_27"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_26_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_26"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_25_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_25"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_24_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_24"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_23_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_23"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_22_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_22"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_21_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_21"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_20_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_20"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_19_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_19"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_18_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_18"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_17_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_17"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_16_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_16"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_15_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_15"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_14_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_14"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_13_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_13"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_12_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_12"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_11_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_11"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_10_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_10"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_9_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_9"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_8_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_8"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_7_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_7"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_6_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_6"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_5_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_5"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_4_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_4"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_3_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_3"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_2_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_2"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_1_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_1"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_0_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/FIFO_Full"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_2"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_3"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_4"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_busy" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_0"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_2" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_3" BEL
@@ -39263,14 +39037,6 @@ TIMEGRP globclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_2" BEL
@@ -39287,6 +39053,22 @@ TIMEGRP globclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_2" BEL
@@ -39303,14 +39085,6 @@ TIMEGRP globclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_2" BEL
@@ -39319,102 +39093,102 @@ TIMEGRP globclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_8" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_9" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_10" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_11" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_12" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_13" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_14" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_15" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_16" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_17" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_18" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_19" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_20" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_21" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_22" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_23" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_24" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_25" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_26" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_27" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_28" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_29" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_30" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_31" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_8" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_9" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_10" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_11" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_12" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_13" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_14" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_15" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_16" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_17" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_18" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_19" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_20" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_21" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_22" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_23" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_24" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_25" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_26" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_27" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_28" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_29" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_30" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_31" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_8" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_9" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_10" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_11" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_12" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_13" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_14" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_15" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_16" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_17" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_18" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_19" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_20" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_21" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_22" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_23" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_24" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_25" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_26" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_27" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_28" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_29" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_30" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_31" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_8" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_9" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_10" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_11" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_12" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_13" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_14" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_15" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_16" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_17" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_18" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_19" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_20" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_21" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_22" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_23" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_24" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_25" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_26" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_27" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_28" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_29" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_30" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_31" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_8" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_9" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_10" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_11" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_12" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_13" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_14" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_15" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_16" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_17" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_18" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_19" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_20" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_21" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_22" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_23" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_24" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_25" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_26" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_27" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_28" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_29" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_30" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_31" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_8" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_9" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_10" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_11" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_12" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_13" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_14" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_15" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_16" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_17" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_18" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_19" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_20" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_21" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_22" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_23" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_24" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_25" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_26" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_27" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_28" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_29" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_30" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_31" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_2" BEL
@@ -39447,144 +39221,56 @@ TIMEGRP globclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_29" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_30" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_31" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_8" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_9" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_10" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_11" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_12" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_13" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_14" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_15" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_16" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_17" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_18" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_19" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_20" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_21" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_22" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_23" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_24" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_25" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_26" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_27" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_28" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_29" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_30" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_31" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_8" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_9" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_10" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_11" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_12" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_13" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_14" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_15" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_16" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_17" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_18" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_19" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_20" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_21" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_22" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_23" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_24" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_25" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_26" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_27" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_28" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_29" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_30" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_31" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_clr_go" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_wr_req" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_0"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_1"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_2"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_3"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_error"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_busy" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_2" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_clr_go" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_wr_req" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_8" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_9" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_10"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_11"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_12"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_13"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_14"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_15"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_16"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_17"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_18"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_19"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_20"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_21"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_22"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_23"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_24"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_25"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_26"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_27"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_28"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_29"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_30"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_31"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_error"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_2"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_3"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_4"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_5"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_6"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_7"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_8"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_9"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_10"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_11"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_12"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_13"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_14"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_15"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_16"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_17"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_18"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_19"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_20"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_21"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_22"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_23"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_24"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_25"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_26"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_rd_req"
-        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_rd_req" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_2"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_3"
@@ -39634,6 +39320,35 @@ TIMEGRP globclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_25"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_26"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_0"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_1"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_2"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_3"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_4"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_5"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_6"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_7"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_8"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_9"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_10"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_11"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_12"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_13"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_14"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_15"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_16"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_17"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_18"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_19"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_20"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_21"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_22"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_23"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_24"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_25"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_26"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_27"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_28"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_state_FSM_FFd2"
         BEL
@@ -39750,6 +39465,12 @@ TIMEGRP globclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_25"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_26"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_0"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_1"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_2"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_3"
         BEL
@@ -52354,29 +52075,9 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         BEL
         "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1"
         BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_6"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_5"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_4"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_3_2"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_5_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_2_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_3_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_4_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_3"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0_1"
-        BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_2"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_1"
         BEL
@@ -52399,11 +52100,7 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_7"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_8"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1"
         BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_go" BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_wr_dst_rdy"
-        BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_awvalid"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wvalid"
@@ -52417,8 +52114,7 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_rd_src_rdy"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_cmdack"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/done_done" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/r_w_flag" BEL
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/r_w_flag" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_state_FSM_FFd1"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
@@ -52428,8 +52124,6 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_read_error"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_write_error"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_0"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_wr_in_prog"
         BEL
@@ -52455,83 +52149,70 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RESET_MODULE/sig_combined_reset"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_31_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_31"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_30_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_30"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_29_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_29"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_28_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_28"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_27_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_27"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_26_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_26"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_25_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_25"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_24_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_24"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_23_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_23"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_22_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_22"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_21_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_21"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_20_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_20"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_19_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_19"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_18_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_18"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_17_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_17"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_16_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_16"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_15_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_15"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_14_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_14"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_13_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_13"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_12_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_12"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_11_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_11"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_10_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_10"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_9_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_9"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_8_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_8"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_7_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_7"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_6_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_6"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_5_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_5"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_4_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_4"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_3_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_3"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_2_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_2"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_1_0"
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_1"
         BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_0_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/FIFO_Full"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_2"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_3"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_4"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_busy" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_0_0"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_2" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_3" BEL
@@ -52571,14 +52252,6 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_2" BEL
@@ -52595,6 +52268,22 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_2" BEL
@@ -52611,14 +52300,6 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_2" BEL
@@ -52627,102 +52308,102 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_8" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_9" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_10" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_11" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_12" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_13" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_14" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_15" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_16" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_17" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_18" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_19" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_20" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_21" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_22" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_23" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_24" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_25" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_26" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_27" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_28" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_29" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_30" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg1_31" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_8" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_9" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_10" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_11" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_12" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_13" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_14" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_15" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_16" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_17" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_18" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_19" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_20" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_21" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_22" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_23" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_24" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_25" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_26" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_27" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_28" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_29" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_30" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg2_31" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_8" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_9" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_10" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_11" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_12" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_13" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_14" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_15" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_16" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_17" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_18" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_19" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_20" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_21" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_22" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_23" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_24" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_25" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_26" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_27" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_28" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_29" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_30" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg3_31" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_8" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_9" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_10" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_11" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_12" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_13" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_14" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_15" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_16" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_17" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_18" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_19" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_20" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_21" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_22" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_23" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_24" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_25" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_26" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_27" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_28" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_29" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_30" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/source_addr_31" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_8" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_9" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_10" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_11" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_12" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_13" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_14" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_15" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_16" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_17" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_18" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_19" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_20" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_21" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_22" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_23" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_24" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_25" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_26" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_27" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_28" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_29" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_30" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/dest_addr_31" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_8" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_9" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_10" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_11" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_12" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_13" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_14" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_15" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_16" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_17" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_18" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_19" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_20" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_21" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_22" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_23" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_24" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_25" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_26" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_27" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_28" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_29" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_30" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/num_of_transfers_31" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_2" BEL
@@ -52755,144 +52436,56 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_29" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_30" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg4_31" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_8" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_9" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_10" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_11" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_12" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_13" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_14" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_15" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_16" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_17" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_18" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_19" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_20" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_21" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_22" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_23" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_24" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_25" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_26" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_27" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_28" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_29" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_30" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/slv_reg0_31" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_8" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_9" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_10" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_11" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_12" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_13" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_14" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_15" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_16" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_17" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_18" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_19" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_20" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_21" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_22" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_23" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_24" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_25" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_26" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_27" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_28" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_29" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_30" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_31" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_clr_go" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_wr_req" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_0"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_1"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_2"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_3"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_error"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_busy" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_2" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_clr_go" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_wr_req" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_8" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_9" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_10"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_11"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_12"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_13"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_14"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_15"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_16"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_17"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_18"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_19"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_20"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_21"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_22"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_23"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_24"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_25"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_26"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_27"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_28"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_29"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_30"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_31"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_error"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_2"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_3"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_4"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_5"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_6"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_7"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_8"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_9"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_10"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_11"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_12"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_13"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_14"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_15"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_16"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_17"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_18"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_19"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_20"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_21"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_22"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_23"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_24"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_25"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_26"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_rd_req"
-        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_rd_req" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_2"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_3"
@@ -52942,6 +52535,35 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_25"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_26"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_0"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_1"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_2"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_3"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_4"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_5"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_6"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_7"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_8"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_9"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_10"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_11"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_12"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_13"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_14"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_15"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_16"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_17"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_18"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_19"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_20"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_21"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_22"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_23"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_24"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_25"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_26"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_27"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/transfer_count_28"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_state_FSM_FFd2"
         BEL
@@ -53058,6 +52680,12 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_25"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_26"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_0"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_1"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_2"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_3"
         BEL

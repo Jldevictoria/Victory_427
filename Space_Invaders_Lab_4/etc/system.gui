@@ -122,9 +122,7 @@
       <SET ID="gpio_0" IS_EXPANDED="TRUE"/>
     </SET>
     <STATUS>
-      <SELECTIONS>
-        <VARIABLE ID="axi_switches_gpio_GPIO_IO_I_pin" PARENT="ExternalPorts"/>
-      </SELECTIONS>
+      <SELECTIONS/>
     </STATUS>
     <SEQUENCES IS_DEF_SEQUENCES="TRUE">
       <VARIABLE ID="ExternalPorts" IS_EXPANDED="TRUE" ROW_INDEX="0"/>

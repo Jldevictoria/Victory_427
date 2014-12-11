@@ -1025,13 +1025,7 @@ INFO:Xst:2260 - The FF/Latch <Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATT
 INFO:Xst:2260 - The FF/Latch <Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/rd_en_s> in Unit <Digilent_QuadSPI_Cntlr> is equivalent to the following 5 FFs/Latches : <Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/rd_en_s_1> <Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/rd_en_s_2> <Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/rd_en_s_3> <Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/rd_en_s_4> <Digilent_QuadSPI_Cntlr/USER_LOGIC_I/spi_sf_instance/rd_en_s_5> 
 INFO:Xst:2260 - The FF/Latch <Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_4> in Unit <Digilent_QuadSPI_Cntlr> is equivalent to the following FF/Latch : <Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_4_1> 
 INFO:Xst:2260 - The FF/Latch <Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_5> in Unit <Digilent_QuadSPI_Cntlr> is equivalent to the following FF/Latch : <Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_5_1> 
-INFO:Xst:2260 - The FF/Latch <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0> in Unit <dma_screencap_0> is equivalent to the following FF/Latch : <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0_1> 
-INFO:Xst:2260 - The FF/Latch <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_3> in Unit <dma_screencap_0> is equivalent to the following 2 FFs/Latches : <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_3_1> <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_3_2> 
-INFO:Xst:2260 - The FF/Latch <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1> in Unit <dma_screencap_0> is equivalent to the following FF/Latch : <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1_1> 
-INFO:Xst:2260 - The FF/Latch <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg> in Unit <dma_screencap_0> is equivalent to the following 6 FFs/Latches : <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1> <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_2> <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_3> <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_4> <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_5> <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_6> 
-INFO:Xst:2260 - The FF/Latch <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_4> in Unit <dma_screencap_0> is equivalent to the following FF/Latch : <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_4_1> 
-INFO:Xst:2260 - The FF/Latch <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_2> in Unit <dma_screencap_0> is equivalent to the following FF/Latch : <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_2_1> 
-INFO:Xst:2260 - The FF/Latch <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_5> in Unit <dma_screencap_0> is equivalent to the following FF/Latch : <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_5_1> 
+INFO:Xst:2260 - The FF/Latch <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg> in Unit <dma_screencap_0> is equivalent to the following 2 FFs/Latches : <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1> <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_2> 
 INFO:Xst:2260 - The FF/Latch <axi_switches_gpio/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <axi_switches_gpio> is equivalent to the following FF/Latch : <axi_switches_gpio/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
 INFO:Xst:2260 - The FF/Latch <RS232_Uart_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg> in Unit <RS232_Uart_1> is equivalent to the following FF/Latch : <RS232_Uart_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1> 
 INFO:Xst:2260 - The FF/Latch <axi_ac97_0/USER_LOGIC_I/AC97_CONTROLLER/AC97_FIFO_I/ac97_core_I/ac97_timing_I_1/slotnum_i_2> in Unit <axi_ac97_0> is equivalent to the following FF/Latch : <axi_ac97_0/USER_LOGIC_I/AC97_CONTROLLER/AC97_FIFO_I/ac97_core_I/ac97_timing_I_1/slotnum_i_2_1> 
@@ -1101,13 +1095,7 @@ INFO:Xst:2260 - The FF/Latch <Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATT
 INFO:Xst:2260 - The FF/Latch <Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_4> in Unit <Digilent_QuadSPI_Cntlr> is equivalent to the following FF/Latch : <Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_4_1> 
 INFO:Xst:2260 - The FF/Latch <Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_7> in Unit <Digilent_QuadSPI_Cntlr> is equivalent to the following FF/Latch : <Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_7_1> 
 INFO:Xst:2260 - The FF/Latch <Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_5> in Unit <Digilent_QuadSPI_Cntlr> is equivalent to the following FF/Latch : <Digilent_QuadSPI_Cntlr/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_5_1> 
-INFO:Xst:2260 - The FF/Latch <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_2> in Unit <dma_screencap_0> is equivalent to the following FF/Latch : <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_2_1> 
-INFO:Xst:2260 - The FF/Latch <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1> in Unit <dma_screencap_0> is equivalent to the following FF/Latch : <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1_1> 
-INFO:Xst:2260 - The FF/Latch <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0> in Unit <dma_screencap_0> is equivalent to the following FF/Latch : <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0_1> 
-INFO:Xst:2260 - The FF/Latch <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg> in Unit <dma_screencap_0> is equivalent to the following 6 FFs/Latches : <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1> <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_2> <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_3> <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_4> <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_5> <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_6> 
-INFO:Xst:2260 - The FF/Latch <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_5> in Unit <dma_screencap_0> is equivalent to the following FF/Latch : <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_5_1> 
-INFO:Xst:2260 - The FF/Latch <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_4> in Unit <dma_screencap_0> is equivalent to the following FF/Latch : <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_4_1> 
-INFO:Xst:2260 - The FF/Latch <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_3> in Unit <dma_screencap_0> is equivalent to the following 2 FFs/Latches : <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_3_1> <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_3_2> 
+INFO:Xst:2260 - The FF/Latch <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg> in Unit <dma_screencap_0> is equivalent to the following 2 FFs/Latches : <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1> <dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_2> 
 
 Final Macro Processing ...
 
@@ -1136,37 +1124,37 @@ Top Level Output File Name         : system.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 10542
+# BELS                             : 10367
 #      GND                         : 27
-#      INV                         : 232
-#      LUT1                        : 199
-#      LUT2                        : 799
-#      LUT3                        : 1389
-#      LUT4                        : 1312
-#      LUT5                        : 1495
-#      LUT6                        : 2866
+#      INV                         : 231
+#      LUT1                        : 141
+#      LUT2                        : 781
+#      LUT3                        : 1329
+#      LUT4                        : 1361
+#      LUT5                        : 1559
+#      LUT6                        : 2777
 #      LUT6_2                      : 80
 #      MULT_AND                    : 9
-#      MUXCY                       : 785
+#      MUXCY                       : 757
 #      MUXCY_L                     : 279
-#      MUXF7                       : 261
+#      MUXF7                       : 260
 #      MUXF8                       : 46
 #      VCC                         : 22
-#      XORCY                       : 741
-# FlipFlops/Latches                : 8430
-#      FD                          : 987
+#      XORCY                       : 708
+# FlipFlops/Latches                : 8414
+#      FD                          : 974
 #      FD_1                        : 21
 #      FDC                         : 221
 #      FDC_1                       : 5
 #      FDCE                        : 151
-#      FDE                         : 1298
+#      FDE                         : 1295
 #      FDE_1                       : 8
 #      FDP                         : 29
 #      FDPE                        : 28
-#      FDR                         : 2122
-#      FDRE                        : 3406
+#      FDR                         : 2124
+#      FDRE                        : 3409
 #      FDRE_1                      : 1
-#      FDS                         : 95
+#      FDS                         : 90
 #      FDSE                        : 56
 #      LD                          : 1
 #      LDC                         : 1
@@ -1175,10 +1163,10 @@ Primitive and Black Box Usage:
 #      RAM32M                      : 21
 #      RAMB16BWER                  : 30
 #      RAMB8BWER                   : 3
-# Shift Registers                  : 438
+# Shift Registers                  : 406
 #      SRL16                       : 2
 #      SRL16E                      : 39
-#      SRLC16E                     : 388
+#      SRLC16E                     : 356
 #      SRLC32E                     : 9
 # Clock Buffers                    : 7
 #      BUFG                        : 6
@@ -1215,18 +1203,18 @@ Selected Device : 6slx45csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            8430  out of  54576    15%  
- Number of Slice LUTs:                 8898  out of  27288    32%  
-    Number used as Logic:              8372  out of  27288    30%  
-    Number used as Memory:              526  out of   6408     8%  
+ Number of Slice Registers:            8414  out of  54576    15%  
+ Number of Slice LUTs:                 8753  out of  27288    32%  
+    Number used as Logic:              8259  out of  27288    30%  
+    Number used as Memory:              494  out of   6408     7%  
        Number used as RAM:               88
-       Number used as SRL:              438
+       Number used as SRL:              406
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:  13455
-   Number with an unused Flip Flop:    5025  out of  13455    37%  
-   Number with an unused LUT:          4557  out of  13455    33%  
-   Number of fully used LUT-FF pairs:  3873  out of  13455    28%  
+ Number of LUT Flip Flop pairs used:  13333
+   Number with an unused Flip Flop:    4919  out of  13333    36%  
+   Number with an unused LUT:          4580  out of  13333    34%  
+   Number of fully used LUT-FF pairs:  3834  out of  13333    28%  
    Number of unique control sets:       504
 
 IO Utilization: 
@@ -1261,7 +1249,7 @@ Clock Information:
 -------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+-------+
 Clock Signal                                                                                     | Clock buffer(FF name)                                                                                              | Load  |
 -------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+-------+
-GCLK                                                                                             | PLL_ADV:CLKOUT2                                                                                                    | 8096  |
+GCLK                                                                                             | PLL_ADV:CLKOUT2                                                                                                    | 8048  |
 axi_hdmi_0/axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/PLL_BASE_inst/CLKOUT1  | BUFG                                                                                                               | 434   |
 axi_hdmi_0/axi_hdmi_0/USE_HDMI_OUT.Inst_AxiHDMITransmitter/Inst_DynClkGen/PLL_BASE_inst/CLKOUT3  | BUFG                                                                                                               | 17    |
 axi_ac97_0_Bit_Clk_pin                                                                           | BUFGP                                                                                                              | 130   |
@@ -1298,7 +1286,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'GCLK'
   Clock period: 10.510ns (frequency: 95.143MHz)
-  Total number of paths / destination ports: 802855 / 21013
+  Total number of paths / destination ports: 806504 / 20805
 -------------------------------------------------------------------------
 Delay:               10.510ns (Levels of Logic = 21)
   Source:            axi4_0/axi4_0/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_master_slots[0].reg_slice_mi/r_pipe/state_FSM_FFd2 (FF)
@@ -1804,7 +1792,7 @@ GCLK           |    3.258|         |         |         |
 
 
 Total REAL time to Xst completion: 29.00 secs
-Total CPU time to Xst completion: 29.18 secs
+Total CPU time to Xst completion: 28.84 secs
  
 --> 
 
@@ -1812,5 +1800,5 @@ Total memory usage is 355316 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   18 (   0 filtered)
-Number of infos    :  912 (   0 filtered)
+Number of infos    :  900 (   0 filtered)
 

@@ -61,9 +61,9 @@ run_clock 10
 
 # start the test'
 # setup slave registers
-isim force add slv_reg1 1024
-isim force add slv_reg2 64
-isim force add slv_reg3 [expr 20 * 4] ;# 20 words
+isim force add slv_reg1 C1000000 -radix hex
+isim force add slv_reg2 C5000000 -radix hex
+isim force add slv_reg3 128
 
 isim force add mst_go 1
 
@@ -91,7 +91,8 @@ run_clock 2
 # do 16 writes
 send_data mst_fifo_valid_read_xfer Bus2IP_Mst_Cmplt
 
-run_clock 4
+run_clock 10
+
 
 ## # # # # # #
 ## Test small transfers
