@@ -160,7 +160,8 @@ implementation/push_buttons_5bits_wrapper.ngc \
 implementation/mcb_ddr2_wrapper.ngc \
 implementation/digilent_quadspi_cntlr_wrapper.ngc \
 implementation/pit_timer_0_wrapper.ngc \
-implementation/dma_screencap_0_wrapper.ngc
+implementation/dma_screencap_0_wrapper.ngc \
+implementation/axi_switches_gpio_wrapper.ngc
 
 POSTSYN_NETLIST = implementation/$(SYSTEM).ngc
 

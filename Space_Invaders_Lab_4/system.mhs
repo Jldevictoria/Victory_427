@@ -61,6 +61,7 @@
  PORT axi_ac97_0_SData_Out_pin = axi_ac97_0_SData_Out, DIR = O
  PORT axi_ac97_0_AC97Reset_n_pin = axi_ac97_0_AC97Reset_n, DIR = O
  PORT Push_Buttons_5Bits_TRI_I = Push_Buttons_5Bits_TRI_I, DIR = I, VEC = [0:4]
+ PORT axi_switches_gpio_GPIO_IO_I_pin = axi_switches_gpio_GPIO_IO_I, DIR = I, VEC = [7:0]
 
 
 BEGIN proc_sys_reset
@@ -320,6 +321,7 @@ BEGIN axi_gpio
  PORT S_AXI_ACLK = clk_100_0000MHzPLL0
  PORT GPIO_IO_I = Push_Buttons_5Bits_TRI_I
  PORT IP2INTC_Irpt = Push_Buttons_5Bits_IP2INTC_Irpt
+ PORT GPIO_IO_T = Push_Buttons_5Bits_GPIO_IO_T
 END
 
 BEGIN axi_s6_ddrx
@@ -402,5 +404,16 @@ BEGIN dma_screencap
  PORT S_AXI_ACLK = clk_100_0000MHzPLL0
  PORT m_axi_lite_aclk = clk_100_0000MHzPLL0
  PORT screencap_interrupt = dma_screencap_0_screencap_interrupt
+END
+
+BEGIN axi_gpio
+ PARAMETER INSTANCE = axi_switches_gpio
+ PARAMETER HW_VER = 1.01.b
+ PARAMETER C_BASEADDR = 0x40040000
+ PARAMETER C_HIGHADDR = 0x4004ffff
+ PARAMETER C_GPIO_WIDTH = 8
+ BUS_INTERFACE S_AXI = axi4lite_0
+ PORT S_AXI_ACLK = clk_100_0000MHzPLL0
+ PORT GPIO_IO_I = axi_switches_gpio_GPIO_IO_I
 END
 

@@ -70,6 +70,7 @@ Address Map for Processor microblaze_0
   (0000000000-0x00007fff) microblaze_0_d_bram_ctrl	microblaze_0_dlmb
   (0000000000-0x00007fff) microblaze_0_i_bram_ctrl	microblaze_0_ilmb
   (0x40000000-0x4000ffff) Push_Buttons_5Bits	axi4lite_0
+  (0x40040000-0x4004ffff) axi_switches_gpio	axi4lite_0
   (0x40600000-0x4060ffff) RS232_Uart_1	axi4lite_0
   (0x41200000-0x4120ffff) axi_intc_0	axi4lite_0
   (0x41400000-0x4140ffff) debug_module	axi4lite_0
@@ -99,7 +100,7 @@ Checking platform address map ...
 Checking platform configuration ...
 IPNAME: lmb_v10, INSTANCE: microblaze_0_ilmb - 1 master(s) : 1 slave(s) 
 IPNAME: lmb_v10, INSTANCE: microblaze_0_dlmb - 1 master(s) : 1 slave(s) 
-IPNAME: axi_interconnect, INSTANCE: axi4lite_0 - 1 master(s) : 11 slave(s) 
+IPNAME: axi_interconnect, INSTANCE: axi4lite_0 - 1 master(s) : 12 slave(s) 
 IPNAME: axi_interconnect, INSTANCE: axi4_0 - 4 master(s) : 1 slave(s) 
 WARNING:EDK:3977 - AXI4 protocol type BUSIF: S0_AXI of IPINSTANCE: MCB_DDR2 
    connected with AXI4LITE type BUSIF: M_AXI of IPINSTANCE: dma_screencap_0.
@@ -152,7 +153,10 @@ WARNING:EDK:4181 - PORT: s2mm_prmry_reset_out_n, CONNECTOR: S2MM_RESET_OUT_N -
    C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_vdma_v5_00_a\dat
    a\axi_vdma_v2_1_0.mpd line 224 
 WARNING:EDK:4181 - PORT: M_AXIS_S2MM_ACLK, CONNECTOR: M_AXIS_S2MM_ACLK_int -
-   floating connection - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 260
+   floating connection - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 261
+    
+WARNING:EDK:4181 - PORT: GPIO_IO_T, CONNECTOR: Push_Buttons_5Bits_GPIO_IO_T -
+   floating connection - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 324
     
 
 Performing Clock DRCs...
@@ -289,74 +293,74 @@ Managing hardware (BBD-specified) netlist files ...
 
 Managing cache ...
 IPNAME:proc_sys_reset INSTANCE:proc_sys_reset_0 -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 66 - Copying cache
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 67 - Copying cache
 implementation netlist
 IPNAME:lmb_v10 INSTANCE:microblaze_0_ilmb -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 79 - Copying cache
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 80 - Copying cache
 implementation netlist
 IPNAME:lmb_bram_if_cntlr INSTANCE:microblaze_0_i_bram_ctrl -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 86 - Copying cache
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 87 - Copying cache
 implementation netlist
 IPNAME:lmb_v10 INSTANCE:microblaze_0_dlmb -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 95 - Copying cache
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 96 - Copying cache
 implementation netlist
 IPNAME:lmb_bram_if_cntlr INSTANCE:microblaze_0_d_bram_ctrl -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 102 - Copying cache
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 103 - Copying cache
 implementation netlist
 IPNAME:bram_block INSTANCE:microblaze_0_bram_block -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 111 - Copying cache
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 112 - Copying cache
 implementation netlist
 IPNAME:microblaze INSTANCE:microblaze_0 -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 118 - Copying cache
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 119 - Copying cache
 implementation netlist
 IPNAME:fit_timer INSTANCE:fit_timer_0 -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 146 - Copying cache
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 147 - Copying cache
 implementation netlist
 IPNAME:mdm INSTANCE:debug_module -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 154 - Copying cache
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 155 - Copying cache
 implementation netlist
 IPNAME:axi_vdma INSTANCE:axi_vdma_0 -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 189 - Copying cache
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 190 - Copying cache
 implementation netlist
 IPNAME:axi_timer INSTANCE:axi_timer_0 -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 209 - Copying cache
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 210 - Copying cache
+implementation netlist
+IPNAME:axi_intc INSTANCE:axi_intc_0 -
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 220 - Copying cache
 implementation netlist
 IPNAME:axi_hdmi INSTANCE:axi_hdmi_0 -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 230 - Copying cache
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 231 - Copying cache
 implementation netlist
 IPNAME:axi_ac97 INSTANCE:axi_ac97_0 -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 264 - Copying cache
-implementation netlist
-IPNAME:axi_interconnect INSTANCE:axi4lite_0 -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 279 - Copying cache
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 265 - Copying cache
 implementation netlist
 IPNAME:axi_interconnect INSTANCE:axi4_0 -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 287 - Copying cache
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 288 - Copying cache
 implementation netlist
 IPNAME:axi_uartlite INSTANCE:rs232_uart_1 -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 294 - Copying cache
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 295 - Copying cache
 implementation netlist
 IPNAME:axi_gpio INSTANCE:push_buttons_5bits -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 310 - Copying cache
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 311 - Copying cache
 implementation netlist
 IPNAME:axi_s6_ddrx INSTANCE:mcb_ddr2 -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 325 - Copying cache
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 327 - Copying cache
 implementation netlist
 IPNAME:d_qspi_axi INSTANCE:digilent_quadspi_cntlr -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 373 - Copying cache
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 375 - Copying cache
 implementation netlist
 IPNAME:pit_timer INSTANCE:pit_timer_0 -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 385 - Copying cache
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 387 - Copying cache
 implementation netlist
 IPNAME:dma_screencap INSTANCE:dma_screencap_0 -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 395 - Copying cache
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 397 - Copying cache
 implementation netlist
 
 Elaborating instances ...
 IPNAME:bram_block INSTANCE:microblaze_0_bram_block -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 111 - elaborating IP
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 112 - elaborating IP
 IPNAME:clock_generator INSTANCE:clock_generator_0 -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 167 - elaborating IP
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 168 - elaborating IP
 ClkGen elaborate status: PASSED
 ----------------------------------------
 
@@ -381,23 +385,27 @@ INFO:EDK:4211 - The following instances are synthesized with XST. The MPD option
    synthesis. IMP_NETLIST=FALSE (default) instances are not synthesized. 
 INFO:EDK:4194 - Running XST parallelly on 2 processors
 INSTANCE:clock_generator_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line
-167 - Running XST synthesis
-INSTANCE:axi_intc_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 219 -
+168 - Running XST synthesis
+INSTANCE:axi_ac97_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 265 -
 Running XST synthesis
-INSTANCE:axi_ac97_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 264 -
+INSTANCE:axi4lite_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 280 -
 Running XST synthesis
-INSTANCE:pit_timer_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 385 -
+INSTANCE:pit_timer_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 387 -
 Running XST synthesis
 INSTANCE:dma_screencap_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line
-395 - Running XST synthesis
+397 - Running XST synthesis
+INSTANCE:axi_switches_gpio - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line
+409 - Running XST synthesis
 
 Running NGCBUILD ...
 IPNAME:clock_generator_0_wrapper INSTANCE:clock_generator_0 -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 167 - Running NGCBUILD
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 168 - Running NGCBUILD
+IPNAME:axi4lite_0_wrapper INSTANCE:axi4lite_0 -
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 280 - Running NGCBUILD
 INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
    If any constraint needs to be overridden, this should be done by modifying
    the data/system.ucf file.
 
 Rebuilding cache ...
 
-Total run time: 55.00 seconds
+Total run time: 64.00 seconds

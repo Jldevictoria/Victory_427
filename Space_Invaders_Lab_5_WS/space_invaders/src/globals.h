@@ -136,6 +136,7 @@ unsigned int * framePointer;
 int currentButtonState;
 int ctlrButtons;
 int atlysButtons;
+int atlysSwitches;
 int idleTime;
 int runTimeN, runTimeO, deltaRunTime;
 _Bool sFlags[10];

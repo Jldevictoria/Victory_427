@@ -2,27 +2,9 @@ Command line:
    user_logic_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  62463
+     -socket  62851
 
-Wed Dec 10 23:15:40 2014
+Thu Dec 11 01:32:55 2014
 
 
  Elaboration Time: 0.0468 sec
-
- Current Memory Usage: 825.897 Meg
-
- Total Signals          : 120
- Total Nets             : 1361
- Total Signal Drivers   : 74
- Total Blocks           : 13
- Total Primitive Blocks : 8
- Total Processes        : 55
- Total Traceable Variables  : 42
- Total Scalar Nets and Variables : 38928
-
- Total Simulation Time: 0.592804 sec
-
- Current Memory Usage: 672.805 Meg
-
-Wed Dec 10 23:21:36 2014
-

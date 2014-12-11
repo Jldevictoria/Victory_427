@@ -18,19 +18,3 @@ at 0 ps, Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/
 Finished circuit initialization process.
 at 10 ns(2), Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 10 ns(2), Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-# restart
-# source simulation.tcl
-Simulator is doing circuit initialization process.
-at 0 ps, Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-Finished circuit initialization process.
-at 10 ns(2), Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 10 ns(2), Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-# restart
-# source simulation.tcl
-Simulator is doing circuit initialization process.
-at 0 ps, Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 0 ps, Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-Finished circuit initialization process.
-at 10 ns(2), Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 10 ns(2), Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0

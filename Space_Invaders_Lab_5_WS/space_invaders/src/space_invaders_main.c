@@ -47,6 +47,7 @@ char inputChar;
 unsigned int delayValue;
 
 XGpio gpPB;   // This is a handle for the push-button GPIO block.
+XGpio gpSW;   // This is a handle for the switches GPIO block.
 XUartLite uart;
 XAxiVdma_DmaSetup myFrameBuffer;
 XAxiVdma videoDMAController;
@@ -54,12 +55,23 @@ XAxiVdma videoDMAController;
 void pollButtons(){
 	if((fit_counter % TANK_SPEED) == 0){
 		atlysButtons = XGpio_DiscreteRead(&gpPB, 1);  // Get the current state of the buttons.
+		atlysSwitches = XGpio_DiscreteRead(&gpSW, 1); // Get the current state of the switches.
 		currentButtonState = atlysButtons | ctlrButtons;
 		int left = currentButtonState&(0x8);
 		int button_b = currentButtonState&(0x1);
 		int right = currentButtonState&(0x2);
 		int up = currentButtonState&(0x10);
 		int down = currentButtonState&(0x4);
+
+
+		//int SW0 = atlysSwitches&(0x1);
+		//int SW1 = atlysSwitches&(0x2);
+		//int SW2 = atlysSwitches&(0x4);
+		//int SW3 = atlysSwitches&(0x8);
+		//int SW4 = atlysSwitches&(0x10);
+		int SW5 = atlysSwitches&(0x20);
+		int SW6 = atlysSwitches&(0x40);
+		int SW7 = atlysSwitches&(0x80);
 
 		int button_start = currentButtonState&(0x20);
 		int button_a = currentButtonState&(0x40);
@@ -136,26 +148,27 @@ void pollButtons(){
 				masterVolume = AC97_VOL_MUTE;
 				XAC97_WriteReg(XPAR_AXI_AC97_0_BASEADDR, AC97_AuxOutVol, masterVolume);
 			}
+		}
+
+
+		if (SW5){
 			if (XST_FAILURE == XAxiVdma_StartParking(&videoDMAController, 1,  XAXIVDMA_READ)) {
 				xil_printf("vdma parking failed\n\r");
 			}
-//			if (ss_status == 1){
-//				if (XST_FAILURE == XAxiVdma_StartParking(&videoDMAController, ss_status,  XAXIVDMA_READ)) {
-//					xil_printf("vdma parking failed\n\r");
-//				}
-//				ss_status = 0;
-//			}
-//			else{
-//				if (XST_FAILURE == XAxiVdma_StartParking(&videoDMAController, ss_status,  XAXIVDMA_READ)) {
-//					xil_printf("vdma parking failed\n\r");
-//				}
-//				ss_status = 1;
-//			}
-		}
-		else{
+		}else{
 			if (XST_FAILURE == XAxiVdma_StartParking(&videoDMAController, 0,  XAXIVDMA_READ)) {
 				xil_printf("vdma parking failed\n\r");
 			}
+		}
+
+		if (SW6){
+			// Software DMA.
+			memcpy((void *)SCREENSHOT_BUFFER_0_ADDR, (void *)FRAME_BUFFER_0_ADDR, (size_t) BUFFER_FULL_SIZE);
+		}
+
+		if (SW7){
+			// Send go command to dma_screencap.
+			DMA_SCREENCAP_mWriteReg(XPAR_DMA_SCREENCAP_0_BASEADDR, DMA_SCREENCAP_MST_GO_PORT_OFFSET, 0x0A);
 		}
 
 		if((gameStatus == RUNNING)&& up){
@@ -167,17 +180,6 @@ void pollButtons(){
 				masterVolume -= AC97_VOL_ATTN_1_5_DB;
 				XAC97_WriteReg(XPAR_AXI_AC97_0_BASEADDR, AC97_AuxOutVol, masterVolume);
 			}
-
-
-
-			// Send go command to dma_screencap.
-			DMA_SCREENCAP_mWriteReg(XPAR_DMA_SCREENCAP_0_BASEADDR, DMA_SCREENCAP_MST_GO_PORT_OFFSET, 0x0A);
-			xil_printf("go address value: %d\n\r", DMA_SCREENCAP_mReadReg(XPAR_DMA_SCREENCAP_0_BASEADDR, DMA_SCREENCAP_MST_GO_PORT_OFFSET));
-			// Software DMA.
-			//memcpy((void *)SCREENSHOT_BUFFER_0_ADDR, (void *)FRAME_BUFFER_0_ADDR, (size_t) BUFFER_FULL_SIZE);
-
-
-
 		}
 
 		if(gameStatus == STOPPED && (left || right || button_b) && (0 < playerLives) && (reachedBottom != 1)){
@@ -764,10 +766,12 @@ int main(){
      int success;
      // print("hello world\n\r");
      success = XGpio_Initialize(&gpPB, XPAR_PUSH_BUTTONS_5BITS_DEVICE_ID);
-     // success = XGpio_Initialize(&gpPB, XPAR_PUSH_BUTTONS_5BITS_DEVICE_ID);
+     success = XGpio_Initialize(&gpSW, XPAR_AXI_SWITCHES_GPIO_DEVICE_ID);
 
      // Set the push button peripheral to be inputs.
      XGpio_SetDataDirection(&gpPB, 1, 0x0000001F);
+     XGpio_SetDataDirection(&gpSW, 1, 0x000000FF);
+
      // Enable the global GPIO interrupt for push buttons.
      //XGpio_InterruptGlobalEnable(&gpPB);
      // Enable all interrupts in the push button peripheral.

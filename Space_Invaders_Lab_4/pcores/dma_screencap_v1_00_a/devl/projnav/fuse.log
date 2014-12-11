@@ -26,8 +26,8 @@ Compiling architecture imp of entity srl_fifo_rbu_f [\srl_fifo_rbu_f(32,16,"nofa
 Compiling architecture imp of entity srl_fifo_f [\srl_fifo_f(32,16,"nofamily")(1,...]
 Compiling architecture imp of entity user_logic
 Time Resolution for simulation is 1ps.
-Waiting for 3 sub-compilation(s) to finish...
+Waiting for 4 sub-compilation(s) to finish...
 Compiled 16 VHDL Units
 Built simulation executable C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/user_logic_isim_beh.exe
-Fuse Memory Usage: 40688 KB
+Fuse Memory Usage: 40672 KB
 Fuse CPU Usage: 779 ms

@@ -12,6 +12,9 @@ Loading design module
 "C:/Victory_427/Space_Invaders_Lab_4/implementation/push_buttons_5bits_wrapper.n
 gc"...
 Loading design module
+"C:/Victory_427/Space_Invaders_Lab_4/implementation/axi_switches_gpio_wrapper.ng
+c"...
+Loading design module
 "C:/Victory_427/Space_Invaders_Lab_4/implementation/rs232_uart_1_wrapper.ngc"...
 Loading design module
 "C:/Victory_427/Space_Invaders_Lab_4/implementation/proc_sys_reset_0_wrapper.ngc
@@ -289,10 +292,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:  37
 
-Total memory usage is 301784 kilobytes
+Total memory usage is 303000 kilobytes
 
 Writing NGD file "system.ngd" ...
-Total REAL time to NGDBUILD completion: 1 min  2 sec
+Total REAL time to NGDBUILD completion: 1 min  3 sec
 Total CPU time to NGDBUILD completion:  1 min  2 sec
 
 Writing NGDBUILD log file "system.bld"...

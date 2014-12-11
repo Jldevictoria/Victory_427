@@ -38,13 +38,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1418278534" xil_pn:in_ck="4698823641074954426" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1418278534">
+    <transform xil_pn:end_ts="1418286767" xil_pn:in_ck="4698823641074954426" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1418286767">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="../../hdl/vhdl/dma_screencap.vhd"/>
       <outfile xil_pn:name="../../hdl/vhdl/user_logic.vhd"/>
       <outfile xil_pn:name="C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/address_decoder.vhd"/>
@@ -78,14 +74,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1418278534" xil_pn:in_ck="4698823641074954426" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1418278534">
+    <transform xil_pn:end_ts="1418286767" xil_pn:in_ck="4698823641074954426" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1418286767">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="../../hdl/vhdl/dma_screencap.vhd"/>
       <outfile xil_pn:name="../../hdl/vhdl/user_logic.vhd"/>
       <outfile xil_pn:name="C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/address_decoder.vhd"/>
@@ -107,14 +98,9 @@
       <outfile xil_pn:name="C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/srl_fifo_f.vhd"/>
       <outfile xil_pn:name="C:/Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/srl_fifo_rbu_f.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1418278538" xil_pn:in_ck="4698823641074954426" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-7011580084256736533" xil_pn:start_ts="1418278534">
+    <transform xil_pn:end_ts="1418286773" xil_pn:in_ck="4698823641074954426" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-7011580084256736533" xil_pn:start_ts="1418286767">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
@@ -122,12 +108,9 @@
       <outfile xil_pn:name="user_logic_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1418278538" xil_pn:in_ck="9029298855654020079" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-5456930004579064729" xil_pn:start_ts="1418278538">
+    <transform xil_pn:end_ts="1418286773" xil_pn:in_ck="9029298855654020079" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-5456930004579064729" xil_pn:start_ts="1418286773">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="user_logic_isim_beh.wdb"/>
