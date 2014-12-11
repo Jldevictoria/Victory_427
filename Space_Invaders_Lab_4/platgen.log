@@ -32,7 +32,7 @@ INFO:EDK:4130 - IPNAME: axi_vdma, INSTANCE:axi_vdma_0 - tcl is overriding
    C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_vdma_v5_00_a\dat
    a\axi_vdma_v2_1_0.mpd line 146 
 INFO:EDK:4130 - IPNAME: axi_intc, INSTANCE:axi_intc_0 - tcl is overriding
-   PARAMETER C_NUM_INTR_INPUTS value to 6 -
+   PARAMETER C_NUM_INTR_INPUTS value to 7 -
    C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_intc_v1_01_a\dat
    a\axi_intc_v2_1_0.mpd line 80 
 INFO:EDK:4130 - IPNAME: axi_interconnect, INSTANCE:axi4lite_0 - tcl is
@@ -193,7 +193,7 @@ INFO:EDK:4130 - IPNAME: microblaze, INSTANCE:microblaze_0 - tcl is overriding
    C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_20_b\d
    ata\microblaze_v2_1_0.mpd line 398 
 INFO:EDK:4130 - IPNAME: axi_intc, INSTANCE:axi_intc_0 - tcl is overriding
-   PARAMETER C_KIND_OF_INTR value to 0b11111111111111111111111111110010 -
+   PARAMETER C_KIND_OF_INTR value to 0b11111111111111111111111111100100 -
    C:\Xilinx\13.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_intc_v1_01_a\dat
    a\axi_intc_v2_1_0.mpd line 81 
 INFO:EDK:4130 - IPNAME: axi_intc, INSTANCE:axi_intc_0 - tcl is overriding
@@ -321,14 +321,17 @@ implementation netlist
 IPNAME:axi_timer INSTANCE:axi_timer_0 -
 C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 209 - Copying cache
 implementation netlist
-IPNAME:axi_intc INSTANCE:axi_intc_0 -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 219 - Copying cache
-implementation netlist
 IPNAME:axi_hdmi INSTANCE:axi_hdmi_0 -
 C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 230 - Copying cache
 implementation netlist
 IPNAME:axi_ac97 INSTANCE:axi_ac97_0 -
 C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 264 - Copying cache
+implementation netlist
+IPNAME:axi_interconnect INSTANCE:axi4lite_0 -
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 279 - Copying cache
+implementation netlist
+IPNAME:axi_interconnect INSTANCE:axi4_0 -
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 287 - Copying cache
 implementation netlist
 IPNAME:axi_uartlite INSTANCE:rs232_uart_1 -
 C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 294 - Copying cache
@@ -345,6 +348,9 @@ implementation netlist
 IPNAME:pit_timer INSTANCE:pit_timer_0 -
 C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 385 - Copying cache
 implementation netlist
+IPNAME:dma_screencap INSTANCE:dma_screencap_0 -
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 395 - Copying cache
+implementation netlist
 
 Elaborating instances ...
 IPNAME:bram_block INSTANCE:microblaze_0_bram_block -
@@ -357,10 +363,10 @@ ClkGen elaborate status: PASSED
 Writing HDL for elaborated instances ...
 
 Inserting wrapper level ...
-Completion time: 0.00 seconds
+Completion time: 1.00 seconds
 
 Constructing platform-level connectivity ...
-Completion time: 1.00 seconds
+Completion time: 0.00 seconds
 
 Writing (top-level) BMM ...
 
@@ -376,11 +382,9 @@ INFO:EDK:4211 - The following instances are synthesized with XST. The MPD option
 INFO:EDK:4194 - Running XST parallelly on 2 processors
 INSTANCE:clock_generator_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line
 167 - Running XST synthesis
+INSTANCE:axi_intc_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 219 -
+Running XST synthesis
 INSTANCE:axi_ac97_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 264 -
-Running XST synthesis
-INSTANCE:axi4lite_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 279 -
-Running XST synthesis
-INSTANCE:axi4_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 287 -
 Running XST synthesis
 INSTANCE:pit_timer_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 385 -
 Running XST synthesis
@@ -390,14 +394,10 @@ INSTANCE:dma_screencap_0 - C:\Victory_427\Space_Invaders_Lab_4\system.mhs line
 Running NGCBUILD ...
 IPNAME:clock_generator_0_wrapper INSTANCE:clock_generator_0 -
 C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 167 - Running NGCBUILD
-IPNAME:axi4lite_0_wrapper INSTANCE:axi4lite_0 -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 279 - Running NGCBUILD
-IPNAME:axi4_0_wrapper INSTANCE:axi4_0 -
-C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 287 - Running NGCBUILD
 INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
    If any constraint needs to be overridden, this should be done by modifying
    the data/system.ucf file.
 
 Rebuilding cache ...
 
-Total run time: 168.00 seconds
+Total run time: 55.00 seconds

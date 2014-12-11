@@ -34,6 +34,7 @@
 #include "time.h"
 #include "unistd.h"
 #include "mb_interface.h"
+#include "dma_screencap.h"
 #include "xintc_l.h"
 #include "globals.h"
 #include "xac97_l.h"
@@ -47,6 +48,8 @@ unsigned int delayValue;
 
 XGpio gpPB;   // This is a handle for the push-button GPIO block.
 XUartLite uart;
+XAxiVdma_DmaSetup myFrameBuffer;
+XAxiVdma videoDMAController;
 
 void pollButtons(){
 	if((fit_counter % TANK_SPEED) == 0){
@@ -133,6 +136,26 @@ void pollButtons(){
 				masterVolume = AC97_VOL_MUTE;
 				XAC97_WriteReg(XPAR_AXI_AC97_0_BASEADDR, AC97_AuxOutVol, masterVolume);
 			}
+			if (XST_FAILURE == XAxiVdma_StartParking(&videoDMAController, 1,  XAXIVDMA_READ)) {
+				xil_printf("vdma parking failed\n\r");
+			}
+//			if (ss_status == 1){
+//				if (XST_FAILURE == XAxiVdma_StartParking(&videoDMAController, ss_status,  XAXIVDMA_READ)) {
+//					xil_printf("vdma parking failed\n\r");
+//				}
+//				ss_status = 0;
+//			}
+//			else{
+//				if (XST_FAILURE == XAxiVdma_StartParking(&videoDMAController, ss_status,  XAXIVDMA_READ)) {
+//					xil_printf("vdma parking failed\n\r");
+//				}
+//				ss_status = 1;
+//			}
+		}
+		else{
+			if (XST_FAILURE == XAxiVdma_StartParking(&videoDMAController, 0,  XAXIVDMA_READ)) {
+				xil_printf("vdma parking failed\n\r");
+			}
 		}
 
 		if((gameStatus == RUNNING)&& up){
@@ -144,6 +167,17 @@ void pollButtons(){
 				masterVolume -= AC97_VOL_ATTN_1_5_DB;
 				XAC97_WriteReg(XPAR_AXI_AC97_0_BASEADDR, AC97_AuxOutVol, masterVolume);
 			}
+
+
+
+			// Send go command to dma_screencap.
+			DMA_SCREENCAP_mWriteReg(XPAR_DMA_SCREENCAP_0_BASEADDR, DMA_SCREENCAP_MST_GO_PORT_OFFSET, 0x0A);
+			xil_printf("go address value: %d\n\r", DMA_SCREENCAP_mReadReg(XPAR_DMA_SCREENCAP_0_BASEADDR, DMA_SCREENCAP_MST_GO_PORT_OFFSET));
+			// Software DMA.
+			//memcpy((void *)SCREENSHOT_BUFFER_0_ADDR, (void *)FRAME_BUFFER_0_ADDR, (size_t) BUFFER_FULL_SIZE);
+
+
+
 		}
 
 		if(gameStatus == STOPPED && (left || right || button_b) && (0 < playerLives) && (reachedBottom != 1)){
@@ -648,7 +682,7 @@ int main(){
 	gameStatus = STOPPED;
 	init_platform();                   // Necessary for all programs.
 	int Status;                        // Keep track of success/failure of system function calls.
-	XAxiVdma videoDMAController;
+	//XAxiVdma videoDMAController;
 	// There are 3 steps to initializing the vdma driver and IP.
 	// Step 1: lookup the memory structure that is used to access the vdma driver.
     XAxiVdma_Config * VideoDMAConfig = XAxiVdma_LookupConfig(XPAR_AXI_VDMA_0_DEVICE_ID);
@@ -678,7 +712,7 @@ int main(){
     }
     // Now we tell the driver about the geometry of our frame buffer and a few other things.
     // Our image is 480 x 640.
-    XAxiVdma_DmaSetup myFrameBuffer;
+    //XAxiVdma_DmaSetup myFrameBuffer;
     myFrameBuffer.VertSizeInput = 480;    // 480 vertical pixels.
     myFrameBuffer.HoriSizeInput = 640*4;  // 640 horizontal (32-bit pixels).
     myFrameBuffer.Stride = 640*4;         // Dont' worry about the rest of the values.
@@ -695,7 +729,7 @@ int main(){
     // is where you will write your video data. The vdma IP/driver then streams it to the HDMI
     // IP.
      myFrameBuffer.FrameStoreStartAddr[0] = FRAME_BUFFER_0_ADDR;
-     myFrameBuffer.FrameStoreStartAddr[1] = FRAME_BUFFER_0_ADDR + 4*640*480;
+     myFrameBuffer.FrameStoreStartAddr[1] = SCREENSHOT_BUFFER_0_ADDR;
 
      if(XST_FAILURE == XAxiVdma_DmaSetBufferAddr(&videoDMAController, XAXIVDMA_READ,
     		               myFrameBuffer.FrameStoreStartAddr)) {
@@ -756,8 +790,12 @@ int main(){
      mothershipSoundTurn = 5;
 
      //Initialize DMA Screen Capture values.
-     DMA_SCREENCAP_mWriteReg(XPAR_DMA_SCREENCAP_0_BASEADDR, DMA_SCREENCAP_SLV_REG0_OFFSET, FRAME_BUFFER_0_ADDR);
-     DMA_SCREENCAP_mWriteReg(XPAR_DMA_SCREENCAP_0_BASEADDR, DMA_SCREENCAP_SLV_REG1_OFFSET, SCREENSHOT_BUFFER_0_ADDR);
+     DMA_SCREENCAP_mWriteReg(XPAR_DMA_SCREENCAP_0_BASEADDR, DMA_SCREENCAP_SLV_REG1_OFFSET, FRAME_BUFFER_0_ADDR);
+     DMA_SCREENCAP_mWriteReg(XPAR_DMA_SCREENCAP_0_BASEADDR, DMA_SCREENCAP_SLV_REG2_OFFSET, SCREENSHOT_BUFFER_0_ADDR);
+     DMA_SCREENCAP_mWriteReg(XPAR_DMA_SCREENCAP_0_BASEADDR, DMA_SCREENCAP_SLV_REG3_OFFSET, BUFFER_FULL_SIZE);
+
+     //Initialize screenshot state.
+     ss_status = 1;
 
      //Initialize Pit Timer values
 	 // Write 1,000,000 to the pit_timer delay register.

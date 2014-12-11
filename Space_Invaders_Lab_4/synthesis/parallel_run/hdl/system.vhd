@@ -1281,7 +1281,7 @@ architecture STRUCTURE of system is
       S_AXI_RRESP : out std_logic_vector(1 downto 0);
       S_AXI_RVALID : out std_logic;
       S_AXI_RREADY : in std_logic;
-      Intr : in std_logic_vector(5 downto 0);
+      Intr : in std_logic_vector(6 downto 0);
       Irq : out std_logic
     );
   end component;
@@ -2181,6 +2181,7 @@ architecture STRUCTURE of system is
 
   component dma_screencap_0_wrapper is
     port (
+      screencap_interrupt : out std_logic;
       S_AXI_ACLK : in std_logic;
       S_AXI_ARESETN : in std_logic;
       S_AXI_AWADDR : in std_logic_vector(31 downto 0);
@@ -2420,6 +2421,7 @@ architecture STRUCTURE of system is
   signal clk_100_0000MHzPLL0 : std_logic_vector(0 to 0);
   signal clk_600_0000MHz180PLL0_nobuf : std_logic;
   signal clk_600_0000MHzPLL0_nobuf : std_logic;
+  signal dma_screencap_0_screencap_interrupt : std_logic;
   signal fit_timer_0_Interrupt : std_logic;
   signal microblaze_0_d_bram_ctrl_2_microblaze_0_bram_block_BRAM_Addr : std_logic_vector(0 to 31);
   signal microblaze_0_d_bram_ctrl_2_microblaze_0_bram_block_BRAM_Clk : std_logic;
@@ -2499,7 +2501,7 @@ architecture STRUCTURE of system is
   signal net_gnd4096 : std_logic_vector(0 to 4095);
   signal net_vcc0 : std_logic;
   signal net_vcc4 : std_logic_vector(3 downto 0);
-  signal pgassign1 : std_logic_vector(5 downto 0);
+  signal pgassign1 : std_logic_vector(6 downto 0);
   signal pgassign2 : std_logic_vector(10 downto 0);
   signal pgassign3 : std_logic_vector(3 downto 0);
   signal pit_timer_0_pit_interrupt : std_logic;
@@ -2601,12 +2603,13 @@ begin
   axi4_0_S_ARQOS(15 downto 12) <= B"0000";
   axi4_0_S_ARUSER(14 downto 10) <= B"00000";
   axi4_0_S_ARUSER(19 downto 15) <= B"00000";
-  pgassign1(5) <= RS232_Uart_1_Interrupt;
-  pgassign1(4) <= axi_ac97_0_Interrupt;
-  pgassign1(3) <= axi_timer_0_Interrupt;
-  pgassign1(2) <= Push_Buttons_5Bits_IP2INTC_Irpt;
-  pgassign1(1) <= fit_timer_0_Interrupt;
-  pgassign1(0) <= pit_timer_0_pit_interrupt;
+  pgassign1(6) <= RS232_Uart_1_Interrupt;
+  pgassign1(5) <= axi_ac97_0_Interrupt;
+  pgassign1(4) <= axi_timer_0_Interrupt;
+  pgassign1(3) <= Push_Buttons_5Bits_IP2INTC_Irpt;
+  pgassign1(2) <= fit_timer_0_Interrupt;
+  pgassign1(1) <= pit_timer_0_pit_interrupt;
+  pgassign1(0) <= dma_screencap_0_screencap_interrupt;
   pgassign2(10 downto 10) <= clk_100_0000MHzPLL0(0 to 0);
   pgassign2(9 downto 9) <= clk_100_0000MHzPLL0(0 to 0);
   pgassign2(8 downto 8) <= clk_100_0000MHzPLL0(0 to 0);
@@ -4731,6 +4734,7 @@ begin
 
   dma_screencap_0 : dma_screencap_0_wrapper
     port map (
+      screencap_interrupt => dma_screencap_0_screencap_interrupt,
       S_AXI_ACLK => pgassign2(10),
       S_AXI_ARESETN => axi4lite_0_M_ARESETN(10),
       S_AXI_AWADDR => axi4lite_0_M_AWADDR(351 downto 320),

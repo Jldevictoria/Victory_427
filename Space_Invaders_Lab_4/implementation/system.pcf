@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map O.87xd on Thu Dec 04 17:57:18 2014
+// Written by: Map O.87xd on Wed Dec 10 23:56:44 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -10626,22 +10626,22 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         BEL
         "axi_vdma_0/axi_vdma_0/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUFFER.GEN_ASYNC_FIFO.I_LINEBUFFER_FIFO/I_ASYNC_FIFOGEN_FIFO/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d2"
         BEL
-        "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_2"
-        BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1"
         BEL "axi_intc_0/axi_intc_0/INTC_CORE_I/Irq" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_1" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_6" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_6" BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
         BEL "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst" BEL
         "axi_intc_0/axi_intc_0/ip2bus_rdack" BEL
@@ -10649,16 +10649,18 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "axi_intc_0/axi_intc_0/INTC_CORE_I/mer_int_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_1" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_3" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_6" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_1" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_3" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_6" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/mer_int_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_1" BEL
@@ -10666,18 +10668,21 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_6" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_1" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_6" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_6" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_2" BEL
@@ -10686,23 +10691,23 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bvalid_i"
         BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_p1_4"
-        BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_p1_1"
-        BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_p1_5"
         BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_p2_1"
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<2>.EDGE_DETECT_GEN.intr_p1_2"
         BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_p2_4"
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<6>.EDGE_DETECT_GEN.intr_p1_6"
+        BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<2>.EDGE_DETECT_GEN.intr_p2_2"
         BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_p2_5"
         BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_d1_1"
-        BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_d1_4"
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<6>.EDGE_DETECT_GEN.intr_p2_6"
         BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_d1_5"
+        BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<2>.EDGE_DETECT_GEN.intr_d1_2"
+        BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<6>.EDGE_DETECT_GEN.intr_d1_6"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1"
         BEL
@@ -10731,6 +10736,8 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_4"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_5"
+        BEL
+        "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_6"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_31"
         BEL
@@ -12348,9 +12355,23 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         BEL
         "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1"
         BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_4_1"
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_6"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_5"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_4"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_3_2"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_5_1"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_2_1"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_3_1"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_4_1"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_3"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1_1"
         BEL
@@ -12397,7 +12418,8 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_rd_src_rdy"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_cmdack"
-        BEL
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/done_done" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/r_w_flag" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_state_FSM_FFd1"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
@@ -12407,6 +12429,8 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_read_error"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_write_error"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_0"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_wr_in_prog"
         BEL
@@ -12496,6 +12520,8 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_0_0"
         BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/FIFO_Full"
+        BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_0"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_1"
@@ -12503,6 +12529,8 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_2"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_3"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_4"
         BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_busy" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_1" BEL
@@ -12544,6 +12572,14 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_2" BEL
@@ -12560,22 +12596,6 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_2" BEL
@@ -12592,6 +12612,14 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_2" BEL
@@ -12765,9 +12793,107 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_2" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_3" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_clr_go" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_rd_req" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_wr_req" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_8" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_9" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_10"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_11"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_12"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_13"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_14"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_15"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_16"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_17"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_18"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_19"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_20"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_21"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_22"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_23"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_24"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_25"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_26"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_27"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_28"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_29"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_30"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_31"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_error"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_2"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_3"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_4"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_5"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_6"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_7"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_8"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_9"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_10"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_11"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_12"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_13"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_14"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_15"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_16"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_17"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_18"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_19"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_20"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_21"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_22"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_23"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_24"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_25"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_26"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_rd_req"
+        BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_2"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_3"
@@ -12817,16 +12943,6 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_25"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_26"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_2"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_3"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_error"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_state_FSM_FFd2"
         BEL
@@ -12943,12 +13059,6 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_25"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_26"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_2"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_3"
         BEL
@@ -23701,22 +23811,22 @@ TIMEGRP s_axi_lite_aclk = PIN
         BEL
         "axi_vdma_0/axi_vdma_0/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUFFER.GEN_ASYNC_FIFO.I_LINEBUFFER_FIFO/I_ASYNC_FIFOGEN_FIFO/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d2"
         BEL
-        "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_2"
-        BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1"
         BEL "axi_intc_0/axi_intc_0/INTC_CORE_I/Irq" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_1" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_6" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_6" BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
         BEL "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst" BEL
         "axi_intc_0/axi_intc_0/ip2bus_rdack" BEL
@@ -23724,16 +23834,18 @@ TIMEGRP s_axi_lite_aclk = PIN
         "axi_intc_0/axi_intc_0/INTC_CORE_I/mer_int_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_1" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_3" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_6" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_1" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_3" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_6" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/mer_int_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_1" BEL
@@ -23741,18 +23853,21 @@ TIMEGRP s_axi_lite_aclk = PIN
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_6" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_1" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_6" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_6" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_2" BEL
@@ -23761,23 +23876,23 @@ TIMEGRP s_axi_lite_aclk = PIN
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bvalid_i"
         BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_p1_4"
-        BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_p1_1"
-        BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_p1_5"
         BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_p2_1"
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<2>.EDGE_DETECT_GEN.intr_p1_2"
         BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_p2_4"
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<6>.EDGE_DETECT_GEN.intr_p1_6"
+        BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<2>.EDGE_DETECT_GEN.intr_p2_2"
         BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_p2_5"
         BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_d1_1"
-        BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_d1_4"
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<6>.EDGE_DETECT_GEN.intr_p2_6"
         BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_d1_5"
+        BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<2>.EDGE_DETECT_GEN.intr_d1_2"
+        BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<6>.EDGE_DETECT_GEN.intr_d1_6"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1"
         BEL
@@ -23806,6 +23921,8 @@ TIMEGRP s_axi_lite_aclk = PIN
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_4"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_5"
+        BEL
+        "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_6"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_31"
         BEL
@@ -25423,9 +25540,23 @@ TIMEGRP s_axi_lite_aclk = PIN
         BEL
         "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1"
         BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_4_1"
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_6"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_5"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_4"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_3_2"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_5_1"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_2_1"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_3_1"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_4_1"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_3"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1_1"
         BEL
@@ -25472,7 +25603,8 @@ TIMEGRP s_axi_lite_aclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_rd_src_rdy"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_cmdack"
-        BEL
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/done_done" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/r_w_flag" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_state_FSM_FFd1"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
@@ -25482,6 +25614,8 @@ TIMEGRP s_axi_lite_aclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_read_error"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_write_error"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_0"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_wr_in_prog"
         BEL
@@ -25571,6 +25705,8 @@ TIMEGRP s_axi_lite_aclk = PIN
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_0_0"
         BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/FIFO_Full"
+        BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_0"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_1"
@@ -25578,6 +25714,8 @@ TIMEGRP s_axi_lite_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_2"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_3"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_4"
         BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_busy" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_1" BEL
@@ -25619,6 +25757,14 @@ TIMEGRP s_axi_lite_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_2" BEL
@@ -25635,22 +25781,6 @@ TIMEGRP s_axi_lite_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_2" BEL
@@ -25667,6 +25797,14 @@ TIMEGRP s_axi_lite_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_2" BEL
@@ -25840,9 +25978,107 @@ TIMEGRP s_axi_lite_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_2" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_3" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_clr_go" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_rd_req" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_wr_req" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_8" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_9" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_10"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_11"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_12"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_13"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_14"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_15"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_16"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_17"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_18"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_19"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_20"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_21"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_22"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_23"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_24"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_25"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_26"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_27"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_28"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_29"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_30"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_31"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_error"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_2"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_3"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_4"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_5"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_6"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_7"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_8"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_9"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_10"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_11"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_12"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_13"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_14"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_15"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_16"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_17"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_18"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_19"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_20"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_21"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_22"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_23"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_24"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_25"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_26"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_rd_req"
+        BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_2"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_3"
@@ -25892,16 +26128,6 @@ TIMEGRP s_axi_lite_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_25"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_26"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_2"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_3"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_error"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_state_FSM_FFd2"
         BEL
@@ -26018,12 +26244,6 @@ TIMEGRP s_axi_lite_aclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_25"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_26"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_2"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_3"
         BEL
@@ -36777,22 +36997,22 @@ TIMEGRP globclk = PIN
         BEL
         "axi_vdma_0/axi_vdma_0/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUFFER.GEN_ASYNC_FIFO.I_LINEBUFFER_FIFO/I_ASYNC_FIFOGEN_FIFO/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d2"
         BEL
-        "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_2"
-        BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1"
         BEL "axi_intc_0/axi_intc_0/INTC_CORE_I/Irq" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_1" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_6" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_6" BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
         BEL "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst" BEL
         "axi_intc_0/axi_intc_0/ip2bus_rdack" BEL
@@ -36800,16 +37020,18 @@ TIMEGRP globclk = PIN
         "axi_intc_0/axi_intc_0/INTC_CORE_I/mer_int_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_1" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_3" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_6" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_1" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_3" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_6" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/mer_int_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_1" BEL
@@ -36817,18 +37039,21 @@ TIMEGRP globclk = PIN
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_6" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_1" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_6" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_6" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_2" BEL
@@ -36837,23 +37062,23 @@ TIMEGRP globclk = PIN
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bvalid_i"
         BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_p1_4"
-        BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_p1_1"
-        BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_p1_5"
         BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_p2_1"
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<2>.EDGE_DETECT_GEN.intr_p1_2"
         BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_p2_4"
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<6>.EDGE_DETECT_GEN.intr_p1_6"
+        BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<2>.EDGE_DETECT_GEN.intr_p2_2"
         BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_p2_5"
         BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_d1_1"
-        BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_d1_4"
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<6>.EDGE_DETECT_GEN.intr_p2_6"
         BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_d1_5"
+        BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<2>.EDGE_DETECT_GEN.intr_d1_2"
+        BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<6>.EDGE_DETECT_GEN.intr_d1_6"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1"
         BEL
@@ -36882,6 +37107,8 @@ TIMEGRP globclk = PIN
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_4"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_5"
+        BEL
+        "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_6"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_31"
         BEL
@@ -38499,9 +38726,23 @@ TIMEGRP globclk = PIN
         BEL
         "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1"
         BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_4_1"
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_6"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_5"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_4"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_3_2"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_5_1"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_2_1"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_3_1"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_4_1"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_3"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1_1"
         BEL
@@ -38548,7 +38789,8 @@ TIMEGRP globclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_rd_src_rdy"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_cmdack"
-        BEL
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/done_done" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/r_w_flag" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_state_FSM_FFd1"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
@@ -38558,6 +38800,8 @@ TIMEGRP globclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_read_error"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_write_error"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_0"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_wr_in_prog"
         BEL
@@ -38647,6 +38891,8 @@ TIMEGRP globclk = PIN
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_0_0"
         BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/FIFO_Full"
+        BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_0"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_1"
@@ -38654,6 +38900,8 @@ TIMEGRP globclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_2"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_3"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_4"
         BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_busy" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_1" BEL
@@ -38695,6 +38943,14 @@ TIMEGRP globclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_2" BEL
@@ -38711,22 +38967,6 @@ TIMEGRP globclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_2" BEL
@@ -38743,6 +38983,14 @@ TIMEGRP globclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_2" BEL
@@ -38916,9 +39164,107 @@ TIMEGRP globclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_2" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_3" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_clr_go" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_rd_req" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_wr_req" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_8" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_9" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_10"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_11"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_12"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_13"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_14"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_15"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_16"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_17"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_18"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_19"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_20"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_21"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_22"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_23"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_24"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_25"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_26"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_27"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_28"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_29"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_30"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_31"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_error"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_2"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_3"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_4"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_5"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_6"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_7"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_8"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_9"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_10"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_11"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_12"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_13"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_14"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_15"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_16"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_17"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_18"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_19"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_20"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_21"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_22"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_23"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_24"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_25"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_26"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_rd_req"
+        BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_2"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_3"
@@ -38968,16 +39314,6 @@ TIMEGRP globclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_25"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_26"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_2"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_3"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_error"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_state_FSM_FFd2"
         BEL
@@ -39094,12 +39430,6 @@ TIMEGRP globclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_25"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_26"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_2"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_3"
         BEL
@@ -49871,22 +50201,22 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         BEL
         "axi_vdma_0/axi_vdma_0/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUFFER.GEN_ASYNC_FIFO.I_LINEBUFFER_FIFO/I_ASYNC_FIFOGEN_FIFO/USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d2"
         BEL
-        "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_2"
-        BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1"
         BEL "axi_intc_0/axi_intc_0/INTC_CORE_I/Irq" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_1" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/sie_6" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ipr_6" BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
         BEL "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst" BEL
         "axi_intc_0/axi_intc_0/ip2bus_rdack" BEL
@@ -49894,16 +50224,18 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "axi_intc_0/axi_intc_0/INTC_CORE_I/mer_int_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_1" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_3" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/cie_6" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_1" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_3" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/iar_6" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/mer_int_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_1" BEL
@@ -49911,18 +50243,21 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/isr_6" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_1" BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/hw_intr_6" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_2" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_3" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_4" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_5" BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/ier_6" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_0" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_1" BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/ivr_2" BEL
@@ -49931,23 +50266,23 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bvalid_i"
         BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_p1_4"
-        BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_p1_1"
-        BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_p1_5"
         BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_p2_1"
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<2>.EDGE_DETECT_GEN.intr_p1_2"
         BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_p2_4"
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<6>.EDGE_DETECT_GEN.intr_p1_6"
+        BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<2>.EDGE_DETECT_GEN.intr_p2_2"
         BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_p2_5"
         BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<1>.EDGE_DETECT_GEN.intr_d1_1"
-        BEL
-        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<4>.EDGE_DETECT_GEN.intr_d1_4"
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<6>.EDGE_DETECT_GEN.intr_p2_6"
         BEL
         "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<5>.EDGE_DETECT_GEN.intr_d1_5"
+        BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<2>.EDGE_DETECT_GEN.intr_d1_2"
+        BEL
+        "axi_intc_0/axi_intc_0/INTC_CORE_I/INTR_DETECT_GEN<6>.EDGE_DETECT_GEN.intr_d1_6"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1"
         BEL
@@ -49976,6 +50311,8 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_4"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_5"
+        BEL
+        "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_6"
         BEL
         "axi_intc_0/axi_intc_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_31"
         BEL
@@ -51593,9 +51930,23 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         BEL
         "pit_timer_0/pit_timer_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1"
         BEL
-        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_4_1"
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_6"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_5"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_4"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_3_2"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_5_1"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_2_1"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_3_1"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_4_1"
+        BEL
+        "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_3"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1_1"
         BEL
@@ -51642,7 +51993,8 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_rd_src_rdy"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_cmdack"
-        BEL
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/done_done" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/r_w_flag" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_state_FSM_FFd1"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
@@ -51652,6 +52004,8 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_read_error"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_write_error"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_0"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_wr_in_prog"
         BEL
@@ -51741,6 +52095,8 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_0_0"
         BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/FIFO_Full"
+        BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_0"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_1"
@@ -51748,6 +52104,8 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_2"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_3"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/cnt_i_4"
         BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_busy" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_0_1" BEL
@@ -51789,6 +52147,14 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_7_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_8_2" BEL
@@ -51805,22 +52171,6 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_9_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_10_7" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_0" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_1" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_2" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_3" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_4" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_5" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_6" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_11_2" BEL
@@ -51837,6 +52187,14 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_5" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_6" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_12_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_13_7" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_14_2" BEL
@@ -52010,9 +52368,107 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_2" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_3" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_clr_go" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_rd_req" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_wr_req" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_0" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_1" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_2" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_3" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_4" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_5" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_6" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_7" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_8" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_9" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_10"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_11"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_12"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_13"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_14"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_15"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_16"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_17"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_18"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_19"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_20"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_21"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_22"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_23"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_24"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_25"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_26"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_27"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_28"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_29"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_30"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_w_address_31"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_error"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_2"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_3"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_4"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_5"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_6"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_7"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_8"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_9"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_10"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_11"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_12"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_13"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_14"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_15"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_16"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_17"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_18"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_19"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_20"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_21"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_22"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_23"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_24"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_25"
+        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/current_r_address_26"
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_rd_req"
+        BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_2"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_3"
@@ -52062,16 +52518,6 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_25"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_addr_26"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_2"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_3"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_error"
         BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_state_FSM_FFd2"
         BEL
@@ -52188,12 +52634,6 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_25"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_26"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_2"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_3"
         BEL

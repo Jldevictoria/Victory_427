@@ -167,6 +167,7 @@ entity dma_screencap is
   (
     -- ADD USER PORTS BELOW THIS LINE ------------------
     --USER ports added here
+	 screencap_interrupt 			  : out std_logic;
     -- ADD USER PORTS ABOVE THIS LINE ------------------
 
     -- DO NOT EDIT BELOW THIS LINE ---------------------
@@ -433,6 +434,7 @@ begin
     (
       -- MAP USER GENERICS BELOW THIS LINE ---------------
       --USER generics mapped here
+		
       -- MAP USER GENERICS ABOVE THIS LINE ---------------
 
       C_MST_AWIDTH                   => USER_MST_AWIDTH,
@@ -444,6 +446,7 @@ begin
     (
       -- MAP USER PORTS BELOW THIS LINE ------------------
       --USER ports mapped here
+		screencap_interrupt				 => screencap_interrupt,
       -- MAP USER PORTS ABOVE THIS LINE ------------------
 
       Bus2IP_Clk                     => ipif_Bus2IP_Clk,

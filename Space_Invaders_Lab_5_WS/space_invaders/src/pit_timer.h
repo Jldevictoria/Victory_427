@@ -129,7 +129,7 @@
 XStatus PIT_TIMER_SelfTest(void * baseaddr_p);
 /**
 *  Defines the number of registers available for read and write*/
-#define TEST_AXI_LITE_USER_NUM_REG 3
+//#define TEST_AXI_LITE_USER_NUM_REG 3
 
 
 #endif /** PIT_TIMER_H */

@@ -1,14 +1,26 @@
-#Thu Nov 06 12:12:10 MST 2014
-com.xilinx.sdk.linkgen.prefs.space_invaders\:.sbss2=MCB_DDR2_S0_AXI_BASEADDR
-com.xilinx.sdk.linkgen.prefs.space_invaders\:Heap-size=1024
-com.xilinx.sdk.linkgen.prefs.space_invaders\:.rodata=MCB_DDR2_S0_AXI_BASEADDR
+#Thu Dec 04 19:07:23 MST 2014
+com.xilinx.sdk.linkgen.prefs.space_invaders\:.data=MCB_DDR2_S0_AXI_BASEADDR
+com.xilinx.sdk.linkgen.prefs.space_invaders\:.sbss=MCB_DDR2_S0_AXI_BASEADDR
+com.xilinx.sdk.linkgen.prefs.space_invaders\:Stack-size=4096
 com.xilinx.sdk.linkgen.prefs.space_invaders\:.bss=MCB_DDR2_S0_AXI_BASEADDR
 com.xilinx.sdk.linkgen.prefs.space_invaders\:.sdata=MCB_DDR2_S0_AXI_BASEADDR
-com.xilinx.sdk.linkgen.prefs.space_invaders\:.text=MCB_DDR2_S0_AXI_BASEADDR
-com.xilinx.sdk.linkgen.prefs.space_invaders\:Heap=MCB_DDR2_S0_AXI_BASEADDR
-com.xilinx.sdk.linkgen.prefs.space_invaders\:Stack-size=4096
-com.xilinx.sdk.linkgen.prefs.space_invaders\:.sbss=MCB_DDR2_S0_AXI_BASEADDR
-eclipse.preferences.version=1
-com.xilinx.sdk.linkgen.prefs.space_invaders\:.data=MCB_DDR2_S0_AXI_BASEADDR
-com.xilinx.sdk.linkgen.prefs.space_invaders\:.sdata2=MCB_DDR2_S0_AXI_BASEADDR
+com.xilinx.sdk.linkgen.prefs.DMA_Milestone_One\:.sdata=MCB_DDR2_S0_AXI_BASEADDR
 com.xilinx.sdk.linkgen.prefs.space_invaders\:Stack=MCB_DDR2_S0_AXI_BASEADDR
+com.xilinx.sdk.linkgen.prefs.DMA_Milestone_One\:.sdata2=MCB_DDR2_S0_AXI_BASEADDR
+com.xilinx.sdk.linkgen.prefs.DMA_Milestone_One\:.rodata=MCB_DDR2_S0_AXI_BASEADDR
+eclipse.preferences.version=1
+com.xilinx.sdk.linkgen.prefs.DMA_Milestone_One\:.bss=MCB_DDR2_S0_AXI_BASEADDR
+com.xilinx.sdk.linkgen.prefs.DMA_Milestone_One\:.data=MCB_DDR2_S0_AXI_BASEADDR
+com.xilinx.sdk.linkgen.prefs.space_invaders\:.sbss2=MCB_DDR2_S0_AXI_BASEADDR
+com.xilinx.sdk.linkgen.prefs.DMA_Milestone_One\:.sbss2=MCB_DDR2_S0_AXI_BASEADDR
+com.xilinx.sdk.linkgen.prefs.DMA_Milestone_One\:.sbss=MCB_DDR2_S0_AXI_BASEADDR
+com.xilinx.sdk.linkgen.prefs.space_invaders\:Heap-size=1024
+com.xilinx.sdk.linkgen.prefs.space_invaders\:.sdata2=MCB_DDR2_S0_AXI_BASEADDR
+com.xilinx.sdk.linkgen.prefs.space_invaders\:Heap=MCB_DDR2_S0_AXI_BASEADDR
+com.xilinx.sdk.linkgen.prefs.space_invaders\:.text=MCB_DDR2_S0_AXI_BASEADDR
+com.xilinx.sdk.linkgen.prefs.DMA_Milestone_One\:Stack=MCB_DDR2_S0_AXI_BASEADDR
+com.xilinx.sdk.linkgen.prefs.space_invaders\:.rodata=MCB_DDR2_S0_AXI_BASEADDR
+com.xilinx.sdk.linkgen.prefs.DMA_Milestone_One\:Stack-size=1024
+com.xilinx.sdk.linkgen.prefs.DMA_Milestone_One\:Heap=MCB_DDR2_S0_AXI_BASEADDR
+com.xilinx.sdk.linkgen.prefs.DMA_Milestone_One\:Heap-size=1024
+com.xilinx.sdk.linkgen.prefs.DMA_Milestone_One\:.text=MCB_DDR2_S0_AXI_BASEADDR

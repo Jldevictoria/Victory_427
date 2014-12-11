@@ -106,6 +106,8 @@ entity user_logic is
     --USER generics added here
     -- ADD USER GENERICS ABOVE THIS LINE ---------------
 
+	memory_byte_allignment 		   : integer			  := 4;
+	
     -- DO NOT EDIT BELOW THIS LINE ---------------------
     -- Bus protocol parameters, do not add to or delete
     C_MST_AWIDTH                   : integer              := 32;
@@ -117,7 +119,7 @@ entity user_logic is
   port
   (
     -- ADD USER PORTS BELOW THIS LINE ------------------
-    --USER ports added here
+	 screencap_interrupt						: out std_logic;
     -- ADD USER PORTS ABOVE THIS LINE ------------------
 
     -- DO NOT EDIT BELOW THIS LINE ---------------------
@@ -166,15 +168,23 @@ end entity user_logic;
 architecture IMP of user_logic is
 
   --USER signal declarations added here, as needed for user logic
+  
+  signal current_r_address				: std_logic_vector(C_SLV_DWIDTH-1 downto 0); --Current address to be read
+  signal current_w_address				: std_logic_vector(C_SLV_DWIDTH-1 downto 0); --Current address to be write
+  signal fifo_full						: std_logic;
+  signal fifo_empty						: std_logic;
+  signal r_w_flag							: std_logic;
+  signal done_done						: std_logic;
+  signal test_comp						: std_logic_vector(C_SLV_DWIDTH-1 downto 0); --Holds final address value.
 
   ------------------------------------------
   -- Signals for user logic slave model s/w accessible register example
   ------------------------------------------
-  signal slv_reg0                       : std_logic_vector(C_SLV_DWIDTH-1 downto 0);
-  signal slv_reg1                       : std_logic_vector(C_SLV_DWIDTH-1 downto 0);
-  signal slv_reg2                       : std_logic_vector(C_SLV_DWIDTH-1 downto 0);
-  signal slv_reg3                       : std_logic_vector(C_SLV_DWIDTH-1 downto 0);
-  signal slv_reg4                       : std_logic_vector(C_SLV_DWIDTH-1 downto 0);
+  signal slv_reg0                       : std_logic_vector(C_SLV_DWIDTH-1 downto 0); --Control Register.
+  signal slv_reg1                       : std_logic_vector(C_SLV_DWIDTH-1 downto 0); --Frame Buffer.
+  signal slv_reg2                       : std_logic_vector(C_SLV_DWIDTH-1 downto 0); --Screenshot Buffer.
+  signal slv_reg3                       : std_logic_vector(C_SLV_DWIDTH-1 downto 0); --Transfer size.
+  signal slv_reg4                       : std_logic_vector(C_SLV_DWIDTH-1 downto 0); --Value Register.
   signal slv_reg_write_sel              : std_logic_vector(4 downto 0);
   signal slv_reg_read_sel               : std_logic_vector(4 downto 0);
   signal slv_ip2bus_data                : std_logic_vector(C_SLV_DWIDTH-1 downto 0);
@@ -225,7 +235,8 @@ attribute SIGIS of Bus2IP_Reset   : signal is "RST";
 begin
 
   --USER logic implementation added here
-
+  screencap_interrupt <= done_done;
+  test_comp <= (slv_reg2 + slv_reg3);
   ------------------------------------------
   -- Example code to read/write user logic slave model s/w accessible registers
   -- 
@@ -547,6 +558,9 @@ begin
             if ( mst_go = '1' ) then
               mst_cmd_sm_state  <= CMD_RUN;
               mst_cmd_sm_clr_go <= '1';
+			  current_r_address <= slv_reg1;
+			  current_w_address <= slv_reg2;
+			  r_w_flag 			<= '1';
             else
               mst_cmd_sm_state  <= CMD_IDLE;
               mst_cmd_sm_busy   <= '0';
@@ -566,17 +580,21 @@ begin
                 mst_cmd_sm_set_error   <= '1';
               end if;
             else
-              mst_cmd_sm_state       <= CMD_RUN;
-              mst_cmd_sm_rd_req      <= mst_cntl_rd_req;
-              mst_cmd_sm_wr_req      <= mst_cntl_wr_req;
-              mst_cmd_sm_ip2bus_addr <= mst_ip2bus_addr;
-              mst_cmd_sm_ip2bus_be   <= mst_ip2bus_be(15 downto 16-C_MST_DWIDTH/8 );
+			     mst_cmd_sm_state       <= CMD_RUN;
+              mst_cmd_sm_rd_req      <= r_w_flag;
+              mst_cmd_sm_wr_req      <= not r_w_flag;
+				  if (r_w_flag = '1') then
+						mst_cmd_sm_ip2bus_addr <= current_r_address;
+      		  else 
+						mst_cmd_sm_ip2bus_addr <= current_w_address;
+				  end if;
+              mst_cmd_sm_ip2bus_be   <= (others => '1');
               mst_cmd_sm_bus_lock    <= mst_cntl_bus_lock;
             end if;
 
           when CMD_WAIT_FOR_DATA =>
             if ( Bus2IP_Mst_Cmplt = '1' ) then
-              mst_cmd_sm_state <= CMD_DONE;
+              mst_cmd_sm_state <= CMD_RUN;
               if ( Bus2IP_Mst_Cmd_Timeout = '1' ) then
                 -- AXI4LITE address phase timeout
                 mst_cmd_sm_set_error   <= '1';
@@ -590,9 +608,28 @@ begin
             end if;
 
           when CMD_DONE =>
-            mst_cmd_sm_state    <= CMD_IDLE;
+			if (done_done = '1') then
+				mst_cmd_sm_state    <= CMD_IDLE;
+			else
+				mst_cmd_sm_state 	<= CMD_RUN;
+			end if;
             mst_cmd_sm_set_done <= '1';
             mst_cmd_sm_busy     <= '0';
+			if (fifo_full = '1') then
+				r_w_flag <= '0';
+			  elsif (fifo_empty = '1') then
+				r_w_flag <= '1';
+			end if;
+			if (r_w_flag = '1') then
+				current_r_address <= current_r_address + 4;
+			  else
+				current_w_address <= current_w_address + 4;
+			end if;
+			if (current_w_address = slv_reg2 + slv_reg3) then
+				done_done <= '1';
+			  else
+				done_done <= '0';
+			 end if;
 
           when others =>
             mst_cmd_sm_state    <= CMD_IDLE;
@@ -624,8 +661,8 @@ begin
       Data_In    => Bus2IP_MstRd_d,
       FIFO_Read  => mst_fifo_valid_read_xfer,
       Data_Out   => IP2Bus_MstWr_d,
-      FIFO_Full  => open,
-      FIFO_Empty => open,
+      FIFO_Full  => fifo_full,
+      FIFO_Empty => fifo_empty,
       Addr       => open
     );
 

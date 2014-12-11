@@ -1,0 +1,33 @@
+Running: C:\Xilinx\13.4\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/user_logic_isim_beh.exe -prj C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/user_logic_beh.prj dma_screencap_v1_00_a.user_logic 
+ISim O.87xd (signature 0xc3576ebc)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/proc_common_pkg.vhd" into library proc_common_v3_00_a
+Parsing VHDL file "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/family_support.vhd" into library proc_common_v3_00_a
+Parsing VHDL file "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/muxf_struct_f.vhd" into library proc_common_v3_00_a
+Parsing VHDL file "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/dynshreg_f.vhd" into library proc_common_v3_00_a
+Parsing VHDL file "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/cntr_incr_decr_addn_f.vhd" into library proc_common_v3_00_a
+Parsing VHDL file "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/srl_fifo_rbu_f.vhd" into library proc_common_v3_00_a
+Parsing VHDL file "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/srl_fifo_f.vhd" into library proc_common_v3_00_a
+Parsing VHDL file "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../hdl/vhdl/user_logic.vhd" into library dma_screencap_v1_00_a
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package proc_common_pkg
+Compiling package numeric_std
+Compiling package family_support
+Compiling architecture imp of entity cntr_incr_decr_addn_f [\cntr_incr_decr_addn_f(5,"nofami...]
+Compiling architecture behavioral of entity dynshreg_f [\dynshreg_f(16,32,"nofamily")(1,...]
+Compiling architecture imp of entity srl_fifo_rbu_f [\srl_fifo_rbu_f(32,16,"nofamily"...]
+Compiling architecture imp of entity srl_fifo_f [\srl_fifo_f(32,16,"nofamily")(1,...]
+Compiling architecture imp of entity user_logic
+Time Resolution for simulation is 1ps.
+Waiting for 3 sub-compilation(s) to finish...
+Compiled 16 VHDL Units
+Built simulation executable C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/user_logic_isim_beh.exe
+Fuse Memory Usage: 40688 KB
+Fuse CPU Usage: 779 ms

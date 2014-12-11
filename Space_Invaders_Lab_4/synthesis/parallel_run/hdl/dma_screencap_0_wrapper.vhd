@@ -12,6 +12,7 @@ use dma_screencap_v1_00_a.all;
 
 entity dma_screencap_0_wrapper is
   port (
+    screencap_interrupt : out std_logic;
     S_AXI_ACLK : in std_logic;
     S_AXI_ARESETN : in std_logic;
     S_AXI_AWADDR : in std_logic_vector(31 downto 0);
@@ -76,6 +77,7 @@ architecture STRUCTURE of dma_screencap_0_wrapper is
       C_M_AXI_LITE_DATA_WIDTH : INTEGER
     );
     port (
+      screencap_interrupt : out std_logic;
       S_AXI_ACLK : in std_logic;
       S_AXI_ARESETN : in std_logic;
       S_AXI_AWADDR : in std_logic_vector((C_S_AXI_ADDR_WIDTH-1) downto 0);
@@ -140,6 +142,7 @@ begin
       C_M_AXI_LITE_DATA_WIDTH => 32
     )
     port map (
+      screencap_interrupt => screencap_interrupt,
       S_AXI_ACLK => S_AXI_ACLK,
       S_AXI_ARESETN => S_AXI_ARESETN,
       S_AXI_AWADDR => S_AXI_AWADDR,

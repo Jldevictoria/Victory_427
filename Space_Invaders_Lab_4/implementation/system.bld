@@ -36,6 +36,9 @@ Loading design module
 Loading design module
 "C:/Victory_427/Space_Invaders_Lab_4/implementation/axi4_0_wrapper.ngc"...
 Loading design module
+"C:/Victory_427/Space_Invaders_Lab_4/implementation/axi4_0_wrapper_fifo_generato
+r_v8_4.ngc"...
+Loading design module
 "C:/Victory_427/Space_Invaders_Lab_4/implementation/microblaze_0_wrapper.ngc"...
 Loading design module
 "C:/Victory_427/Space_Invaders_Lab_4/implementation/axi_vdma_0_wrapper.ngc"...
@@ -286,7 +289,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:  37
 
-Total memory usage is 299416 kilobytes
+Total memory usage is 301784 kilobytes
 
 Writing NGD file "system.ngd" ...
 Total REAL time to NGDBUILD completion: 1 min  2 sec

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="com.xilinx.sdk.ui.dialogs.ProjectContentsLocationArea">
+		<item value="C:\Victory_427\Space_Invaders_Lab_5_WS\space_invaders_bsp" key="OUTSIDE_LOCATION"/>
+	</section>
+	<section name="NewWizardAction">
+		<item value="com.xilinx.sdk.appwiz.CAppWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+		</list>
+	</section>
+</section>
