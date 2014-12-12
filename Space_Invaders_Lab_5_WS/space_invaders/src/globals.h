@@ -143,7 +143,7 @@ int runTimeN, runTimeO, deltaRunTime;
 _Bool sFlags[10];
 char alienMarchSoundTurn;
 char mothershipSoundTurn;
-_Bool ss_status;
+_Bool ss_status, hw_ss_flag;
 
 //Sound files.
 extern int fastinvader4_soundData[1098];

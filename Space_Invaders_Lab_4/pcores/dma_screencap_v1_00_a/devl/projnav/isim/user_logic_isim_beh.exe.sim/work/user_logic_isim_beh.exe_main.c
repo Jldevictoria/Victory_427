@@ -35,10 +35,10 @@ int main(int argc, char **argv)
     proc_common_v3_00_a_p_2444876401_init();
     ieee_p_1242562249_init();
     proc_common_v3_00_a_p_4147123038_init();
-    proc_common_v3_00_a_a_0307373905_3306564128_init();
-    proc_common_v3_00_a_a_2419661608_3212880686_init();
-    proc_common_v3_00_a_a_0030151582_3306564128_init();
-    proc_common_v3_00_a_a_1627319469_3306564128_init();
+    proc_common_v3_00_a_a_4214893235_3306564128_init();
+    proc_common_v3_00_a_a_0627397907_3212880686_init();
+    proc_common_v3_00_a_a_3620359732_3306564128_init();
+    proc_common_v3_00_a_a_0666894910_3306564128_init();
     dma_screencap_v1_00_a_a_3268654154_3306564128_init();
 
 

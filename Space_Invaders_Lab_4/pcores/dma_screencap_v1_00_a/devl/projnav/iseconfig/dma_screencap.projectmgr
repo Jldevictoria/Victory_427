@@ -13,7 +13,9 @@
          <ClosedNode>/dma_screencap - IMP C:|Victory_427|Space_Invaders_Lab_4|pcores|dma_screencap_v1_00_a|hdl|vhdl|dma_screencap.vhd/USER_LOGIC_I - user_logic - IMP/DATA_CAPTURE_FIFO_I - srl_fifo_f - imp/I_SRL_FIFO_RBU_F - srl_fifo_rbu_f - imp</ClosedNode>
          <ClosedNode>/dma_screencap - IMP C:|Victory_427|Space_Invaders_Lab_4|pcores|dma_screencap_v1_00_a|hdl|vhdl|dma_screencap.vhd/USER_LOGIC_I - user_logic - IMP/DATA_CAPTURE_FIFO_I - srl_fifo_f - imp/proc_common_pkg</ClosedNode>
       </ClosedNodes>
-      <SelectedItems/>
+      <SelectedItems>
+         <SelectedItem>USER_LOGIC_I - user_logic - IMP (C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/hdl/vhdl/user_logic.vhd)</SelectedItem>
+      </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001e4000000020000000000000000000000000200000064ffffffff000000810000000300000002000001e40000000100000003000000000000000100000003</ViewHeaderState>
@@ -26,7 +28,6 @@
          <ClosedNode>Configure Target Device</ClosedNode>
          <ClosedNode>Design Utilities</ClosedNode>
          <ClosedNode>Implement Design</ClosedNode>
-         <ClosedNode>Synthesize - XST</ClosedNode>
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
@@ -34,7 +35,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000178000000010000000100000000000000000000000064ffffffff000000810000000000000001000001780000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000c9000000010000000100000000000000000000000064ffffffff000000810000000000000001000000c90000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>Check Syntax</CurrentItem>
    </ItemView>
@@ -69,7 +70,7 @@
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/Unassigned User Library Modules/dma_screencap - IMP/AXI_LITE_IPIF_I - axi_lite_ipif - imp</ClosedNode>
          <ClosedNode>/Unassigned User Library Modules/dma_screencap - IMP/AXI_MASTER_LITE_I - axi_master_lite - implementation</ClosedNode>
-         <ClosedNode>/Unassigned User Library Modules/dma_screencap - IMP/USER_LOGIC_I - user_logic - IMP</ClosedNode>
+         <ClosedNode>/Unassigned User Library Modules/dma_screencap - IMP/USER_LOGIC_I - user_logic - IMP/DATA_CAPTURE_FIFO_I - srl_fifo_f - imp</ClosedNode>
          <ClosedNode>/Unassigned User Library Modules/or_gate128 - imp</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
@@ -100,28 +101,28 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem>Simulate Behavioral Model</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000178000000010000000100000000000000000000000064ffffffff000000810000000000000001000001780000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000c9000000010000000100000000000000000000000064ffffffff000000810000000000000001000000c90000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem>Simulate Behavioral Model</CurrentItem>
    </ItemView>
    <SourceProcessView>000000ff00000000000000020000011b0000011b01000000050100000002</SourceProcessView>
-   <CurrentView>Implementation</CurrentView>
+   <CurrentView>Behavioral Simulation</CurrentView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
          <ClosedNode>Design Utilities</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000178000000010000000100000000000000000000000064ffffffff000000810000000000000001000001780000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
 </Project>

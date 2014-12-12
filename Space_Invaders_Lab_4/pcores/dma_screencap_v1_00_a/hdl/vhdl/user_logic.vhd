@@ -509,6 +509,8 @@ begin
   IP2Bus_Mst_Lock   <= mst_cmd_sm_bus_lock;
   IP2Bus_Mst_Reset  <= mst_cmd_sm_reset;
 
+	mst_cmd_sm_ip2bus_be   <= (others => '1');
+
   --implement master command interface state machine
   MASTER_CMD_SM_PROC : process( Bus2IP_Clk ) is
   begin
@@ -524,12 +526,10 @@ begin
         mst_cmd_sm_bus_lock       <= '0';
         mst_cmd_sm_reset          <= '0';
         mst_cmd_sm_ip2bus_addr    <= (others => '0');
-        mst_cmd_sm_ip2bus_be      <= (others => '0');
         mst_cmd_sm_set_done       <= '0';
         mst_cmd_sm_set_error      <= '0';
         mst_cmd_sm_set_timeout    <= '0';
-        mst_cmd_sm_busy           <= '0';
-		screencap_interrupt       <= '0';
+		    screencap_interrupt       <= '0';
                 
       else
 
@@ -540,12 +540,10 @@ begin
         mst_cmd_sm_bus_lock       <= '0';
         mst_cmd_sm_reset          <= '0';
         mst_cmd_sm_ip2bus_addr    <= (others => '0');
-        mst_cmd_sm_ip2bus_be      <= (others => '0');
         mst_cmd_sm_set_done       <= '0';
         mst_cmd_sm_set_error      <= '0';
         mst_cmd_sm_set_timeout    <= '0';
-        mst_cmd_sm_busy           <= '1';
-		screencap_interrupt       <= '0';
+		    screencap_interrupt       <= '0';
                 
         -- state transition
         case mst_cmd_sm_state is
@@ -553,9 +551,10 @@ begin
           when CMD_IDLE =>
             if ( mst_go = '1' ) then
               mst_cmd_sm_state  <= CMD_RUN;
-			  mst_cmd_sm_clr_go <= '1';
-			  transfer_count	<=  (others => '0');
-			  r_w_flag 		<= '1';
+							mst_cmd_sm_clr_go <= '1';
+							transfer_count	<=  (others => '0');
+							r_w_flag 		<= '1';
+							mst_cmd_sm_busy <= '1';
             else
               mst_cmd_sm_state  <= CMD_IDLE;
               mst_cmd_sm_busy   <= '0';
@@ -575,17 +574,16 @@ begin
                 mst_cmd_sm_set_error   <= '1';
               end if;
             else
-			     mst_cmd_sm_state       <= CMD_RUN;
+			        mst_cmd_sm_state       <= CMD_RUN;
               mst_cmd_sm_rd_req      <= r_w_flag;
               mst_cmd_sm_wr_req      <= not r_w_flag;
-				  if (r_w_flag = '1') then
-						mst_cmd_sm_ip2bus_addr <= source_addr + std_logic_vector(transfer_count*to_unsigned(4,3));
-      		  else 
-						mst_cmd_sm_ip2bus_addr <= dest_addr + std_logic_vector(transfer_count*to_unsigned(4,3));
-				  end if;
-              mst_cmd_sm_ip2bus_be   <= mst_ip2bus_be(15 downto 16-C_MST_DWIDTH/8 );
-              mst_cmd_sm_bus_lock    <= mst_cntl_bus_lock;
-            end if;
+				      if (r_w_flag = '1') then
+						    mst_cmd_sm_ip2bus_addr <= source_addr + std_logic_vector(transfer_count*to_unsigned(4,3));
+      		    else 
+						    mst_cmd_sm_ip2bus_addr <= dest_addr + std_logic_vector(transfer_count*to_unsigned(4,3));
+				      end if;
+                mst_cmd_sm_bus_lock    <= mst_cntl_bus_lock;
+              end if;
 
           when CMD_WAIT_FOR_DATA =>
             if ( Bus2IP_Mst_Cmplt = '1' ) then
@@ -603,23 +601,24 @@ begin
             end if;
 
           when CMD_DONE =>
-				if (transfer_count > unsigned(num_of_transfers)) then
-					mst_cmd_sm_state    <= CMD_IDLE;
-					mst_cmd_sm_set_done <= '1';
-					mst_cmd_sm_busy     <= '0';
-					screencap_interrupt <= '1';
-				else
-					if (r_w_flag = '0') then
-						transfer_count <= transfer_count + 1;
-						r_w_flag <= '1';
+					if (transfer_count > unsigned(num_of_transfers)) then
+						--slv_reg4 <= mst_cmd_sm_ip2bus_addr;
+						mst_cmd_sm_state    <= CMD_IDLE;
+						mst_cmd_sm_set_done <= '1';
+						mst_cmd_sm_busy     <= '0';
+						screencap_interrupt <= '1';
 					else
-						r_w_flag <= '0';
-					end if;				
-					mst_cmd_sm_state 	<= CMD_RUN;
-				end if;
-          when others =>
-            mst_cmd_sm_state    <= CMD_IDLE;
-            mst_cmd_sm_busy     <= '0';
+						if (r_w_flag = '0') then
+							transfer_count <= transfer_count + 1;
+							r_w_flag <= '1';
+						else
+							r_w_flag <= '0';
+						end if;				
+						mst_cmd_sm_state 	<= CMD_RUN;
+					end if;
+						when others =>
+							mst_cmd_sm_state    <= CMD_IDLE;
+							mst_cmd_sm_busy     <= '0';
 
         end case;
 

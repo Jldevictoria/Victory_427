@@ -355,6 +355,9 @@ implementation netlist
 IPNAME:pit_timer INSTANCE:pit_timer_0 -
 C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 387 - Copying cache
 implementation netlist
+IPNAME:dma_screencap INSTANCE:dma_screencap_0 -
+C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 397 - Copying cache
+implementation netlist
 IPNAME:axi_gpio INSTANCE:axi_switches_gpio -
 C:\Victory_427\Space_Invaders_Lab_4\system.mhs line 409 - Copying cache
 implementation netlist
@@ -370,10 +373,10 @@ ClkGen elaborate status: PASSED
 Writing HDL for elaborated instances ...
 
 Inserting wrapper level ...
-Completion time: 1.00 seconds
+Completion time: 0.00 seconds
 
 Constructing platform-level connectivity ...
-Completion time: 0.00 seconds
+Completion time: 1.00 seconds
 
 Writing (top-level) BMM ...
 
@@ -405,4 +408,4 @@ INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
 
 Rebuilding cache ...
 
-Total run time: 46.00 seconds
+Total run time: 43.00 seconds

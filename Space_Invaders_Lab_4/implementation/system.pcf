@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map O.87xd on Thu Dec 11 05:25:48 2014
+// Written by: Map O.87xd on Thu Dec 11 20:25:46 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -12506,7 +12506,8 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_rd_src_rdy"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_cmdack"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/r_w_flag" BEL
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_busy" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/r_w_flag" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_state_FSM_FFd1"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
@@ -12862,18 +12863,9 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_31" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_clr_go" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_wr_req" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_2"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_3"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done"
-        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_error"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_busy" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_0" BEL
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_2" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_3" BEL
@@ -13072,12 +13064,6 @@ TIMEGRP m_axi_mm2s_aclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_25"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_26"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_2"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_3"
         BEL
@@ -25702,7 +25688,8 @@ TIMEGRP s_axi_lite_aclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_rd_src_rdy"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_cmdack"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/r_w_flag" BEL
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_busy" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/r_w_flag" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_state_FSM_FFd1"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
@@ -26058,18 +26045,9 @@ TIMEGRP s_axi_lite_aclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_31" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_clr_go" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_wr_req" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_2"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_3"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done"
-        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_error"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_busy" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_0" BEL
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_2" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_3" BEL
@@ -26268,12 +26246,6 @@ TIMEGRP s_axi_lite_aclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_25"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_26"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_2"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_3"
         BEL
@@ -38899,7 +38871,8 @@ TIMEGRP globclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_rd_src_rdy"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_cmdack"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/r_w_flag" BEL
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_busy" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/r_w_flag" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_state_FSM_FFd1"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
@@ -39255,18 +39228,9 @@ TIMEGRP globclk = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_31" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_clr_go" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_wr_req" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_2"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_3"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done"
-        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_error"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_busy" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_0" BEL
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_2" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_3" BEL
@@ -39465,12 +39429,6 @@ TIMEGRP globclk = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_25"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_26"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_2"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_3"
         BEL
@@ -52114,7 +52072,8 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_rd_src_rdy"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_bus2ip_cmdack"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/r_w_flag" BEL
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_busy" BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/r_w_flag" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_state_FSM_FFd1"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg"
@@ -52470,18 +52429,9 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/status_reg_31" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_clr_go" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_wr_req" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_2"
-        BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_ip2bus_be_3"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done"
-        BEL
+        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_done" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_set_error"
-        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_cmd_sm_busy" BEL
-        "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_0" BEL
+        BEL "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_0" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_1" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_2" BEL
         "dma_screencap_0/dma_screencap_0/USER_LOGIC_I/mst_reg_1_3" BEL
@@ -52680,12 +52630,6 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT2 = PIN
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_25"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_ip2bus_addr_reg_26"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_0"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_1"
-        BEL
-        "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_2"
         BEL
         "dma_screencap_0/dma_screencap_0/AXI_MASTER_LITE_I/I_RD_WR_CNTLR/sig_m_axi_wstrb_3"
         BEL

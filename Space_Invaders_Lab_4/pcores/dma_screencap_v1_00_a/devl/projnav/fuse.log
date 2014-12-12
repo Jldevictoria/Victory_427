@@ -12,6 +12,23 @@ Parsing VHDL file "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_0
 Parsing VHDL file "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/srl_fifo_f.vhd" into library proc_common_v3_00_a
 Parsing VHDL file "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../hdl/vhdl/user_logic.vhd" into library dma_screencap_v1_00_a
 Starting static elaboration
+WARNING:HDLCompiler:746 - "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/srl_fifo_f.vhd" Line 156: Range is empty (null range)
+WARNING:HDLCompiler:746 - "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/srl_fifo_f.vhd" Line 156: Range is empty (null range)
+WARNING:HDLCompiler:746 - "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/srl_fifo_f.vhd" Line 166: Range is empty (null range)
+WARNING:HDLCompiler:746 - "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/srl_fifo_rbu_f.vhd" Line 186: Range is empty (null range)
+WARNING:HDLCompiler:746 - "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/srl_fifo_rbu_f.vhd" Line 187: Range is empty (null range)
+WARNING:HDLCompiler:746 - "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/srl_fifo_rbu_f.vhd" Line 186: Range is empty (null range)
+WARNING:HDLCompiler:746 - "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/srl_fifo_rbu_f.vhd" Line 187: Range is empty (null range)
+WARNING:HDLCompiler:746 - "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/srl_fifo_rbu_f.vhd" Line 217: Range is empty (null range)
+WARNING:HDLCompiler:220 - "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/srl_fifo_rbu_f.vhd" Line 217: Assignment ignored
+WARNING:HDLCompiler:746 - "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/dynshreg_f.vhd" Line 147: Range is empty (null range)
+WARNING:HDLCompiler:746 - "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/srl_fifo_rbu_f.vhd" Line 255: Range is empty (null range)
+WARNING:HDLCompiler:746 - "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/dynshreg_f.vhd" Line 147: Range is empty (null range)
+WARNING:HDLCompiler:746 - "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/srl_fifo_rbu_f.vhd" Line 255: Range is empty (null range)
+WARNING:HDLCompiler:746 - "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/dynshreg_f.vhd" Line 362: Range is empty (null range)
+WARNING:HDLCompiler:746 - "N:/O.87xd/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3167: Range is empty (null range)
+WARNING:HDLCompiler:746 - "N:/O.87xd/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3168: Range is empty (null range)
+WARNING:HDLCompiler:1242 - "N:/O.87xd/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3174: Warning: "NUMERIC_STD.TO_INTEGER: null detected, returning 0"
 Completed static elaboration
 Compiling package standard
 Compiling package std_logic_1164
@@ -20,14 +37,22 @@ Compiling package std_logic_unsigned
 Compiling package proc_common_pkg
 Compiling package numeric_std
 Compiling package family_support
-Compiling architecture imp of entity cntr_incr_decr_addn_f [\cntr_incr_decr_addn_f(5,"nofami...]
-Compiling architecture behavioral of entity dynshreg_f [\dynshreg_f(16,32,"nofamily")(1,...]
-Compiling architecture imp of entity srl_fifo_rbu_f [\srl_fifo_rbu_f(32,16,"nofamily"...]
-Compiling architecture imp of entity srl_fifo_f [\srl_fifo_f(32,16,"nofamily")(1,...]
+Compiling architecture imp of entity cntr_incr_decr_addn_f [\cntr_incr_decr_addn_f(1,"nofami...]
+Compiling architecture behavioral of entity dynshreg_f [\dynshreg_f(1,32,"nofamily")(1,8...]
+WARNING:HDLCompiler:746 - "N:/O.87xd/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3167: Range is empty (null range)
+WARNING:HDLCompiler:746 - "N:/O.87xd/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3168: Range is empty (null range)
+WARNING:HDLCompiler:1242 - "N:/O.87xd/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3174: Warning: "NUMERIC_STD.TO_INTEGER: null detected, returning 0"
+WARNING:HDLCompiler:746 - "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/dynshreg_f.vhd" Line 362: Range is empty (null range)
+Compiling architecture imp of entity srl_fifo_rbu_f [\srl_fifo_rbu_f(32,1,"nofamily")...]
+WARNING:HDLCompiler:746 - "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/srl_fifo_rbu_f.vhd" Line 217: Range is empty (null range)
+WARNING:HDLCompiler:746 - "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/srl_fifo_rbu_f.vhd" Line 255: Range is empty (null range)
+WARNING:HDLCompiler:746 - "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/srl_fifo_rbu_f.vhd" Line 217: Range is empty (null range)
+Compiling architecture imp of entity srl_fifo_f [\srl_fifo_f(32,1,"nofamily")(1,8...]
+WARNING:HDLCompiler:746 - "C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/../../../../../../Xilinx/13.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/srl_fifo_rbu_f.vhd" Line 187: Range is empty (null range)
 Compiling architecture imp of entity user_logic
 Time Resolution for simulation is 1ps.
 Waiting for 4 sub-compilation(s) to finish...
 Compiled 16 VHDL Units
 Built simulation executable C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/user_logic_isim_beh.exe
-Fuse Memory Usage: 40852 KB
+Fuse Memory Usage: 40800 KB
 Fuse CPU Usage: 748 ms

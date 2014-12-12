@@ -39,8 +39,8 @@ int main()
     printf("Printing value before DMA transfer.\n\r");
     xil_printf("%x\r\n", destination_word);
 
-    DMA_SCREENCAP_MasterRecvWord(XPAR_DMA_SCREENCAP_0_BASEADDR, (Xuint32) &source_word);
-    DMA_SCREENCAP_MasterSendWord(XPAR_DMA_SCREENCAP_0_BASEADDR, (Xuint32) &destination_word);
+    //DMA_SCREENCAP_MasterRecvWord(XPAR_DMA_SCREENCAP_0_BASEADDR, (Xuint32) &source_word);
+    //DMA_SCREENCAP_MasterSendWord(XPAR_DMA_SCREENCAP_0_BASEADDR, (Xuint32) &destination_word);
 
     printf("Printing value after DMA transfer.\n\r");
     xil_printf("%x\r\n", destination_word);
