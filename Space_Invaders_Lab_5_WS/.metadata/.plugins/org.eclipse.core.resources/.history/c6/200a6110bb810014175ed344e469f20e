@@ -40,6 +40,12 @@
 #include "xac97_l.h"
 #include "xuartlite.h"
 #include "xuartlite_l.h"
+#include "xtmrctr.h"
+
+int XTmrCtr_Initialize(XTmrCtr * InstancePtr, u16 DeviceId);
+void XTmrCtr_Start(XTmrCtr * InstancePtr, u8 TmrCtrNumber);
+void XTmrCtr_Stop(XTmrCtr * InstancePtr, u8 TmrCtrNumber);
+u32 XTmrCtr_GetValue(XTmrCtr * InstancePtr, u8 TmrCtrNumber);
 
 unsigned int * framePointer = (unsigned int *) FRAME_BUFFER_0_ADDR;
 unsigned int testCount = 0;
@@ -47,17 +53,32 @@ char inputChar;
 unsigned int delayValue;
 
 XGpio gpPB;   // This is a handle for the push-button GPIO block.
+XGpio gpSW;   // This is a handle for the switches GPIO block.
 XUartLite uart;
+XAxiVdma_DmaSetup myFrameBuffer;
+XAxiVdma videoDMAController;
+XTmrCtr axi_timer;
 
 void pollButtons(){
 	if((fit_counter % TANK_SPEED) == 0){
 		atlysButtons = XGpio_DiscreteRead(&gpPB, 1);  // Get the current state of the buttons.
+		atlysSwitches = XGpio_DiscreteRead(&gpSW, 1); // Get the current state of the switches.
 		currentButtonState = atlysButtons | ctlrButtons;
 		int left = currentButtonState&(0x8);
 		int button_b = currentButtonState&(0x1);
 		int right = currentButtonState&(0x2);
 		int up = currentButtonState&(0x10);
 		int down = currentButtonState&(0x4);
+
+
+		//int SW0 = atlysSwitches&(0x1);
+		//int SW1 = atlysSwitches&(0x2);
+		//int SW2 = atlysSwitches&(0x4);
+		//int SW3 = atlysSwitches&(0x8);
+		//int SW4 = atlysSwitches&(0x10);
+		int SW5 = atlysSwitches&(0x20);
+		int SW6 = atlysSwitches&(0x40);
+		int SW7 = atlysSwitches&(0x80);
 
 		int button_start = currentButtonState&(0x20);
 		int button_a = currentButtonState&(0x40);
@@ -134,7 +155,42 @@ void pollButtons(){
 				masterVolume = AC97_VOL_MUTE;
 				XAC97_WriteReg(XPAR_AXI_AC97_0_BASEADDR, AC97_AuxOutVol, masterVolume);
 			}
+		}
 
+
+		if (SW5){
+			if (XST_FAILURE == XAxiVdma_StartParking(&videoDMAController, 1,  XAXIVDMA_READ)) {
+				xil_printf("vdma parking failed\n\r");
+			}
+		}else{
+			if (XST_FAILURE == XAxiVdma_StartParking(&videoDMAController, 0,  XAXIVDMA_READ)) {
+				xil_printf("vdma parking failed\n\r");
+			}
+		}
+
+		if (SW6){
+			// Software DMA.
+			// Start Timer
+			XTmrCtr_Start(&axi_timer, 0);
+			memcpy((void *)SCREENSHOT_BUFFER_0_ADDR, (void *)FRAME_BUFFER_0_ADDR, (size_t) BUFFER_FULL_SIZE);
+			// Stop timer and print values.
+			XTmrCtr_Stop(&axi_timer, 0);
+			xil_printf("Software Timer: %d", XTmrCtr_GetValue(&axi_timer, 0));
+			xil_printf("SW6\n\r");
+		}
+
+		if (SW7){
+			if (hw_ss_flag){
+				// Send go command to dma_screencap.
+				//SEt Timer
+				XTmrCtr_Start(&axi_timer, 0);
+				Xil_Out8(XPAR_DMA_SCREENCAP_0_BASEADDR+DMA_SCREENCAP_MST_GO_PORT_OFFSET, MST_START);
+				// DMA_SCREENCAP_mWriteReg(XPAR_DMA_SCREENCAP_0_BASEADDR, DMA_SCREENCAP_MST_GO_PORT_OFFSET, 0x0A);
+				xil_printf("SW7\n\r");
+			}
+			hw_ss_flag = 0;
+		}else{
+			hw_ss_flag = 1;
 		}
 
 		if((gameStatus == RUNNING)&& up){
@@ -551,6 +607,14 @@ void interrupt_handler_dispatcher(void* ptr) {
 		XIntc_AckIntr(XPAR_INTC_0_BASEADDR, XPAR_AXI_AC97_0_INTERRUPT_MASK);
 		AC97_interrupt_handler();
 	}
+	if (intc_status & XPAR_DMA_SCREENCAP_0_SCREENCAP_INTERRUPT_MASK){
+		XIntc_AckIntr(XPAR_INTC_0_BASEADDR, XPAR_DMA_SCREENCAP_0_SCREENCAP_INTERRUPT_MASK);
+		xil_printf("DMA interrupt\n\r");
+		//Stop timer and print value.
+		XTmrCtr_Stop(&axi_timer, 0);
+		xil_printf("Hardware Timer: %d", XTmrCtr_GetValue(&axi_timer, 0));
+	}
+
 
 }
 
@@ -650,7 +714,7 @@ int main(){
 	gameStatus = STOPPED;
 	init_platform();                   // Necessary for all programs.
 	int Status;                        // Keep track of success/failure of system function calls.
-	XAxiVdma videoDMAController;
+	//XAxiVdma videoDMAController;
 	// There are 3 steps to initializing the vdma driver and IP.
 	// Step 1: lookup the memory structure that is used to access the vdma driver.
     XAxiVdma_Config * VideoDMAConfig = XAxiVdma_LookupConfig(XPAR_AXI_VDMA_0_DEVICE_ID);
@@ -680,7 +744,7 @@ int main(){
     }
     // Now we tell the driver about the geometry of our frame buffer and a few other things.
     // Our image is 480 x 640.
-    XAxiVdma_DmaSetup myFrameBuffer;
+    //XAxiVdma_DmaSetup myFrameBuffer;
     myFrameBuffer.VertSizeInput = 480;    // 480 vertical pixels.
     myFrameBuffer.HoriSizeInput = 640*4;  // 640 horizontal (32-bit pixels).
     myFrameBuffer.Stride = 640*4;         // Dont' worry about the rest of the values.
@@ -697,7 +761,7 @@ int main(){
     // is where you will write your video data. The vdma IP/driver then streams it to the HDMI
     // IP.
      myFrameBuffer.FrameStoreStartAddr[0] = FRAME_BUFFER_0_ADDR;
-     myFrameBuffer.FrameStoreStartAddr[1] = FRAME_BUFFER_0_ADDR + 4*640*480;
+     myFrameBuffer.FrameStoreStartAddr[1] = SCREENSHOT_BUFFER_0_ADDR;
 
      if(XST_FAILURE == XAxiVdma_DmaSetBufferAddr(&videoDMAController, XAXIVDMA_READ,
     		               myFrameBuffer.FrameStoreStartAddr)) {
@@ -728,21 +792,27 @@ int main(){
     	 xil_printf("vdma parking failed\n\r");
      }
 
+     if (XST_FAILURE == XTmrCtr_Initialize(&axi_timer, XPAR_AXI_TIMER_0_DEVICE_ID)){
+    	 xil_printf("Axi timer initialization failed.");
+     }
+
      // Initialize the GPIO peripherals.
      int success;
      // print("hello world\n\r");
      success = XGpio_Initialize(&gpPB, XPAR_PUSH_BUTTONS_5BITS_DEVICE_ID);
-     // success = XGpio_Initialize(&gpPB, XPAR_PUSH_BUTTONS_5BITS_DEVICE_ID);
+     success = XGpio_Initialize(&gpSW, XPAR_AXI_SWITCHES_GPIO_DEVICE_ID);
 
      // Set the push button peripheral to be inputs.
      XGpio_SetDataDirection(&gpPB, 1, 0x0000001F);
+     XGpio_SetDataDirection(&gpSW, 1, 0x000000FF);
+
      // Enable the global GPIO interrupt for push buttons.
      //XGpio_InterruptGlobalEnable(&gpPB);
      // Enable all interrupts in the push button peripheral.
      //XGpio_InterruptEnable(&gpPB, 0xFFFFFFFF);
 
      microblaze_register_handler(interrupt_handler_dispatcher, NULL);
-     XIntc_EnableIntr(XPAR_INTC_0_BASEADDR, XPAR_AXI_AC97_0_INTERRUPT_MASK | XPAR_PIT_TIMER_0_PIT_INTERRUPT_MASK);
+     XIntc_EnableIntr(XPAR_INTC_0_BASEADDR, XPAR_AXI_AC97_0_INTERRUPT_MASK | XPAR_PIT_TIMER_0_PIT_INTERRUPT_MASK | XPAR_DMA_SCREENCAP_0_SCREENCAP_INTERRUPT_MASK);
      XIntc_MasterEnable(XPAR_INTC_0_BASEADDR);
      microblaze_enable_interrupts();
 
@@ -760,7 +830,11 @@ int main(){
      //Initialize DMA Screen Capture values.
      DMA_SCREENCAP_mWriteReg(XPAR_DMA_SCREENCAP_0_BASEADDR, DMA_SCREENCAP_SLV_REG1_OFFSET, FRAME_BUFFER_0_ADDR);
      DMA_SCREENCAP_mWriteReg(XPAR_DMA_SCREENCAP_0_BASEADDR, DMA_SCREENCAP_SLV_REG2_OFFSET, SCREENSHOT_BUFFER_0_ADDR);
-     DMA_SCREENCAP_mWriteReg(XPAR_DMA_SCREENCAP_0_BASEADDR, DMA_SCREENCAP_SLV_REG3_OFFSET, BUFFER_FULL_SIZE);
+     DMA_SCREENCAP_mWriteReg(XPAR_DMA_SCREENCAP_0_BASEADDR, DMA_SCREENCAP_SLV_REG3_OFFSET, NUM_OF_DMA_TRANSFERS);
+
+     //Initialize screenshot state.
+     ss_status = 1;
+     hw_ss_flag = 1;
 
      //Initialize Pit Timer values
 	 // Write 1,000,000 to the pit_timer delay register.
@@ -773,6 +847,8 @@ int main(){
      //Initialize the uart
      XUartLite_Initialize(&uart, XPAR_RS232_UART_1_DEVICE_ID);
      XUartLite_ResetFifos(&uart);
+
+     xil_printf("Here we go!\n\r");
      while(1){
     	 inputChar = XUartLite_RecvByte(XPAR_RS232_UART_1_BASEADDR);
 

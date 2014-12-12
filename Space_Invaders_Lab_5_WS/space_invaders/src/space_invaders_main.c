@@ -40,6 +40,7 @@
 #include "xac97_l.h"
 #include "xuartlite.h"
 #include "xuartlite_l.h"
+#include "xtmrctr.h"
 
 unsigned int * framePointer = (unsigned int *) FRAME_BUFFER_0_ADDR;
 unsigned int testCount = 0;
@@ -51,6 +52,7 @@ XGpio gpSW;   // This is a handle for the switches GPIO block.
 XUartLite uart;
 XAxiVdma_DmaSetup myFrameBuffer;
 XAxiVdma videoDMAController;
+XTmrCtr axi_timer;
 
 void pollButtons(){
 	if((fit_counter % TANK_SPEED) == 0){
@@ -163,13 +165,20 @@ void pollButtons(){
 
 		if (SW6){
 			// Software DMA.
+			// Start Timer
+			XTmrCtr_Start(&axi_timer, 0);
 			memcpy((void *)SCREENSHOT_BUFFER_0_ADDR, (void *)FRAME_BUFFER_0_ADDR, (size_t) BUFFER_FULL_SIZE);
+			// Stop timer and print values.
+			XTmrCtr_Stop(&axi_timer, 0);
+			xil_printf("Software Timer: %d", XTmrCtr_GetValue(&axi_timer, 0));
 			xil_printf("SW6\n\r");
 		}
 
 		if (SW7){
 			if (hw_ss_flag){
 				// Send go command to dma_screencap.
+				//SEt Timer
+				XTmrCtr_Start(&axi_timer, 0);
 				Xil_Out8(XPAR_DMA_SCREENCAP_0_BASEADDR+DMA_SCREENCAP_MST_GO_PORT_OFFSET, MST_START);
 				// DMA_SCREENCAP_mWriteReg(XPAR_DMA_SCREENCAP_0_BASEADDR, DMA_SCREENCAP_MST_GO_PORT_OFFSET, 0x0A);
 				xil_printf("SW7\n\r");
@@ -596,6 +605,9 @@ void interrupt_handler_dispatcher(void* ptr) {
 	if (intc_status & XPAR_DMA_SCREENCAP_0_SCREENCAP_INTERRUPT_MASK){
 		XIntc_AckIntr(XPAR_INTC_0_BASEADDR, XPAR_DMA_SCREENCAP_0_SCREENCAP_INTERRUPT_MASK);
 		xil_printf("DMA interrupt\n\r");
+		//Stop timer and print value.
+		XTmrCtr_Stop(&axi_timer, 0);
+		xil_printf("Hardware Timer: %d", XTmrCtr_GetValue(&axi_timer, 0));
 	}
 
 
@@ -773,6 +785,10 @@ int main(){
      // Note that you have to start the DMA process before parking on a frame.
      if (XST_FAILURE == XAxiVdma_StartParking(&videoDMAController, frameIndex,  XAXIVDMA_READ)) {
     	 xil_printf("vdma parking failed\n\r");
+     }
+
+     if (XST_FAILURE == XTmrCtr_Initialize(&axi_timer, XPAR_AXI_TIMER_0_DEVICE_ID)){
+    	 xil_printf("Axi timer initialization failed.");
      }
 
      // Initialize the GPIO peripherals.
