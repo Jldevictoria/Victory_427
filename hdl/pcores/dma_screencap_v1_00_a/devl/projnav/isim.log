@@ -1,0 +1,52 @@
+ISim log file
+Running: C:\Victory_427\Space_Invaders_Lab_4\pcores\dma_screencap_v1_00_a\devl\projnav\user_logic_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Victory_427/Space_Invaders_Lab_4/pcores/dma_screencap_v1_00_a/devl/projnav/user_logic_isim_beh.wdb 
+ISim O.87xd (signature 0xc3576ebc)
+This is a Full version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: null detected, returning 0
+at 0 ps, Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: null detected, returning 0
+Finished circuit initialization process.
+# source simulation_orig.tcl
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: null detected, returning 0
+at 0 ps, Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: null detected, returning 0
+Finished circuit initialization process.
+slv_reg0: No such HDL object
+# source simulation_orig.tcl
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: null detected, returning 0
+at 0 ps, Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: null detected, returning 0
+Finished circuit initialization process.
+at 290 ns(1), Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: null detected, returning 0
+at 290 ns(1), Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: null detected, returning 0
+slv_reg0: No such HDL object
+# source simulation_orig.tcl
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: null detected, returning 0
+at 0 ps, Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: null detected, returning 0
+Finished circuit initialization process.
+at 290 ns(1), Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: null detected, returning 0
+at 290 ns(1), Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: null detected, returning 0
+slv_reg0: No such HDL object
+# restart
+# source simulation_orig.tcl
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: null detected, returning 0
+at 0 ps, Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: null detected, returning 0
+Finished circuit initialization process.
+at 290 ns(1), Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: null detected, returning 0
+at 290 ns(1), Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: null detected, returning 0
+slv_reg0: No such HDL object
+# restart
+# source simulation_orig.tcl
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: null detected, returning 0
+at 0 ps, Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: null detected, returning 0
+Finished circuit initialization process.
+at 290 ns(1), Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: null detected, returning 0
+at 290 ns(1), Instance /user_logic/DATA_CAPTURE_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: null detected, returning 0
+slv_reg0: No such HDL object

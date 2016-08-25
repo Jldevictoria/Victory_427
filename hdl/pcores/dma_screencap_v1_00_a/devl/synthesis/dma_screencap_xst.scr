@@ -1,0 +1,12 @@
+run
+-opt_level 2
+-opt_mode speed
+-ifmt mixed
+-ifn "C:\Victory_427\Space_Invaders_Lab_4\pcores\dma_screencap_v1_00_a\devl\synthesis\dma_screencap_xst.prj"
+-top dma_screencap
+-p virtex6
+-ofn "C:\Victory_427\Space_Invaders_Lab_4\pcores\dma_screencap_v1_00_a\devl\synthesis\dma_screencap_xst.ngc"
+-iobuf NO
+-rtlview YES
+-hierarchy_separator /
+-work_lib dma_screencap_v1_00_a

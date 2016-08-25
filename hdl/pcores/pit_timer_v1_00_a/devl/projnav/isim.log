@@ -1,0 +1,10 @@
+ISim log file
+Running: C:\Victory_427\Space_Invaders_Lab_4\pcores\pit_timer_v1_00_a\devl\projnav\user_logic_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Victory_427/Space_Invaders_Lab_4/pcores/pit_timer_v1_00_a/devl/projnav/user_logic_isim_beh.wdb 
+ISim O.87xd (signature 0xc3576ebc)
+This is a Full version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# source pit_timer.tcl
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
